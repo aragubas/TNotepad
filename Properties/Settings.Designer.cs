@@ -93,5 +93,17 @@ namespace TNotepad.Properties {
                 this["PinnedDocuments"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool WordWrapEnabled {
+            get {
+                return ((bool)(this["WordWrapEnabled"]));
+            }
+            set {
+                this["WordWrapEnabled"] = value;
+            }
+        }
     }
 }

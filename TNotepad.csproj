@@ -57,6 +57,9 @@
   <PropertyGroup>
     <ApplicationIcon>Resources\TabbedNotpadIcon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>TNotepad.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />

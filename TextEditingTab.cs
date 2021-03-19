@@ -57,6 +57,8 @@ namespace TNotepad
             // Set Default Encoding
             SetEncoding(Utils.EncodingNameToEncodingObject());
 
+            Text.WordWrap = Properties.Settings.Default.WordWrapEnabled;
+
         }
 
         private void NewPage_Click(object sender, EventArgs e)
