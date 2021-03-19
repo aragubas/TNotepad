@@ -137,7 +137,7 @@ namespace TNotepad
             if (Tabs.TabPages.Count == 0) { CreateHometab(); }
 
             // Select the Last Tab
-            Tabs.SelectedTab = Tabs.TabPages[Tabs.TabPages.Count - 1];
+            //Tabs.SelectedTab = Tabs.TabPages[Tabs.TabPages.Count - 1];
 
         }
 

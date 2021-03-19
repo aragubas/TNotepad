@@ -56,7 +56,13 @@ namespace TNotepad
             PinDocsView.Items.Clear();
             try
             {
-                if (Properties.Settings.Default.PinnedDocuments.Count < 1)
+                if (Properties.Settings.Default.PinnedDocuments == null)
+                {
+                    NoDocumentsPinned();
+                    return;
+                }
+                int PinDocsCount = Properties.Settings.Default.PinnedDocuments.Count;
+                if (PinDocsCount < 1)
                 {
                     NoDocumentsPinned();
                     return;
@@ -106,7 +112,7 @@ namespace TNotepad
                 }
 
             } 
-            catch (NullReferenceException)
+            catch (Exception ex)
             {
                 NoDocumentsPinned();
             }

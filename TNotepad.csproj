@@ -107,6 +107,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SettingsPages\TextEditorTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SettingsPages\TextEditorTab.Designer.cs">
+      <DependentUpon>TextEditorTab.cs</DependentUpon>
+    </Compile>
     <Compile Include="SettingsPages\UISettings.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -151,6 +157,9 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsPages\TextEditorTab.resx">
+      <DependentUpon>TextEditorTab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SettingsPages\UISettings.resx">
       <DependentUpon>UISettings.cs</DependentUpon>

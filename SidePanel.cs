@@ -176,29 +176,14 @@ namespace TNotepad
             e.Effect = DragDropEffects.Copy;
         }
 
-        private void NewFileMiniButton_MouseDown(object sender, MouseEventArgs e)
+        private void NewFileMiniButton_Click(object sender, EventArgs e)
         {
-            NewFileMiniButton.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-
+            NewTabButton.PerformClick();
         }
 
-
-        private void NewFileMiniButton_MouseUp(object sender, MouseEventArgs e)
+        private void OpenFileMiniButton_Click(object sender, EventArgs e)
         {
-            NewFileMiniButton.BorderStyle = System.Windows.Forms.BorderStyle.None;
-
-        }
-
-        private void OpenFileMiniButton_MouseDown(object sender, MouseEventArgs e)
-        {
-            OpenFileMiniButton.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-
-        }
-
-        private void OpenFileMiniButton_MouseUp(object sender, MouseEventArgs e)
-        {
-            OpenFileMiniButton.BorderStyle = System.Windows.Forms.BorderStyle.None;
-
+            OpenFileButton.PerformClick();
         }
 
         private void SettingsMiniButton_Click(object sender, EventArgs e)
@@ -206,44 +191,9 @@ namespace TNotepad
             SettingsButton.PerformClick();
         }
 
-        private void OpenFileMiniButton_Click(object sender, EventArgs e)
-        {
-            OpenFileButton.PerformClick();
-
-        }
-
-        private void NewFileMiniButton_Click(object sender, EventArgs e)
-        {
-            NewTabButton.PerformClick();
-        }
-
-        private void SettingsMiniButton_MouseUp(object sender, MouseEventArgs e)
-        {
-            SettingsMiniButton.BorderStyle = System.Windows.Forms.BorderStyle.None;
-
-        }
-
-        private void SettingsMiniButton_MouseDown(object sender, MouseEventArgs e)
-        {
-            SettingsMiniButton.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-
-        }
-
-        private void CloseMiniButton_Click(object sender, EventArgs e)
+        private void CloseTabMiniButton_Click(object sender, EventArgs e)
         {
             RootControl.CloseSelectedTab();
-        }
-
-        private void CloseMiniButton_MouseUp(object sender, MouseEventArgs e)
-        {
-            CloseMiniButton.BorderStyle = System.Windows.Forms.BorderStyle.None;
-
-        }
-
-        private void CloseMiniButton_MouseDown(object sender, MouseEventArgs e)
-        {
-            CloseMiniButton.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-
         }
     }
 }

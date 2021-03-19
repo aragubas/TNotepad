@@ -45,16 +45,20 @@ namespace TNotepad
         {
             SettingsPanel.Controls.Clear();
 
-            switch (SettingTabID)
+            if (SettingTabID == 0)
             {
-                case 0:
-                    SettingsPages.UISettings Set = new SettingsPages.UISettings(RootControl);
-                    SelectedTab = Set;
-                    SettingsPanel.Controls.Add(Set);
-                    break;
+                SettingsPages.UISettings Set = new SettingsPages.UISettings(RootControl);
+                SelectedTab = Set;
+                SettingsPanel.Controls.Add(Set);
 
+            } else if (SettingTabID == 1)
+            {
+                SettingsPages.TextEditorTab Set = new SettingsPages.TextEditorTab(RootControl);
+                SelectedTab = Set;
+                SettingsPanel.Controls.Add(Set);
 
             }
+
 
         }
 
@@ -85,6 +89,10 @@ namespace TNotepad
 
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CreateSettingsTab(1);
 
+        }
     }
 }

@@ -35,7 +35,6 @@ namespace TNotepad
         DateTime dateTime;
         int LastUnsavedTime = 0;
         public string LastFileName = "";
-        DateTime dateTime;
         public bool DontSetUntitled = false;
         System.Text.Encoding CurrentEncoding;
 

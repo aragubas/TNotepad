@@ -39,16 +39,12 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.HideShowAnimation = new System.Windows.Forms.Timer(this.components);
             this.QuickSettings = new System.Windows.Forms.Panel();
-            this.SettingsMiniButton = new System.Windows.Forms.PictureBox();
-            this.CloseMiniButton = new System.Windows.Forms.PictureBox();
-            this.OpenFileMiniButton = new System.Windows.Forms.PictureBox();
-            this.NewFileMiniButton = new System.Windows.Forms.PictureBox();
+            this.NewFileMiniButton = new System.Windows.Forms.Button();
+            this.CloseTabMiniButton = new System.Windows.Forms.Button();
+            this.OpenFileMiniButton = new System.Windows.Forms.Button();
+            this.SettingsMiniButton = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.QuickSettings.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SettingsMiniButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CloseMiniButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OpenFileMiniButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NewFileMiniButton)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -153,8 +149,8 @@
             this.QuickSettings.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.QuickSettings.Controls.Add(this.SettingsMiniButton);
-            this.QuickSettings.Controls.Add(this.CloseMiniButton);
             this.QuickSettings.Controls.Add(this.OpenFileMiniButton);
+            this.QuickSettings.Controls.Add(this.CloseTabMiniButton);
             this.QuickSettings.Controls.Add(this.NewFileMiniButton);
             this.QuickSettings.Location = new System.Drawing.Point(94, 79);
             this.QuickSettings.Name = "QuickSettings";
@@ -162,61 +158,65 @@
             this.QuickSettings.TabIndex = 3;
             this.QuickSettings.Visible = false;
             // 
-            // SettingsMiniButton
+            // NewFileMiniButton
             // 
-            this.SettingsMiniButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SettingsMiniButton.Image = global::TNotepad.Properties.Resources.SettingsMini;
-            this.SettingsMiniButton.Location = new System.Drawing.Point(0, 90);
-            this.SettingsMiniButton.Name = "SettingsMiniButton";
-            this.SettingsMiniButton.Size = new System.Drawing.Size(25, 30);
-            this.SettingsMiniButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SettingsMiniButton.TabIndex = 2;
-            this.SettingsMiniButton.TabStop = false;
-            this.SettingsMiniButton.Click += new System.EventHandler(this.SettingsMiniButton_Click);
-            this.SettingsMiniButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SettingsMiniButton_MouseDown);
-            this.SettingsMiniButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.SettingsMiniButton_MouseUp);
+            this.NewFileMiniButton.BackgroundImage = global::TNotepad.Properties.Resources.NewFileMini;
+            this.NewFileMiniButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.NewFileMiniButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.NewFileMiniButton.FlatAppearance.BorderSize = 0;
+            this.NewFileMiniButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.NewFileMiniButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewFileMiniButton.Location = new System.Drawing.Point(0, 0);
+            this.NewFileMiniButton.Name = "NewFileMiniButton";
+            this.NewFileMiniButton.Size = new System.Drawing.Size(25, 27);
+            this.NewFileMiniButton.TabIndex = 0;
+            this.NewFileMiniButton.UseVisualStyleBackColor = true;
+            this.NewFileMiniButton.Click += new System.EventHandler(this.NewFileMiniButton_Click);
             // 
-            // CloseMiniButton
+            // CloseTabMiniButton
             // 
-            this.CloseMiniButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.CloseMiniButton.Image = global::TNotepad.Properties.Resources.CloseTabMini;
-            this.CloseMiniButton.Location = new System.Drawing.Point(0, 60);
-            this.CloseMiniButton.Name = "CloseMiniButton";
-            this.CloseMiniButton.Size = new System.Drawing.Size(25, 30);
-            this.CloseMiniButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.CloseMiniButton.TabIndex = 3;
-            this.CloseMiniButton.TabStop = false;
-            this.CloseMiniButton.Click += new System.EventHandler(this.CloseMiniButton_Click);
-            this.CloseMiniButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CloseMiniButton_MouseDown);
-            this.CloseMiniButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.CloseMiniButton_MouseUp);
+            this.CloseTabMiniButton.BackgroundImage = global::TNotepad.Properties.Resources.CloseTabMini;
+            this.CloseTabMiniButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.CloseTabMiniButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.CloseTabMiniButton.FlatAppearance.BorderSize = 0;
+            this.CloseTabMiniButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.CloseTabMiniButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseTabMiniButton.Location = new System.Drawing.Point(0, 27);
+            this.CloseTabMiniButton.Name = "CloseTabMiniButton";
+            this.CloseTabMiniButton.Size = new System.Drawing.Size(25, 27);
+            this.CloseTabMiniButton.TabIndex = 1;
+            this.CloseTabMiniButton.UseVisualStyleBackColor = true;
+            this.CloseTabMiniButton.Click += new System.EventHandler(this.CloseTabMiniButton_Click);
             // 
             // OpenFileMiniButton
             // 
+            this.OpenFileMiniButton.BackgroundImage = global::TNotepad.Properties.Resources.Open_FileMini;
+            this.OpenFileMiniButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.OpenFileMiniButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.OpenFileMiniButton.Image = global::TNotepad.Properties.Resources.Open_FileMini;
-            this.OpenFileMiniButton.Location = new System.Drawing.Point(0, 30);
+            this.OpenFileMiniButton.FlatAppearance.BorderSize = 0;
+            this.OpenFileMiniButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.OpenFileMiniButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OpenFileMiniButton.Location = new System.Drawing.Point(0, 54);
             this.OpenFileMiniButton.Name = "OpenFileMiniButton";
-            this.OpenFileMiniButton.Size = new System.Drawing.Size(25, 30);
-            this.OpenFileMiniButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.OpenFileMiniButton.TabIndex = 1;
-            this.OpenFileMiniButton.TabStop = false;
+            this.OpenFileMiniButton.Size = new System.Drawing.Size(25, 27);
+            this.OpenFileMiniButton.TabIndex = 2;
+            this.OpenFileMiniButton.UseVisualStyleBackColor = true;
             this.OpenFileMiniButton.Click += new System.EventHandler(this.OpenFileMiniButton_Click);
-            this.OpenFileMiniButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OpenFileMiniButton_MouseDown);
-            this.OpenFileMiniButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.OpenFileMiniButton_MouseUp);
             // 
-            // NewFileMiniButton
+            // SettingsMiniButton
             // 
-            this.NewFileMiniButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.NewFileMiniButton.Image = global::TNotepad.Properties.Resources.NewFileMini;
-            this.NewFileMiniButton.Location = new System.Drawing.Point(0, 0);
-            this.NewFileMiniButton.Name = "NewFileMiniButton";
-            this.NewFileMiniButton.Size = new System.Drawing.Size(25, 30);
-            this.NewFileMiniButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.NewFileMiniButton.TabIndex = 0;
-            this.NewFileMiniButton.TabStop = false;
-            this.NewFileMiniButton.Click += new System.EventHandler(this.NewFileMiniButton_Click);
-            this.NewFileMiniButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NewFileMiniButton_MouseDown);
-            this.NewFileMiniButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.NewFileMiniButton_MouseUp);
+            this.SettingsMiniButton.BackgroundImage = global::TNotepad.Properties.Resources.SettingsMini;
+            this.SettingsMiniButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.SettingsMiniButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SettingsMiniButton.FlatAppearance.BorderSize = 0;
+            this.SettingsMiniButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.SettingsMiniButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SettingsMiniButton.Location = new System.Drawing.Point(0, 81);
+            this.SettingsMiniButton.Name = "SettingsMiniButton";
+            this.SettingsMiniButton.Size = new System.Drawing.Size(25, 27);
+            this.SettingsMiniButton.TabIndex = 3;
+            this.SettingsMiniButton.UseVisualStyleBackColor = true;
+            this.SettingsMiniButton.Click += new System.EventHandler(this.SettingsMiniButton_Click);
             // 
             // SidePanel
             // 
@@ -237,10 +237,6 @@
             this.DragOver += new System.Windows.Forms.DragEventHandler(this.SidePanel_DragOver);
             this.panel2.ResumeLayout(false);
             this.QuickSettings.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.SettingsMiniButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CloseMiniButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OpenFileMiniButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NewFileMiniButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,9 +254,9 @@
         private System.Windows.Forms.Button SettingsButton;
         private System.Windows.Forms.Button AboutButton;
         private System.Windows.Forms.Panel QuickSettings;
-        private System.Windows.Forms.PictureBox NewFileMiniButton;
-        private System.Windows.Forms.PictureBox SettingsMiniButton;
-        private System.Windows.Forms.PictureBox OpenFileMiniButton;
-        private System.Windows.Forms.PictureBox CloseMiniButton;
+        private System.Windows.Forms.Button NewFileMiniButton;
+        private System.Windows.Forms.Button CloseTabMiniButton;
+        private System.Windows.Forms.Button OpenFileMiniButton;
+        private System.Windows.Forms.Button SettingsMiniButton;
     }
 }
