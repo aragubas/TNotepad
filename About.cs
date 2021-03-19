@@ -47,6 +47,13 @@ namespace TNotepad
         private void About_Load(object sender, EventArgs e)
         {
             LicenseView.Text = Properties.Resources.ApacheLicense;
+
+            InfosLabel.Text += "\n\nBuild Number: " + Utils.GetBuildNumber() + "\n\nBuild Date: " + Utils.GetBuildDate();
+        }
+
+        private void BuildInfo_Button_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Build at " + Utils.GetBuildDate() + "\nBuild ID:" + Utils.GetBuildNumber(), "Build Info");
         }
     }
 }

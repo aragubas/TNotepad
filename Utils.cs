@@ -18,6 +18,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,7 +26,41 @@ namespace TNotepad
 {
     static class Utils
     {
-        public static System.Text.Encoding EncodingNameToEncodingObject(string EncodingName="")
+
+        static DateTime BuildDate = new DateTime(2000, 1, 1);
+
+        public static string GetVersion()
+        {
+            var version = Assembly.GetExecutingAssembly().GetName().Version.Major + "." + Assembly.GetExecutingAssembly().GetName().Version.Minor;
+
+            return $"{version}";
+        }
+        public static string GetVersionWithBuild()
+        {
+            var version = Assembly.GetExecutingAssembly().GetName().Version;
+
+            return $"{version}";
+        }
+
+        public static string GetBuildDate()
+        {
+            var version = Assembly.GetExecutingAssembly().GetName().Version;
+
+            var buildDate = BuildDate.AddDays(version.Build).AddSeconds(version.Revision * 2);
+
+            return $"{buildDate}";
+
+        }
+
+        public static string GetBuildNumber()
+        {
+            var version = Assembly.GetExecutingAssembly().GetName().Version.Revision;
+
+            return $"{version}";
+
+        }
+
+        public static Encoding EncodingNameToEncodingObject(string EncodingName="")
         {
             string CurrentValue = "";
 
@@ -34,28 +69,28 @@ namespace TNotepad
             switch (CurrentValue.ToUpper())
             {
                 case "UTF-8":
-                    return System.Text.Encoding.UTF8;
+                    return Encoding.UTF8;
 
                 case "UTF-7":
-                    return System.Text.Encoding.UTF7;
+                    return Encoding.UTF7;
 
                 case "UNICODE":
-                    return System.Text.Encoding.Unicode;
+                    return Encoding.Unicode;
 
                 case "UTF-32":
-                    return System.Text.Encoding.UTF32;
+                    return Encoding.UTF32;
 
                 case "ASCII":
-                    return System.Text.Encoding.ASCII;
+                    return Encoding.ASCII;
 
                 default:
                     Console.WriteLine("Invalid value for encoding : " + CurrentValue);
-                    return System.Text.Encoding.UTF8;
+                    return Encoding.UTF8;
             }
 
         }
 
-        public static string GetCurrentEncodingName(System.Text.Encoding CurrentValue)
+        public static string GetCurrentEncodingName(Encoding CurrentValue)
         {
             if (CurrentValue == Encoding.UTF8)
             {

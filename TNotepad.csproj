@@ -44,6 +44,9 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TransformOnBuild>true</TransformOnBuild>
+    <OverwriteReadOnlyOutputFiles>true</OverwriteReadOnlyOutputFiles>
+    <TransformOutOfDateOnly>false</TransformOutOfDateOnly>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -53,6 +56,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TransformOnBuild>true</TransformOnBuild>
+    <OverwriteReadOnlyOutputFiles>true</OverwriteReadOnlyOutputFiles>
+    <TransformOutOfDateOnly>false</TransformOutOfDateOnly>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Resources\TabbedNotpadIcon.ico</ApplicationIcon>
@@ -176,6 +182,9 @@
     <EmbeddedResource Include="TextEditingTab.resx">
       <DependentUpon>TextEditingTab.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bin\Release\TNotepad.exe.config" />
+    <None Include="bin\Release\TNotepad.vshost.exe.config" />
+    <None Include="bin\Release\TNotepad.vshost.exe.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -224,7 +233,18 @@
   <ItemGroup>
     <None Include="Resources\SettingsMini.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\TNotepad.exe" />
+    <Content Include="bin\Release\TNotepad.exe" />
+    <Content Include="bin\Release\TNotepad.pdb" />
+    <Content Include="bin\Release\TNotepad.vshost.exe" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v16.0\TextTemplating\Microsoft.TextTemplating.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

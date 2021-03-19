@@ -21,6 +21,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -126,7 +127,9 @@ namespace TNotepad
             else { CreateNewTab(); }
             AttachSidePanel();
 
-            Text = "TNotepad v" + Application.ProductVersion;
+            Console.WriteLine("Ceira do sinas");
+
+            Text = "TNotepad v" + Utils.GetVersion();
         }
 
         public void CloseSelectedTab()
