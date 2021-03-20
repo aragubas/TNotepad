@@ -94,7 +94,7 @@ Settings_UISettings_Hometab;Pagina Inicial
 Settings_UISettings_SaveWarning;Aviso de Não-Salvo
 Settings_UISettings_LanguageSetting;Configurações de Idioma
 # -Labels
-Settings_UISettings_SaveWarningIntervalInfoLabel;Intervalo (em segundos)
+Settings_UISettings_SaveWarningIntervalInfoLabel;Intervalo (em milisegundos)
 Settings_UISettings_LanguageSettingsInfoLabel;Clique no botão abaixo para alterar o idioma
 # -Checkbox
 Settings_UISettings_SaveWarningCheckbox;Mostra o tempo em que um arquivo não foi salvo%nna barra de status

@@ -164,6 +164,57 @@ namespace TNotepad
 
             Environment.Exit(0);
         }
+
+        private void Tabs_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            /*
+            SolidBrush fillBrush = new SolidBrush(Color.DimGray);
+
+
+
+            //draw rectangle behind the tabs
+            Rectangle lasttabrect = Tabs.GetTabRect(Tabs.TabPages.Count - 1);
+            Rectangle background = new Rectangle();
+            background.Location = new Point(lasttabrect.Right, 0);
+
+            //pad the rectangle to cover the 1 pixel line between the top of the tabpage and the start of the tabs
+            background.Size = new Size(Tabs.Right - background.Left, lasttabrect.Height + 3);
+            e.Graphics.FillRectangle(fillBrush, background);
+            */
+
+            var tabPage = Tabs.TabPages[e.Index];
+            var tabRect = Tabs.GetTabRect(e.Index);
+            tabRect.Inflate(-2, -2);
+            
+            // Draw tab title
+            //e.Graphics.DrawString(tabPage.Text, SystemFonts.DefaultFont, Brushes.Red, new Point(tabRect.X, tabRect.Y));
+
+            var closeImage = new Bitmap(Properties.Resources.CloseTabMini);
+            e.Graphics.DrawImage(closeImage,
+                (tabRect.Right - 8),
+                tabRect.Top + (tabRect.Height - 8) / 2, 8, 8);
+
+            //TextRenderer.DrawText(e.Graphics, tabPage.Text, tabPage.Font,
+            //    tabRect, Color.DarkBlue, TextFormatFlags.Left);
+
+        }
+
+        private void Tabs_MouseDown(object sender, MouseEventArgs e)
+        {
+            // Process MouseDown event only till (tabControl.TabPages.Count - 1) excluding the last TabPage
+            for (var i = 0; i < Tabs.TabPages.Count; i++)
+            {
+                var tabRect = Tabs.GetTabRect(i);
+                tabRect.Inflate(-2, -2);
+                var imageRect = new Rectangle(tabRect.Right - 8, tabRect.Top + (tabRect.Height - 8) / 2, 8, 16);
+
+                if (imageRect.IntersectsWith(new Rectangle(e.Location.X, e.Location.Y, 1, 1)))
+                {
+                    Tabs.TabPages.RemoveAt(i);
+                    break;
+                }
+            }
+        }
     }
 
     public partial class ApplicationTabs : TabControl
@@ -171,13 +222,72 @@ namespace TNotepad
         public ApplicationTabs()
         {
             //if (!DesignMode) Multiline = true;
+            this.DrawMode = TabDrawMode.OwnerDrawFixed;
+            this.Appearance = TabAppearance.Normal;
+
         }
 
         private const int TCM_ADJUSTRECT = 0x1328;
 
+        protected override void OnPaintBackground(PaintEventArgs pevent)
+        {
+
+            base.OnPaintBackground(pevent);
+            pevent.Graphics.FillRectangle(Brushes.Red, new Rectangle(0, 0, Width, Height));
+
+
+        }
+
+        
+        protected override void OnDrawItem(DrawItemEventArgs e)
+        {
+            //base.OnDrawItem(e);
+    
+            Font fntTab;
+            Brush bshBack;
+            Brush bshFore;
+
+            if (e.Index == this.SelectedIndex) // Selected Tab
+            {
+                fntTab = new Font(e.Font, FontStyle.Underline);
+                bshFore = Brushes.White;
+                bshBack = new SolidBrush(Color.FromArgb(255, 64, 64, 64));
+
+            }
+            else // Unselected Tab
+            {
+                fntTab = e.Font;
+                bshBack = new SolidBrush(Color.FromArgb(255, 32, 32, 32));
+                bshFore = new SolidBrush(Color.White);
+
+            }
+
+            // Draw Title Background
+            e.Graphics.FillRectangle(bshBack, e.Bounds);
+
+
+            // Draw Tab Title
+            string tabName = this.TabPages[e.Index].Text;
+            StringFormat sftTab = new StringFormat();
+            Rectangle recTab = e.Bounds;
+            recTab = new Rectangle(recTab.X, recTab.Y + 4, recTab.Width, recTab.Height - 4);
+            
+            e.Graphics.DrawString(tabName, fntTab, bshFore, recTab, sftTab);
+
+
+            // Draw Background
+            Rectangle r = this.GetTabRect(this.TabPages.Count - 1);
+
+            RectangleF tf = new RectangleF(r.X + r.Width, r.Y - 5, this.Width - (r.X + r.Width) + 5, r.Height + 5);
+            Brush b = new SolidBrush(Color.FromArgb(255, 32, 32, 32));
+
+            e.Graphics.FillRectangle(b, tf);
+
+        }
+
         protected override void WndProc(ref Message m)
         {
-            //Hide the tab headers at run-time
+            // Hide all borders
             if (m.Msg == TCM_ADJUSTRECT)
             {
                 RECT rect = (RECT)(m.GetLParam(typeof(RECT)));
