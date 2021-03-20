@@ -36,6 +36,8 @@ namespace TNotepad
 
         public void LoadLang()
         {
+            ExitButton.Text = Lang.GetLangData("About_ExitButton");
+
 
         }
 
@@ -62,6 +64,11 @@ namespace TNotepad
         private void BuildInfo_Button_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Build at " + Utils.GetBuildDate() + "\nBuild ID:" + Utils.GetBuildNumber(), "Build Info");
+        }
+
+        private void CheckForUpdateButton_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

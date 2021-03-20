@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{434DAF86-97F0-4146-8288-BDCAA6282B6D}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TNotepad</RootNamespace>
     <AssemblyName>TNotepad</AssemblyName>
@@ -84,6 +84,12 @@
     </Compile>
     <Compile Include="About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackgroundWorkerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackgroundWorkerDialog.Designer.cs">
+      <DependentUpon>BackgroundWorkerDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="ExtraFuncPanels\Find.cs">
       <SubType>UserControl</SubType>
@@ -168,6 +174,9 @@
     <Compile Include="Utils.cs" />
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BackgroundWorkerDialog.resx">
+      <DependentUpon>BackgroundWorkerDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExtraFuncPanels\Find.resx">
       <DependentUpon>Find.cs</DependentUpon>

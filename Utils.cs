@@ -19,6 +19,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -32,6 +33,7 @@ namespace TNotepad
         public static string GetVersion()
         {
             var version = Assembly.GetExecutingAssembly().GetName().Version.Major + "." + Assembly.GetExecutingAssembly().GetName().Version.Minor;
+
 
             return $"{version}";
         }
@@ -89,7 +91,6 @@ namespace TNotepad
             }
 
         }
-
         public static string GetCurrentEncodingName(Encoding CurrentValue)
         {
             if (CurrentValue == Encoding.UTF8)

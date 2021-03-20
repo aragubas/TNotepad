@@ -73,7 +73,7 @@ namespace TNotepad.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool ShowHometab {
             get {
                 return ((bool)(this["ShowHometab"]));
@@ -127,6 +127,18 @@ namespace TNotepad.Properties {
             }
             set {
                 this["SaveChangesWhenExiting"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://dpaulootavio5.000webhostapp.com/Taiyou/taiyou_app/tnotepad/")]
+        public string WebserviceURL {
+            get {
+                return ((string)(this["WebserviceURL"]));
+            }
+            set {
+                this["WebserviceURL"] = value;
             }
         }
     }

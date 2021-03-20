@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("TabNotepad")]
-[assembly: AssemblyDescription("A simple tabbed notpad application, part of Taiyou Software")]
+[assembly: AssemblyDescription("A simple tabbed notpad application with some features, part of Taiyou Software")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Aragubas")]
 [assembly: AssemblyProduct("TabNotepad")]
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.1.*")]
+[assembly: AssemblyVersion("1.2.*")]
 //[assembly: AssemblyFileVersion("1.0.0.1")]

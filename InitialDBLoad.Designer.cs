@@ -31,7 +31,6 @@ namespace TNotepad
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InitialDBLoad));
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.CurrentVersionLabel = new System.Windows.Forms.Label();
             this.BGWorker = new System.ComponentModel.BackgroundWorker();
             this.label1 = new System.Windows.Forms.Label();
             this.CurrentlyLoading = new System.Windows.Forms.Label();
@@ -43,17 +42,6 @@ namespace TNotepad
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(407, 23);
             this.progressBar1.TabIndex = 0;
-            // 
-            // CurrentVersionLabel
-            // 
-            this.CurrentVersionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.CurrentVersionLabel.AutoSize = true;
-            this.CurrentVersionLabel.Location = new System.Drawing.Point(9, 91);
-            this.CurrentVersionLabel.Name = "CurrentVersionLabel";
-            this.CurrentVersionLabel.Size = new System.Drawing.Size(42, 16);
-            this.CurrentVersionLabel.TabIndex = 1;
-            this.CurrentVersionLabel.Text = "label1";
-            this.CurrentVersionLabel.Click += new System.EventHandler(this.CurrentVersionLabel_Click);
             // 
             // BGWorker
             // 
@@ -84,10 +72,9 @@ namespace TNotepad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(431, 116);
+            this.ClientSize = new System.Drawing.Size(431, 83);
             this.Controls.Add(this.CurrentlyLoading);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.CurrentVersionLabel);
             this.Controls.Add(this.progressBar1);
             this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -105,7 +92,6 @@ namespace TNotepad
         #endregion
 
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label CurrentVersionLabel;
         private System.ComponentModel.BackgroundWorker BGWorker;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label CurrentlyLoading;

@@ -20,8 +20,6 @@ namespace TNotepad
 
         private void InitialDBLoad_Load(object sender, EventArgs e)
         {
-            CurrentVersionLabel.Text = "TabNotepad v" + Utils.GetVersion();
-
             BGWorker.RunWorkerAsync();
         }
 
@@ -35,7 +33,7 @@ namespace TNotepad
         public void ChangeReportText(string NewReportText)
         {
             CurrentlyLoading.Invoke((MethodInvoker)delegate {
-                CurrentlyLoading.Text = NewReportText.ToString() + NewReportText;
+                CurrentlyLoading.Text = NewReportText;
             });
         }
 
@@ -50,10 +48,11 @@ namespace TNotepad
 
         private void BGWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            Console.WriteLine("Initial loading complete.");
+            ChangeReportText("Loading Complete");
             Form1 Ceira = new Form1();
             Ceira.Show();
             Close();
+
         }
 
         private void CurrentVersionLabel_Click(object sender, EventArgs e)

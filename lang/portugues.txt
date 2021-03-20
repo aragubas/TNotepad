@@ -37,7 +37,8 @@ TextEditMain_SavedStatus;Salvo!
 TextEditMain_UntitledTab;Arquivo sem titulo
 # -Encoding Status
 TextEditMain_EncodingNotSetStatus;Codificação não definida.
-
+TextEditMain_LineNumber;Linha 
+TextEditMain_ColumnSelected;Coluna 
 
 #
 # Homescreen
@@ -79,8 +80,11 @@ About_WindowTitle;Sobre TabNotepad
 About_MainDesc;Feito usando Windows Forms em c# pelo%nVisual Studio 2019 Community
 About_BuildNumber;Numero da build:
 About_BuildDate;Data da Build:
+# -Message Box
 About_LogoClickText;TabNotepad faz parte do pacote de software 'Taiyou'
 About_LogoClickTitle;Sobre
+# -Buttons
+About_ExitButton;Fechar
 
 #
 # Settings -> UI Settings
@@ -181,3 +185,10 @@ SidePanel_AboutButton;Sobre
 # Quick Find
 #
 QuickFind_FindButton;Encontrar
+
+#
+# Background Worker
+#
+BackgroundWorker_WindowTitle;Trabalho em Segundo Plano
+BackgroundWorker_WorksLeftLabel; restante
+BackgroundWorker_CurrentLabel;Atual
