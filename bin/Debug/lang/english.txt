@@ -20,6 +20,7 @@ TextEditMain_ExtraMenu_Run;Run
 TextEditMain_ExtraMenu_Settings;Settings
 TextEditMain_ExtraMenu_PinDocument;Pin File
 TextEditMain_ExtraMenu_SavePath;Save Path
+TextEditMain_ExtraMenu_QuickFind;Quick Find
 # -Message Box
 TextEditMain_ReloadAfterEncodingChange_Text;Do you want to reload after changing encoding?
 TextEditMain_ReloadAfterEncodingChange_Title;Reload After Encoding Change
@@ -157,3 +158,24 @@ LanguageSettings_ExitButton;Exit
 LanguageSettings_CurrentLanguageLabel;Current Language:
 LanguageSettings_AvaliableLanguageFiles;Avaliable language files
 LanguageSettings_WindowTitle;Language Settings
+
+#
+# Settings
+#
+SettingsTab_ApplyButton;Apply
+SettingsTab_UISettingsLabel;UI Settings
+SettingsTab_TextEditorLabel;Text Editor
+
+
+#
+# SidePanel
+#
+SidePanel_NewFileButton;New File
+SidePanel_OpenFileButton;Open File
+SidePanel_SettingsButton;Settings
+SidePanel_AboutButton;About
+
+#
+# Quick Find
+#
+QuickFind_FindButton;Quick Find

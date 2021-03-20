@@ -45,11 +45,22 @@ namespace TNotepad
 
         }
 
+        public void LoadLangs()
+        {
+            // Buttons
+            NewTabButton.Text = Lang.GetLangData("SidePanel_NewFileButton");
+            OpenFileButton.Text = Lang.GetLangData("SidePanel_OpenFileButton");
+            SettingsButton.Text = Lang.GetLangData("SidePanel_SettingsButton");
+            AboutButton.Text = Lang.GetLangData("SidePanel_AboutButton");
+
+        }
         private void SidePanel_Load(object sender, EventArgs e)
         {
             Dock = DockStyle.Fill;
             DefaultWidth = RootPanel.Width;
             HideShowButton.PerformClick();
+
+            LoadLangs();
         }
 
         private void NewTabButton_Click(object sender, EventArgs e)

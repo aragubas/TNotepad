@@ -53,7 +53,7 @@ namespace TNotepad
             LastSavedTimer.Enabled = Properties.Settings.Default.UnsavedTime;
             LastSavedTimer.Interval = Properties.Settings.Default.UnsavedTimeInterval;
             
-            Text.WordWrap = Properties.Settings.Default.WordWrapEnabled;
+            TextEditingThing.WordWrap = Properties.Settings.Default.WordWrapEnabled;
             LoadLangStrings();
 
             // Set Default Encoding
@@ -76,6 +76,7 @@ namespace TNotepad
             settingsToolStripMenuItem.Text = Lang.GetLangData("TextEditMain_ExtraMenu_Settings");
             encodingToolStripMenuItem.Text = Lang.GetLangData("TextEditMain_ExtraMenu_Encoding");
             runToolStripMenuItem.Text = Lang.GetLangData("TextEditMain_ExtraMenu_Run");
+            quickFindToolStripMenuItem.Text = Lang.GetLangData("TextEditMain_ExtraMenu_QuickFind");
 
             // Labels
             SaveStatusText.Text = Lang.GetLangData("TextEditMain_UnsavedStatus");
@@ -113,7 +114,7 @@ namespace TNotepad
                 return;
             }
             LastFileName = FileName;
-            File.WriteAllText(FileName, Text.Text, CurrentEncoding);
+            File.WriteAllText(FileName, TextEditingThing.Text, CurrentEncoding);
             SaveStatusText.Text = Lang.GetLangData("TextEditMain_SavedStatus");
             UpdateTitle(Path.GetFileName(FileName));
             ResetLastUnsavedTime();
@@ -154,7 +155,7 @@ namespace TNotepad
                 }
                 SaveFile(LastFileName);
 
-                Text.Text = "";
+                TextEditingThing.Text = "";
 
                 OpenFile(LastFileName);
             }
@@ -168,7 +169,7 @@ namespace TNotepad
             // Set to default encoding, if encoding is null
             if (CurrentEncoding == null) { SetEncoding(Utils.EncodingNameToEncodingObject()); }
 
-            Text.Text = File.ReadAllText(FileName, CurrentEncoding);
+            TextEditingThing.Text = File.ReadAllText(FileName, CurrentEncoding);
 
             SaveStatusText.Text = Lang.GetLangData("TextEditMain_UnsavedStatus");
             ResetLastUnsavedTime();
@@ -205,7 +206,7 @@ namespace TNotepad
                 saveFileDialog1.ShowDialog();
                 return;
             }
-            File.WriteAllText(LastFileName, Text.Text);
+            File.WriteAllText(LastFileName, TextEditingThing.Text);
             SaveStatusText.Text = Lang.GetLangData("TextEditMain_SavedStatus");
             ResetLastUnsavedTime();
         }
@@ -252,6 +253,43 @@ namespace TNotepad
                 return;
             }
             MessageBox.Show(LastFileName, Lang.GetLangData("TextEditMain_CurrentSavingPath_Title"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void TextEditingTab_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        public void QuitExtraFuncPanel()
+        {
+            ExtraFuncPanel.Controls.Clear();
+            ExtraFuncPanel.Visible = false;
+        }
+
+        public void FindExtraFuncPanel()
+        {
+            ExtraFuncPanel.Visible = true;
+            // Remove all previus controls
+            ExtraFuncPanel.Controls.Clear();
+
+            ExtraFuncPanels.Find Ceira = new ExtraFuncPanels.Find(this);
+            ExtraFuncPanel.Controls.Add(Ceira);
+
+            Ceira.Focus();
+        }
+
+        private void Text_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Find Shortcut
+            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.F)
+            {
+                FindExtraFuncPanel();
+            }
+        }
+
+        private void quickFindToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FindExtraFuncPanel();
         }
     }
 }

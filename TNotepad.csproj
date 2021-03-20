@@ -85,6 +85,12 @@
     <Compile Include="About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExtraFuncPanels\Find.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExtraFuncPanels\Find.Designer.cs">
+      <DependentUpon>Find.cs</DependentUpon>
+    </Compile>
     <Compile Include="InitialDBLoad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     <Compile Include="Utils.cs" />
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtraFuncPanels\Find.resx">
+      <DependentUpon>Find.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InitialDBLoad.resx">
       <DependentUpon>InitialDBLoad.cs</DependentUpon>

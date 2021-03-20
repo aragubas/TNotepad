@@ -18,15 +18,16 @@ TextEditMain_NewPageButton;Novo Arquivo
 # -ExtraMenuItems
 TextEditMain_ExtraMenu_Encoding;Codificação
 TextEditMain_ExtraMenu_Run;Executar
-TextEditMain_ExtraMenu_Settings;Configuraçoes
+TextEditMain_ExtraMenu_Settings;Configurações
 TextEditMain_ExtraMenu_PinDocument;Fixar Arquivo
 TextEditMain_ExtraMenu_SavePath;Caminho Atual
+TextEditMain_ExtraMenu_QuickFind;Encontrar Rápido
 # -Message Box
-TextEditMain_ReloadAfterEncodingChange_Text;Deseja recarregar apos mudar codificação?
+TextEditMain_ReloadAfterEncodingChange_Text;Deseja recarregar após mudar codificação?
 TextEditMain_ReloadAfterEncodingChange_Title;Mudança de Codificação
 TextEditMain_UnsavedStatusTimeFormatInfo_Text;Formato do tempo Horas:minutos:segundos
-TextEditMain_UnsavedStatusTimeFormatInfo_Title;Sobre O tempo não salvo
-TextEditMain_CantShowCurrentSavingPath_Text;Não é possivel mostrar o caminho atual para salvar porque este arquivo ainda não foi salvo
+TextEditMain_UnsavedStatusTimeFormatInfo_Title;Sobre o tempo não salvo
+TextEditMain_CantShowCurrentSavingPath_Text;Não foi possivel mostrar o caminho atual para salvar, este arquivo ainda não foi salvo
 TextEditMain_CurrentSavingPath_Title;Caminho atual para salvar
 # -Unsaved Status
 TextEditMain_UnsavedStatus;Não-salvo!
@@ -43,14 +44,14 @@ TextEditMain_EncodingNotSetStatus;Codificação não definida.
 #
 # -Buttons
 PinnedDocuments_ReloadListButton;Recarregar Pins
-PinnedDocuments_SaveChangesButton;Salvar Alteraçoes
-PinnedDocuments_RollbackChangesButton;Desfazer Alteraçoes
+PinnedDocuments_SaveChangesButton;Salvar Alterações
+PinnedDocuments_RollbackChangesButton;Desfazer Alterações
 PinnedDocuments_OpenPinDocButton;Abrir
 PinnedDocuments_EditPinDocButton;Editar
 PinnedDocuments_RemovePinDocButton;Remover
 # -Labels
-PinnedDocuments_TipPinLabel_NoPinnedDocuments;Você não fixou nenhum arquivo.
-PinnedDocuments_TipPinLabelText;Você pode fixar um arquivo em%nExtra -> Fixar Arquivo
+PinnedDocuments_TipPinLabel_NoPinnedDocuments;Você ainda não fixou nenhum arquivo.
+PinnedDocuments_TipPinLabelText;Você poderá fixar arquvios em%nExtra -> Fixar Arquivo
 PinnedDocuments_PinDocsTitle;Arquivos Fixados
 # -Dialog Box Messages
 PinnedDocuments_SaveChangesDialogBox_Text;Você tem certeza que deseja salvar todas as alteraçoes?%nApos salvar você não poderá desfazer.
@@ -64,7 +65,7 @@ PinnedDocuments_OpenMultipleDocuments_Title;Abrir Multiplos Arquivos
 PinnedDocuments_EditMultiplePins_Text;Editar multiplos pins não é permitido.
 PinnedDocuments_EditMultiplePins_Title;Editar multiplos pins
 # $1 = PinName to be deleted
-PinnedDocuments_DeleteSinglePinDialogBox_Text;Você tem certeza que deseja apagar '$1'?%n%nVocê ainda pode desfazer caso cometa um erro.
+PinnedDocuments_DeleteSinglePinDialogBox_Text;Você tem certeza que deseja apagar '$1'?%n%nVocê ainda pode desfazer caso cometa um erro
 PinnedDocuments_DeleteSinglePinDialogBox_Title;Apagar Pin
 # -ListView Category
 PinnedDocuments_ListViewCollumsText_PinName;Pin
@@ -87,10 +88,10 @@ About_LogoClickTitle;Sobre
 # -Groupbox Title
 Settings_UISettings_Hometab;Pagina Inicial
 Settings_UISettings_SaveWarning;Aviso de Não-Salvo
-Settings_UISettings_LanguageSetting;Configuraçoes de Idioma
+Settings_UISettings_LanguageSetting;Configurações de Idioma
 # -Labels
 Settings_UISettings_SaveWarningIntervalInfoLabel;Intervalo (em segundos)
-Settings_UISettings_LanguageSettingsInfoLabel;Click no botão abaixo para alterar o idioma.
+Settings_UISettings_LanguageSettingsInfoLabel;Clique no botão abaixo para alterar o idioma
 # -Checkbox
 Settings_UISettings_SaveWarningCheckbox;Mostra o tempo em que um arquivo não foi salvo%nna barra de status
 Settings_UISettings_HometabAsDefaultCheckbox;Usar Pagina Inicial como Pagina Padrão
@@ -125,19 +126,19 @@ PinDocument_PinNameLabel;Nome:
 # -Button
 PinDocument_PinDocButton;Salvar e Sair
 # -MessageBox
-PinDocument_InvalidCharAtPinName_Text;Pin contem um caractere invalido ':'
+PinDocument_InvalidCharAtPinName_Text;Pin contém um caractere inválido ':'
 PinDocument_InvalidCharAtPinName_Title;Caractere invalido
 PinDocument_SameDocumentTitleAlreadyPinned_Text;Um arquivo com este titulo já foi fixado antes.
 PinDocument_SameDocumentAlreadyPinned_Text;Este arquivo já foi fixado.
 PinDocument_DuplicateDocumentPin_Title;Entrada Duplicada
-PinDocument_DocumentSucefullyPinned_Title;Fixado com sucesso
+PinDocument_DocumentSucefullyPinned_Title;Fixado com sucesso!
 PinDocument_DocumentSucefullyPinned_Text;Arquivo fixado com sucesso!
 
 
 #
 # Generic/Global
 #
-LanguageChangeMessageBox_Text;O idioma atual foi alterado para 'Portugues'%nReinicie o aplicativo para aplicar a alteração em tudo.
+LanguageChangeMessageBox_Text;O idioma atual foi alterado para 'Portugues'%nReinicie o aplicativo para aplicar as alterações.%n%nPacote de idiomas revisado por: Tlestf Blend (Marck Lab)
 LanguageChangeMessageBox_Title;Idioma alterado
 Generic_Settings;Configuraçoes
 
@@ -159,3 +160,24 @@ LanguageSettings_ExitButton;Sair
 LanguageSettings_CurrentLanguageLabel;Idioma Atual:
 LanguageSettings_AvaliableLanguageFiles;Arquivos de idioma disponivel:
 LanguageSettings_WindowTitle;Configuraçoes de Idioma
+
+#
+# Settings
+#
+SettingsTab_ApplyButton;Aplicar
+SettingsTab_UISettingsLabel;UI
+SettingsTab_TextEditorLabel;Editor de Texto
+
+
+#
+# SidePanel
+#
+SidePanel_NewFileButton;Novo Arquivo
+SidePanel_OpenFileButton;Abrir Arquivo
+SidePanel_SettingsButton;Configuraçoes
+SidePanel_AboutButton;Sobre
+
+#
+# Quick Find
+#
+QuickFind_FindButton;Encontrar Rápido

@@ -41,13 +41,15 @@
             this.savePathToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveButton = new System.Windows.Forms.ToolStripButton();
             this.SaveAsButton = new System.Windows.Forms.ToolStripButton();
-            this.Text = new System.Windows.Forms.RichTextBox();
+            this.TextEditingThing = new System.Windows.Forms.RichTextBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.SaveStatusText = new System.Windows.Forms.ToolStripStatusLabel();
             this.EncodingInfoLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.LastSavedTimer = new System.Windows.Forms.Timer(this.components);
+            this.ExtraFuncPanel = new System.Windows.Forms.Panel();
+            this.quickFindToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Toolbar.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -62,9 +64,9 @@
             this.ExtraMenu,
             this.SaveButton,
             this.SaveAsButton});
-            this.Toolbar.Location = new System.Drawing.Point(0, 0);
+            this.Toolbar.Location = new System.Drawing.Point(0, 29);
             this.Toolbar.Name = "Toolbar";
-            this.Toolbar.Size = new System.Drawing.Size(558, 25);
+            this.Toolbar.Size = new System.Drawing.Size(760, 25);
             this.Toolbar.TabIndex = 0;
             this.Toolbar.Text = "Toolbar";
             // 
@@ -97,7 +99,8 @@
             this.runToolStripMenuItem,
             this.settingsToolStripMenuItem,
             this.pinDocumentToolStripMenuItem,
-            this.savePathToolStripMenuItem});
+            this.savePathToolStripMenuItem,
+            this.quickFindToolStripMenuItem});
             this.ExtraMenu.Image = ((System.Drawing.Image)(resources.GetObject("ExtraMenu.Image")));
             this.ExtraMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ExtraMenu.Name = "ExtraMenu";
@@ -108,20 +111,20 @@
             // encodingToolStripMenuItem
             // 
             this.encodingToolStripMenuItem.Name = "encodingToolStripMenuItem";
-            this.encodingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.encodingToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.encodingToolStripMenuItem.Text = "Encoding";
             this.encodingToolStripMenuItem.Click += new System.EventHandler(this.encodingToolStripMenuItem_Click);
             // 
             // runToolStripMenuItem
             // 
             this.runToolStripMenuItem.Name = "runToolStripMenuItem";
-            this.runToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.runToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.runToolStripMenuItem.Text = "Run";
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
@@ -129,14 +132,14 @@
             // 
             this.pinDocumentToolStripMenuItem.Enabled = false;
             this.pinDocumentToolStripMenuItem.Name = "pinDocumentToolStripMenuItem";
-            this.pinDocumentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pinDocumentToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.pinDocumentToolStripMenuItem.Text = "Pin Document";
             this.pinDocumentToolStripMenuItem.Click += new System.EventHandler(this.pinDocumentToolStripMenuItem_Click);
             // 
             // savePathToolStripMenuItem
             // 
             this.savePathToolStripMenuItem.Name = "savePathToolStripMenuItem";
-            this.savePathToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.savePathToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.savePathToolStripMenuItem.Text = "Save Path";
             this.savePathToolStripMenuItem.Click += new System.EventHandler(this.savePathToolStripMenuItem_Click);
             // 
@@ -160,16 +163,19 @@
             this.SaveAsButton.Text = "Save As...";
             this.SaveAsButton.Click += new System.EventHandler(this.SaveAsButton_Click);
             // 
-            // Text
+            // TextEditingThing
             // 
-            this.Text.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Text.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Text.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Text.Location = new System.Drawing.Point(0, 25);
-            this.Text.Name = "Text";
-            this.Text.Size = new System.Drawing.Size(558, 324);
-            this.Text.TabIndex = 1;
-            this.Text.Text = "";
+            this.TextEditingThing.AcceptsTab = true;
+            this.TextEditingThing.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextEditingThing.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TextEditingThing.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextEditingThing.Location = new System.Drawing.Point(0, 54);
+            this.TextEditingThing.Name = "TextEditingThing";
+            this.TextEditingThing.ShowSelectionMargin = true;
+            this.TextEditingThing.Size = new System.Drawing.Size(760, 274);
+            this.TextEditingThing.TabIndex = 1;
+            this.TextEditingThing.Text = "";
+            this.TextEditingThing.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Text_KeyDown);
             // 
             // saveFileDialog1
             // 
@@ -183,9 +189,9 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SaveStatusText,
             this.EncodingInfoLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 349);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 328);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(558, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(760, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "Status Bar";
             // 
@@ -217,19 +223,37 @@
             this.LastSavedTimer.Interval = 1000;
             this.LastSavedTimer.Tick += new System.EventHandler(this.LastSavedTimer_Tick);
             // 
+            // ExtraFuncPanel
+            // 
+            this.ExtraFuncPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ExtraFuncPanel.Location = new System.Drawing.Point(0, 0);
+            this.ExtraFuncPanel.Name = "ExtraFuncPanel";
+            this.ExtraFuncPanel.Size = new System.Drawing.Size(760, 29);
+            this.ExtraFuncPanel.TabIndex = 3;
+            this.ExtraFuncPanel.Visible = false;
+            // 
+            // quickFindToolStripMenuItem
+            // 
+            this.quickFindToolStripMenuItem.Name = "quickFindToolStripMenuItem";
+            this.quickFindToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quickFindToolStripMenuItem.Text = "Quick Find";
+            this.quickFindToolStripMenuItem.Click += new System.EventHandler(this.quickFindToolStripMenuItem_Click);
+            // 
             // TextEditingTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.Text);
+            this.Controls.Add(this.TextEditingThing);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.Toolbar);
+            this.Controls.Add(this.ExtraFuncPanel);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "TextEditingTab";
-            this.Size = new System.Drawing.Size(558, 371);
+            this.Size = new System.Drawing.Size(760, 350);
             this.Load += new System.EventHandler(this.TextEditingTab_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextEditingTab_KeyDown);
             this.Toolbar.ResumeLayout(false);
             this.Toolbar.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -242,7 +266,7 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip Toolbar;
-        private System.Windows.Forms.RichTextBox Text;
+        public System.Windows.Forms.RichTextBox TextEditingThing;
         private System.Windows.Forms.ToolStripButton NewPage;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.StatusStrip statusStrip1;
@@ -259,5 +283,7 @@
         private System.Windows.Forms.ToolStripButton SaveButton;
         private System.Windows.Forms.ToolStripButton SaveAsButton;
         private System.Windows.Forms.ToolStripMenuItem savePathToolStripMenuItem;
+        public System.Windows.Forms.Panel ExtraFuncPanel;
+        private System.Windows.Forms.ToolStripMenuItem quickFindToolStripMenuItem;
     }
 }

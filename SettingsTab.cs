@@ -62,10 +62,20 @@ namespace TNotepad
 
         }
 
+        public void LoadLangs()
+        {
+            ApplyChangesButton.Text = Lang.GetLangData("SettingsTab_ApplyButton");
+            button1.Text = Lang.GetLangData("SettingsTab_UISettingsLabel");
+            button2.Text = Lang.GetLangData("SettingsTab_TextEditorLabel");
+
+        }
+
         private void SettingsTab_Load(object sender, EventArgs e)
         {
             Dock = DockStyle.Fill;
             CreateSettingsTab(0);
+
+            LoadLangs();
 
         }
 

@@ -32,8 +32,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
-            this.SettingsPanel = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
+            this.SettingsPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -44,7 +44,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ApplyChangesButton.Location = new System.Drawing.Point(3, 384);
             this.ApplyChangesButton.Name = "ApplyChangesButton";
-            this.ApplyChangesButton.Size = new System.Drawing.Size(89, 25);
+            this.ApplyChangesButton.Size = new System.Drawing.Size(106, 25);
             this.ApplyChangesButton.TabIndex = 1;
             this.ApplyChangesButton.Text = "Apply";
             this.ApplyChangesButton.UseVisualStyleBackColor = true;
@@ -58,7 +58,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(97, 414);
+            this.panel1.Size = new System.Drawing.Size(114, 414);
             this.panel1.TabIndex = 2;
             // 
             // flowLayoutPanel1
@@ -73,36 +73,36 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(87, 375);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(104, 375);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(90, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "UI";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // SettingsPanel
-            // 
-            this.SettingsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SettingsPanel.Location = new System.Drawing.Point(97, 0);
-            this.SettingsPanel.Name = "SettingsPanel";
-            this.SettingsPanel.Size = new System.Drawing.Size(476, 414);
-            this.SettingsPanel.TabIndex = 3;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(3, 32);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(90, 23);
             this.button2.TabIndex = 1;
             this.button2.Text = "Text Editor";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // SettingsPanel
+            // 
+            this.SettingsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SettingsPanel.Location = new System.Drawing.Point(114, 0);
+            this.SettingsPanel.Name = "SettingsPanel";
+            this.SettingsPanel.Size = new System.Drawing.Size(459, 414);
+            this.SettingsPanel.TabIndex = 3;
             // 
             // SettingsTab
             // 
