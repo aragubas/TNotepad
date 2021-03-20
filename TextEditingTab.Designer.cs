@@ -33,15 +33,14 @@
             this.Toolbar = new System.Windows.Forms.ToolStrip();
             this.NewPage = new System.Windows.Forms.ToolStripButton();
             this.OpenFileButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showCurrentPathToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.ExtraMenu = new System.Windows.Forms.ToolStripDropDownButton();
             this.encodingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pinDocumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.savePathToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaveButton = new System.Windows.Forms.ToolStripButton();
+            this.SaveAsButton = new System.Windows.Forms.ToolStripButton();
             this.Text = new System.Windows.Forms.RichTextBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -60,8 +59,9 @@
             this.Toolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NewPage,
             this.OpenFileButton,
-            this.toolStripDropDownButton1,
-            this.toolStripDropDownButton2});
+            this.ExtraMenu,
+            this.SaveButton,
+            this.SaveAsButton});
             this.Toolbar.Location = new System.Drawing.Point(0, 0);
             this.Toolbar.Name = "Toolbar";
             this.Toolbar.Size = new System.Drawing.Size(558, 25);
@@ -88,74 +88,40 @@
             this.OpenFileButton.Text = "Open File";
             this.OpenFileButton.Click += new System.EventHandler(this.OpenFileButton_Click);
             // 
-            // toolStripDropDownButton1
+            // ExtraMenu
             // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveAsToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.showCurrentPathToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(44, 22);
-            this.toolStripDropDownButton1.Text = "Save";
-            this.toolStripDropDownButton1.ToolTipText = "Save Actions";
-            // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.saveAsToolStripMenuItem.Text = "Save As...";
-            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.saveToolStripMenuItem.Text = "Save with current path";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // showCurrentPathToolStripMenuItem
-            // 
-            this.showCurrentPathToolStripMenuItem.Name = "showCurrentPathToolStripMenuItem";
-            this.showCurrentPathToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.showCurrentPathToolStripMenuItem.Text = "Show current path";
-            this.showCurrentPathToolStripMenuItem.Click += new System.EventHandler(this.showCurrentPathToolStripMenuItem_Click);
-            // 
-            // toolStripDropDownButton2
-            // 
-            this.toolStripDropDownButton2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ExtraMenu.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.ExtraMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.ExtraMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.encodingToolStripMenuItem,
             this.runToolStripMenuItem,
             this.settingsToolStripMenuItem,
-            this.pinDocumentToolStripMenuItem});
-            this.toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
-            this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
-            this.toolStripDropDownButton2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripDropDownButton2.Size = new System.Drawing.Size(46, 22);
-            this.toolStripDropDownButton2.Text = "Extra";
+            this.pinDocumentToolStripMenuItem,
+            this.savePathToolStripMenuItem});
+            this.ExtraMenu.Image = ((System.Drawing.Image)(resources.GetObject("ExtraMenu.Image")));
+            this.ExtraMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ExtraMenu.Name = "ExtraMenu";
+            this.ExtraMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ExtraMenu.Size = new System.Drawing.Size(46, 22);
+            this.ExtraMenu.Text = "Extra";
             // 
             // encodingToolStripMenuItem
             // 
             this.encodingToolStripMenuItem.Name = "encodingToolStripMenuItem";
-            this.encodingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.encodingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.encodingToolStripMenuItem.Text = "Encoding";
             this.encodingToolStripMenuItem.Click += new System.EventHandler(this.encodingToolStripMenuItem_Click);
             // 
             // runToolStripMenuItem
             // 
             this.runToolStripMenuItem.Name = "runToolStripMenuItem";
-            this.runToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.runToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.runToolStripMenuItem.Text = "Run";
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
@@ -163,9 +129,36 @@
             // 
             this.pinDocumentToolStripMenuItem.Enabled = false;
             this.pinDocumentToolStripMenuItem.Name = "pinDocumentToolStripMenuItem";
-            this.pinDocumentToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pinDocumentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pinDocumentToolStripMenuItem.Text = "Pin Document";
             this.pinDocumentToolStripMenuItem.Click += new System.EventHandler(this.pinDocumentToolStripMenuItem_Click);
+            // 
+            // savePathToolStripMenuItem
+            // 
+            this.savePathToolStripMenuItem.Name = "savePathToolStripMenuItem";
+            this.savePathToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.savePathToolStripMenuItem.Text = "Save Path";
+            this.savePathToolStripMenuItem.Click += new System.EventHandler(this.savePathToolStripMenuItem_Click);
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.SaveButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveButton.Image")));
+            this.SaveButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(35, 22);
+            this.SaveButton.Text = "Save";
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click_1);
+            // 
+            // SaveAsButton
+            // 
+            this.SaveAsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.SaveAsButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveAsButton.Image")));
+            this.SaveAsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.SaveAsButton.Name = "SaveAsButton";
+            this.SaveAsButton.Size = new System.Drawing.Size(60, 22);
+            this.SaveAsButton.Text = "Save As...";
+            this.SaveAsButton.Click += new System.EventHandler(this.SaveAsButton_Click);
             // 
             // Text
             // 
@@ -257,16 +250,14 @@
         private System.Windows.Forms.ToolStripButton OpenFileButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Timer LastSavedTimer;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
-        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem showCurrentPathToolStripMenuItem;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
+        private System.Windows.Forms.ToolStripDropDownButton ExtraMenu;
         private System.Windows.Forms.ToolStripMenuItem encodingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem runToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel EncodingInfoLabel;
         private System.Windows.Forms.ToolStripMenuItem pinDocumentToolStripMenuItem;
-
+        private System.Windows.Forms.ToolStripButton SaveButton;
+        private System.Windows.Forms.ToolStripButton SaveAsButton;
+        private System.Windows.Forms.ToolStripMenuItem savePathToolStripMenuItem;
     }
 }

@@ -41,10 +41,9 @@
             this.InfosLabel.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InfosLabel.Location = new System.Drawing.Point(12, 129);
             this.InfosLabel.Name = "InfosLabel";
-            this.InfosLabel.Size = new System.Drawing.Size(267, 91);
+            this.InfosLabel.Size = new System.Drawing.Size(90, 13);
             this.InfosLabel.TabIndex = 0;
-            this.InfosLabel.Text = "2021 - Aragubas\r\n\r\nPowered by Windows Forms, made in C#\r\n\r\nWindows© is a registre" +
-    "d treadmark by Microsoft©\r\n\r\nThis product is licensed with Apache 2.0 License.";
+            this.InfosLabel.Text = "2021 - Aragubas\r\n";
             this.InfosLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox1
@@ -100,6 +99,7 @@
             this.Name = "About";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "About TabNotepad";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.About_Load);

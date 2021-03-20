@@ -74,7 +74,7 @@ namespace TNotepad
         {
             // Create Tab object
             TabPage newTab = new TabPage();
-            newTab.Text = "Settings";
+            newTab.Text = Lang.GetLangData("Generic_Settings");
             newTab.Controls.Add(new SettingsTab(this, newTab));
             newTab.ContextMenuStrip = ContextMenu;
             Tabs.TabPages.Add(newTab);
@@ -127,9 +127,7 @@ namespace TNotepad
             else { CreateNewTab(); }
             AttachSidePanel();
 
-            Console.WriteLine("Ceira do sinas");
-
-            Text = "TNotepad v" + Utils.GetVersion();
+            Text = "TNotepad " + Utils.GetVersion();
         }
 
         public void CloseSelectedTab()
@@ -150,11 +148,15 @@ namespace TNotepad
             CloseSelectedTab();
 
         }
-
-        private void Form1_DragDrop(object sender, DragEventArgs e)
+       
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Console.WriteLine(e.Data);
-        }
+            if (Properties.Settings.Default.SaveChangesWhenExiting)
+            {
+                Properties.Settings.Default.Save();
+            }
 
+            Environment.Exit(0);
+        }
     }
 }

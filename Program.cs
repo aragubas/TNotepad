@@ -33,7 +33,11 @@ namespace TNotepad
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            InitialDBLoad Ceira = new InitialDBLoad();
+            Ceira.Show();
+
+            Application.Run();
         }
     }
 }

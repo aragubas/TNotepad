@@ -48,16 +48,38 @@ namespace TNotepad
         private void TextEditingTab_Load(object sender, EventArgs e)
         {
             Dock = DockStyle.Fill;
-            if (!DontSetUntitled) { UpdateTitle("Unsaved Document"); }
+            if (!DontSetUntitled) { UpdateTitle(Lang.GetLangData("TextEditMain_UntitledTab")); }
 
             LastSavedTimer.Enabled = Properties.Settings.Default.UnsavedTime;
             LastSavedTimer.Interval = Properties.Settings.Default.UnsavedTimeInterval;
             
-            
+            Text.WordWrap = Properties.Settings.Default.WordWrapEnabled;
+            LoadLangStrings();
+
             // Set Default Encoding
             SetEncoding(Utils.EncodingNameToEncodingObject());
 
-            Text.WordWrap = Properties.Settings.Default.WordWrapEnabled;
+        }
+
+        public void LoadLangStrings()
+        {
+            // Buttons
+            NewPage.Text = Lang.GetLangData("TextEditMain_NewPageButton");
+            SaveAsButton.Text = Lang.GetLangData("TextEditMain_SaveFileAs");
+            SaveButton.Text = Lang.GetLangData("TextEditMain_SaveFile");
+            OpenFileButton.Text = Lang.GetLangData("TextEditMain_OpenFile");
+
+            // Menus
+            ExtraMenu.Text = Lang.GetLangData("TextEditMain_ExtraMenu");
+            pinDocumentToolStripMenuItem.Text = Lang.GetLangData("TextEditMain_ExtraMenu_PinDocument");
+            savePathToolStripMenuItem.Text = Lang.GetLangData("TextEditMain_ExtraMenu_SavePath");
+            settingsToolStripMenuItem.Text = Lang.GetLangData("TextEditMain_ExtraMenu_Settings");
+            encodingToolStripMenuItem.Text = Lang.GetLangData("TextEditMain_ExtraMenu_Encoding");
+            runToolStripMenuItem.Text = Lang.GetLangData("TextEditMain_ExtraMenu_Run");
+
+            // Labels
+            SaveStatusText.Text = Lang.GetLangData("TextEditMain_UnsavedStatus");
+            EncodingInfoLabel.Text = Lang.GetLangData("TextEditMain_EncodingNotSetStatus");
 
         }
 
@@ -86,9 +108,13 @@ namespace TNotepad
 
         public void SaveFile(string FileName)
         {
+            if (FileName == "")
+            {
+                return;
+            }
             LastFileName = FileName;
             File.WriteAllText(FileName, Text.Text, CurrentEncoding);
-            SaveStatusText.Text = "Saved";
+            SaveStatusText.Text = Lang.GetLangData("TextEditMain_SavedStatus");
             UpdateTitle(Path.GetFileName(FileName));
             ResetLastUnsavedTime();
             pinDocumentToolStripMenuItem.Enabled = true;
@@ -120,7 +146,7 @@ namespace TNotepad
 
         public void ReopenFileInEncodingChange()
         {
-            if (MessageBox.Show("Do you want to reload the file after changing encoding?", "Encoding Change", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show(Lang.GetLangData("TextEditMain_ReloadAfterEncodingChange_Text"), Lang.GetLangData("TextEditMain_ReloadAfterEncodingChange_Title"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 if (LastFileName == "")
                 { 
@@ -138,12 +164,13 @@ namespace TNotepad
         // Open a File
         public void OpenFile(string FileName)
         {
+            if (FileName == "") { return; }
             // Set to default encoding, if encoding is null
             if (CurrentEncoding == null) { SetEncoding(Utils.EncodingNameToEncodingObject()); }
 
             Text.Text = File.ReadAllText(FileName, CurrentEncoding);
 
-            SaveStatusText.Text = "Unsaved";
+            SaveStatusText.Text = Lang.GetLangData("TextEditMain_UnsavedStatus");
             ResetLastUnsavedTime();
             LastFileName = FileName;
             pinDocumentToolStripMenuItem.Enabled = true;
@@ -161,18 +188,17 @@ namespace TNotepad
 
             string LastTimeInString = dateTime.ToString("HH:mm:ss");
 
-            SaveStatusText.Text = "Unsaved (in last " + LastTimeInString + ")";
+            SaveStatusText.Text = Lang.GetLangData("TextEditMain_UnsavedStatusInLast").Replace("$1", LastTimeInString);
 
         }
 
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            saveFileDialog1.ShowDialog();
-
+            
         }
 
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        public void SaveDocument()
         {
             if (LastFileName == "")
             {
@@ -180,24 +206,14 @@ namespace TNotepad
                 return;
             }
             File.WriteAllText(LastFileName, Text.Text);
-            SaveStatusText.Text = "Saved";
+            SaveStatusText.Text = Lang.GetLangData("TextEditMain_SavedStatus");
             ResetLastUnsavedTime();
-
         }
 
-        private void showCurrentPathToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (LastFileName == "")
-            {
-                MessageBox.Show("You didn't saved anything yet.", "Can't show current saving path", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                return;
-            }            
-            MessageBox.Show(LastFileName, "Current Path for Saving",MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
 
         private void SaveStatusText_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Time Format is:\nHours:Minutes:Secounds", "About : Unsaved Timer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(Lang.GetLangData("TextEditMain_UnsavedStatusTimeFormatInfo_Text"), Lang.GetLangData("TextEditMain_UnsavedStatusTimeFormatInfo_Title"), MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -218,5 +234,24 @@ namespace TNotepad
 
         }
 
+        private void SaveButton_Click_1(object sender, EventArgs e)
+        {
+            SaveDocument();
+        }
+
+        private void SaveAsButton_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.ShowDialog();
+        }
+
+        private void savePathToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (LastFileName == "")
+            {
+                MessageBox.Show(Lang.GetLangData("TextEditMain_CantShowCurrentSavingPath_Text"), Lang.GetLangData("TextEditMain_CurrentSavingPath_Title"), MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+            MessageBox.Show(LastFileName, Lang.GetLangData("TextEditMain_CurrentSavingPath_Title"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

@@ -38,9 +38,22 @@ namespace TNotepad
             RootControl = pRootControl;
         }
 
+        public void LoadLang()
+        {
+            // Window Title
+            Text = Lang.GetLangData("PinDocument_WindowTitle");
+
+            // Pin name Label
+            DocNameThingLabel.Text = Lang.GetLangData("PinDocument_PinNameLabel");
+
+            // Save pin button
+            PinDocButton.Text = Lang.GetLangData("PinDocument_PinDocButton");
+
+        }
         private void PinDocumentWizard_Load(object sender, EventArgs e)
         {
             DocFileName = RootControl.LastFileName;
+            LoadLang();
 
         }
 

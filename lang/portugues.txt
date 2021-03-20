@@ -1,0 +1,149 @@
+﻿# ========== Idioma Portugues para TabNotepad ==========
+# O parser do idioma vai ignorar:
+# - Linhas com menos de 10 caracteres
+# - Linhas que começam com '#'
+# Para adiciona uma nova linha, utilize o token '%n'
+# $1, $2 etc.. irá ser substituido por algum valor, dependendo do contexto
+#
+
+#
+# Text editor tab
+#
+# -Buttons
+TextEditMain_OpenFile;Abrir Arquivo
+TextEditMain_SaveFileAs;Salvar Como...
+TextEditMain_SaveFile;Salvar
+TextEditMain_ExtraMenu;Extra
+TextEditMain_NewPageButton;Novo Arquivo
+# -ExtraMenuItems
+TextEditMain_ExtraMenu_Encoding;Codificação
+TextEditMain_ExtraMenu_Run;Executar
+TextEditMain_ExtraMenu_Settings;Configuraçoes
+TextEditMain_ExtraMenu_PinDocument;Fixar Arquivo
+TextEditMain_ExtraMenu_SavePath;Caminho Atual
+# -Message Box
+TextEditMain_ReloadAfterEncodingChange_Text;Deseja recarregar apos mudar codificação?
+TextEditMain_ReloadAfterEncodingChange_Title;Mudança de Codificação
+TextEditMain_UnsavedStatusTimeFormatInfo_Text;Formato do tempo Horas:minutos:segundos
+TextEditMain_UnsavedStatusTimeFormatInfo_Title;Sobre O tempo não salvo
+TextEditMain_CantShowCurrentSavingPath_Text;Não é possivel mostrar o caminho atual para salvar porque este arquivo ainda não foi salvo
+TextEditMain_CurrentSavingPath_Title;Caminho atual para salvar
+# -Unsaved Status
+TextEditMain_UnsavedStatus;Não-salvo!
+TextEditMain_UnsavedStatusInLast;Não-salvo! (nos ultimos $1)
+TextEditMain_SavedStatus;Salvo!
+# -Tab Title
+TextEditMain_UntitledTab;Arquivo sem titulo
+# -Encoding Status
+TextEditMain_EncodingNotSetStatus;Codificação não definida.
+
+
+#
+# Homescreen
+#
+# -Buttons
+PinnedDocuments_ReloadListButton;Recarregar Pins
+PinnedDocuments_SaveChangesButton;Salvar Alteraçoes
+PinnedDocuments_RollbackChangesButton;Desfazer Alteraçoes
+PinnedDocuments_OpenPinDocButton;Abrir
+PinnedDocuments_EditPinDocButton;Editar
+PinnedDocuments_RemovePinDocButton;Remover
+# -Labels
+PinnedDocuments_TipPinLabel_NoPinnedDocuments;Você não fixou nenhum arquivo.
+PinnedDocuments_TipPinLabelText;Você pode fixar um arquivo em%nExtra -> Fixar Arquivo
+PinnedDocuments_PinDocsTitle;Arquivos Fixados
+# -Dialog Box Messages
+PinnedDocuments_SaveChangesDialogBox_Text;Você tem certeza que deseja salvar todas as alteraçoes?%nApos salvar você não poderá desfazer.
+PinnedDocuments_SaveChangesDialogBox_Title;Salvar Alteraçoes
+PinnedDocuments_RollbackChangesDialogBox_Text;Você tem certeza que deseja desfazer?%nTodas as alteraçoes não-salvas serão perdidas.
+PinnedDocuments_RollbackChangesDialogBox_Title;Desfazer
+PinnedDocuments_DeleteMultiplePinsDialogBox_Text;Você tem certeza que deseja apagar multiplos arquivos fixos?%n%nSe você cometeu um erro, você ainda por desfazer
+PinnedDocuments_DeleteMultiplePinsDialogBox_Title;Apagar multiplos Pins
+PinnedDocuments_OpenMultipleDocuments_Text;Você tem certeza que deseja abrir multiplos arquivos?%nEsta operação pode demorar um pouco.
+PinnedDocuments_OpenMultipleDocuments_Title;Abrir Multiplos Arquivos
+PinnedDocuments_EditMultiplePins_Text;Editar multiplos pins não é permitido.
+PinnedDocuments_EditMultiplePins_Title;Editar multiplos pins
+# $1 = PinName to be deleted
+PinnedDocuments_DeleteSinglePinDialogBox_Text;Você tem certeza que deseja apagar '$1'?%n%nVocê ainda pode desfazer caso cometa um erro.
+PinnedDocuments_DeleteSinglePinDialogBox_Title;Apagar Pin
+# -ListView Category
+PinnedDocuments_ListViewCollumsText_PinName;Pin
+PinnedDocuments_ListViewCollumsText_FilePath;Local do Arquivo
+
+
+#
+# About
+#
+About_WindowTitle;Sobre TabNotepad
+About_MainDesc;Feito usando Windows Forms em c# pelo%nVisual Studio 2019 Community
+About_BuildNumber;Numero da build:
+About_BuildDate;Data da Build:
+About_LogoClickText;TabNotepad faz parte do pacote de software 'Taiyou'
+About_LogoClickTitle;Sobre
+
+#
+# Settings -> UI Settings
+#
+# -Groupbox Title
+Settings_UISettings_Hometab;Pagina Inicial
+Settings_UISettings_SaveWarning;Aviso de Não-Salvo
+Settings_UISettings_LanguageSetting;Configuraçoes de Idioma
+# -Labels
+Settings_UISettings_SaveWarningIntervalInfoLabel;Intervalo (em segundos)
+Settings_UISettings_LanguageSettingsInfoLabel;Configuraçoes de idioma esta localizado em outra janela.
+# -Checkbox
+Settings_UISettings_SaveWarningCheckbox;Mostra o tempo em que um arquivo não foi salvo%nna barra de status
+Settings_UISettings_HometabAsDefaultCheckbox;Usar Pagina Inicial como Pagina Padrão
+
+#
+# Settings -> Text Editor
+#
+Settings_TextEditor_WordWrapGroupBoxTitle;Quebra de Linha
+Settings_TextEditor_WordWrapEnabled;Ativado
+Settings_TextEditor_WordWrapToggleButton;Alternar
+
+#
+# Encoding Selector
+#
+# -Label
+EncodingSelector_EncodingInfosLabel;Codificação
+# -RadioButton
+EncodingSelector_SetSelectedEncodingRadioButton;Definir codificação como padrão para novos arquivos
+# -Button
+EncodingSelector_ExitSaveButton;Salvar e Sair
+# -Window Title
+EncodingSelected_WindowTitle;Selecionar Codificação
+
+#
+# Pin Documents Window
+#
+PinDocument_WindowTitle;Fixar arquivo
+PinDocument_PinNameLabel;Nome:
+PinDocument_PinDocButton;Salvar e Sair
+
+
+#
+# Generic/Global
+#
+LanguageChangeMessageBox_Text;O idioma atual foi alterado para 'Portugues'%nReinicie o aplicativo para aplicar a alteração em tudo.
+LanguageChangeMessageBox_Title;Idioma alterado
+Generic_Settings;Configuraçoes
+
+#
+# Side Bar Drag Drop
+#
+# -Message Box
+DragDrop_OpenMultipleFiles_Text;Você tem certeza que deseja abrir multiplos arquivos?
+DragDrop_OpenMultipleFiles_Title;Multiplos Arquivos
+
+
+#
+# Language Settings Window
+#
+# - Buttons
+LanguageSettings_ConfirmButton;Confirmar
+LanguageSettings_ExitButton;Sair
+# - Labels
+LanguageSettings_CurrentLanguageLabel;Idioma Atual:
+LanguageSettings_AvaliableLanguageFiles;Arquivos de idioma disponivel:
+LanguageSettings_WindowTitle;Configuraçoes de Idioma

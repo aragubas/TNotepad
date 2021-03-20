@@ -34,9 +34,14 @@ namespace TNotepad
             InitializeComponent();
         }
 
+        public void LoadLang()
+        {
+
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("TabNotepad v" + Application.ProductVersion);
+            MessageBox.Show(Lang.GetLangData("About_LogoClickText"), Lang.GetLangData("About_LogoClickTitle"));
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -46,9 +51,12 @@ namespace TNotepad
 
         private void About_Load(object sender, EventArgs e)
         {
+            MinimumSize = Size;
+            LoadLang();
             LicenseView.Text = Properties.Resources.ApacheLicense;
 
-            InfosLabel.Text += "\n\nBuild Number: " + Utils.GetBuildNumber() + "\n\nBuild Date: " + Utils.GetBuildDate();
+            InfosLabel.Text += Lang.GetLangData("About_MainDesc");
+            InfosLabel.Text += $"\n\n{Lang.GetLangData("About_BuildNumber")} " + Utils.GetBuildNumber() + $"\n\n{Lang.GetLangData("About_BuildDate")} " + Utils.GetBuildDate();
         }
 
         private void BuildInfo_Button_Click(object sender, EventArgs e)

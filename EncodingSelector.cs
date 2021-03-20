@@ -51,8 +51,18 @@ namespace TNotepad
 
         }
 
+        public void LoadLangString()
+        {
+            EncodingInfoLabel.Text = Lang.GetLangData("EncodingSelector_EncodingInfosLabel");
+            radioButton1.Text = Lang.GetLangData("EncodingSelector_SetSelectedEncodingRadioButton");
+            button1.Text = Lang.GetLangData("EncodingSelector_ExitSaveButton");
+            Text = Lang.GetLangData("EncodingSelected_WindowTitle");
+
+        }
+
         private void EncodingSelector_Load(object sender, EventArgs e)
         {
+            LoadLangString();
             LoadValues();
 
         }

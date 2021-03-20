@@ -20,11 +20,19 @@ namespace TNotepad.SettingsPages
             RootControl = pRootControl;
         }
 
+        public void LoadLangStrings()
+        {
+            WordWrapGroupBox.Text = Lang.GetLangData("Settings_TextEditor_WordWrapGroupBoxTitle");
+            WordWrap_Enable.Text = Lang.GetLangData("Settings_TextEditor_WordWrapEnabled");
+            WordWrapToggleButton.Text = Lang.GetLangData("Settings_TextEditor_WordWrapToggleButton");
+        }
+
         private void TextEditorTab_Load(object sender, EventArgs e)
         {
             Dock = DockStyle.Fill;
 
             LoadValues();
+            LoadLangStrings();
         }
 
         public void LoadValues()

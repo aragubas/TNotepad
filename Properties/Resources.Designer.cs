@@ -19,7 +19,7 @@ namespace TNotepad.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -61,25 +61,6 @@ namespace TNotepad.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TabNotepad is part of Taiyou Software, create by Aragubas
-        ///Extreme simple text editor with tabs and some nice little features..
-        /// </summary>
-        public static string AboutText {
-            get {
-                return ResourceManager.GetString("AboutText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to About TabNotepad.
-        /// </summary>
-        public static string AboutTextTitle {
-            get {
-                return ResourceManager.GetString("AboutTextTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Apache License
         ///                           Version 2.0, January 2004
         ///                        http://www.apache.org/licenses/
@@ -109,24 +90,6 @@ namespace TNotepad.Properties {
             get {
                 object obj = ResourceManager.GetObject("CloseTabMini", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to You can only edit 1 pin at a time..
-        /// </summary>
-        public static string EditingMultiplePins {
-            get {
-                return ResourceManager.GetString("EditingMultiplePins", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Can&apos;t edit multiple pins.
-        /// </summary>
-        public static string EditingMultiplePinsTitle {
-            get {
-                return ResourceManager.GetString("EditingMultiplePinsTitle", resourceCulture);
             }
         }
         
@@ -167,81 +130,6 @@ namespace TNotepad.Properties {
             get {
                 object obj = ResourceManager.GetObject("Open FileMini", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Are you sure you want to open multiple files?.
-        /// </summary>
-        public static string OpenMultipleDocuments {
-            get {
-                return ResourceManager.GetString("OpenMultipleDocuments", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Open multiple files.
-        /// </summary>
-        public static string OpenMultipleDocumentsTitle {
-            get {
-                return ResourceManager.GetString("OpenMultipleDocumentsTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to You can pin a document at
-        ///Extra -&gt; Pin Document.
-        /// </summary>
-        public static string PinnedDocumentTipText {
-            get {
-                return ResourceManager.GetString("PinnedDocumentTipText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to You didn&apos;t pinned any document
-        ///yet..
-        /// </summary>
-        public static string PinnedDocumentTipText_NoSaved {
-            get {
-                return ResourceManager.GetString("PinnedDocumentTipText_NoSaved", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Are you sure you want to rollback?
-        ///Any unsaved changes will be lost.
-        /// </summary>
-        public static string RollbackChangesDialogText {
-            get {
-                return ResourceManager.GetString("RollbackChangesDialogText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Rollback Changes.
-        /// </summary>
-        public static string RollbackChangesDialogTitle {
-            get {
-                return ResourceManager.GetString("RollbackChangesDialogTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Are you sure you want to save all changes?$nYou can rollback clicking at rollback button.
-        /// </summary>
-        public static string SaveChangesDialog {
-            get {
-                return ResourceManager.GetString("SaveChangesDialog", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Save Changes.
-        /// </summary>
-        public static string SaveChangesDialogTitle {
-            get {
-                return ResourceManager.GetString("SaveChangesDialogTitle", resourceCulture);
             }
         }
         

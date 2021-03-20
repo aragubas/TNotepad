@@ -38,9 +38,27 @@ namespace TNotepad.SettingsPages
 
         }
 
+        public void LoadLangStrings()
+        {
+            // Group Box
+            HometabSettingGroupBox.Text = Lang.GetLangData("Settings_UISettings_Hometab");
+            SaveWarningGroupBox.Text = Lang.GetLangData("Settings_UISettings_SaveWarning");
+            LanguageSettingGroupBox.Text = Lang.GetLangData("Settings_UISettings_LanguageSetting");
+
+            // Labels
+            SaveWarningIntervalInfo.Text = Lang.GetLangData("Settings_UISettings_SaveWarningIntervalInfoLabel");
+            LanguageSettingsInfoLabel.Text = Lang.GetLangData("Settings_UISettings_LanguageSettingsInfoLabel");
+
+            // Checkboxes
+            SaveWarningCheckBox.Text = Lang.GetLangData("Settings_UISettings_SaveWarningCheckbox");
+            CheckHometabOpt.Text = Lang.GetLangData("Settings_UISettings_HometabAsDefaultCheckbox");
+
+
+        }
         private void UISettingscs_Load(object sender, EventArgs e)
         {
             Dock = DockStyle.Fill;
+            LoadLangStrings();
             LoadValues();
 
         }
@@ -77,6 +95,12 @@ namespace TNotepad.SettingsPages
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void OpenLanguageSettingsButton_Click(object sender, EventArgs e)
+        {
+            LanguageSettings languageSettings = new LanguageSettings();
+            languageSettings.ShowDialog();
         }
     }
 }

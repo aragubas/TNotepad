@@ -85,6 +85,12 @@
     <Compile Include="About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
+    <Compile Include="InitialDBLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitialDBLoad.Designer.cs">
+      <DependentUpon>InitialDBLoad.cs</DependentUpon>
+    </Compile>
     <Compile Include="EncodingSelector.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,13 @@
     </Compile>
     <Compile Include="HomescreenTab.Designer.cs">
       <DependentUpon>HomescreenTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lang.cs" />
+    <Compile Include="LanguageSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LanguageSettings.Designer.cs">
+      <DependentUpon>LanguageSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="PinDocumentWizard.cs">
       <SubType>Form</SubType>
@@ -150,6 +163,9 @@
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InitialDBLoad.resx">
+      <DependentUpon>InitialDBLoad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EncodingSelector.resx">
       <DependentUpon>EncodingSelector.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HomescreenTab.resx">
       <DependentUpon>HomescreenTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LanguageSettings.resx">
+      <DependentUpon>LanguageSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PinDocumentWizard.resx">
       <DependentUpon>PinDocumentWizard.cs</DependentUpon>
@@ -234,10 +253,17 @@
     <None Include="Resources\SettingsMini.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\lang\english.txt" />
     <Content Include="bin\Debug\TNotepad.exe" />
     <Content Include="bin\Release\TNotepad.exe" />
     <Content Include="bin\Release\TNotepad.pdb" />
     <Content Include="bin\Release\TNotepad.vshost.exe" />
+    <Content Include="lang\portugues.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lang\english.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v16.0\TextTemplating\Microsoft.TextTemplating.targets" />

@@ -158,7 +158,7 @@ namespace TNotepad
 
             if (FilesDropped.Count<string>() > 1)
             {
-                if (MessageBox.Show("Are you sure you want to open multiple files?", "Drag-Drop File Opening", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                if (MessageBox.Show(Lang.GetLangData("DragDrop_OpenMultipleFiles_Text"), Lang.GetLangData("DragDrop_OpenMultipleFiles_Title"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 {
                     return;
                 }

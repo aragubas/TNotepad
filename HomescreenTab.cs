@@ -43,6 +43,23 @@ namespace TNotepad
         {
             Dock = DockStyle.Fill;
             ReloadPinnedDocuments();
+            LoadLangStrings();
+
+
+        }
+
+        public void LoadLangStrings()
+        {
+            ReloadPinDocListButton.Text = Lang.GetLangData("PinnedDocuments_ReloadListButton");
+            SaveChangesButton.Text = Lang.GetLangData("PinnedDocuments_SaveChangesButton");
+            RollbackChanges.Text = Lang.GetLangData("PinnedDocuments_RollbackChangesButton");
+            OpenPinDocButton.Text = Lang.GetLangData("PinnedDocuments_OpenPinDocButton");
+            EditPinDocButton.Text = Lang.GetLangData("PinnedDocuments_EditPinDocButton");
+            DeletePinDocButton.Text = Lang.GetLangData("PinnedDocuments_RemovePinDocButton");
+            PinnedDocsTitle.Text = Lang.GetLangData("PinnedDocuments_PinDocsTitle");
+
+            PinDocsView.Columns[0].Text = Lang.GetLangData("PinnedDocuments_ListViewCollumsText_PinName");
+            PinDocsView.Columns[1].Text = Lang.GetLangData("PinnedDocuments_ListViewCollumsText_FilePath");
 
         }
 
@@ -102,12 +119,11 @@ namespace TNotepad
                     Ceira.Text = ItemName;
                     Ceira.Tag = ItemPath + "|" + Index;
                     Ceira.SubItems.Add(ItemPath);
-
                     PinDocsView.Items.Add(Ceira);
 
                     // Re-Enable Panel1 if disabled
                     splitContainer1.Panel1.Enabled = true;
-                    TipPinLabel.Text = Properties.Resources.PinnedDocumentTipText.Replace("$n", Environment.NewLine);
+                    TipPinLabel.Text = Lang.GetLangData("PinnedDocuments_TipPinLabelText");
 
                 }
 
@@ -122,7 +138,7 @@ namespace TNotepad
         private void NoDocumentsPinned()
         {
             splitContainer1.Panel1.Enabled = false;
-            TipPinLabel.Text = Properties.Resources.PinnedDocumentTipText_NoSaved.Replace("$n", Environment.NewLine);
+            TipPinLabel.Text = Lang.GetLangData("PinnedDocuments_TipPinLabel_NoPinnedDocuments");
 
         }
 
@@ -130,7 +146,7 @@ namespace TNotepad
         {
             if (PinDocsView.SelectedItems.Count > 1)
             {
-                if (MessageBox.Show(Properties.Resources.OpenMultipleDocuments, Properties.Resources.OpenMultipleDocumentsTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                if (MessageBox.Show(Lang.GetLangData("PinnedDocuments_OpenMultipleDocuments_Text"), Lang.GetLangData("PinnedDocuments_OpenMultipleDocuments_Title"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 {
                     return;
                 }
@@ -158,7 +174,7 @@ namespace TNotepad
         {
             if (PinDocsView.SelectedItems.Count > 1)
             {
-                MessageBox.Show(Properties.Resources.EditingMultiplePins, Properties.Resources.EditingMultiplePinsTitle, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show(Lang.GetLangData("PinnedDocuments_EditMultiplePins_Text"), Lang.GetLangData("PinnedDocuments_EditMultiplePins_Title"), MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return;
             }
 
@@ -174,7 +190,7 @@ namespace TNotepad
             if (PinDocsView.SelectedItems.Count >= 2)
             {
                 // Ask for multiple file removal
-                if (MessageBox.Show("Are you sure you want to remove multiple items?", "Remove Pinned Documents", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
+                if (MessageBox.Show(Lang.GetLangData("PinnedDocuments_DeleteMultiplePinsDialogBox_Text"), Lang.GetLangData("PinnedDocuments_DeleteMultiplePinsDialogBox_Title"), MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
                 {
                     return;
                 }
@@ -183,7 +199,7 @@ namespace TNotepad
             else
             {
                 // Ask for single file removal
-                if (MessageBox.Show("Are you sure you want to remove '" + PinDocsView.SelectedItems[0].Text + "' ?", "Remove Pinned Document", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
+                if (MessageBox.Show(Lang.GetLangData("PinnedDocuments_DeleteSinglePinDialogBox_Text").Replace("$1", PinDocsView.SelectedItems[0].Text), Lang.GetLangData("PinnedDocuments_DeleteSinglePinDialogBox_Title"), MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
                 {
                     return;
                 }
@@ -250,8 +266,7 @@ namespace TNotepad
 
         private void SaveChangesButton_Click(object sender, EventArgs e)
         {
-            // Ask for multiple file removal
-            if (MessageBox.Show(Properties.Resources.SaveChangesDialog.Replace("$n", Environment.NewLine), Properties.Resources.SaveChangesDialogTitle.Replace("$n", Environment.NewLine), MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
+            if (MessageBox.Show(Lang.GetLangData("PinnedDocuments_SaveChangesDialogBox_Text"), Lang.GetLangData("PinnedDocuments_SaveChangesDialogBox_Title"), MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
             {
                 return;
             }
@@ -264,8 +279,7 @@ namespace TNotepad
 
         private void RollbackChanges_Click(object sender, EventArgs e)
         {
-            // Ask for multiple file removal
-            if (MessageBox.Show(Properties.Resources.RollbackChangesDialogText.Replace("$n", Environment.NewLine), Properties.Resources.RollbackChangesDialogTitle.Replace("$n", Environment.NewLine), MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
+            if (MessageBox.Show(Lang.GetLangData("PinnedDocuments_RollbackChangesDialogBox_Text"), Lang.GetLangData("PinnedDocuments_RollbackChangesDialogBox_Title"), MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
             {
                 return;
             }

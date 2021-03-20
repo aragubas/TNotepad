@@ -105,5 +105,29 @@ namespace TNotepad.Properties {
                 this["WordWrapEnabled"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("english")]
+        public string CurrentLanguage {
+            get {
+                return ((string)(this["CurrentLanguage"]));
+            }
+            set {
+                this["CurrentLanguage"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SaveChangesWhenExiting {
+            get {
+                return ((bool)(this["SaveChangesWhenExiting"]));
+            }
+            set {
+                this["SaveChangesWhenExiting"] = value;
+            }
+        }
     }
 }
