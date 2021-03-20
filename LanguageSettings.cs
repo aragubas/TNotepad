@@ -28,6 +28,8 @@ namespace TNotepad
             LoadAvaliableLanguages();
             LoadLang();
 
+            CurrentLanguageTextBox.Text = Properties.Settings.Default.CurrentLanguage;
+
         }
 
         public void LoadLang()

@@ -60,6 +60,8 @@
             // Toolbar
             // 
             this.Toolbar.AllowItemReorder = true;
+            this.Toolbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Toolbar.GripMargin = new System.Windows.Forms.Padding(0);
             this.Toolbar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.Toolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NewPage,
@@ -70,6 +72,8 @@
             this.Toolbar.Location = new System.Drawing.Point(0, 35);
             this.Toolbar.Name = "Toolbar";
             this.Toolbar.Padding = new System.Windows.Forms.Padding(0);
+            this.Toolbar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.Toolbar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Toolbar.Size = new System.Drawing.Size(710, 25);
             this.Toolbar.TabIndex = 0;
             this.Toolbar.Text = "Toolbar";
@@ -77,6 +81,7 @@
             // NewPage
             // 
             this.NewPage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.NewPage.ForeColor = System.Drawing.Color.White;
             this.NewPage.Image = ((System.Drawing.Image)(resources.GetObject("NewPage.Image")));
             this.NewPage.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NewPage.Name = "NewPage";
@@ -87,6 +92,7 @@
             // OpenFileButton
             // 
             this.OpenFileButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.OpenFileButton.ForeColor = System.Drawing.Color.White;
             this.OpenFileButton.Image = ((System.Drawing.Image)(resources.GetObject("OpenFileButton.Image")));
             this.OpenFileButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OpenFileButton.Name = "OpenFileButton";
@@ -105,6 +111,7 @@
             this.pinDocumentToolStripMenuItem,
             this.savePathToolStripMenuItem,
             this.quickFindToolStripMenuItem});
+            this.ExtraMenu.ForeColor = System.Drawing.Color.White;
             this.ExtraMenu.Image = ((System.Drawing.Image)(resources.GetObject("ExtraMenu.Image")));
             this.ExtraMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ExtraMenu.Name = "ExtraMenu";
@@ -157,6 +164,7 @@
             // SaveButton
             // 
             this.SaveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.SaveButton.ForeColor = System.Drawing.Color.White;
             this.SaveButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveButton.Image")));
             this.SaveButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SaveButton.Name = "SaveButton";
@@ -167,6 +175,7 @@
             // SaveAsButton
             // 
             this.SaveAsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.SaveAsButton.ForeColor = System.Drawing.Color.White;
             this.SaveAsButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveAsButton.Image")));
             this.SaveAsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SaveAsButton.Name = "SaveAsButton";
@@ -183,6 +192,7 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SaveStatusText,
             this.EncodingInfoLabel,
@@ -197,6 +207,7 @@
             // SaveStatusText
             // 
             this.SaveStatusText.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.SaveStatusText.ForeColor = System.Drawing.Color.White;
             this.SaveStatusText.Name = "SaveStatusText";
             this.SaveStatusText.Size = new System.Drawing.Size(52, 17);
             this.SaveStatusText.Text = "Unsaved";
@@ -205,21 +216,24 @@
             // 
             // EncodingInfoLabel
             // 
+            this.EncodingInfoLabel.ForeColor = System.Drawing.Color.White;
             this.EncodingInfoLabel.Name = "EncodingInfoLabel";
             this.EncodingInfoLabel.Size = new System.Drawing.Size(99, 17);
             this.EncodingInfoLabel.Text = "Encoding not set.";
             // 
             // LineInfoLabel
             // 
+            this.LineInfoLabel.ForeColor = System.Drawing.Color.White;
             this.LineInfoLabel.Name = "LineInfoLabel";
             this.LineInfoLabel.Size = new System.Drawing.Size(49, 17);
             this.LineInfoLabel.Text = "Line 0/0";
             // 
             // ColumnInfoLabel
             // 
+            this.ColumnInfoLabel.ForeColor = System.Drawing.Color.White;
             this.ColumnInfoLabel.Name = "ColumnInfoLabel";
-            this.ColumnInfoLabel.Size = new System.Drawing.Size(118, 17);
-            this.ColumnInfoLabel.Text = "toolStripStatusLabel1";
+            this.ColumnInfoLabel.Size = new System.Drawing.Size(59, 17);
+            this.ColumnInfoLabel.Text = "Column 0";
             // 
             // openFileDialog1
             // 
@@ -236,6 +250,7 @@
             // 
             // ExtraFuncPanel
             // 
+            this.ExtraFuncPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ExtraFuncPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.ExtraFuncPanel.Location = new System.Drawing.Point(0, 0);
             this.ExtraFuncPanel.Name = "ExtraFuncPanel";
@@ -252,9 +267,11 @@
             // TextEditingThing
             // 
             this.TextEditingThing.AcceptsTab = true;
+            this.TextEditingThing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.TextEditingThing.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TextEditingThing.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TextEditingThing.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextEditingThing.ForeColor = System.Drawing.Color.White;
             this.TextEditingThing.Location = new System.Drawing.Point(0, 60);
             this.TextEditingThing.Name = "TextEditingThing";
             this.TextEditingThing.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
@@ -272,6 +289,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.Toolbar);
             this.Controls.Add(this.ExtraFuncPanel);
+            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "TextEditingTab";
             this.Size = new System.Drawing.Size(710, 285);

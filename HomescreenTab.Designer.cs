@@ -75,6 +75,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.splitContainer1.Panel2.Controls.Add(this.RollbackChanges);
             this.splitContainer1.Panel2.Controls.Add(this.SaveChangesButton);
             this.splitContainer1.Panel2.Controls.Add(this.TipPinLabel);
@@ -104,46 +105,58 @@
             // 
             // OpenPinDocButton
             // 
+            this.OpenPinDocButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.OpenPinDocButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OpenPinDocButton.FlatAppearance.BorderSize = 0;
+            this.OpenPinDocButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OpenPinDocButton.Location = new System.Drawing.Point(3, 3);
             this.OpenPinDocButton.Name = "OpenPinDocButton";
             this.OpenPinDocButton.Size = new System.Drawing.Size(178, 28);
             this.OpenPinDocButton.TabIndex = 0;
             this.OpenPinDocButton.Text = "Open";
-            this.OpenPinDocButton.UseVisualStyleBackColor = true;
+            this.OpenPinDocButton.UseVisualStyleBackColor = false;
             this.OpenPinDocButton.Click += new System.EventHandler(this.OpenPinDocButton_Click);
             // 
             // EditPinDocButton
             // 
+            this.EditPinDocButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.EditPinDocButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EditPinDocButton.FlatAppearance.BorderSize = 0;
+            this.EditPinDocButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditPinDocButton.Location = new System.Drawing.Point(187, 3);
             this.EditPinDocButton.Name = "EditPinDocButton";
             this.EditPinDocButton.Size = new System.Drawing.Size(207, 28);
             this.EditPinDocButton.TabIndex = 1;
             this.EditPinDocButton.Text = "Edit";
-            this.EditPinDocButton.UseVisualStyleBackColor = true;
+            this.EditPinDocButton.UseVisualStyleBackColor = false;
             this.EditPinDocButton.Click += new System.EventHandler(this.EditPinDocButton_Click);
             // 
             // DeletePinDocButton
             // 
+            this.DeletePinDocButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.DeletePinDocButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DeletePinDocButton.FlatAppearance.BorderSize = 0;
+            this.DeletePinDocButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeletePinDocButton.Location = new System.Drawing.Point(400, 3);
             this.DeletePinDocButton.Name = "DeletePinDocButton";
             this.DeletePinDocButton.Size = new System.Drawing.Size(102, 28);
             this.DeletePinDocButton.TabIndex = 2;
             this.DeletePinDocButton.Text = "Remove";
-            this.DeletePinDocButton.UseVisualStyleBackColor = true;
+            this.DeletePinDocButton.UseVisualStyleBackColor = false;
             this.DeletePinDocButton.Click += new System.EventHandler(this.DeletePinDocButton_Click);
             // 
             // PinDocsView
             // 
             this.PinDocsView.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.PinDocsView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.PinDocsView.BackgroundImageTiled = true;
             this.PinDocsView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PinDocsView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PinName,
             this.FilePath});
             this.PinDocsView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PinDocsView.ForeColor = System.Drawing.Color.White;
+            this.PinDocsView.HideSelection = false;
             this.PinDocsView.HotTracking = true;
             this.PinDocsView.HoverSelection = true;
             this.PinDocsView.Location = new System.Drawing.Point(0, 30);
@@ -180,24 +193,30 @@
             // 
             this.RollbackChanges.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.RollbackChanges.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.RollbackChanges.FlatAppearance.BorderSize = 0;
+            this.RollbackChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RollbackChanges.Location = new System.Drawing.Point(7, 100);
             this.RollbackChanges.Name = "RollbackChanges";
-            this.RollbackChanges.Size = new System.Drawing.Size(204, 23);
+            this.RollbackChanges.Size = new System.Drawing.Size(203, 23);
             this.RollbackChanges.TabIndex = 5;
             this.RollbackChanges.Text = "Rollback Changes";
-            this.RollbackChanges.UseVisualStyleBackColor = true;
+            this.RollbackChanges.UseVisualStyleBackColor = false;
             this.RollbackChanges.Click += new System.EventHandler(this.RollbackChanges_Click);
             // 
             // SaveChangesButton
             // 
             this.SaveChangesButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveChangesButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.SaveChangesButton.FlatAppearance.BorderSize = 0;
+            this.SaveChangesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveChangesButton.Location = new System.Drawing.Point(6, 71);
             this.SaveChangesButton.Name = "SaveChangesButton";
-            this.SaveChangesButton.Size = new System.Drawing.Size(204, 23);
+            this.SaveChangesButton.Size = new System.Drawing.Size(203, 23);
             this.SaveChangesButton.TabIndex = 4;
             this.SaveChangesButton.Text = "Save Changes";
-            this.SaveChangesButton.UseVisualStyleBackColor = true;
+            this.SaveChangesButton.UseVisualStyleBackColor = false;
             this.SaveChangesButton.Click += new System.EventHandler(this.SaveChangesButton_Click);
             // 
             // TipPinLabel
@@ -214,22 +233,27 @@
             // 
             this.ReloadPinDocListButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.ReloadPinDocListButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.ReloadPinDocListButton.FlatAppearance.BorderSize = 0;
+            this.ReloadPinDocListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ReloadPinDocListButton.Location = new System.Drawing.Point(6, 42);
             this.ReloadPinDocListButton.Name = "ReloadPinDocListButton";
-            this.ReloadPinDocListButton.Size = new System.Drawing.Size(204, 23);
+            this.ReloadPinDocListButton.Size = new System.Drawing.Size(203, 23);
             this.ReloadPinDocListButton.TabIndex = 3;
             this.ReloadPinDocListButton.Text = "Refresh List";
-            this.ReloadPinDocListButton.UseVisualStyleBackColor = true;
+            this.ReloadPinDocListButton.UseVisualStyleBackColor = false;
             this.ReloadPinDocListButton.Click += new System.EventHandler(this.ReloadPinDocListButton_Click);
             // 
             // HomescreenTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "HomescreenTab";
             this.Size = new System.Drawing.Size(728, 351);
             this.Load += new System.EventHandler(this.HomescreenTab_Load);

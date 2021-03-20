@@ -137,7 +137,6 @@ namespace TNotepad
 
         private void NoDocumentsPinned()
         {
-            splitContainer1.Panel1.Enabled = false;
             TipPinLabel.Text = Lang.GetLangData("PinnedDocuments_TipPinLabel_NoPinnedDocuments");
 
         }

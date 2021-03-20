@@ -64,7 +64,10 @@ namespace TNotepad
             // 
             // CurrentLanguageTextBox
             // 
+            this.CurrentLanguageTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.CurrentLanguageTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CurrentLanguageTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CurrentLanguageTextBox.ForeColor = System.Drawing.Color.White;
             this.CurrentLanguageTextBox.Location = new System.Drawing.Point(115, 0);
             this.CurrentLanguageTextBox.Name = "CurrentLanguageTextBox";
             this.CurrentLanguageTextBox.Size = new System.Drawing.Size(367, 25);
@@ -73,12 +76,15 @@ namespace TNotepad
             // ConfirmButton
             // 
             this.ConfirmButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ConfirmButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.ConfirmButton.FlatAppearance.BorderSize = 0;
+            this.ConfirmButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ConfirmButton.Location = new System.Drawing.Point(12, 264);
             this.ConfirmButton.Name = "ConfirmButton";
             this.ConfirmButton.Size = new System.Drawing.Size(75, 32);
             this.ConfirmButton.TabIndex = 2;
             this.ConfirmButton.Text = "Confirm";
-            this.ConfirmButton.UseVisualStyleBackColor = true;
+            this.ConfirmButton.UseVisualStyleBackColor = false;
             this.ConfirmButton.Click += new System.EventHandler(this.ConfirmButton_Click);
             // 
             // AvaliableLanguagesListBox
@@ -86,11 +92,14 @@ namespace TNotepad
             this.AvaliableLanguagesListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.AvaliableLanguagesListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.AvaliableLanguagesListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AvaliableLanguagesListBox.ForeColor = System.Drawing.Color.White;
             this.AvaliableLanguagesListBox.FormattingEnabled = true;
             this.AvaliableLanguagesListBox.ItemHeight = 17;
             this.AvaliableLanguagesListBox.Location = new System.Drawing.Point(12, 67);
             this.AvaliableLanguagesListBox.Name = "AvaliableLanguagesListBox";
-            this.AvaliableLanguagesListBox.Size = new System.Drawing.Size(482, 191);
+            this.AvaliableLanguagesListBox.Size = new System.Drawing.Size(482, 189);
             this.AvaliableLanguagesListBox.TabIndex = 3;
             this.AvaliableLanguagesListBox.SelectedIndexChanged += new System.EventHandler(this.AvaliableLanguagesListBox_SelectedIndexChanged);
             // 
@@ -106,18 +115,22 @@ namespace TNotepad
             // ExitButton
             // 
             this.ExitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ExitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.ExitButton.FlatAppearance.BorderSize = 0;
+            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExitButton.Location = new System.Drawing.Point(419, 264);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(75, 32);
             this.ExitButton.TabIndex = 5;
             this.ExitButton.Text = "Exit";
-            this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // LanguageSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(506, 308);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.AvaliableLanguageFilesInfoLabel);
@@ -125,6 +138,7 @@ namespace TNotepad
             this.Controls.Add(this.ConfirmButton);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

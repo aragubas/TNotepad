@@ -50,6 +50,7 @@
             // 
             this.SaveWarningGroupBox.Controls.Add(this.SaveWarningCheckBox);
             this.SaveWarningGroupBox.Controls.Add(this.panel1);
+            this.SaveWarningGroupBox.ForeColor = System.Drawing.Color.White;
             this.SaveWarningGroupBox.Location = new System.Drawing.Point(3, 3);
             this.SaveWarningGroupBox.Name = "SaveWarningGroupBox";
             this.SaveWarningGroupBox.Size = new System.Drawing.Size(300, 91);
@@ -79,7 +80,10 @@
             // 
             // SaveWarningTextBox
             // 
+            this.SaveWarningTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.SaveWarningTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SaveWarningTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SaveWarningTextBox.ForeColor = System.Drawing.Color.White;
             this.SaveWarningTextBox.Location = new System.Drawing.Point(112, 0);
             this.SaveWarningTextBox.Name = "SaveWarningTextBox";
             this.SaveWarningTextBox.Size = new System.Drawing.Size(182, 20);
@@ -112,6 +116,7 @@
             // HometabSettingGroupBox
             // 
             this.HometabSettingGroupBox.Controls.Add(this.CheckHometabOpt);
+            this.HometabSettingGroupBox.ForeColor = System.Drawing.Color.White;
             this.HometabSettingGroupBox.Location = new System.Drawing.Point(3, 100);
             this.HometabSettingGroupBox.Name = "HometabSettingGroupBox";
             this.HometabSettingGroupBox.Size = new System.Drawing.Size(300, 59);
@@ -133,6 +138,7 @@
             // 
             this.LanguageSettingGroupBox.Controls.Add(this.OpenLanguageSettingsButton);
             this.LanguageSettingGroupBox.Controls.Add(this.LanguageSettingsInfoLabel);
+            this.LanguageSettingGroupBox.ForeColor = System.Drawing.Color.White;
             this.LanguageSettingGroupBox.Location = new System.Drawing.Point(3, 165);
             this.LanguageSettingGroupBox.Name = "LanguageSettingGroupBox";
             this.LanguageSettingGroupBox.Size = new System.Drawing.Size(297, 114);
@@ -143,12 +149,15 @@
             // OpenLanguageSettingsButton
             // 
             this.OpenLanguageSettingsButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.OpenLanguageSettingsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.OpenLanguageSettingsButton.FlatAppearance.BorderSize = 0;
+            this.OpenLanguageSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OpenLanguageSettingsButton.Location = new System.Drawing.Point(53, 59);
             this.OpenLanguageSettingsButton.Name = "OpenLanguageSettingsButton";
             this.OpenLanguageSettingsButton.Size = new System.Drawing.Size(190, 23);
             this.OpenLanguageSettingsButton.TabIndex = 4;
             this.OpenLanguageSettingsButton.Text = "Open Language Settings";
-            this.OpenLanguageSettingsButton.UseVisualStyleBackColor = true;
+            this.OpenLanguageSettingsButton.UseVisualStyleBackColor = false;
             this.OpenLanguageSettingsButton.Click += new System.EventHandler(this.OpenLanguageSettingsButton_Click);
             // 
             // LanguageSettingsInfoLabel
@@ -165,8 +174,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Controls.Add(this.flowLayoutPanel1);
             this.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "UISettings";
             this.Size = new System.Drawing.Size(342, 308);
             this.Load += new System.EventHandler(this.UISettingscs_Load);

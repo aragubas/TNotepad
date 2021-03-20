@@ -62,46 +62,62 @@
             // 
             // AboutButton
             // 
+            this.AboutButton.BackColor = System.Drawing.Color.Gray;
             this.AboutButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.AboutButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.AboutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AboutButton.ForeColor = System.Drawing.Color.White;
             this.AboutButton.Location = new System.Drawing.Point(0, 81);
             this.AboutButton.Name = "AboutButton";
             this.AboutButton.Size = new System.Drawing.Size(82, 25);
             this.AboutButton.TabIndex = 4;
             this.AboutButton.Text = "About";
-            this.AboutButton.UseVisualStyleBackColor = true;
+            this.AboutButton.UseVisualStyleBackColor = false;
             this.AboutButton.Click += new System.EventHandler(this.AboutButton_Click);
             // 
             // SettingsButton
             // 
+            this.SettingsButton.BackColor = System.Drawing.Color.Gray;
             this.SettingsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SettingsButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.SettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SettingsButton.ForeColor = System.Drawing.Color.White;
             this.SettingsButton.Location = new System.Drawing.Point(0, 56);
             this.SettingsButton.Name = "SettingsButton";
             this.SettingsButton.Size = new System.Drawing.Size(82, 25);
             this.SettingsButton.TabIndex = 3;
             this.SettingsButton.Text = "Settings";
-            this.SettingsButton.UseVisualStyleBackColor = true;
+            this.SettingsButton.UseVisualStyleBackColor = false;
             this.SettingsButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // OpenFileButton
             // 
+            this.OpenFileButton.BackColor = System.Drawing.Color.Gray;
             this.OpenFileButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.OpenFileButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.OpenFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OpenFileButton.ForeColor = System.Drawing.Color.White;
             this.OpenFileButton.Location = new System.Drawing.Point(0, 29);
             this.OpenFileButton.Name = "OpenFileButton";
             this.OpenFileButton.Size = new System.Drawing.Size(82, 27);
             this.OpenFileButton.TabIndex = 1;
             this.OpenFileButton.Text = "Open File";
-            this.OpenFileButton.UseVisualStyleBackColor = true;
+            this.OpenFileButton.UseVisualStyleBackColor = false;
             this.OpenFileButton.Click += new System.EventHandler(this.OpenFileButton_Click);
             // 
             // NewTabButton
             // 
+            this.NewTabButton.BackColor = System.Drawing.Color.Gray;
             this.NewTabButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.NewTabButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.NewTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewTabButton.ForeColor = System.Drawing.Color.White;
             this.NewTabButton.Location = new System.Drawing.Point(0, 0);
             this.NewTabButton.Name = "NewTabButton";
             this.NewTabButton.Size = new System.Drawing.Size(82, 29);
             this.NewTabButton.TabIndex = 0;
             this.NewTabButton.Text = "New Tab";
-            this.NewTabButton.UseVisualStyleBackColor = true;
+            this.NewTabButton.UseVisualStyleBackColor = false;
             this.NewTabButton.Click += new System.EventHandler(this.NewTabButton_Click);
             // 
             // label1
@@ -109,6 +125,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 51);
@@ -122,6 +139,7 @@
             this.HideShowButton.FlatAppearance.BorderSize = 0;
             this.HideShowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HideShowButton.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HideShowButton.ForeColor = System.Drawing.Color.White;
             this.HideShowButton.Location = new System.Drawing.Point(94, 48);
             this.HideShowButton.Name = "HideShowButton";
             this.HideShowButton.Size = new System.Drawing.Size(25, 25);
@@ -216,6 +234,7 @@
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.QuickSettings);
             this.Controls.Add(this.HideShowButton);

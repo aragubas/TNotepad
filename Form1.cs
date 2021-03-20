@@ -22,6 +22,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -47,6 +48,7 @@ namespace TNotepad
             newTab.Controls.Add(new HomescreenTab(this));
             newTab.ContextMenuStrip = ContextMenu;
             newTab.Text = "TNotepad";
+            newTab.Padding = new Padding(0, 0, 0, 0);
             Tabs.TabPages.Add(newTab);
 
             // Set selected tab to the newly created one
@@ -77,6 +79,8 @@ namespace TNotepad
             newTab.Text = Lang.GetLangData("Generic_Settings");
             newTab.Controls.Add(new SettingsTab(this, newTab));
             newTab.ContextMenuStrip = ContextMenu;
+            newTab.Padding = new Padding(0, 0, 0, 0);
+
             Tabs.TabPages.Add(newTab);
 
             // Set selected tab to the newly created one
@@ -99,6 +103,8 @@ namespace TNotepad
             // Add the control
             newTab.Controls.Add(TextEdtTab);
             newTab.ContextMenuStrip = ContextMenu;
+            newTab.Padding = new Padding(0, 0, 0, 0);
+
             Tabs.TabPages.Add(newTab);
 
             // Set selected tab to the newly created one
@@ -159,4 +165,41 @@ namespace TNotepad
             Environment.Exit(0);
         }
     }
+
+    public partial class ApplicationTabs : TabControl
+    {
+        public ApplicationTabs()
+        {
+            //if (!DesignMode) Multiline = true;
+        }
+
+        private const int TCM_ADJUSTRECT = 0x1328;
+
+        protected override void WndProc(ref Message m)
+        {
+            //Hide the tab headers at run-time
+            if (m.Msg == TCM_ADJUSTRECT)
+            {
+                RECT rect = (RECT)(m.GetLParam(typeof(RECT)));
+                rect.Left = this.Left - 4;
+                rect.Right = this.Right + 4;
+
+                rect.Top = this.Top - 1;
+                rect.Bottom = this.Bottom + 4;
+
+                Marshal.StructureToPtr(rect, m.LParam, true);
+                //m.Result = (IntPtr)1;
+                //return;
+            }
+            //else
+            // call the base class implementation
+            base.WndProc(ref m);
+        }
+
+        private struct RECT
+        {
+            public int Left, Top, Right, Bottom;
+        }
+    }
+
 }

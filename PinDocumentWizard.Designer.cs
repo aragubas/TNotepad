@@ -47,7 +47,10 @@
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.Color.Gray;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.ForeColor = System.Drawing.Color.White;
             this.textBox1.Location = new System.Drawing.Point(38, 0);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(370, 20);
@@ -57,12 +60,16 @@
             // 
             this.PinDocButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.PinDocButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.PinDocButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.PinDocButton.FlatAppearance.BorderSize = 0;
+            this.PinDocButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PinDocButton.Location = new System.Drawing.Point(93, 49);
             this.PinDocButton.Name = "PinDocButton";
             this.PinDocButton.Size = new System.Drawing.Size(246, 23);
             this.PinDocButton.TabIndex = 3;
             this.PinDocButton.Text = "Pin Document";
-            this.PinDocButton.UseVisualStyleBackColor = true;
+            this.PinDocButton.UseVisualStyleBackColor = false;
             this.PinDocButton.Click += new System.EventHandler(this.PinButton_Click);
             // 
             // panel1
@@ -80,9 +87,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(432, 84);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PinDocButton);
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

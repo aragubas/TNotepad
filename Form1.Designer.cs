@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.Tabs = new System.Windows.Forms.TabControl();
+            this.Tabs = new ApplicationTabs();
             this.ContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SidePanelView = new System.Windows.Forms.Panel();
@@ -66,7 +66,7 @@
             // SidePanelView
             // 
             this.SidePanelView.AllowDrop = true;
-            this.SidePanelView.BackColor = System.Drawing.SystemColors.Control;
+            this.SidePanelView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.SidePanelView.Dock = System.Windows.Forms.DockStyle.Left;
             this.SidePanelView.Location = new System.Drawing.Point(0, 0);
             this.SidePanelView.Name = "SidePanelView";
@@ -78,7 +78,7 @@
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DimGray;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(825, 383);
             this.Controls.Add(this.Tabs);
             this.Controls.Add(this.SidePanelView);
@@ -100,7 +100,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl Tabs;
+        private ApplicationTabs Tabs;
         private System.Windows.Forms.ContextMenuStrip ContextMenu;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.Panel SidePanelView;

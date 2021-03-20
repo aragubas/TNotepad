@@ -51,6 +51,7 @@ namespace TNotepad
             // WorkingProgress
             // 
             this.WorkingProgress.AutoSize = true;
+            this.WorkingProgress.ForeColor = System.Drawing.Color.White;
             this.WorkingProgress.Location = new System.Drawing.Point(12, 65);
             this.WorkingProgress.Name = "WorkingProgress";
             this.WorkingProgress.Size = new System.Drawing.Size(24, 13);
@@ -72,6 +73,7 @@ namespace TNotepad
             // CurrentInfoLabel
             // 
             this.CurrentInfoLabel.AutoSize = true;
+            this.CurrentInfoLabel.ForeColor = System.Drawing.Color.White;
             this.CurrentInfoLabel.Location = new System.Drawing.Point(12, 9);
             this.CurrentInfoLabel.Name = "CurrentInfoLabel";
             this.CurrentInfoLabel.Size = new System.Drawing.Size(41, 13);
@@ -82,6 +84,7 @@ namespace TNotepad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(407, 120);
             this.Controls.Add(this.CurrentInfoLabel);
             this.Controls.Add(this.WorkingProgress);
