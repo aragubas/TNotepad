@@ -61,8 +61,6 @@ namespace TNotepad
             SetEncoding(Utils.EncodingNameToEncodingObject());
 
 
-            TextEditingThing.SelectionIndent = TextEditingThing.GetThingWidth();
-
         }
 
         public void LoadLangStrings()
@@ -309,9 +307,6 @@ namespace TNotepad
 
             ColumnInfoLabel.Text = $"{Lang.GetLangData("TextEditMain_ColumnSelected")} {column}";
 
-            // TextEditingThing.SelectionIndent = TextEditingThing.GetThingWidth();
-
-
 
         }
 
@@ -320,104 +315,7 @@ namespace TNotepad
     public class ExtendedRichTextBox : RichTextBox
     {
 
-        [DllImport("user32.dll")]
-        public static extern IntPtr SendMessage(
-              IntPtr hWnd,      // handle to destination window
-              uint Msg,       // message
-              IntPtr wParam,  // first message parameter
-              IntPtr lParam   // second message parameter
-        );
 
-        const uint WM_MOUSEWHEEL = 0x20A;
-        const uint WM_VSCROLL = 0x115;
-        const uint SB_LINEUP = 0;
-        const uint SB_LINEDOWN = 1;
-        const uint SB_THUMBTRACK = 5;
-        const uint WM_PAINT = 15;
-         
-        protected override void OnKeyDown(KeyEventArgs e)
-        {
-            base.OnKeyDown(e);
-            Invalidate();
-            SelectionIndent = GetThingWidth();
-
-        }
-
-        protected override void OnMouseDown(MouseEventArgs e)
-        {
-            base.OnMouseDown(e);
-            Invalidate();
-            SelectionIndent = GetThingWidth();
-
-        }
-
-
-        public void DrawLineNumbers(Graphics g)
-        {
-            // create & set Point pt to (0,0)    
-            Point pt = new Point(0, 0);
-            // get First Index & First Line from richTextBox1    
-            int First_Index = GetCharIndexFromPosition(pt);
-            int First_Line = GetLineFromCharIndex(First_Index);
-            // set X & Y coordinates of Point pt to ClientRectangle Width & Height respectively    
-            pt.Y = ClientRectangle.Width;
-            pt.X = ClientRectangle.Height;
-            // get Last Index & Last Line from richTextBox1    
-            int Last_Index = GetCharIndexFromPosition(pt);
-            int Last_Line = GetLineFromCharIndex(Last_Index);
-
-            // Currently selected line number
-            Point curPoint = GetPositionFromCharIndex(SelectionStart);
-            curPoint.Offset(Left, Top - Font.Height * 2);
-
-            int CurrentLineNumber = GetLineFromCharIndex(SelectionStart);
-
-            // Draw current line
-            g.DrawString("" + (CurrentLineNumber + 1), Font, Brushes.DarkRed, new Point(0, curPoint.Y + 5));
-
-
-        }
-
-        public int GetThingWidth()
-        {
-            int w = 25;
-            // get total lines of richTextBox1    
-            int line = Lines.Length;
-
-            if (line <= 99)
-            {
-                w = 20 + (int)Font.Size;
-            }
-            else if (line <= 999)
-            {
-                w = 25 + (int)Font.Size;
-            }
-            else
-            {
-                w = 45 + (int)Font.Size;
-            }
-
-            return w;
-        }
-
-        protected override void WndProc(ref Message m)
-        {
-            switch ((uint)m.Msg)
-            {
-                case WM_PAINT:
-                    Invalidate();
-                    base.WndProc(ref m);
-                    using (Graphics g = Graphics.FromHwnd(this.Handle))
-                    {
-                        DrawLineNumbers(g);
-                    }
-                    break;
-
-                    default:
-                    base.WndProc(ref m);
-                    break;
-            }
-        }
     }
 
 
