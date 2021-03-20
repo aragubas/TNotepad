@@ -90,10 +90,12 @@ Settings_UISettings_SaveWarning;Aviso de Não-Salvo
 Settings_UISettings_LanguageSetting;Configuraçoes de Idioma
 # -Labels
 Settings_UISettings_SaveWarningIntervalInfoLabel;Intervalo (em segundos)
-Settings_UISettings_LanguageSettingsInfoLabel;Configuraçoes de idioma esta localizado em outra janela.
+Settings_UISettings_LanguageSettingsInfoLabel;Click no botão abaixo para alterar o idioma.
 # -Checkbox
 Settings_UISettings_SaveWarningCheckbox;Mostra o tempo em que um arquivo não foi salvo%nna barra de status
 Settings_UISettings_HometabAsDefaultCheckbox;Usar Pagina Inicial como Pagina Padrão
+# -Buttons
+Settings_UISettings_OpenLanguageSettingsButton;Alterar Idioma
 
 #
 # Settings -> Text Editor
@@ -117,9 +119,19 @@ EncodingSelected_WindowTitle;Selecionar Codificação
 #
 # Pin Documents Window
 #
-PinDocument_WindowTitle;Fixar arquivo
+PinDocument_WindowTitle;Fixar Arquivo
+# -Label
 PinDocument_PinNameLabel;Nome:
+# -Button
 PinDocument_PinDocButton;Salvar e Sair
+# -MessageBox
+PinDocument_InvalidCharAtPinName_Text;Pin contem um caractere invalido ':'
+PinDocument_InvalidCharAtPinName_Title;Caractere invalido
+PinDocument_SameDocumentTitleAlreadyPinned_Text;Um arquivo com este titulo já foi fixado antes.
+PinDocument_SameDocumentAlreadyPinned_Text;Este arquivo já foi fixado.
+PinDocument_DuplicateDocumentPin_Title;Entrada Duplicada
+PinDocument_DocumentSucefullyPinned_Title;Fixado com sucesso
+PinDocument_DocumentSucefullyPinned_Text;Arquivo fixado com sucesso!
 
 
 #

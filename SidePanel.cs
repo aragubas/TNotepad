@@ -35,7 +35,7 @@ namespace TNotepad
         int DefaultWidth;
         int HideAnimationMode = 0;
         int AnimationMultiplier = 0;
-        int AnimationMultiplierValue = 15;
+        int AnimationMultiplierValue = 30;
 
         public SidePanel(Form1 pRootControl, Panel pRootPanel)
         {
@@ -80,55 +80,17 @@ namespace TNotepad
                 case 1:
                     HideShowButton.Text = ">";
                     HideToggle = -1;
-                    HideShowAnimation.Enabled = true;
+                    RootPanel.Width = HideShowButton.Width + 4;
+                    QuickSettings.Visible = true;
                     label1.Text = "";
                     break;
 
                 case 0:
                     HideShowButton.Text = "<";
-                    HideShowAnimation.Enabled = true;
+                    RootPanel.Width = DefaultWidth;
                     label1.Text = "TabNotepad";
                     QuickSettings.Visible = false;
                     break;
-
-            }
-
-
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            // Hide Animation
-            if (HideAnimationMode == 0)
-            {
-                AnimationMultiplier += AnimationMultiplierValue;
-                RootPanel.Width -= AnimationMultiplier;
-
-                if (RootPanel.Width <= HideShowButton.Width + 4)
-                {
-                    HideAnimationMode = 1;
-                    HideShowAnimation.Enabled = false;
-                    //AnimationMultiplier = 0;
-                    QuickSettings.Visible = true;
-
-
-                }
-                RootPanel.Width = HideShowButton.Width + 4;
-
-            }
-            else
-            {
-                AnimationMultiplier += AnimationMultiplierValue;
-
-                if (RootPanel.Width >= DefaultWidth)
-                {
-                    HideAnimationMode = 0;
-                    RootPanel.Width = DefaultWidth;
-                    HideShowAnimation.Enabled = false;
-                    AnimationMultiplier = 0;
-
-                }
-                RootPanel.Width += AnimationMultiplier;
 
             }
 

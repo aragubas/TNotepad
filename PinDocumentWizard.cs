@@ -98,7 +98,7 @@ namespace TNotepad
                         case "name":
                             if (EventSplit[1] == textBox1.Text)
                             {
-                                MessageBox.Show("A document with this title has been already pinned.", "Cannot pin document", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                                MessageBox.Show(Lang.GetLangData("PinDocument_SameDocumentTitleAlreadyPinned_Text"), Lang.GetLangData("PinDocument_DuplicateDocumentPin_Title"), MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                                 Close();
                                 return;
                             }
@@ -107,7 +107,7 @@ namespace TNotepad
                         case "path":
                             if (EventSplit[1] == DocFileName)
                             {
-                                MessageBox.Show("This same document has been already pinned.", "Cannot pin document", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                                MessageBox.Show(Lang.GetLangData("PinDocument_SameDocumentAlreadyPinned_Text"), Lang.GetLangData("PinDocument_DuplicateDocumentPin_Title"), MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                                 Close();
                                 return;
                             }
@@ -120,7 +120,7 @@ namespace TNotepad
             // Save the item to list
             Properties.Settings.Default.PinnedDocuments.Add(DocString);
             Properties.Settings.Default.Save();
-            MessageBox.Show("Document sucefully pinned.", "Pin Document", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(Lang.GetLangData("PinDocument_DocumentSucefullyPinned_Text"), Lang.GetLangData("PinDocument_DocumentSucefullyPinned_Title"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             Close();
         }
     }

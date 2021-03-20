@@ -89,10 +89,12 @@ Settings_UISettings_SaveWarning;Save Warning
 Settings_UISettings_LanguageSetting;Language Settings
 # -Labels
 Settings_UISettings_SaveWarningIntervalInfoLabel;Interval (in seconds)
-Settings_UISettings_LanguageSettingsInfoLabel;Language Settings are located at Language Settings Window
+Settings_UISettings_LanguageSettingsInfoLabel;Click on the button below to change the current language.
 # -Checkbox
 Settings_UISettings_SaveWarningCheckbox;Show the time a document has been not saved%non statusbar
 Settings_UISettings_HometabAsDefaultCheckbox;Use hometab as default tab
+# -Buttons
+Settings_UISettings_OpenLanguageSettingsButton;Change Language
 
 #
 # Settings -> Text Editor
@@ -117,8 +119,18 @@ EncodingSelected_WindowTitle;Select Encoding
 # Pin Documents Window
 #
 PinDocument_WindowTitle;Pin File
+# -Label
 PinDocument_PinNameLabel;Name:
+# -Button
 PinDocument_PinDocButton;Save and Exit
+# -MessageBox
+PinDocument_InvalidCharAtPinName_Text;Pin name contains invalid character ':'
+PinDocument_InvalidCharAtPinName_Title;Invalid Character
+PinDocument_SameDocumentTitleAlreadyPinned_Text;A file with this title has been already pinned before.
+PinDocument_SameDocumentAlreadyPinned_Text;This file has been already pinned before.
+PinDocument_DuplicateDocumentPin_Title;Cannot duplicate pinned file
+PinDocument_DocumentSucefullyPinned_Title;Sucefully pinned
+PinDocument_DocumentSucefullyPinned_Text;File sucefully pinned.
 
 #
 # Generic/Global

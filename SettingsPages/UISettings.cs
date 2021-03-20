@@ -53,6 +53,9 @@ namespace TNotepad.SettingsPages
             SaveWarningCheckBox.Text = Lang.GetLangData("Settings_UISettings_SaveWarningCheckbox");
             CheckHometabOpt.Text = Lang.GetLangData("Settings_UISettings_HometabAsDefaultCheckbox");
 
+            // Buttons
+            OpenLanguageSettingsButton.Text = Lang.GetLangData("Settings_UISettings_OpenLanguageSettingsButton");
+
 
         }
         private void UISettingscs_Load(object sender, EventArgs e)
