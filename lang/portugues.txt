@@ -180,4 +180,4 @@ SidePanel_AboutButton;Sobre
 #
 # Quick Find
 #
-QuickFind_FindButton;Encontrar Rápido
+QuickFind_FindButton;Encontrar

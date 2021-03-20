@@ -64,9 +64,10 @@
             this.ExtraMenu,
             this.SaveButton,
             this.SaveAsButton});
-            this.Toolbar.Location = new System.Drawing.Point(0, 29);
+            this.Toolbar.Location = new System.Drawing.Point(0, 35);
             this.Toolbar.Name = "Toolbar";
-            this.Toolbar.Size = new System.Drawing.Size(760, 25);
+            this.Toolbar.Padding = new System.Windows.Forms.Padding(0);
+            this.Toolbar.Size = new System.Drawing.Size(762, 25);
             this.Toolbar.TabIndex = 0;
             this.Toolbar.Text = "Toolbar";
             // 
@@ -169,10 +170,10 @@
             this.TextEditingThing.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TextEditingThing.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TextEditingThing.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextEditingThing.Location = new System.Drawing.Point(0, 54);
+            this.TextEditingThing.Location = new System.Drawing.Point(0, 60);
             this.TextEditingThing.Name = "TextEditingThing";
             this.TextEditingThing.ShowSelectionMargin = true;
-            this.TextEditingThing.Size = new System.Drawing.Size(760, 274);
+            this.TextEditingThing.Size = new System.Drawing.Size(762, 270);
             this.TextEditingThing.TabIndex = 1;
             this.TextEditingThing.Text = "";
             this.TextEditingThing.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Text_KeyDown);
@@ -189,9 +190,9 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SaveStatusText,
             this.EncodingInfoLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 328);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 330);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(760, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(762, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "Status Bar";
             // 
@@ -228,7 +229,7 @@
             this.ExtraFuncPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.ExtraFuncPanel.Location = new System.Drawing.Point(0, 0);
             this.ExtraFuncPanel.Name = "ExtraFuncPanel";
-            this.ExtraFuncPanel.Size = new System.Drawing.Size(760, 29);
+            this.ExtraFuncPanel.Size = new System.Drawing.Size(762, 35);
             this.ExtraFuncPanel.TabIndex = 3;
             this.ExtraFuncPanel.Visible = false;
             // 
@@ -244,14 +245,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.TextEditingThing);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.Toolbar);
             this.Controls.Add(this.ExtraFuncPanel);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "TextEditingTab";
-            this.Size = new System.Drawing.Size(760, 350);
+            this.Size = new System.Drawing.Size(762, 352);
             this.Load += new System.EventHandler(this.TextEditingTab_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextEditingTab_KeyDown);
             this.Toolbar.ResumeLayout(false);
