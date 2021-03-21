@@ -85,6 +85,9 @@
     <Compile Include="About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
+    <Compile Include="ApplicationTabs.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="BackgroundWorkerDialog.cs">
       <SubType>Form</SubType>
     </Compile>
