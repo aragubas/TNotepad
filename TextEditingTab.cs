@@ -287,6 +287,18 @@ namespace TNotepad
             {
                 FindExtraFuncPanel();
             }
+
+            // Save Shortcut
+            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.S)
+            {
+                SaveButton.PerformClick();
+
+            }else if (e.KeyCode == Keys.S && (e.Control || e.Shift)) // Save As Shortcut
+            {
+                SaveAsButton.PerformClick();
+            }
+
+
         }
 
         private void quickFindToolStripMenuItem_Click(object sender, EventArgs e)

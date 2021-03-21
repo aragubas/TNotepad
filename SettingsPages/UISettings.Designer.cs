@@ -105,7 +105,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(342, 308);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(492, 340);
             this.flowLayoutPanel1.TabIndex = 3;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -154,7 +154,7 @@
             this.Font = new System.Drawing.Font("Arial", 8.25F);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "UISettings";
-            this.Size = new System.Drawing.Size(342, 308);
+            this.Size = new System.Drawing.Size(492, 340);
             this.Load += new System.EventHandler(this.UISettingscs_Load);
             this.SaveWarningGroupBox.ResumeLayout(false);
             this.SaveWarningGroupBox.PerformLayout();
