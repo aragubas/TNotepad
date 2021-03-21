@@ -46,7 +46,6 @@ namespace TNotepad
             // Create Tab object
             TabPage newTab = new TabPage();
             newTab.Controls.Add(new HomescreenTab(this));
-            newTab.ContextMenuStrip = ContextMenu;
             newTab.Text = "TNotepad";
             newTab.Padding = new Padding(0, 0, 0, 0);
             Tabs.TabPages.Add(newTab);
@@ -63,7 +62,6 @@ namespace TNotepad
             // Create Tab object
             TabPage newTab = new TabPage();
             newTab.Controls.Add(new TextEditingTab(newTab, this));
-            newTab.ContextMenuStrip = ContextMenu;
             Tabs.TabPages.Add(newTab);
 
             // Set selected tab to the newly created one
@@ -78,7 +76,6 @@ namespace TNotepad
             TabPage newTab = new TabPage();
             newTab.Text = Lang.GetLangData("Generic_Settings");
             newTab.Controls.Add(new SettingsTab(this, newTab));
-            newTab.ContextMenuStrip = ContextMenu;
             newTab.Padding = new Padding(0, 0, 0, 0);
 
             Tabs.TabPages.Add(newTab);
@@ -102,7 +99,6 @@ namespace TNotepad
 
             // Add the control
             newTab.Controls.Add(TextEdtTab);
-            newTab.ContextMenuStrip = ContextMenu;
             newTab.Padding = new Padding(0, 0, 0, 0);
 
             Tabs.TabPages.Add(newTab);
@@ -206,13 +202,19 @@ namespace TNotepad
             {
                 var tabRect = Tabs.GetTabRect(i);
                 tabRect.Inflate(-2, -2);
-                var imageRect = new Rectangle(tabRect.Right - 8, tabRect.Top + (tabRect.Height - 8) / 2, 8, 16);
+                var imageRect = new Rectangle(tabRect.Right - 13, tabRect.Top + (tabRect.Height - 12) / 2, 10, 10);
 
                 if (imageRect.IntersectsWith(new Rectangle(e.Location.X, e.Location.Y, 1, 1)))
                 {
                     Tabs.TabPages.RemoveAt(i);
+
                     break;
                 }
+            }
+
+            if (Tabs.TabPages.Count == 0)
+            {
+                CreateHometab();
             }
         }
     }
@@ -223,8 +225,7 @@ namespace TNotepad
         {
             //if (!DesignMode) Multiline = true;
             this.DrawMode = TabDrawMode.OwnerDrawFixed;
-            this.Appearance = TabAppearance.Normal;
-
+            this.Appearance = TabAppearance.Buttons;
         }
 
         private const int TCM_ADJUSTRECT = 0x1328;
@@ -233,7 +234,7 @@ namespace TNotepad
         {
 
             base.OnPaintBackground(pevent);
-            pevent.Graphics.FillRectangle(Brushes.Red, new Rectangle(0, 0, Width, Height));
+            pevent.Graphics.FillRectangle(Brushes.Black, new Rectangle(0, 0, Width, Height));
 
 
         }
@@ -246,6 +247,10 @@ namespace TNotepad
             Font fntTab;
             Brush bshBack;
             Brush bshFore;
+
+            // Set SmoothingMode
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
 
             if (e.Index == this.SelectedIndex) // Selected Tab
             {
@@ -265,15 +270,24 @@ namespace TNotepad
             // Draw Title Background
             e.Graphics.FillRectangle(bshBack, e.Bounds);
 
+            // Add spacing to title text
+            if (!TabPages[e.Index].Text.EndsWith("   "))
+            {
+                TabPages[e.Index].Text += "   ";
+
+            }
 
             // Draw Tab Title
-            string tabName = this.TabPages[e.Index].Text;
+            string tabName = TabPages[e.Index].Text;
             StringFormat sftTab = new StringFormat();
             Rectangle recTab = e.Bounds;
             recTab = new Rectangle(recTab.X, recTab.Y + 4, recTab.Width, recTab.Height - 4);
             
             e.Graphics.DrawString(tabName, fntTab, bshFore, recTab, sftTab);
 
+            // Draw Red Circle
+            var imageRect = new Rectangle(recTab.Right - 13, recTab.Top + (recTab.Height - 12) / 2, 10, 10);
+            e.Graphics.FillEllipse(Brushes.Red, imageRect);
 
             // Draw Background
             Rectangle r = this.GetTabRect(this.TabPages.Count - 1);
@@ -294,7 +308,7 @@ namespace TNotepad
                 rect.Left = this.Left - 4;
                 rect.Right = this.Right + 4;
 
-                rect.Top = this.Top - 1;
+                rect.Top = this.Top - 6;
                 rect.Bottom = this.Bottom + 4;
 
                 Marshal.StructureToPtr(rect, m.LParam, true);

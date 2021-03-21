@@ -28,19 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Tabs = new TNotepad.ApplicationTabs();
-            this.ContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SidePanelView = new System.Windows.Forms.Panel();
-            this.ContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // Tabs
             // 
-            this.Tabs.ContextMenuStrip = this.ContextMenu;
+            this.Tabs.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             this.Tabs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Tabs.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.Tabs.Location = new System.Drawing.Point(131, 0);
             this.Tabs.Name = "Tabs";
             this.Tabs.Padding = new System.Drawing.Point(0, 0);
@@ -49,21 +46,6 @@
             this.Tabs.TabIndex = 1;
             this.Tabs.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.Tabs_DrawItem);
             this.Tabs.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Tabs_MouseDown);
-            // 
-            // ContextMenu
-            // 
-            this.ContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.closeToolStripMenuItem});
-            this.ContextMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.ContextMenu.Name = "ContextMenu";
-            this.ContextMenu.Size = new System.Drawing.Size(146, 26);
-            // 
-            // closeToolStripMenuItem
-            // 
-            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.closeToolStripMenuItem.Text = "Close this tab";
-            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // SidePanelView
             // 
@@ -95,7 +77,6 @@
             this.Text = "TabNotepad";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.ContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -103,8 +84,6 @@
         #endregion
 
         private ApplicationTabs Tabs;
-        private System.Windows.Forms.ContextMenuStrip ContextMenu;
-        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.Panel SidePanelView;
     }
 }
