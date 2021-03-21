@@ -72,13 +72,6 @@ namespace TNotepad
             // Draw Title Background
             e.Graphics.FillRectangle(bshBack, e.Bounds);
 
-            // Add spacing to title text
-            if (!TabPages[e.Index].Text.EndsWith("   "))
-            {
-                TabPages[e.Index].Text += "   ";
-
-            }
-
             // Draw Tab Title
             string tabName = TabPages[e.Index].Text;
             StringFormat sftTab = new StringFormat();
@@ -87,9 +80,30 @@ namespace TNotepad
 
             e.Graphics.DrawString(tabName, fntTab, bshFore, recTab, sftTab);
 
-            // Draw Red Circle
-            var imageRect = new Rectangle(recTab.Right - 13, recTab.Top + (recTab.Height - 12) / 2, 10, 10);
-            e.Graphics.FillEllipse(Brushes.Red, imageRect);
+            // Draw Red Closee Circle
+            if (TabPages[e.Index].Tag != "PERSISTENT")
+            {
+                var imageRect = new Rectangle(recTab.Right - 13, recTab.Top + (recTab.Height - 12) / 2, 10, 10);
+                e.Graphics.FillEllipse(Brushes.Red, imageRect);
+
+                // Add spacing to title text
+                if (!TabPages[e.Index].Text.EndsWith("   "))
+                {
+                    TabPages[e.Index].Text += "   ";
+
+                }
+
+            }
+            else
+            {
+                // Add spacing to title text
+                if (!TabPages[e.Index].Text.EndsWith(" "))
+                {
+                    TabPages[e.Index].Text += " ";
+
+                }
+
+            }
 
             // Draw Background
             Rectangle r = GetTabRect(this.TabPages.Count - 1);

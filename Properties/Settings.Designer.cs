@@ -73,18 +73,6 @@ namespace TNotepad.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool ShowHometab {
-            get {
-                return ((bool)(this["ShowHometab"]));
-            }
-            set {
-                this["ShowHometab"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::System.Collections.Specialized.StringCollection PinnedDocuments {
             get {
                 return ((global::System.Collections.Specialized.StringCollection)(this["PinnedDocuments"]));

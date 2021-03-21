@@ -34,15 +34,12 @@
             this.SaveWarningTextBox = new System.Windows.Forms.TextBox();
             this.SaveWarningIntervalInfo = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.HometabSettingGroupBox = new System.Windows.Forms.GroupBox();
-            this.CheckHometabOpt = new System.Windows.Forms.CheckBox();
             this.LanguageSettingGroupBox = new System.Windows.Forms.GroupBox();
             this.OpenLanguageSettingsButton = new System.Windows.Forms.Button();
             this.LanguageSettingsInfoLabel = new System.Windows.Forms.Label();
             this.SaveWarningGroupBox.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.HometabSettingGroupBox.SuspendLayout();
             this.LanguageSettingGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,7 +101,6 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.SaveWarningGroupBox);
-            this.flowLayoutPanel1.Controls.Add(this.HometabSettingGroupBox);
             this.flowLayoutPanel1.Controls.Add(this.LanguageSettingGroupBox);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -113,33 +109,12 @@
             this.flowLayoutPanel1.TabIndex = 3;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
-            // HometabSettingGroupBox
-            // 
-            this.HometabSettingGroupBox.Controls.Add(this.CheckHometabOpt);
-            this.HometabSettingGroupBox.ForeColor = System.Drawing.Color.White;
-            this.HometabSettingGroupBox.Location = new System.Drawing.Point(3, 100);
-            this.HometabSettingGroupBox.Name = "HometabSettingGroupBox";
-            this.HometabSettingGroupBox.Size = new System.Drawing.Size(300, 59);
-            this.HometabSettingGroupBox.TabIndex = 2;
-            this.HometabSettingGroupBox.TabStop = false;
-            this.HometabSettingGroupBox.Text = "Hometab";
-            // 
-            // CheckHometabOpt
-            // 
-            this.CheckHometabOpt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CheckHometabOpt.Location = new System.Drawing.Point(3, 16);
-            this.CheckHometabOpt.Name = "CheckHometabOpt";
-            this.CheckHometabOpt.Size = new System.Drawing.Size(294, 40);
-            this.CheckHometabOpt.TabIndex = 0;
-            this.CheckHometabOpt.Text = "Use hometab as default tab";
-            this.CheckHometabOpt.UseVisualStyleBackColor = true;
-            // 
             // LanguageSettingGroupBox
             // 
             this.LanguageSettingGroupBox.Controls.Add(this.OpenLanguageSettingsButton);
             this.LanguageSettingGroupBox.Controls.Add(this.LanguageSettingsInfoLabel);
             this.LanguageSettingGroupBox.ForeColor = System.Drawing.Color.White;
-            this.LanguageSettingGroupBox.Location = new System.Drawing.Point(3, 165);
+            this.LanguageSettingGroupBox.Location = new System.Drawing.Point(3, 100);
             this.LanguageSettingGroupBox.Name = "LanguageSettingGroupBox";
             this.LanguageSettingGroupBox.Size = new System.Drawing.Size(297, 114);
             this.LanguageSettingGroupBox.TabIndex = 3;
@@ -186,7 +161,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.HometabSettingGroupBox.ResumeLayout(false);
             this.LanguageSettingGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -199,8 +173,6 @@
         private System.Windows.Forms.TextBox SaveWarningTextBox;
         private System.Windows.Forms.CheckBox SaveWarningCheckBox;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.GroupBox HometabSettingGroupBox;
-        private System.Windows.Forms.CheckBox CheckHometabOpt;
         private System.Windows.Forms.GroupBox LanguageSettingGroupBox;
         private System.Windows.Forms.Button OpenLanguageSettingsButton;
         private System.Windows.Forms.Label LanguageSettingsInfoLabel;

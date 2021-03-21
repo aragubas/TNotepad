@@ -41,7 +41,6 @@ namespace TNotepad.SettingsPages
         public void LoadLangStrings()
         {
             // Group Box
-            HometabSettingGroupBox.Text = Lang.GetLangData("Settings_UISettings_Hometab");
             SaveWarningGroupBox.Text = Lang.GetLangData("Settings_UISettings_SaveWarning");
             LanguageSettingGroupBox.Text = Lang.GetLangData("Settings_UISettings_LanguageSetting");
 
@@ -51,7 +50,6 @@ namespace TNotepad.SettingsPages
 
             // Checkboxes
             SaveWarningCheckBox.Text = Lang.GetLangData("Settings_UISettings_SaveWarningCheckbox");
-            CheckHometabOpt.Text = Lang.GetLangData("Settings_UISettings_HometabAsDefaultCheckbox");
 
             // Buttons
             OpenLanguageSettingsButton.Text = Lang.GetLangData("Settings_UISettings_OpenLanguageSettingsButton");
@@ -70,14 +68,12 @@ namespace TNotepad.SettingsPages
         {
             SaveWarningTextBox.Text = Convert.ToString(Properties.Settings.Default.UnsavedTimeInterval);
             SaveWarningCheckBox.Checked = Properties.Settings.Default.UnsavedTime;
-            CheckHometabOpt.Checked = Properties.Settings.Default.ShowHometab;
 
         }
 
         public void SaveSettings()
         {
             Properties.Settings.Default.UnsavedTime = SaveWarningCheckBox.Checked;
-            Properties.Settings.Default.ShowHometab = CheckHometabOpt.Checked;
 
             // Unsaved Time Interval
             try

@@ -28,11 +28,6 @@ namespace TNotepad
             InitializeComponent();
         }
 
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         public void CreateHometab()
         {
             // Create Tab object
@@ -40,6 +35,8 @@ namespace TNotepad
             newTab.Controls.Add(new HomescreenTab(this));
             newTab.Text = "TNotepad";
             newTab.Padding = new Padding(0, 0, 0, 0);
+            newTab.Tag = "PERSISTENT";
+
             Tabs.TabPages.Add(newTab);
 
             // Set selected tab to the newly created one
@@ -114,11 +111,7 @@ namespace TNotepad
         private void Form1_Load(object sender, EventArgs e)
         {
             // Create Initial Tab
-            if (Properties.Settings.Default.ShowHometab)
-            {
-                CreateHometab();
-            }
-            else { CreateNewTab(); }
+            CreateHometab();
             AttachSidePanel();
 
             Text = "TNotepad " + Utils.GetVersion();
@@ -127,20 +120,15 @@ namespace TNotepad
 
         public void CloseSelectedTab()
         {
-            // Dispose current tab
-            Tabs.SelectedTab.Dispose();
-
             // Create new tab if there is no one left
-            if (Tabs.TabPages.Count == 0) { CreateHometab(); }
+            if (Tabs.SelectedTab.Tag != "PERSISTENT")
+            {
+                Tabs.TabPages.RemoveAt(Tabs.SelectedIndex);
 
-            // Select the Last Tab
-            Tabs.SelectedTab = Tabs.TabPages[Tabs.TabPages.Count - 1];
+                // Select the Last Tab
+                Tabs.SelectedTab = Tabs.TabPages[Tabs.TabPages.Count - 1];
 
-        }
-
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CloseSelectedTab();
+            }
 
         }
        
@@ -167,7 +155,7 @@ namespace TNotepad
 
         }
 
-        private void Tabs_MouseDown(object sender, MouseEventArgs e)
+        private void Tabs_MouseUp(object sender, MouseEventArgs e)
         {
             // Process MouseDown event only till (tabControl.TabPages.Count - 1) excluding the last TabPage
             for (var i = 0; i < Tabs.TabPages.Count; i++)
@@ -178,7 +166,10 @@ namespace TNotepad
 
                 if (imageRect.IntersectsWith(new Rectangle(e.Location.X, e.Location.Y, 1, 1)))
                 {
-                    Tabs.TabPages.RemoveAt(i);
+                    if (Tabs.TabPages[i].Tag != "PERSISTENT")
+                    {
+                        Tabs.TabPages.RemoveAt(i);
+                    }
 
                     break;
                 }
@@ -188,6 +179,7 @@ namespace TNotepad
             {
                 CreateHometab();
             }
+
         }
     }
 

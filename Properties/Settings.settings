@@ -14,9 +14,6 @@
     <Setting Name="DefaultEncoding" Type="System.String" Scope="User">
       <Value Profile="(Default)">UTF-8</Value>
     </Setting>
-    <Setting Name="ShowHometab" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
-    </Setting>
     <Setting Name="PinnedDocuments" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)" />
     </Setting>

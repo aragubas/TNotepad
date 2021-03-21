@@ -29,9 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.Tabs = new TNotepad.ApplicationTabs();
             this.SidePanelView = new System.Windows.Forms.Panel();
+            this.Tabs = new TNotepad.ApplicationTabs();
             this.SuspendLayout();
+            // 
+            // SidePanelView
+            // 
+            this.SidePanelView.AllowDrop = true;
+            this.SidePanelView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.SidePanelView.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SidePanelView.Location = new System.Drawing.Point(0, 0);
+            this.SidePanelView.Name = "SidePanelView";
+            this.SidePanelView.Size = new System.Drawing.Size(131, 383);
+            this.SidePanelView.TabIndex = 2;
             // 
             // Tabs
             // 
@@ -45,17 +55,7 @@
             this.Tabs.Size = new System.Drawing.Size(694, 383);
             this.Tabs.TabIndex = 1;
             this.Tabs.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.Tabs_DrawItem);
-            this.Tabs.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Tabs_MouseDown);
-            // 
-            // SidePanelView
-            // 
-            this.SidePanelView.AllowDrop = true;
-            this.SidePanelView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.SidePanelView.Dock = System.Windows.Forms.DockStyle.Left;
-            this.SidePanelView.Location = new System.Drawing.Point(0, 0);
-            this.SidePanelView.Name = "SidePanelView";
-            this.SidePanelView.Size = new System.Drawing.Size(131, 383);
-            this.SidePanelView.TabIndex = 2;
+            this.Tabs.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Tabs_MouseUp);
             // 
             // Form1
             // 
