@@ -34,6 +34,7 @@ namespace TNotepad
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            // Start InitialDB Load
             InitialDBLoad Ceira = new InitialDBLoad();
             Ceira.Show();
 

@@ -222,9 +222,6 @@
     <EmbeddedResource Include="TextEditingTab.resx">
       <DependentUpon>TextEditingTab.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="bin\Release\TNotepad.exe.config" />
-    <None Include="bin\Release\TNotepad.vshost.exe.config" />
-    <None Include="bin\Release\TNotepad.vshost.exe.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -274,11 +271,6 @@
     <None Include="Resources\SettingsMini.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\lang\english.txt" />
-    <Content Include="bin\Debug\TNotepad.exe" />
-    <Content Include="bin\Release\TNotepad.exe" />
-    <Content Include="bin\Release\TNotepad.pdb" />
-    <Content Include="bin\Release\TNotepad.vshost.exe" />
     <Content Include="lang\portugues.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

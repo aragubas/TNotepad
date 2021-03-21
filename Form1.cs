@@ -126,7 +126,7 @@ namespace TNotepad
                 Tabs.TabPages.RemoveAt(Tabs.SelectedIndex);
 
                 // Select the Last Tab
-                Tabs.SelectedTab = Tabs.TabPages[Tabs.TabPages.Count - 1];
+                //Tabs.SelectedTab = Tabs.TabPages[Tabs.TabPages.Count - 1];
 
             }
 

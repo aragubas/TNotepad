@@ -44,7 +44,7 @@ namespace TNotepad
 
         protected override void OnDrawItem(DrawItemEventArgs e)
         {
-            //base.OnDrawItem(e);
+            base.OnDrawItem(e);
 
             Font fntTab;
             Brush bshBack;
