@@ -124,10 +124,6 @@ namespace TNotepad
             if (Tabs.SelectedTab.Tag != "PERSISTENT")
             {
                 Tabs.TabPages.RemoveAt(Tabs.SelectedIndex);
-
-                // Select the Last Tab
-                //Tabs.SelectedTab = Tabs.TabPages[Tabs.TabPages.Count - 1];
-
             }
 
         }
