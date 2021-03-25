@@ -4,36 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{434DAF86-97F0-4146-8288-BDCAA6282B6D}</ProjectGuid>
+    <ProjectGuid>{0D7C5D5A-18EF-4636-9FCA-42273762840A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TNotepad</RootNamespace>
     <AssemblyName>TNotepad</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>
-    </SccProjectName>
-    <SccLocalPath>
-    </SccLocalPath>
-    <SccAuxPath>
-    </SccAuxPath>
-    <SccProvider>
-    </SccProvider>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -44,9 +22,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <TransformOnBuild>true</TransformOnBuild>
-    <OverwriteReadOnlyOutputFiles>true</OverwriteReadOnlyOutputFiles>
-    <TransformOutOfDateOnly>false</TransformOutOfDateOnly>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -56,12 +31,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <TransformOnBuild>true</TransformOnBuild>
-    <OverwriteReadOnlyOutputFiles>true</OverwriteReadOnlyOutputFiles>
-    <TransformOutOfDateOnly>false</TransformOutOfDateOnly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>Resources\TabbedNotpadIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>TNotepad.Program</StartupObject>
@@ -94,23 +63,17 @@
     <Compile Include="BackgroundWorkerDialog.Designer.cs">
       <DependentUpon>BackgroundWorkerDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="ExtraFuncPanels\Find.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ExtraFuncPanels\Find.Designer.cs">
-      <DependentUpon>Find.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InitialDBLoad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InitialDBLoad.Designer.cs">
-      <DependentUpon>InitialDBLoad.cs</DependentUpon>
-    </Compile>
     <Compile Include="EncodingSelector.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EncodingSelector.Designer.cs">
       <DependentUpon>EncodingSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExtraFuncPanels\Find.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExtraFuncPanels\Find.Designer.cs">
+      <DependentUpon>Find.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -124,6 +87,12 @@
     <Compile Include="HomescreenTab.Designer.cs">
       <DependentUpon>HomescreenTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="InitialDBLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitialDBLoad.Designer.cs">
+      <DependentUpon>InitialDBLoad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lang.cs" />
     <Compile Include="LanguageSettings.cs">
       <SubType>Form</SubType>
@@ -131,6 +100,14 @@
     <Compile Include="LanguageSettings.Designer.cs">
       <DependentUpon>LanguageSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.5.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="obj\Release\.NETFramework,Version=v4.5.AssemblyAttributes.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="PinDocumentWizard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,11 +116,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="SettingsPages\TextEditorTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -159,7 +131,7 @@
     <Compile Include="SettingsTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SettingsTab.Designer.cs">
+    <Compile Include="Settingstab.Designer.cs">
       <DependentUpon>SettingsTab.cs</DependentUpon>
     </Compile>
     <Compile Include="SidePanel.cs">
@@ -181,14 +153,11 @@
     <EmbeddedResource Include="BackgroundWorkerDialog.resx">
       <DependentUpon>BackgroundWorkerDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ExtraFuncPanels\Find.resx">
-      <DependentUpon>Find.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InitialDBLoad.resx">
-      <DependentUpon>InitialDBLoad.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="EncodingSelector.resx">
       <DependentUpon>EncodingSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtraFuncPanels\Find.resx">
+      <DependentUpon>Find.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -196,17 +165,55 @@
     <EmbeddedResource Include="HomescreenTab.resx">
       <DependentUpon>HomescreenTab.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InitialDBLoad.resx">
+      <DependentUpon>InitialDBLoad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LanguageSettings.resx">
       <DependentUpon>LanguageSettings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\TNotepad.About.resources" />
+    <EmbeddedResource Include="obj\Debug\TNotepad.BackgroundWorkerDialog.resources" />
+    <EmbeddedResource Include="obj\Debug\TNotepad.EncodingSelector.resources" />
+    <EmbeddedResource Include="obj\Debug\TNotepad.ExtraFuncPanels.Find.resources" />
+    <EmbeddedResource Include="obj\Debug\TNotepad.Form1.resources" />
+    <EmbeddedResource Include="obj\Debug\TNotepad.HomescreenTab.resources" />
+    <EmbeddedResource Include="obj\Debug\TNotepad.InitialDBLoad.resources" />
+    <EmbeddedResource Include="obj\Debug\TNotepad.LanguageSettings.resources" />
+    <EmbeddedResource Include="obj\Debug\TNotepad.PinDocumentWizard.resources" />
+    <EmbeddedResource Include="obj\Debug\TNotepad.Properties.Resources.resources" />
+    <EmbeddedResource Include="obj\Debug\TNotepad.SettingsPages.TextEditorTab.resources" />
+    <EmbeddedResource Include="obj\Debug\TNotepad.SettingsPages.UISettings.resources" />
+    <EmbeddedResource Include="obj\Debug\TNotepad.SettingsTab.resources" />
+    <EmbeddedResource Include="obj\Debug\TNotepad.SidePanel.resources" />
+    <EmbeddedResource Include="obj\Debug\TNotepad.TextEditingTab.resources" />
+    <EmbeddedResource Include="obj\Release\TNotepad.About.resources" />
+    <EmbeddedResource Include="obj\Release\TNotepad.BackgroundWorkerDialog.resources" />
+    <EmbeddedResource Include="obj\Release\TNotepad.EncodingSelector.resources" />
+    <EmbeddedResource Include="obj\Release\TNotepad.ExtraFuncPanels.Find.resources" />
+    <EmbeddedResource Include="obj\Release\TNotepad.Form1.resources" />
+    <EmbeddedResource Include="obj\Release\TNotepad.HomescreenTab.resources" />
+    <EmbeddedResource Include="obj\Release\TNotepad.InitialDBLoad.resources" />
+    <EmbeddedResource Include="obj\Release\TNotepad.LanguageSettings.resources" />
+    <EmbeddedResource Include="obj\Release\TNotepad.PinDocumentWizard.resources" />
+    <EmbeddedResource Include="obj\Release\TNotepad.Properties.Resources.resources" />
+    <EmbeddedResource Include="obj\Release\TNotepad.SettingsPages.TextEditorTab.resources" />
+    <EmbeddedResource Include="obj\Release\TNotepad.SettingsPages.UISettings.resources" />
+    <EmbeddedResource Include="obj\Release\TNotepad.SettingsTab.resources" />
+    <EmbeddedResource Include="obj\Release\TNotepad.SidePanel.resources" />
+    <EmbeddedResource Include="obj\Release\TNotepad.TextEditingTab.resources" />
     <EmbeddedResource Include="PinDocumentWizard.resx">
       <DependentUpon>PinDocumentWizard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <EmbeddedResource Include="SettingsPages\TextEditorTab.resx">
       <DependentUpon>TextEditorTab.cs</DependentUpon>
     </EmbeddedResource>
@@ -222,6 +229,16 @@
     <EmbeddedResource Include="TextEditingTab.resx">
       <DependentUpon>TextEditingTab.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\TNotepad.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\TNotepad.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\TNotepad.csprojAssemblyReference.cache" />
+    <None Include="obj\Release\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Release\TNotepad.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Release\TNotepad.csproj.GenerateResource.cache" />
+    <None Include="obj\Release\TNotepad.csprojAssemblyReference.cache" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -236,54 +253,28 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\TabbedNotpadIcon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\TabbedNotpadIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\NewFileMini.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Open FileMini.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\CloseTabMini.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SettingsMini.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="lang\portugues.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="lang\english.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="lang\english.txt" />
+    <Content Include="lang\portugues.txt" />
+    <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Properties.VersionAutoIncrementer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Properties.VersionAutoIncrementer.txt.dll" />
+    <Content Include="obj\Debug\TempPE\VersionAutoIncrement.cs.dll" />
+    <Content Include="obj\Debug\TempPE\VersionAutoIncrement.txt.dll" />
+    <Content Include="obj\Debug\TNotepad.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\TNotepad.exe" />
+    <Content Include="obj\Debug\TNotepad.pdb" />
+    <Content Include="obj\Release\TempPE\Properties.Resources.Designer.cs.dll" />
+    <Content Include="obj\Release\TNotepad.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Release\TNotepad.exe" />
+    <Content Include="obj\Release\TNotepad.pdb" />
+    <Content Include="Resources\CloseTabMini.png" />
+    <Content Include="Resources\NewFileMini.png" />
+    <Content Include="Resources\Open FileMini.png" />
+    <Content Include="Resources\SettingsMini.png" />
+    <Content Include="Resources\TabbedNotpadIcon.ico" />
+    <Content Include="Resources\TabbedNotpadIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v16.0\TextTemplating\Microsoft.TextTemplating.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -293,9 +293,27 @@ namespace TNotepad
             {
                 SaveButton.PerformClick();
 
-            }else if (e.KeyCode == Keys.S && (e.Control || e.Shift)) // Save As Shortcut
+            }else if (e.KeyCode == Keys.S && (e.Control && e.Shift)) // Save As Shortcut
             {
                 SaveAsButton.PerformClick();
+            }
+
+            // Open Shortcut
+            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.O)
+            {
+                OpenFileButton.PerformClick();
+            }
+
+            // New Page Shortcut
+            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.N)
+            {
+                NewPage.PerformClick();
+            }
+
+            // Close Shortcut
+            if (e.KeyCode == Keys.E && (e.Control && e.Shift))
+            {
+                RootControl.CloseSelectedTab();
             }
 
 
@@ -308,7 +326,15 @@ namespace TNotepad
 
         private void Updater_Tick(object sender, EventArgs e)
         {
-            LineInfoLabel.Text = $"{Lang.GetLangData("TextEditMain_LineNumber")} { TextEditingThing.GetLineFromCharIndex(TextEditingThing.SelectionStart) + 1 }/{TextEditingThing.Lines.Length}";
+            int DivisionWax = 0;
+
+            try
+            {
+                DivisionWax = TextEditingThing.GetLineFromCharIndex(TextEditingThing.SelectionStart) + 1 / TextEditingThing.Lines.Length;
+            }
+            catch (DivideByZeroException) { DivisionWax = 1; }
+
+            LineInfoLabel.Text = Lang.GetLangData("TextEditMain_LineNumber") + DivisionWax;
             
             int index = TextEditingThing.SelectionStart;
             int line = TextEditingThing.GetLineFromCharIndex(index);
@@ -317,7 +343,7 @@ namespace TNotepad
             int firstChar = TextEditingThing.GetFirstCharIndexFromLine(line);
             int column = index - firstChar;
 
-            ColumnInfoLabel.Text = $"{Lang.GetLangData("TextEditMain_ColumnSelected")} {column}";
+            ColumnInfoLabel.Text = Lang.GetLangData("TextEditMain_ColumnSelected") + column;
 
 
         }
@@ -326,7 +352,11 @@ namespace TNotepad
 
     public class ExtendedRichTextBox : RichTextBox
     {
+        public ExtendedRichTextBox()
+        {
+            this.AllowDrop = false;
 
+        }
 
     }
 

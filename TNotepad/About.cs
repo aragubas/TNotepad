@@ -58,7 +58,7 @@ namespace TNotepad
             LicenseView.Text = Properties.Resources.ApacheLicense;
 
             InfosLabel.Text += Lang.GetLangData("About_MainDesc");
-            InfosLabel.Text += $"\n\n{Lang.GetLangData("About_BuildNumber")} " + Utils.GetBuildNumber() + $"\n\n{Lang.GetLangData("About_BuildDate")} " + Utils.GetBuildDate();
+            InfosLabel.Text += "\n\n" + Lang.GetLangData("About_BuildNumber") + Utils.GetBuildNumber() + "\n\n" + Lang.GetLangData("About_BuildDate") + Utils.GetBuildDate();
         }
 
         private void BuildInfo_Button_Click(object sender, EventArgs e)

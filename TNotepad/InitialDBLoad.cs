@@ -26,7 +26,7 @@ namespace TNotepad
         private void BGWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             progressBar1.Value = e.ProgressPercentage;
-            label1.Text = $"Progress: {e.ProgressPercentage}%";
+            label1.Text = "Progress: " + e.ProgressPercentage + "%";
             label1.Refresh();
         }
 

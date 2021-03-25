@@ -17,7 +17,7 @@ namespace TNotepad
         {
             if (!LangData.ContainsKey(Key))
             {
-                throw new KeyNotFoundException($"Cannot find key {Key} at language {Properties.Settings.Default.CurrentLanguage}");
+                throw new KeyNotFoundException("Cannot find key '" + Key + "' at language '" + Properties.Settings.Default.CurrentLanguage + "'");
             }
 
             return LangData[Key];
@@ -69,7 +69,7 @@ namespace TNotepad
 
                 }
                 catch (ArgumentException) { Console.WriteLine("Duplicate entry found, ignoring..."); continue; }
-                Console.WriteLine($"LangLoader: Added ({Key}) with value ({Data})");
+                Console.WriteLine("LangLoader: Added '" + Key + "' with value '" + Data + "'");
 
                 if (bgWorker != null)
                 {

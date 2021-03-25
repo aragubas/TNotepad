@@ -19,10 +19,10 @@ namespace TNotepad.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Resources {
+    internal class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace TNotepad.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TNotepad.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace TNotepad.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -77,7 +77,7 @@ namespace TNotepad.Properties {
         ///
         ///      &quot; [rest of string was truncated]&quot;;.
         /// </summary>
-        public static string ApacheLicense {
+        internal static string ApacheLicense {
             get {
                 return ResourceManager.GetString("ApacheLicense", resourceCulture);
             }
@@ -86,7 +86,7 @@ namespace TNotepad.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap CloseTabMini {
+        internal static System.Drawing.Bitmap CloseTabMini {
             get {
                 object obj = ResourceManager.GetObject("CloseTabMini", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -96,7 +96,7 @@ namespace TNotepad.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        public static System.Drawing.Icon Icon {
+        internal static System.Drawing.Icon Icon {
             get {
                 object obj = ResourceManager.GetObject("Icon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -106,7 +106,7 @@ namespace TNotepad.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Logo {
+        internal static System.Drawing.Bitmap Logo {
             get {
                 object obj = ResourceManager.GetObject("Logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -116,7 +116,7 @@ namespace TNotepad.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap NewFileMini {
+        internal static System.Drawing.Bitmap NewFileMini {
             get {
                 object obj = ResourceManager.GetObject("NewFileMini", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -126,9 +126,9 @@ namespace TNotepad.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Open_FileMini {
+        internal static System.Drawing.Bitmap OpenFileMini {
             get {
-                object obj = ResourceManager.GetObject("Open FileMini", resourceCulture);
+                object obj = ResourceManager.GetObject("OpenFileMini", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,7 +136,7 @@ namespace TNotepad.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap SettingsMini {
+        internal static System.Drawing.Bitmap SettingsMini {
             get {
                 object obj = ResourceManager.GetObject("SettingsMini", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

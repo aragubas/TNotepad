@@ -186,7 +186,7 @@
             // 
             // OpenFileMiniButton
             // 
-            this.OpenFileMiniButton.BackgroundImage = global::TNotepad.Properties.Resources.Open_FileMini;
+            this.OpenFileMiniButton.BackgroundImage = global::TNotepad.Properties.Resources.OpenFileMini;
             this.OpenFileMiniButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.OpenFileMiniButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.OpenFileMiniButton.FlatAppearance.BorderSize = 0;

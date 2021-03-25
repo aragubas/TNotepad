@@ -35,13 +35,13 @@ namespace TNotepad
             var version = Assembly.GetExecutingAssembly().GetName().Version.Major + "." + Assembly.GetExecutingAssembly().GetName().Version.Minor;
 
 
-            return $"{version}";
+            return version.ToString();
         }
         public static string GetVersionWithBuild()
         {
             var version = Assembly.GetExecutingAssembly().GetName().Version;
 
-            return $"{version}";
+            return version.ToString();
         }
 
         public static string GetBuildDate()
@@ -50,7 +50,7 @@ namespace TNotepad
 
             var buildDate = BuildDate.AddDays(version.Build).AddSeconds(version.Revision * 2);
 
-            return $"{buildDate}";
+            return buildDate.ToString();
 
         }
 
@@ -58,7 +58,7 @@ namespace TNotepad
         {
             var version = Assembly.GetExecutingAssembly().GetName().Version.Revision;
 
-            return $"{version}";
+            return version.ToString();
 
         }
 

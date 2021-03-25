@@ -114,7 +114,7 @@ namespace TNotepad
             CreateHometab();
             AttachSidePanel();
 
-            Text = "TNotepad " + Utils.GetVersion();
+            Text = "TNotepad v" + Utils.GetVersion();
 
         }
 
