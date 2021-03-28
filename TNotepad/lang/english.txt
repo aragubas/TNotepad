@@ -77,7 +77,7 @@ PinnedDocuments_ListViewCollumsText_FilePath;File Path
 # About
 #
 About_WindowTitle;About TabNotepad
-About_MainDesc;Powered by Windows Forms made in C# using%nVisual Studio 2019 Community
+About_MainDesc;Powered by Windows Forms made in C# using%nVisual Studio 2013 Community
 About_BuildNumber;Build Number:
 About_BuildDate;Build Date:
 # -Message Box
