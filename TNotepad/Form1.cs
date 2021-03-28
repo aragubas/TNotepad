@@ -53,6 +53,8 @@ namespace TNotepad
             TabPage newTab = new TabPage();
             newTab.Controls.Add(new TextEditingTab(newTab, this));
             Tabs.TabPages.Add(newTab);
+            newTab.Tag = "TEXT_EDITOR";
+
 
             // Set selected tab to the newly created one
             Tabs.SelectedIndex = Tabs.TabPages.IndexOf(newTab);
@@ -173,8 +175,20 @@ namespace TNotepad
             {
                 CreateParams cp = base.CreateParams;
                 cp.Style |= 0x20000; // <--- use 0x20000
+                
+                // Add shadow
+                if (Properties.Settings.Default.WindowShadow)
+                {
+                    const int CS_DROPSHADOW = 0x20000;
+                    cp.ClassStyle |= CS_DROPSHADOW;
+
+                }
+
                 // Should fix flickering when resizing, but it mess up with tab header rendering
+                // Temporaly Disabled.
                 //cp.ExStyle = cp.ExStyle | 0x2000000;
+
+
                 return cp;
             }
         }
@@ -184,7 +198,13 @@ namespace TNotepad
             // Create new tab if there is no one left
             if (Tabs.SelectedTab.Tag != "PERSISTENT")
             {
+                // Clear controls before closing tab
+                foreach (Control wax in Tabs.TabPages[Tabs.SelectedIndex].Controls)
+                {
+                    wax.Dispose();
+                }
                 Tabs.TabPages.RemoveAt(Tabs.SelectedIndex);
+
             }
 
         }
@@ -215,9 +235,18 @@ namespace TNotepad
 
                 if (imageRect.IntersectsWith(new Rectangle(e.Location.X, e.Location.Y, 1, 1)))
                 {
+                    // Don't close tabs with tag PERSISTENT
                     if (Tabs.TabPages[i].Tag != "PERSISTENT")
                     {
+                        // Dispose all constrols present on that page
+                        foreach (Control wax in Tabs.TabPages[i].Controls)
+                        {
+                            wax.Dispose();
+                        }
+
+                        // Remove page
                         Tabs.TabPages.RemoveAt(i);
+
                     }
 
                     break;

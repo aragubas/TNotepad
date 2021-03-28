@@ -94,12 +94,14 @@ About_ExitButton;Exit
 Settings_UISettings_Hometab;Hometab
 Settings_UISettings_SaveWarning;Save Warning
 Settings_UISettings_LanguageSetting;Language Settings
+Settings_UISettings_WindowShadow;Window Shadow
 # -Labels
 Settings_UISettings_SaveWarningIntervalInfoLabel;Interval (in miliseconds)
 Settings_UISettings_LanguageSettingsInfoLabel;Click on the button below to change the current language.
 # -Checkbox
 Settings_UISettings_SaveWarningCheckbox;Show the time a document has been not saved%non statusbar
 Settings_UISettings_HometabAsDefaultCheckbox;Use hometab as default tab
+Settings_UISettings_WindowShadowCheckbox;Draw a shadow behind the main window
 # -Buttons
 Settings_UISettings_OpenLanguageSettingsButton;Change Language
 

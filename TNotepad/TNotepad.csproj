@@ -253,8 +253,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="lang\english.txt" />
-    <Content Include="lang\portugues.txt" />
+    <Content Include="lang\english.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lang\portugues.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
     <Content Include="obj\Debug\TempPE\Properties.VersionAutoIncrementer.cs.dll" />
     <Content Include="obj\Debug\TempPE\Properties.VersionAutoIncrementer.txt.dll" />

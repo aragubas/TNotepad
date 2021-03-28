@@ -37,10 +37,13 @@
             this.LanguageSettingGroupBox = new System.Windows.Forms.GroupBox();
             this.OpenLanguageSettingsButton = new System.Windows.Forms.Button();
             this.LanguageSettingsInfoLabel = new System.Windows.Forms.Label();
+            this.WindowShadowGroupBox = new System.Windows.Forms.GroupBox();
+            this.WindowShadowCheckBox = new System.Windows.Forms.CheckBox();
             this.SaveWarningGroupBox.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.LanguageSettingGroupBox.SuspendLayout();
+            this.WindowShadowGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // SaveWarningGroupBox
@@ -102,6 +105,7 @@
             // 
             this.flowLayoutPanel1.Controls.Add(this.SaveWarningGroupBox);
             this.flowLayoutPanel1.Controls.Add(this.LanguageSettingGroupBox);
+            this.flowLayoutPanel1.Controls.Add(this.WindowShadowGroupBox);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -145,6 +149,27 @@
             this.LanguageSettingsInfoLabel.Text = "Language Settings is at another window.";
             this.LanguageSettingsInfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // WindowShadowGroupBox
+            // 
+            this.WindowShadowGroupBox.Controls.Add(this.WindowShadowCheckBox);
+            this.WindowShadowGroupBox.ForeColor = System.Drawing.Color.White;
+            this.WindowShadowGroupBox.Location = new System.Drawing.Point(3, 220);
+            this.WindowShadowGroupBox.Name = "WindowShadowGroupBox";
+            this.WindowShadowGroupBox.Size = new System.Drawing.Size(297, 114);
+            this.WindowShadowGroupBox.TabIndex = 4;
+            this.WindowShadowGroupBox.TabStop = false;
+            this.WindowShadowGroupBox.Text = "Window Shadow";
+            // 
+            // WindowShadowCheckBox
+            // 
+            this.WindowShadowCheckBox.Location = new System.Drawing.Point(47, 38);
+            this.WindowShadowCheckBox.Name = "WindowShadowCheckBox";
+            this.WindowShadowCheckBox.Size = new System.Drawing.Size(202, 39);
+            this.WindowShadowCheckBox.TabIndex = 5;
+            this.WindowShadowCheckBox.Text = "Enabled";
+            this.WindowShadowCheckBox.UseVisualStyleBackColor = true;
+            this.WindowShadowCheckBox.CheckedChanged += new System.EventHandler(this.WindowShadowCheckButton_CheckedChanged);
+            // 
             // UISettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -162,6 +187,7 @@
             this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.LanguageSettingGroupBox.ResumeLayout(false);
+            this.WindowShadowGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -177,5 +203,7 @@
         private System.Windows.Forms.Button OpenLanguageSettingsButton;
         private System.Windows.Forms.Label LanguageSettingsInfoLabel;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.GroupBox WindowShadowGroupBox;
+        private System.Windows.Forms.CheckBox WindowShadowCheckBox;
     }
 }

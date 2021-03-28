@@ -129,5 +129,17 @@ namespace TNotepad.Properties {
                 this["WebserviceURL"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool WindowShadow {
+            get {
+                return ((bool)(this["WindowShadow"]));
+            }
+            set {
+                this["WindowShadow"] = value;
+            }
+        }
     }
 }

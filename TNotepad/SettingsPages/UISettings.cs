@@ -43,6 +43,7 @@ namespace TNotepad.SettingsPages
             // Group Box
             SaveWarningGroupBox.Text = Lang.GetLangData("Settings_UISettings_SaveWarning");
             LanguageSettingGroupBox.Text = Lang.GetLangData("Settings_UISettings_LanguageSetting");
+            WindowShadowGroupBox.Text = Lang.GetLangData("Settings_UISettings_WindowShadow");
 
             // Labels
             SaveWarningIntervalInfo.Text = Lang.GetLangData("Settings_UISettings_SaveWarningIntervalInfoLabel");
@@ -50,6 +51,7 @@ namespace TNotepad.SettingsPages
 
             // Checkboxes
             SaveWarningCheckBox.Text = Lang.GetLangData("Settings_UISettings_SaveWarningCheckbox");
+            WindowShadowCheckBox.Text = Lang.GetLangData("Settings_UISettings_WindowShadowCheckbox");
 
             // Buttons
             OpenLanguageSettingsButton.Text = Lang.GetLangData("Settings_UISettings_OpenLanguageSettingsButton");
@@ -68,12 +70,14 @@ namespace TNotepad.SettingsPages
         {
             SaveWarningTextBox.Text = Convert.ToString(Properties.Settings.Default.UnsavedTimeInterval);
             SaveWarningCheckBox.Checked = Properties.Settings.Default.UnsavedTime;
+            WindowShadowCheckBox.Checked = Properties.Settings.Default.WindowShadow;
 
         }
 
         public void SaveSettings()
         {
             Properties.Settings.Default.UnsavedTime = SaveWarningCheckBox.Checked;
+            Properties.Settings.Default.WindowShadow = WindowShadowCheckBox.Checked;
 
             // Unsaved Time Interval
             try
@@ -100,5 +104,11 @@ namespace TNotepad.SettingsPages
             LanguageSettings languageSettings = new LanguageSettings();
             languageSettings.ShowDialog();
         }
+
+        private void WindowShadowCheckButton_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

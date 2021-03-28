@@ -29,5 +29,8 @@
     <Setting Name="WebserviceURL" Type="System.String" Scope="User">
       <Value Profile="(Default)">http://dpaulootavio5.000webhostapp.com/Taiyou/taiyou_app/tnotepad/</Value>
     </Setting>
+    <Setting Name="WindowShadow" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
