@@ -26,6 +26,7 @@ namespace TNotepad
         public Form1()
         {
             InitializeComponent();
+
         }
 
         public void CreateHometab()
@@ -115,7 +116,67 @@ namespace TNotepad
             AttachSidePanel();
 
             Text = "TNotepad v" + Utils.GetVersion();
+            FormTitlebar.FormHandle = this.Handle;
+            this.ResizeRedraw = true;
 
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            const int RESIZE_HANDLE_SIZE = 50;
+
+            switch (m.Msg)
+            {
+                case 0x0084/*NCHITTEST*/ :
+                    base.WndProc(ref m);
+
+                    if ((int)m.Result == 0x01/*HTCLIENT*/)
+                    {
+                        Point screenPoint = new Point(m.LParam.ToInt32());
+                        Point clientPoint = this.PointToClient(screenPoint);
+                        if (clientPoint.Y <= RESIZE_HANDLE_SIZE)
+                        {
+                            if (clientPoint.X <= RESIZE_HANDLE_SIZE)
+                                m.Result = (IntPtr)13/*HTTOPLEFT*/ ;
+                            else if (clientPoint.X < (this.Size.Width - RESIZE_HANDLE_SIZE))
+                                m.Result = (IntPtr)12/*HTTOP*/ ;
+                            else
+                                m.Result = (IntPtr)14/*HTTOPRIGHT*/ ;
+                        }
+                        else if (clientPoint.Y <= (this.Size.Height - RESIZE_HANDLE_SIZE))
+                        {
+                            if (clientPoint.X <= RESIZE_HANDLE_SIZE)
+                                m.Result = (IntPtr)10/*HTLEFT*/ ;
+                            else if (clientPoint.X < (this.Size.Width - RESIZE_HANDLE_SIZE))
+                                m.Result = (IntPtr)2/*HTCAPTION*/ ;
+                            else
+                                m.Result = (IntPtr)11/*HTRIGHT*/ ;
+                        }
+                        else
+                        {
+                            if (clientPoint.X <= RESIZE_HANDLE_SIZE)
+                                m.Result = (IntPtr)16/*HTBOTTOMLEFT*/ ;
+                            else if (clientPoint.X < (this.Size.Width - RESIZE_HANDLE_SIZE))
+                                m.Result = (IntPtr)15/*HTBOTTOM*/ ;
+                            else
+                                m.Result = (IntPtr)17/*HTBOTTOMRIGHT*/ ;
+                        }
+                    }
+                    return;
+            }
+            base.WndProc(ref m);
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.Style |= 0x20000; // <--- use 0x20000
+                // Should fix flickering when resizing, but it mess up with tab header rendering
+                //cp.ExStyle = cp.ExStyle | 0x2000000;
+                return cp;
+            }
         }
 
         public void CloseSelectedTab()
@@ -140,14 +201,6 @@ namespace TNotepad
 
         private void Tabs_DrawItem(object sender, DrawItemEventArgs e)
         {
-            //var tabPage = Tabs.TabPages[e.Index];
-            var tabRect = Tabs.GetTabRect(e.Index);
-            tabRect.Inflate(-2, -2);
-
-            var closeImage = new Bitmap(Properties.Resources.CloseTabMini);
-            e.Graphics.DrawImage(closeImage,
-                (tabRect.Right - 8),
-                tabRect.Top + (tabRect.Height - 8) / 2, 8, 8);
 
         }
 
@@ -177,6 +230,48 @@ namespace TNotepad
             }
 
         }
+
+        private void FormCloseButton_Click(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.SaveChangesWhenExiting)
+            {
+                Properties.Settings.Default.Save();
+            }
+
+            System.Threading.Thread.CurrentThread.Abort();
+            Environment.Exit(0);
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+                FormMaximizeButton.Text = "\\/";
+
+                return;
+            }
+            this.WindowState = FormWindowState.Normal;
+                FormMaximizeButton.Text = "/\\";
+
+        }
+
+    }
+    
+
+    class MoveWindowLabel : Label
+    {
+        public IntPtr FormHandle;
+
+        protected override void OnMouseDown(MouseEventArgs e)
+        {
+        base.OnMouseDown(e);
+        this.Capture = false;
+        Message msg = Message.Create(FormHandle, 0XA1, new IntPtr(2), IntPtr.Zero);
+        WndProc(ref msg);
+        }
+
     }
 
 

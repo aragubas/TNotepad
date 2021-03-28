@@ -59,8 +59,7 @@ namespace TNotepad
 
             // Set Default Encoding
             SetEncoding(Utils.EncodingNameToEncodingObject());
-
-
+        
         }
 
         public void LoadLangStrings()
