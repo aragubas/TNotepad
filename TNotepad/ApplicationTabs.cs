@@ -31,6 +31,8 @@ namespace TNotepad
             //if (!DesignMode) Multiline = true;
             this.DrawMode = TabDrawMode.OwnerDrawFixed;
             this.Appearance = TabAppearance.Buttons;
+
+           
         }
 
         private const int TCM_ADJUSTRECT = 0x1328;
@@ -54,8 +56,12 @@ namespace TNotepad
             Brush bshFore;
 
             // Set SmoothingMode
-            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            if (Properties.Settings.Default.SmoothVisualElements)
+            {
+                e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+
+            }
 
             if (e.Index == this.SelectedIndex) // Selected Tab
             {
@@ -83,11 +89,15 @@ namespace TNotepad
 
             e.Graphics.DrawString(tabName, fntTab, bshFore, recTab, sftTab);
 
-            // Draw Red Closee Circle
+            // Draw Red Close Circle
+            var CloseButtonRect = new Rectangle(recTab.Right - 13, recTab.Top + (recTab.Height - 12) / 2, 10, 10);
             if (TabPages[e.Index].Tag != "PERSISTENT")
             {
-                var imageRect = new Rectangle(recTab.Right - 13, recTab.Top + (recTab.Height - 12) / 2, 10, 10);
-                e.Graphics.FillEllipse(Brushes.Red, imageRect);
+                if (SelectedIndex == e.Index)
+                {
+                    e.Graphics.FillEllipse(Brushes.Red, new Rectangle(CloseButtonRect.X - 1, CloseButtonRect.Y - 1, CloseButtonRect.Width + 2, CloseButtonRect.Height + 2));
+                }
+                e.Graphics.DrawImage(Properties.Resources.TabClose, new Point(CloseButtonRect.X, CloseButtonRect.Y));
 
                 // Add spacing to title text
                 if (!TabPages[e.Index].Text.EndsWith("   "))
@@ -120,7 +130,7 @@ namespace TNotepad
 
         protected override void WndProc(ref Message m)
         {
-            // Hide all borders
+            // Hide undesirable borders
             if (m.Msg == TCM_ADJUSTRECT)
             {
                 RECT rect = (RECT)(m.GetLParam(typeof(RECT)));

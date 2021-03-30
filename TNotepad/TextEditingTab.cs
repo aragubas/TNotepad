@@ -54,12 +54,17 @@ namespace TNotepad
             LastSavedTimer.Enabled = Properties.Settings.Default.UnsavedTime;
             LastSavedTimer.Interval = Properties.Settings.Default.UnsavedTimeInterval;
             
-            TextEditingThing.WordWrap = Properties.Settings.Default.WordWrapEnabled;
             LoadLangStrings();
 
             // Set Default Encoding
             SetEncoding(Utils.EncodingNameToEncodingObject());
-        
+            
+        }
+
+        private void SetTextEditorProperties()
+        {
+            TextEditingThing.WordWrap = Properties.Settings.Default.WordWrapEnabled;
+
         }
 
         public void LoadLangStrings()

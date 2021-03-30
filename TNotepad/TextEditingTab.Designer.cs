@@ -272,9 +272,11 @@
             this.TextEditingThing.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TextEditingThing.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextEditingThing.ForeColor = System.Drawing.Color.White;
+            this.TextEditingThing.HideSelection = false;
             this.TextEditingThing.Location = new System.Drawing.Point(0, 60);
             this.TextEditingThing.Name = "TextEditingThing";
             this.TextEditingThing.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
+            this.TextEditingThing.ShowSelectionMargin = true;
             this.TextEditingThing.Size = new System.Drawing.Size(710, 203);
             this.TextEditingThing.TabIndex = 1;
             this.TextEditingThing.Text = "";

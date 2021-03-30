@@ -17,6 +17,8 @@
 
 using System;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace TNotepad
@@ -26,8 +28,12 @@ namespace TNotepad
         public Form1()
         {
             InitializeComponent();
-
         }
+
+        public bool ResizeMode = false;
+        public bool DisableResizeMode = false;
+        bool ScreenWaxTaken = false;
+        Bitmap Wax;
 
         public void CreateHometab()
         {
@@ -120,6 +126,7 @@ namespace TNotepad
             Text = "TNotepad v" + Utils.GetVersion();
             FormTitlebar.FormHandle = this.Handle;
             this.ResizeRedraw = true;
+            FormTitlebar.RootControlReference = this;
 
         }
 
@@ -267,9 +274,7 @@ namespace TNotepad
                 Properties.Settings.Default.Save();
             }
 
-            System.Threading.Thread.CurrentThread.Abort();
             Environment.Exit(0);
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -286,19 +291,94 @@ namespace TNotepad
 
         }
 
+        private void Form1_ResizeBegin(object sender, EventArgs e)
+        {
+            if (DisableResizeMode) { return; }
+            TakeScreenWax();
+
+            ResizeMode = true;
+
+            // Hide controls
+            panel1.Visible = false;
+            SidePanelView.Visible = false;
+            TitlebarPanel.Visible = false;
+
+            this.SuspendLayout();
+        }
+
+        private void Form1_ResizeEnd(object sender, EventArgs e)
+        {
+            if (DisableResizeMode) { return; }
+            this.ResumeLayout();
+            
+            // ReShow hidden controls
+            panel1.Visible = true;
+            SidePanelView.Visible = true;
+            TitlebarPanel.Visible = true;
+            
+            ResizeMode = false;
+            ScreenWaxTaken = false;
+        }
+
+        private void TakeScreenWax()
+        {
+            if (!ScreenWaxTaken)
+            {
+                ScreenWaxTaken = true;
+                Rectangle bounds = this.Bounds;
+                using (Bitmap bitmap = new Bitmap(bounds.Width, bounds.Height))
+                {
+                    using (Graphics g = Graphics.FromImage(bitmap))
+                    {
+                        g.CopyFromScreen(new Point(bounds.Left, bounds.Top), Point.Empty, bounds.Size);
+                    }
+                    Wax = new Bitmap(bitmap);
+                }
+
+            }
+
+        }
+
+        private void DrawStrechedWindow(PaintEventArgs e)
+        {
+            if (ResizeMode)
+            {
+
+                e.Graphics.DrawImage(Wax, 0, 0, ClientRectangle.Width, ClientRectangle.Height);
+            }
+
+        }  
+
+        private void FormTitlebar_MouseLeave(object sender, EventArgs e)
+        {
+            DisableResizeMode = false;
+            Console.WriteLine("Resize effect re-enabled");
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            if (DisableResizeMode || !ScreenWaxTaken || !Properties.Settings.Default.StrechWindowContentsWhenResizing) { return; }
+
+            e.Graphics.DrawImage(Wax, 0, 0, Width, Height);
+
+        }
+
     }
     
 
     class MoveWindowLabel : Label
     {
         public IntPtr FormHandle;
+        public Form1 RootControlReference;
 
         protected override void OnMouseDown(MouseEventArgs e)
         {
-        base.OnMouseDown(e);
-        this.Capture = false;
-        Message msg = Message.Create(FormHandle, 0XA1, new IntPtr(2), IntPtr.Zero);
-        WndProc(ref msg);
+            base.OnMouseDown(e);
+            RootControlReference.DisableResizeMode = true;
+            Console.WriteLine("Resize effect disable because window is being moved.");
+            this.Capture = false;
+            Message msg = Message.Create(FormHandle, 0XA1, new IntPtr(2), IntPtr.Zero);
+            WndProc(ref msg);
         }
 
     }

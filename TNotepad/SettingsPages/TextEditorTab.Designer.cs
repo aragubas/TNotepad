@@ -31,8 +31,7 @@ namespace TNotepad.SettingsPages
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.WordWrapGroupBox = new System.Windows.Forms.GroupBox();
-            this.WordWrapToggleButton = new System.Windows.Forms.Button();
-            this.WordWrap_Enable = new System.Windows.Forms.RadioButton();
+            this.WordWrapCheckbox = new System.Windows.Forms.CheckBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.WordWrapGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -49,41 +48,24 @@ namespace TNotepad.SettingsPages
             // 
             // WordWrapGroupBox
             // 
-            this.WordWrapGroupBox.Controls.Add(this.WordWrapToggleButton);
-            this.WordWrapGroupBox.Controls.Add(this.WordWrap_Enable);
+            this.WordWrapGroupBox.Controls.Add(this.WordWrapCheckbox);
             this.WordWrapGroupBox.ForeColor = System.Drawing.Color.White;
             this.WordWrapGroupBox.Location = new System.Drawing.Point(3, 3);
             this.WordWrapGroupBox.Name = "WordWrapGroupBox";
-            this.WordWrapGroupBox.Size = new System.Drawing.Size(155, 67);
+            this.WordWrapGroupBox.Size = new System.Drawing.Size(207, 56);
             this.WordWrapGroupBox.TabIndex = 1;
             this.WordWrapGroupBox.TabStop = false;
             this.WordWrapGroupBox.Text = "Word Wrap";
             // 
-            // WordWrapToggleButton
+            // WordWrapCheckbox
             // 
-            this.WordWrapToggleButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.WordWrapToggleButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.WordWrapToggleButton.FlatAppearance.BorderSize = 0;
-            this.WordWrapToggleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.WordWrapToggleButton.Location = new System.Drawing.Point(3, 41);
-            this.WordWrapToggleButton.Name = "WordWrapToggleButton";
-            this.WordWrapToggleButton.Size = new System.Drawing.Size(149, 23);
-            this.WordWrapToggleButton.TabIndex = 2;
-            this.WordWrapToggleButton.Text = "Toggle";
-            this.WordWrapToggleButton.UseVisualStyleBackColor = false;
-            this.WordWrapToggleButton.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // WordWrap_Enable
-            // 
-            this.WordWrap_Enable.AutoCheck = false;
-            this.WordWrap_Enable.Dock = System.Windows.Forms.DockStyle.Top;
-            this.WordWrap_Enable.Enabled = false;
-            this.WordWrap_Enable.Location = new System.Drawing.Point(3, 16);
-            this.WordWrap_Enable.Name = "WordWrap_Enable";
-            this.WordWrap_Enable.Size = new System.Drawing.Size(149, 25);
-            this.WordWrap_Enable.TabIndex = 2;
-            this.WordWrap_Enable.Text = "Enabled";
-            this.WordWrap_Enable.UseVisualStyleBackColor = true;
+            this.WordWrapCheckbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WordWrapCheckbox.Location = new System.Drawing.Point(3, 16);
+            this.WordWrapCheckbox.Name = "WordWrapCheckbox";
+            this.WordWrapCheckbox.Size = new System.Drawing.Size(201, 37);
+            this.WordWrapCheckbox.TabIndex = 0;
+            this.WordWrapCheckbox.Text = "Enabled";
+            this.WordWrapCheckbox.UseVisualStyleBackColor = true;
             // 
             // TextEditorTab
             // 
@@ -104,7 +86,6 @@ namespace TNotepad.SettingsPages
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.GroupBox WordWrapGroupBox;
-        private System.Windows.Forms.RadioButton WordWrap_Enable;
-        private System.Windows.Forms.Button WordWrapToggleButton;
+        private System.Windows.Forms.CheckBox WordWrapCheckbox;
     }
 }

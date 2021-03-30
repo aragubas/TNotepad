@@ -44,6 +44,7 @@ namespace TNotepad.SettingsPages
             SaveWarningGroupBox.Text = Lang.GetLangData("Settings_UISettings_SaveWarning");
             LanguageSettingGroupBox.Text = Lang.GetLangData("Settings_UISettings_LanguageSetting");
             WindowShadowGroupBox.Text = Lang.GetLangData("Settings_UISettings_WindowShadow");
+            SmoothVisualElementsGroupBox.Text = Lang.GetLangData("Settings_UISettings_SmoothVisualElementsGroupbox");
 
             // Labels
             SaveWarningIntervalInfo.Text = Lang.GetLangData("Settings_UISettings_SaveWarningIntervalInfoLabel");
@@ -52,6 +53,7 @@ namespace TNotepad.SettingsPages
             // Checkboxes
             SaveWarningCheckBox.Text = Lang.GetLangData("Settings_UISettings_SaveWarningCheckbox");
             WindowShadowCheckBox.Text = Lang.GetLangData("Settings_UISettings_WindowShadowCheckbox");
+            SmoothVisualElementsCheckbox.Text = Lang.GetLangData("Settings_UISettings_SmoothVisualElementsCheckbox");
 
             // Buttons
             OpenLanguageSettingsButton.Text = Lang.GetLangData("Settings_UISettings_OpenLanguageSettingsButton");
@@ -71,6 +73,8 @@ namespace TNotepad.SettingsPages
             SaveWarningTextBox.Text = Convert.ToString(Properties.Settings.Default.UnsavedTimeInterval);
             SaveWarningCheckBox.Checked = Properties.Settings.Default.UnsavedTime;
             WindowShadowCheckBox.Checked = Properties.Settings.Default.WindowShadow;
+            SmoothVisualElementsCheckbox.Checked = Properties.Settings.Default.SmoothVisualElements;
+
 
         }
 
@@ -78,6 +82,7 @@ namespace TNotepad.SettingsPages
         {
             Properties.Settings.Default.UnsavedTime = SaveWarningCheckBox.Checked;
             Properties.Settings.Default.WindowShadow = WindowShadowCheckBox.Checked;
+            Properties.Settings.Default.SmoothVisualElements = SmoothVisualElementsCheckbox.Checked;
 
             // Unsaved Time Interval
             try

@@ -141,5 +141,29 @@ namespace TNotepad.Properties {
                 this["WindowShadow"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SmoothVisualElements {
+            get {
+                return ((bool)(this["SmoothVisualElements"]));
+            }
+            set {
+                this["SmoothVisualElements"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool StrechWindowContentsWhenResizing {
+            get {
+                return ((bool)(this["StrechWindowContentsWhenResizing"]));
+            }
+            set {
+                this["StrechWindowContentsWhenResizing"] = value;
+            }
+        }
     }
 }

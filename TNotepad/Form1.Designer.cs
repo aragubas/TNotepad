@@ -33,9 +33,9 @@
             this.TitlebarPanel = new System.Windows.Forms.Panel();
             this.FormMaximizeButton = new System.Windows.Forms.Button();
             this.FormCloseButton = new System.Windows.Forms.Button();
+            this.FormTitlebar = new TNotepad.MoveWindowLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Tabs = new TNotepad.ApplicationTabs();
-            this.FormTitlebar = new TNotepad.MoveWindowLabel();
             this.TitlebarPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +93,19 @@
             this.FormCloseButton.UseVisualStyleBackColor = false;
             this.FormCloseButton.Click += new System.EventHandler(this.FormCloseButton_Click);
             // 
+            // FormTitlebar
+            // 
+            this.FormTitlebar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FormTitlebar.Font = new System.Drawing.Font("Arial", 10F);
+            this.FormTitlebar.ForeColor = System.Drawing.Color.White;
+            this.FormTitlebar.Location = new System.Drawing.Point(0, 0);
+            this.FormTitlebar.Name = "FormTitlebar";
+            this.FormTitlebar.Size = new System.Drawing.Size(817, 25);
+            this.FormTitlebar.TabIndex = 2;
+            this.FormTitlebar.Text = "TabNotepad";
+            this.FormTitlebar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FormTitlebar.MouseLeave += new System.EventHandler(this.FormTitlebar_MouseLeave);
+            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -119,18 +132,6 @@
             this.Tabs.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.Tabs_DrawItem);
             this.Tabs.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Tabs_MouseUp);
             // 
-            // FormTitlebar
-            // 
-            this.FormTitlebar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FormTitlebar.Font = new System.Drawing.Font("Arial", 10F);
-            this.FormTitlebar.ForeColor = System.Drawing.Color.White;
-            this.FormTitlebar.Location = new System.Drawing.Point(0, 0);
-            this.FormTitlebar.Name = "FormTitlebar";
-            this.FormTitlebar.Size = new System.Drawing.Size(817, 25);
-            this.FormTitlebar.TabIndex = 2;
-            this.FormTitlebar.Text = "TabNotepad";
-            this.FormTitlebar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Form1
             // 
             this.AllowDrop = true;
@@ -152,6 +153,9 @@
             this.Text = "TabNotepad";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.ResizeBegin += new System.EventHandler(this.Form1_ResizeBegin);
+            this.ResizeEnd += new System.EventHandler(this.Form1_ResizeEnd);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.TitlebarPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

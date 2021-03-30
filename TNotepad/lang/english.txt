@@ -95,6 +95,7 @@ Settings_UISettings_Hometab;Hometab
 Settings_UISettings_SaveWarning;Save Warning
 Settings_UISettings_LanguageSetting;Language Settings
 Settings_UISettings_WindowShadow;Window Shadow
+Settings_UISettings_SmoothVisualElementsGroupbox;Smooth visual elements
 # -Labels
 Settings_UISettings_SaveWarningIntervalInfoLabel;Interval (in miliseconds)
 Settings_UISettings_LanguageSettingsInfoLabel;Click on the button below to change the current language.
@@ -102,6 +103,7 @@ Settings_UISettings_LanguageSettingsInfoLabel;Click on the button below to chang
 Settings_UISettings_SaveWarningCheckbox;Show the time a document has been not saved%non statusbar
 Settings_UISettings_HometabAsDefaultCheckbox;Use hometab as default tab
 Settings_UISettings_WindowShadowCheckbox;Draw a shadow behind the main window
+Settings_UISettings_SmoothVisualElementsCheckbox;Appy anti-aliasing to certain custom-rendered elements.
 # -Buttons
 Settings_UISettings_OpenLanguageSettingsButton;Change Language
 
@@ -109,8 +111,7 @@ Settings_UISettings_OpenLanguageSettingsButton;Change Language
 # Settings -> Text Editor
 #
 Settings_TextEditor_WordWrapGroupBoxTitle;Word Wrap
-Settings_TextEditor_WordWrapEnabled;Enabled
-Settings_TextEditor_WordWrapToggleButton;Toggle
+Settings_TextEditor_WordWrapCheckbox;Enabled
 
 #
 # Encoding Selector
