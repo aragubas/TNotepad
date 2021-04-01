@@ -28,24 +28,55 @@ namespace TNotepad
     {
         public ApplicationTabs()
         {
-            //if (!DesignMode) Multiline = true;
             this.DrawMode = TabDrawMode.OwnerDrawFixed;
-            this.Appearance = TabAppearance.Buttons;
 
-           
+            this.MouseUp += ApplicationTabs_MouseUp;
+
+        }
+
+        void ApplicationTabs_MouseUp(object sender, MouseEventArgs e)
+        {
+            // Process MouseDown event only till (tabControl.TabPages.Count - 1) excluding the last TabPage
+            for (var i = 0; i < TabPages.Count; i++)
+            {
+                var tabRect = GetTabRect(i);
+                tabRect.Inflate(-2, -2);
+                var imageRect = new Rectangle(tabRect.Right - 15, tabRect.Top + (tabRect.Height - 16) / 2, 10, 10);
+
+                if (imageRect.IntersectsWith(new Rectangle(e.Location.X, e.Location.Y, 1, 1)))
+                {
+                    // Don't close tabs with tag PERSISTENT
+                    if (TabPages[i].Tag != "PERSISTENT")
+                    {
+                        // Dispose all constrols present on that page
+                        foreach (Control wax in TabPages[i].Controls)
+                        {
+                            wax.Dispose();
+                        }
+
+                        // Remove page
+                        TabPages.RemoveAt(i);
+
+                    }
+
+                    break;
+                }
+            }
+
+            if (TabPages.Count == 0)
+            {
+                CreateHometab();
+            }
+
+
         }
 
         private const int TCM_ADJUSTRECT = 0x1328;
 
-        protected override void OnPaintBackground(PaintEventArgs pevent)
+        public virtual void CreateHometab()
         {
 
-            base.OnPaintBackground(pevent);
-            pevent.Graphics.FillRectangle(Brushes.Black, new Rectangle(0, 0, Width, Height));
-
-
         }
-
 
         protected override void OnDrawItem(DrawItemEventArgs e)
         {
@@ -90,7 +121,7 @@ namespace TNotepad
             e.Graphics.DrawString(tabName, fntTab, bshFore, recTab, sftTab);
 
             // Draw Red Close Circle
-            var CloseButtonRect = new Rectangle(recTab.Right - 13, recTab.Top + (recTab.Height - 12) / 2, 10, 10);
+            var CloseButtonRect = new Rectangle(recTab.Right - 15, recTab.Top + (recTab.Height - 16) / 2, 10, 10);
             if (TabPages[e.Index].Tag != "PERSISTENT")
             {
                 if (SelectedIndex == e.Index)

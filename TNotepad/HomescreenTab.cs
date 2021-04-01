@@ -29,10 +29,10 @@ namespace TNotepad
 {
     public partial class HomescreenTab : UserControl
     {
-        Form1 RootControl;
+        MainForm RootControl;
 
 
-        public HomescreenTab(Form1 pRootControl)
+        public HomescreenTab(MainForm pRootControl)
         {
             InitializeComponent();
 

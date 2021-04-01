@@ -54,6 +54,19 @@ namespace TNotepad
 
         }
 
+        public static void CreateMainForm()
+        {
+            TabNotepadForm ParentForm = new TabNotepadForm();
+            MainForm ParentControls = new MainForm(ParentForm);
+
+            // Add controls to the form
+            ParentForm.FormControls.Controls.Add(ParentControls);
+
+            ParentForm.Text = "TNotepad v" + GetVersion();
+            ParentForm.Show();
+
+        }
+
         public static string GetBuildNumber()
         {
             var version = Assembly.GetExecutingAssembly().GetName().Version.Revision;

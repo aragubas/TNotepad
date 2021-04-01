@@ -32,14 +32,14 @@ namespace TNotepad
     public partial class TextEditingTab : UserControl
     {
         TabPage AssociatedTabPage;
-        Form1 RootControl;
+        MainForm RootControl;
         DateTime dateTime;
         int LastUnsavedTime = 0;
         public string LastFileName = "";
         public bool DontSetUntitled = false;
         System.Text.Encoding CurrentEncoding;
 
-        public TextEditingTab(TabPage pAssociatedTabPage, Form1 pRootControl)
+        public TextEditingTab(TabPage pAssociatedTabPage, MainForm pRootControl)
         {
             InitializeComponent();
             AssociatedTabPage = pAssociatedTabPage;

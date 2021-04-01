@@ -30,10 +30,10 @@ namespace TNotepad
     public partial class SettingsTab : UserControl
     {
         TabPage AssociatedTabPage;
-        Form1 RootControl;
+        TabNotepadForm RootControl;
         dynamic SelectedTab;
 
-        public SettingsTab(Form1 pRootControl, TabPage pAssociatedTabPage)
+        public SettingsTab(TabNotepadForm pRootControl, TabPage pAssociatedTabPage)
         {
             InitializeComponent();
 

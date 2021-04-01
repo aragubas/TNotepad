@@ -41,12 +41,15 @@
             this.WindowShadowCheckBox = new System.Windows.Forms.CheckBox();
             this.SmoothVisualElementsGroupBox = new System.Windows.Forms.GroupBox();
             this.SmoothVisualElementsCheckbox = new System.Windows.Forms.CheckBox();
+            this.StretchResizeGroupbox = new System.Windows.Forms.GroupBox();
+            this.StretchResizeCheckbox = new System.Windows.Forms.CheckBox();
             this.SaveWarningGroupBox.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.LanguageSettingGroupBox.SuspendLayout();
             this.WindowShadowGroupBox.SuspendLayout();
             this.SmoothVisualElementsGroupBox.SuspendLayout();
+            this.StretchResizeGroupbox.SuspendLayout();
             this.SuspendLayout();
             // 
             // SaveWarningGroupBox
@@ -112,6 +115,7 @@
             this.flowLayoutPanel1.Controls.Add(this.LanguageSettingGroupBox);
             this.flowLayoutPanel1.Controls.Add(this.WindowShadowGroupBox);
             this.flowLayoutPanel1.Controls.Add(this.SmoothVisualElementsGroupBox);
+            this.flowLayoutPanel1.Controls.Add(this.StretchResizeGroupbox);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -201,6 +205,29 @@
             this.SmoothVisualElementsCheckbox.Text = "Apply antialiasing to certain custom-rendered elements";
             this.SmoothVisualElementsCheckbox.UseVisualStyleBackColor = true;
             // 
+            // StretchResizeGroupbox
+            // 
+            this.StretchResizeGroupbox.AutoSize = true;
+            this.StretchResizeGroupbox.Controls.Add(this.StretchResizeCheckbox);
+            this.StretchResizeGroupbox.ForeColor = System.Drawing.Color.White;
+            this.StretchResizeGroupbox.Location = new System.Drawing.Point(305, 94);
+            this.StretchResizeGroupbox.Name = "StretchResizeGroupbox";
+            this.StretchResizeGroupbox.Size = new System.Drawing.Size(182, 37);
+            this.StretchResizeGroupbox.TabIndex = 6;
+            this.StretchResizeGroupbox.TabStop = false;
+            this.StretchResizeGroupbox.Text = "Stretch when resing";
+            // 
+            // StretchResizeCheckbox
+            // 
+            this.StretchResizeCheckbox.AutoSize = true;
+            this.StretchResizeCheckbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.StretchResizeCheckbox.Location = new System.Drawing.Point(3, 16);
+            this.StretchResizeCheckbox.Name = "StretchResizeCheckbox";
+            this.StretchResizeCheckbox.Size = new System.Drawing.Size(176, 18);
+            this.StretchResizeCheckbox.TabIndex = 0;
+            this.StretchResizeCheckbox.Text = "Stretch window when resizing";
+            this.StretchResizeCheckbox.UseVisualStyleBackColor = true;
+            // 
             // UISettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -223,6 +250,8 @@
             this.WindowShadowGroupBox.PerformLayout();
             this.SmoothVisualElementsGroupBox.ResumeLayout(false);
             this.SmoothVisualElementsGroupBox.PerformLayout();
+            this.StretchResizeGroupbox.ResumeLayout(false);
+            this.StretchResizeGroupbox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -242,5 +271,7 @@
         private System.Windows.Forms.CheckBox WindowShadowCheckBox;
         private System.Windows.Forms.GroupBox SmoothVisualElementsGroupBox;
         private System.Windows.Forms.CheckBox SmoothVisualElementsCheckbox;
+        private System.Windows.Forms.GroupBox StretchResizeGroupbox;
+        private System.Windows.Forms.CheckBox StretchResizeCheckbox;
     }
 }

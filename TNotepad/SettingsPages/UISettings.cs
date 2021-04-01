@@ -29,9 +29,9 @@ namespace TNotepad.SettingsPages
 {
     public partial class UISettings : UserControl
     {
-        Form1 RootControl;
+        TabNotepadForm RootControl;
 
-        public UISettings(Form1 pRootControl)
+        public UISettings(TabNotepadForm pRootControl)
         {
             InitializeComponent();
             RootControl = pRootControl;
@@ -45,6 +45,7 @@ namespace TNotepad.SettingsPages
             LanguageSettingGroupBox.Text = Lang.GetLangData("Settings_UISettings_LanguageSetting");
             WindowShadowGroupBox.Text = Lang.GetLangData("Settings_UISettings_WindowShadow");
             SmoothVisualElementsGroupBox.Text = Lang.GetLangData("Settings_UISettings_SmoothVisualElementsGroupbox");
+            StretchResizeGroupbox.Text = Lang.GetLangData("Settings_UISettings_StretchResizeGroupbox");
 
             // Labels
             SaveWarningIntervalInfo.Text = Lang.GetLangData("Settings_UISettings_SaveWarningIntervalInfoLabel");
@@ -54,6 +55,7 @@ namespace TNotepad.SettingsPages
             SaveWarningCheckBox.Text = Lang.GetLangData("Settings_UISettings_SaveWarningCheckbox");
             WindowShadowCheckBox.Text = Lang.GetLangData("Settings_UISettings_WindowShadowCheckbox");
             SmoothVisualElementsCheckbox.Text = Lang.GetLangData("Settings_UISettings_SmoothVisualElementsCheckbox");
+            StretchResizeCheckbox.Text = Lang.GetLangData("Settings_UISettings_StretchResizeCheckbox");
 
             // Buttons
             OpenLanguageSettingsButton.Text = Lang.GetLangData("Settings_UISettings_OpenLanguageSettingsButton");
@@ -74,7 +76,7 @@ namespace TNotepad.SettingsPages
             SaveWarningCheckBox.Checked = Properties.Settings.Default.UnsavedTime;
             WindowShadowCheckBox.Checked = Properties.Settings.Default.WindowShadow;
             SmoothVisualElementsCheckbox.Checked = Properties.Settings.Default.SmoothVisualElements;
-
+            StretchResizeCheckbox.Checked = Properties.Settings.Default.StrechWindowContentsWhenResizing;
 
         }
 
@@ -83,6 +85,7 @@ namespace TNotepad.SettingsPages
             Properties.Settings.Default.UnsavedTime = SaveWarningCheckBox.Checked;
             Properties.Settings.Default.WindowShadow = WindowShadowCheckBox.Checked;
             Properties.Settings.Default.SmoothVisualElements = SmoothVisualElementsCheckbox.Checked;
+            Properties.Settings.Default.StrechWindowContentsWhenResizing = StretchResizeCheckbox.Checked;
 
             // Unsaved Time Interval
             try

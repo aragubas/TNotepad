@@ -29,7 +29,7 @@ namespace TNotepad
 {
     public partial class SidePanel : UserControl
     {
-        Form1 RootControl;
+        MainForm RootControl;
         Panel RootPanel;
         int HideToggle = 0;
         int DefaultWidth;
@@ -37,7 +37,7 @@ namespace TNotepad
         int AnimationMultiplier = 0;
         int AnimationMultiplierValue = 30;
 
-        public SidePanel(Form1 pRootControl, Panel pRootPanel)
+        public SidePanel(MainForm pRootControl, Panel pRootPanel)
         {
             InitializeComponent();
             RootControl = pRootControl;

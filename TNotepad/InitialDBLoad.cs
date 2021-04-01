@@ -49,8 +49,7 @@ namespace TNotepad
         private void BGWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             ChangeReportText("Loading Complete");
-            Form1 Ceira = new Form1();
-            Ceira.Show();
+            Utils.CreateMainForm();
             Close();
 
         }

@@ -96,6 +96,7 @@ Settings_UISettings_SaveWarning;Save Warning
 Settings_UISettings_LanguageSetting;Language Settings
 Settings_UISettings_WindowShadow;Window Shadow
 Settings_UISettings_SmoothVisualElementsGroupbox;Smooth visual elements
+Settings_UISettings_StretchResizeGroupbox;Stretch resize
 # -Labels
 Settings_UISettings_SaveWarningIntervalInfoLabel;Interval (in miliseconds)
 Settings_UISettings_LanguageSettingsInfoLabel;Click on the button below to change the current language.
@@ -104,6 +105,7 @@ Settings_UISettings_SaveWarningCheckbox;Show the time a document has been not sa
 Settings_UISettings_HometabAsDefaultCheckbox;Use hometab as default tab
 Settings_UISettings_WindowShadowCheckbox;Draw a shadow behind the main window
 Settings_UISettings_SmoothVisualElementsCheckbox;Appy anti-aliasing to certain custom-rendered elements.
+Settings_UISettings_StretchResizeCheckbox;Stretch window when resizing.
 # -Buttons
 Settings_UISettings_OpenLanguageSettingsButton;Change Language
 

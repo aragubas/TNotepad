@@ -35,6 +35,9 @@
   <PropertyGroup>
     <StartupObject>TNotepad.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>TabbedNotpadIcon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -75,12 +78,6 @@
     <Compile Include="ExtraFuncPanels\Find.Designer.cs">
       <DependentUpon>Find.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="HomescreenTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -99,6 +96,12 @@
     </Compile>
     <Compile Include="LanguageSettings.Designer.cs">
       <DependentUpon>LanguageSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.5.AssemblyAttributes.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
@@ -140,6 +143,12 @@
     <Compile Include="SidePanel.Designer.cs">
       <DependentUpon>SidePanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="TabNotepadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabNotepadForm.Designer.cs">
+      <DependentUpon>TabNotepadForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TextEditingTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -159,9 +168,6 @@
     <EmbeddedResource Include="ExtraFuncPanels\Find.resx">
       <DependentUpon>Find.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="HomescreenTab.resx">
       <DependentUpon>HomescreenTab.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,11 +177,13 @@
     <EmbeddedResource Include="LanguageSettings.resx">
       <DependentUpon>LanguageSettings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\TNotepad.About.resources" />
     <EmbeddedResource Include="obj\Debug\TNotepad.BackgroundWorkerDialog.resources" />
     <EmbeddedResource Include="obj\Debug\TNotepad.EncodingSelector.resources" />
     <EmbeddedResource Include="obj\Debug\TNotepad.ExtraFuncPanels.Find.resources" />
-    <EmbeddedResource Include="obj\Debug\TNotepad.Form1.resources" />
     <EmbeddedResource Include="obj\Debug\TNotepad.HomescreenTab.resources" />
     <EmbeddedResource Include="obj\Debug\TNotepad.InitialDBLoad.resources" />
     <EmbeddedResource Include="obj\Debug\TNotepad.LanguageSettings.resources" />
@@ -190,7 +198,6 @@
     <EmbeddedResource Include="obj\Release\TNotepad.BackgroundWorkerDialog.resources" />
     <EmbeddedResource Include="obj\Release\TNotepad.EncodingSelector.resources" />
     <EmbeddedResource Include="obj\Release\TNotepad.ExtraFuncPanels.Find.resources" />
-    <EmbeddedResource Include="obj\Release\TNotepad.Form1.resources" />
     <EmbeddedResource Include="obj\Release\TNotepad.HomescreenTab.resources" />
     <EmbeddedResource Include="obj\Release\TNotepad.InitialDBLoad.resources" />
     <EmbeddedResource Include="obj\Release\TNotepad.LanguageSettings.resources" />
@@ -225,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SidePanel.resx">
       <DependentUpon>SidePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabNotepadForm.resx">
+      <DependentUpon>TabNotepadForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TextEditingTab.resx">
       <DependentUpon>TextEditingTab.cs</DependentUpon>
@@ -277,6 +287,7 @@
     <Content Include="Resources\SettingsMini.png" />
     <Content Include="Resources\TabbedNotpadIcon.ico" />
     <Content Include="Resources\TabbedNotpadIcon.png" />
+    <Content Include="TabbedNotpadIcon.ico" />
     <None Include="Resources\TabClose.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
