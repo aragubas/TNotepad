@@ -165,5 +165,17 @@ namespace TNotepad.Properties {
                 this["StrechWindowContentsWhenResizing"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("TaiyouLight")]
+        public string CurrentTheme {
+            get {
+                return ((string)(this["CurrentTheme"]));
+            }
+            set {
+                this["CurrentTheme"] = value;
+            }
+        }
     }
 }

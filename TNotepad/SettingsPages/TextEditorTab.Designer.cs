@@ -29,16 +29,15 @@ namespace TNotepad.SettingsPages
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1 = new taiyouFlowLayoutPanel();
             this.WordWrapGroupBox = new System.Windows.Forms.GroupBox();
-            this.WordWrapCheckbox = new System.Windows.Forms.CheckBox();
+            this.WordWrapCheckbox = new TNotepad.taiyouCheckBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.WordWrapGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.flowLayoutPanel1.Controls.Add(this.WordWrapGroupBox);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -49,7 +48,7 @@ namespace TNotepad.SettingsPages
             // WordWrapGroupBox
             // 
             this.WordWrapGroupBox.Controls.Add(this.WordWrapCheckbox);
-            this.WordWrapGroupBox.ForeColor = System.Drawing.Color.White;
+            this.WordWrapGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.WordWrapGroupBox.Location = new System.Drawing.Point(3, 3);
             this.WordWrapGroupBox.Name = "WordWrapGroupBox";
             this.WordWrapGroupBox.Size = new System.Drawing.Size(207, 56);
@@ -71,7 +70,6 @@ namespace TNotepad.SettingsPages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "TextEditorTab";
             this.Size = new System.Drawing.Size(482, 378);
@@ -84,8 +82,8 @@ namespace TNotepad.SettingsPages
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private taiyouFlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.GroupBox WordWrapGroupBox;
-        private System.Windows.Forms.CheckBox WordWrapCheckbox;
+        private taiyouCheckBox WordWrapCheckbox;
     }
 }

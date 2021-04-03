@@ -23,6 +23,21 @@ namespace TNotepad.SettingsPages
 
             LoadValues();
             LoadLangStrings();
+            LoadTheme();
+
+        }
+
+        public void LoadTheme()
+        {
+            // Default Colors
+            BackColor = ThemeLoader.GetThemeData("Form_BackgroundColor");
+            ForeColor = ThemeLoader.GetThemeData("Form_ForegroundColor");
+
+            // Checkbox
+            WordWrapCheckbox.LoadTheme();
+
+            // FlowLayoutPanel
+            flowLayoutPanel1.LoadTheme();
 
         }
 

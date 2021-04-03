@@ -28,15 +28,75 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ApplyChangesButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.SideOptionsPanel = new System.Windows.Forms.Panel();
+            this.OptionsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SettingsPanel = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.UISettingsPanelButton = new TNotepad.taiyouButton();
+            this.TextEditorSettingsPanelButton = new TNotepad.taiyouButton();
+            this.ApplyChangesButton = new TNotepad.taiyouButton();
+            this.SideOptionsPanel.SuspendLayout();
+            this.OptionsFlowLayoutPanel.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // SideOptionsPanel
+            // 
+            this.SideOptionsPanel.Controls.Add(this.OptionsFlowLayoutPanel);
+            this.SideOptionsPanel.Controls.Add(this.ApplyChangesButton);
+            this.SideOptionsPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SideOptionsPanel.Location = new System.Drawing.Point(0, 0);
+            this.SideOptionsPanel.Name = "SideOptionsPanel";
+            this.SideOptionsPanel.Size = new System.Drawing.Size(114, 414);
+            this.SideOptionsPanel.TabIndex = 2;
+            // 
+            // OptionsFlowLayoutPanel
+            // 
+            this.OptionsFlowLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.OptionsFlowLayoutPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.OptionsFlowLayoutPanel.Controls.Add(this.UISettingsPanelButton);
+            this.OptionsFlowLayoutPanel.Controls.Add(this.TextEditorSettingsPanelButton);
+            this.OptionsFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.OptionsFlowLayoutPanel.Location = new System.Drawing.Point(3, 3);
+            this.OptionsFlowLayoutPanel.Name = "OptionsFlowLayoutPanel";
+            this.OptionsFlowLayoutPanel.Size = new System.Drawing.Size(106, 377);
+            this.OptionsFlowLayoutPanel.TabIndex = 2;
+            // 
+            // SettingsPanel
+            // 
+            this.SettingsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SettingsPanel.Location = new System.Drawing.Point(114, 0);
+            this.SettingsPanel.Name = "SettingsPanel";
+            this.SettingsPanel.Size = new System.Drawing.Size(459, 414);
+            this.SettingsPanel.TabIndex = 3;
+            // 
+            // UISettingsPanelButton
+            // 
+            this.UISettingsPanelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.UISettingsPanelButton.FlatAppearance.BorderSize = 0;
+            this.UISettingsPanelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UISettingsPanelButton.ForeColor = System.Drawing.Color.White;
+            this.UISettingsPanelButton.Location = new System.Drawing.Point(3, 3);
+            this.UISettingsPanelButton.Name = "UISettingsPanelButton";
+            this.UISettingsPanelButton.Size = new System.Drawing.Size(90, 23);
+            this.UISettingsPanelButton.TabIndex = 0;
+            this.UISettingsPanelButton.Text = "UI";
+            this.UISettingsPanelButton.UseVisualStyleBackColor = false;
+            this.UISettingsPanelButton.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // TextEditorSettingsPanelButton
+            // 
+            this.TextEditorSettingsPanelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.TextEditorSettingsPanelButton.FlatAppearance.BorderSize = 0;
+            this.TextEditorSettingsPanelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TextEditorSettingsPanelButton.ForeColor = System.Drawing.Color.White;
+            this.TextEditorSettingsPanelButton.Location = new System.Drawing.Point(3, 32);
+            this.TextEditorSettingsPanelButton.Name = "TextEditorSettingsPanelButton";
+            this.TextEditorSettingsPanelButton.Size = new System.Drawing.Size(90, 23);
+            this.TextEditorSettingsPanelButton.TabIndex = 1;
+            this.TextEditorSettingsPanelButton.Text = "Text Editor";
+            this.TextEditorSettingsPanelButton.UseVisualStyleBackColor = false;
+            this.TextEditorSettingsPanelButton.Click += new System.EventHandler(this.button2_Click);
             // 
             // ApplyChangesButton
             // 
@@ -46,103 +106,37 @@
             this.ApplyChangesButton.FlatAppearance.BorderSize = 0;
             this.ApplyChangesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ApplyChangesButton.ForeColor = System.Drawing.Color.White;
-            this.ApplyChangesButton.Location = new System.Drawing.Point(3, 384);
+            this.ApplyChangesButton.Location = new System.Drawing.Point(3, 386);
             this.ApplyChangesButton.Name = "ApplyChangesButton";
-            this.ApplyChangesButton.Size = new System.Drawing.Size(106, 25);
+            this.ApplyChangesButton.Size = new System.Drawing.Size(108, 25);
             this.ApplyChangesButton.TabIndex = 1;
             this.ApplyChangesButton.Text = "Apply";
             this.ApplyChangesButton.UseVisualStyleBackColor = false;
             this.ApplyChangesButton.Click += new System.EventHandler(this.ApplyChangesButton_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Gray;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
-            this.panel1.Controls.Add(this.ApplyChangesButton);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(114, 414);
-            this.panel1.TabIndex = 2;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.DimGray;
-            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(104, 375);
-            this.flowLayoutPanel1.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "UI";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(3, 32);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Text Editor";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // SettingsPanel
-            // 
-            this.SettingsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.SettingsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SettingsPanel.ForeColor = System.Drawing.Color.White;
-            this.SettingsPanel.Location = new System.Drawing.Point(114, 0);
-            this.SettingsPanel.Name = "SettingsPanel";
-            this.SettingsPanel.Size = new System.Drawing.Size(459, 414);
-            this.SettingsPanel.TabIndex = 3;
             // 
             // SettingsTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.SettingsPanel);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.SideOptionsPanel);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "SettingsTab";
             this.Size = new System.Drawing.Size(573, 414);
             this.Load += new System.EventHandler(this.SettingsTab_Load);
-            this.panel1.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.SideOptionsPanel.ResumeLayout(false);
+            this.OptionsFlowLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button ApplyChangesButton;
-        private System.Windows.Forms.Panel panel1;
+        private taiyouButton ApplyChangesButton;
+        private System.Windows.Forms.Panel SideOptionsPanel;
         private System.Windows.Forms.Panel SettingsPanel;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.FlowLayoutPanel OptionsFlowLayoutPanel;
+        private taiyouButton UISettingsPanelButton;
+        private taiyouButton TextEditorSettingsPanelButton;
     }
 }

@@ -39,8 +39,12 @@ namespace TNotepad
 
         private void BGWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            ChangeReportText("Language Files");
-            Lang.LoadDictData();
+            ChangeReportText("Language Files 1/2");
+            Lang.LoadDictData(BGWorker);
+
+            BGWorker.ReportProgress(0);
+            ChangeReportText("Theme Files 2/2");
+            ThemeLoader.LoadDictData(BGWorker);
 
 
 

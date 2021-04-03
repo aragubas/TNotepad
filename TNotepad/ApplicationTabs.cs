@@ -28,9 +28,7 @@ namespace TNotepad
     {
 
         public ApplicationTabs()
-        {
-            //TabPages_index = new List<int>();
-
+        { 
             this.DrawMode = TabDrawMode.OwnerDrawFixed;
 
             // Make the tab buttons work
@@ -67,7 +65,7 @@ namespace TNotepad
         {
             //base.OnPaintBackground(pevent);
 
-            Brush b = new SolidBrush(Color.FromArgb(255, 32, 32, 32));
+            Brush b = new SolidBrush(ThemeLoader.GetThemeData("Form_BackgroundColor"));
 
             pevent.Graphics.FillRectangle(b, this.ClientRectangle);
 
@@ -102,25 +100,26 @@ namespace TNotepad
                 // Selected Tab
                 if (i == this.SelectedIndex) 
                 {
-                    bshFore = Brushes.LightGray;
-                    bshBack = new SolidBrush(Color.FromArgb(255, 64, 64, 64));
+                    bshFore = new SolidBrush(ThemeLoader.GetThemeData("TabControl_HeaderSelected_ForegroundColor"));
+                    bshBack = new SolidBrush(ThemeLoader.GetThemeData("TabControl_HeaderSelected_BackgroundColor"));
 
                     if (TabPages[i].Tag == "PERSISTENT")
                     {
-                        bshFore = Brushes.White;
-                        bshBack = new SolidBrush(Color.FromArgb(255, 96, 96, 96));
+                        bshFore = new SolidBrush(ThemeLoader.GetThemeData("TabControl_PersistentHeaderSelected_ForegroundColor"));
+                        bshBack = new SolidBrush(ThemeLoader.GetThemeData("TabControl_PersistentHeaderSelected_BackgroundColor"));
 
                     }
 
                 }
                 else // Unselected Tab
                 {
-                    bshBack = new SolidBrush(Color.FromArgb(255, 16, 16, 16));
-                    bshFore = Brushes.Gray;
+                    bshFore = new SolidBrush(ThemeLoader.GetThemeData("TabControl_HeaderUnselected_ForegroundColor"));
+                    bshBack = new SolidBrush(ThemeLoader.GetThemeData("TabControl_HeaderUnselected_BackgroundColor"));
+
                     if (TabPages[i].Tag == "PERSISTENT")
                     {
-                        bshFore = Brushes.Gray;
-                        bshBack = new SolidBrush(Color.FromArgb(255, 32, 32, 32));
+                        bshFore = new SolidBrush(ThemeLoader.GetThemeData("TabControl_PersistentHeaderUnselected_ForegroundColor"));
+                        bshBack = new SolidBrush(ThemeLoader.GetThemeData("TabControl_PersistentHeaderUnselected_BackgroundColor"));
 
                     }
 
@@ -173,12 +172,12 @@ namespace TNotepad
                 // Draw Tab Separation Line
                 // #########################
                 // Left Line
-                e.Graphics.FillRectangle(Brushes.White, new Rectangle(TabRect.X - 1, TabRect.Y, 1, TabRect.Height));
+                e.Graphics.FillRectangle(new SolidBrush(ThemeLoader.GetThemeData("TabControl_SeparatorLineColor")), new Rectangle(TabRect.X - 1, TabRect.Y, 1, TabRect.Height));
 
                 // Right Line
                 if (i == TabPages.Count - 1)
                 {
-                    e.Graphics.FillRectangle(Brushes.White, new Rectangle(TabRect.X + TabRect.Width, TabRect.Y, 1, TabRect.Height));
+                    e.Graphics.FillRectangle(new SolidBrush(ThemeLoader.GetThemeData("TabControl_SeparatorLineColor")), new Rectangle(TabRect.X + TabRect.Width, TabRect.Y, 1, TabRect.Height));
 
                 }
             }

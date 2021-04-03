@@ -33,10 +33,7 @@ namespace TNotepad
         Panel RootPanel;
         int HideToggle = 0;
         int DefaultWidth;
-        int HideAnimationMode = 0;
-        int AnimationMultiplier = 0;
-        int AnimationMultiplierValue = 30;
-
+        
         public SidePanel(MainForm pRootControl, Panel pRootPanel)
         {
             InitializeComponent();
@@ -48,6 +45,21 @@ namespace TNotepad
             HideShowButton.PerformClick();
 
             LoadLangs();
+            LoadTheme();
+
+        }
+
+        public void LoadTheme()
+        {
+            BackColor = ThemeLoader.GetThemeData("SidePanel_BackgroundColor");
+            ForeColor = ThemeLoader.GetThemeData("SidePanel_ForegroundColor");
+
+            label1.ForeColor = ForeColor;
+            AboutButton.LoadTheme();
+            NewTabButton.LoadTheme();
+            OpenFileButton.LoadTheme();
+            SettingsButton.LoadTheme();
+            HideShowButton.LoadTheme();
 
         }
 

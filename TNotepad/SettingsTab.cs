@@ -44,6 +44,19 @@ namespace TNotepad
             CreateSettingsTab(0);
 
             LoadLangs();
+            LoadTheme();
+
+        }
+
+        public void LoadTheme()
+        {
+            this.BackColor = ThemeLoader.GetThemeData("Form_BackgroundColor");
+            this.ForeColor = ThemeLoader.GetThemeData("Form_ForegroundColor");
+
+            // Button
+            UISettingsPanelButton.LoadTheme();
+            TextEditorSettingsPanelButton.LoadTheme();
+            ApplyChangesButton.LoadTheme();
 
         }
 
@@ -71,8 +84,8 @@ namespace TNotepad
         public void LoadLangs()
         {
             ApplyChangesButton.Text = Lang.GetLangData("SettingsTab_ApplyButton");
-            button1.Text = Lang.GetLangData("SettingsTab_UISettingsLabel");
-            button2.Text = Lang.GetLangData("SettingsTab_TextEditorLabel");
+            UISettingsPanelButton.Text = Lang.GetLangData("SettingsTab_UISettingsLabel");
+            TextEditorSettingsPanelButton.Text = Lang.GetLangData("SettingsTab_TextEditorLabel");
 
         }
 

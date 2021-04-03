@@ -30,11 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TabNotepadForm));
             this.TitlebarPanel = new System.Windows.Forms.Panel();
+            this.WindowButtonsPanel = new System.Windows.Forms.Panel();
+            this.FormMinimizeButton = new System.Windows.Forms.Button();
             this.FormMaximizeButton = new System.Windows.Forms.Button();
             this.FormCloseButton = new System.Windows.Forms.Button();
-            this.FormControls = new System.Windows.Forms.Panel();
-            this.WindowButtonsPanel = new System.Windows.Forms.Panel();
             this.FormTitlebar = new TNotepad.MoveWindowLabel();
+            this.FormControls = new System.Windows.Forms.Panel();
             this.TitlebarPanel.SuspendLayout();
             this.WindowButtonsPanel.SuspendLayout();
             this.SuspendLayout();
@@ -50,56 +51,10 @@
             this.TitlebarPanel.Size = new System.Drawing.Size(639, 27);
             this.TitlebarPanel.TabIndex = 5;
             // 
-            // FormMaximizeButton
-            // 
-            this.FormMaximizeButton.BackColor = System.Drawing.Color.Gray;
-            this.FormMaximizeButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.FormMaximizeButton.FlatAppearance.BorderSize = 0;
-            this.FormMaximizeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.FormMaximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FormMaximizeButton.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
-            this.FormMaximizeButton.ForeColor = System.Drawing.Color.White;
-            this.FormMaximizeButton.Location = new System.Drawing.Point(42, 0);
-            this.FormMaximizeButton.Name = "FormMaximizeButton";
-            this.FormMaximizeButton.Size = new System.Drawing.Size(25, 20);
-            this.FormMaximizeButton.TabIndex = 1;
-            this.FormMaximizeButton.Text = "/\\";
-            this.FormMaximizeButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.FormMaximizeButton.UseVisualStyleBackColor = false;
-            this.FormMaximizeButton.Click += new System.EventHandler(this.FormMaximizeButton_Click);
-            // 
-            // FormCloseButton
-            // 
-            this.FormCloseButton.BackColor = System.Drawing.Color.DarkGray;
-            this.FormCloseButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.FormCloseButton.FlatAppearance.BorderSize = 0;
-            this.FormCloseButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.FormCloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FormCloseButton.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
-            this.FormCloseButton.ForeColor = System.Drawing.Color.White;
-            this.FormCloseButton.Location = new System.Drawing.Point(67, 0);
-            this.FormCloseButton.Name = "FormCloseButton";
-            this.FormCloseButton.Size = new System.Drawing.Size(44, 20);
-            this.FormCloseButton.TabIndex = 0;
-            this.FormCloseButton.Text = "X";
-            this.FormCloseButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.FormCloseButton.UseVisualStyleBackColor = false;
-            this.FormCloseButton.Click += new System.EventHandler(this.FormCloseButton_Click);
-            // 
-            // FormControls
-            // 
-            this.FormControls.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FormControls.ForeColor = System.Drawing.Color.White;
-            this.FormControls.Location = new System.Drawing.Point(0, 27);
-            this.FormControls.Name = "FormControls";
-            this.FormControls.Size = new System.Drawing.Size(663, 396);
-            this.FormControls.TabIndex = 6;
-            // 
             // WindowButtonsPanel
             // 
             this.WindowButtonsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.WindowButtonsPanel.Controls.Add(this.FormMinimizeButton);
             this.WindowButtonsPanel.Controls.Add(this.FormMaximizeButton);
             this.WindowButtonsPanel.Controls.Add(this.FormCloseButton);
             this.WindowButtonsPanel.Location = new System.Drawing.Point(524, 0);
@@ -107,11 +62,63 @@
             this.WindowButtonsPanel.Size = new System.Drawing.Size(111, 20);
             this.WindowButtonsPanel.TabIndex = 3;
             // 
+            // FormMinimizeButton
+            // 
+            this.FormMinimizeButton.BackColor = System.Drawing.Color.DimGray;
+            this.FormMinimizeButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.FormMinimizeButton.FlatAppearance.BorderSize = 0;
+            this.FormMinimizeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.FormMinimizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.FormMinimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FormMinimizeButton.Font = new System.Drawing.Font("Arial", 7.5F);
+            this.FormMinimizeButton.ForeColor = System.Drawing.Color.White;
+            this.FormMinimizeButton.Location = new System.Drawing.Point(17, 0);
+            this.FormMinimizeButton.Name = "FormMinimizeButton";
+            this.FormMinimizeButton.Size = new System.Drawing.Size(25, 20);
+            this.FormMinimizeButton.TabIndex = 2;
+            this.FormMinimizeButton.Text = "─";
+            this.FormMinimizeButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.FormMinimizeButton.UseVisualStyleBackColor = false;
+            this.FormMinimizeButton.Click += new System.EventHandler(this.FormMinimizeButton_Click);
+            // 
+            // FormMaximizeButton
+            // 
+            this.FormMaximizeButton.BackColor = System.Drawing.Color.Gray;
+            this.FormMaximizeButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.FormMaximizeButton.FlatAppearance.BorderSize = 0;
+            this.FormMaximizeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.FormMaximizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FormMaximizeButton.Font = new System.Drawing.Font("Arial", 7.5F);
+            this.FormMaximizeButton.ForeColor = System.Drawing.Color.White;
+            this.FormMaximizeButton.Location = new System.Drawing.Point(42, 0);
+            this.FormMaximizeButton.Name = "FormMaximizeButton";
+            this.FormMaximizeButton.Size = new System.Drawing.Size(25, 20);
+            this.FormMaximizeButton.TabIndex = 1;
+            this.FormMaximizeButton.Text = "↨";
+            this.FormMaximizeButton.UseVisualStyleBackColor = false;
+            this.FormMaximizeButton.Click += new System.EventHandler(this.FormMaximizeButton_Click);
+            // 
+            // FormCloseButton
+            // 
+            this.FormCloseButton.BackColor = System.Drawing.Color.LightCoral;
+            this.FormCloseButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.FormCloseButton.FlatAppearance.BorderSize = 0;
+            this.FormCloseButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.FormCloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FormCloseButton.Font = new System.Drawing.Font("Arial", 7.5F);
+            this.FormCloseButton.ForeColor = System.Drawing.Color.White;
+            this.FormCloseButton.Location = new System.Drawing.Point(67, 0);
+            this.FormCloseButton.Name = "FormCloseButton";
+            this.FormCloseButton.Size = new System.Drawing.Size(44, 20);
+            this.FormCloseButton.TabIndex = 0;
+            this.FormCloseButton.Text = "X";
+            this.FormCloseButton.UseVisualStyleBackColor = false;
+            this.FormCloseButton.Click += new System.EventHandler(this.FormCloseButton_Click);
+            // 
             // FormTitlebar
             // 
             this.FormTitlebar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FormTitlebar.Font = new System.Drawing.Font("Arial", 10F);
-            this.FormTitlebar.ForeColor = System.Drawing.Color.White;
             this.FormTitlebar.Location = new System.Drawing.Point(0, 0);
             this.FormTitlebar.Name = "FormTitlebar";
             this.FormTitlebar.Size = new System.Drawing.Size(639, 27);
@@ -119,6 +126,17 @@
             this.FormTitlebar.Text = "TabNotepad";
             this.FormTitlebar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.FormTitlebar.MouseLeave += new System.EventHandler(this.FormTitlebar_MouseLeave);
+            // 
+            // FormControls
+            // 
+            this.FormControls.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FormControls.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FormControls.Location = new System.Drawing.Point(2, 28);
+            this.FormControls.Name = "FormControls";
+            this.FormControls.Size = new System.Drawing.Size(659, 393);
+            this.FormControls.TabIndex = 6;
             // 
             // TabNotepadForm
             // 
@@ -154,6 +172,7 @@
         public MoveWindowLabel FormTitlebar;
         public System.Windows.Forms.Panel FormControls;
         private System.Windows.Forms.Panel WindowButtonsPanel;
+        public System.Windows.Forms.Button FormMinimizeButton;
 
     }
 }

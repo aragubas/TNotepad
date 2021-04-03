@@ -30,20 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TextEditingTab));
-            this.Toolbar = new System.Windows.Forms.ToolStrip();
-            this.NewPage = new System.Windows.Forms.ToolStripButton();
-            this.OpenFileButton = new System.Windows.Forms.ToolStripButton();
-            this.ExtraMenu = new System.Windows.Forms.ToolStripDropDownButton();
-            this.encodingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pinDocumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.savePathToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quickFindToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SaveButton = new System.Windows.Forms.ToolStripButton();
-            this.SaveAsButton = new System.Windows.Forms.ToolStripButton();
+            this.Toolbar = new TNotepad.taiyouToolStrip();
+            this.NewPage = new TNotepad.taiyouToolStripButton();
+            this.OpenFileButton = new TNotepad.taiyouToolStripButton();
+            this.ExtraMenu = new TNotepad.taiyouToolStripDropDownButton();
+            this.encodingToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
+            this.runToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
+            this.settingsToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
+            this.pinDocumentToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
+            this.savePathToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
+            this.quickFindToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
+            this.SaveButton = new TNotepad.taiyouToolStripButton();
+            this.SaveAsButton = new TNotepad.taiyouToolStripButton();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.StatusBar = new TNotepad.taiyouStatusStrip();
             this.SaveStatusText = new System.Windows.Forms.ToolStripStatusLabel();
             this.EncodingInfoLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.LineInfoLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -53,12 +53,12 @@
             this.ExtraFuncPanel = new System.Windows.Forms.Panel();
             this.Updater = new System.Windows.Forms.Timer(this.components);
             this.TextEditorContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.PasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
+            this.cutToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
+            this.PasteToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
             this.TextEditingThing = new TNotepad.ExtendedRichTextBox();
             this.Toolbar.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
+            this.StatusBar.SuspendLayout();
             this.TextEditorContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -195,24 +195,23 @@
             this.saveFileDialog1.Title = "Save Document as...";
             this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
             // 
-            // statusStrip1
+            // StatusBar
             // 
-            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StatusBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.StatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SaveStatusText,
             this.EncodingInfoLabel,
             this.LineInfoLabel,
             this.ColumnInfoLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 263);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(710, 22);
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "Status Bar";
+            this.StatusBar.Location = new System.Drawing.Point(0, 263);
+            this.StatusBar.Name = "StatusBar";
+            this.StatusBar.Size = new System.Drawing.Size(710, 22);
+            this.StatusBar.TabIndex = 2;
+            this.StatusBar.Text = "Status Bar";
             // 
             // SaveStatusText
             // 
             this.SaveStatusText.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.SaveStatusText.ForeColor = System.Drawing.Color.White;
             this.SaveStatusText.Name = "SaveStatusText";
             this.SaveStatusText.Size = new System.Drawing.Size(52, 17);
             this.SaveStatusText.Text = "Unsaved";
@@ -221,21 +220,18 @@
             // 
             // EncodingInfoLabel
             // 
-            this.EncodingInfoLabel.ForeColor = System.Drawing.Color.White;
             this.EncodingInfoLabel.Name = "EncodingInfoLabel";
             this.EncodingInfoLabel.Size = new System.Drawing.Size(99, 17);
             this.EncodingInfoLabel.Text = "Encoding not set.";
             // 
             // LineInfoLabel
             // 
-            this.LineInfoLabel.ForeColor = System.Drawing.Color.White;
             this.LineInfoLabel.Name = "LineInfoLabel";
             this.LineInfoLabel.Size = new System.Drawing.Size(49, 17);
             this.LineInfoLabel.Text = "Line 0/0";
             // 
             // ColumnInfoLabel
             // 
-            this.ColumnInfoLabel.ForeColor = System.Drawing.Color.White;
             this.ColumnInfoLabel.Name = "ColumnInfoLabel";
             this.ColumnInfoLabel.Size = new System.Drawing.Size(59, 17);
             this.ColumnInfoLabel.Text = "Column 0";
@@ -290,16 +286,6 @@
             this.copyToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
-            // PasteToolStripMenuItem
-            // 
-            this.PasteToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.PasteToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.PasteToolStripMenuItem.Name = "PasteToolStripMenuItem";
-            this.PasteToolStripMenuItem.Size = new System.Drawing.Size(77, 22);
-            this.PasteToolStripMenuItem.Text = "Paste";
-            this.PasteToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.PasteToolStripMenuItem.Click += new System.EventHandler(this.PasteToolStripMenuItem_Click);
-            // 
             // cutToolStripMenuItem
             // 
             this.cutToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -309,6 +295,16 @@
             this.cutToolStripMenuItem.Text = "Cut";
             this.cutToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
+            // 
+            // PasteToolStripMenuItem
+            // 
+            this.PasteToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.PasteToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.PasteToolStripMenuItem.Name = "PasteToolStripMenuItem";
+            this.PasteToolStripMenuItem.Size = new System.Drawing.Size(77, 22);
+            this.PasteToolStripMenuItem.Text = "Paste";
+            this.PasteToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.PasteToolStripMenuItem.Click += new System.EventHandler(this.PasteToolStripMenuItem_Click);
             // 
             // TextEditingThing
             // 
@@ -335,19 +331,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.TextEditingThing);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.StatusBar);
             this.Controls.Add(this.Toolbar);
             this.Controls.Add(this.ExtraFuncPanel);
             this.DoubleBuffered = true;
-            this.ForeColor = System.Drawing.Color.Black;
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "TextEditingTab";
             this.Size = new System.Drawing.Size(710, 285);
             this.Load += new System.EventHandler(this.TextEditingTab_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextEditingTab_KeyDown);
             this.Toolbar.ResumeLayout(false);
             this.Toolbar.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.StatusBar.ResumeLayout(false);
+            this.StatusBar.PerformLayout();
             this.TextEditorContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -356,32 +352,32 @@
 
         #endregion
 
-        private System.Windows.Forms.ToolStrip Toolbar;
-        private System.Windows.Forms.ToolStripButton NewPage;
+        private taiyouToolStrip Toolbar;
+        private taiyouToolStripButton NewPage;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private taiyouStatusStrip StatusBar;
         private System.Windows.Forms.ToolStripStatusLabel SaveStatusText;
-        private System.Windows.Forms.ToolStripButton OpenFileButton;
+        private taiyouToolStripButton OpenFileButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Timer LastSavedTimer;
-        private System.Windows.Forms.ToolStripDropDownButton ExtraMenu;
-        private System.Windows.Forms.ToolStripMenuItem encodingToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem runToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private taiyouToolStripDropDownButton ExtraMenu;
+        private taiyouToolStripMenuItem encodingToolStripMenuItem;
+        private taiyouToolStripMenuItem runToolStripMenuItem;
+        private taiyouToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel EncodingInfoLabel;
-        private System.Windows.Forms.ToolStripMenuItem pinDocumentToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton SaveButton;
-        private System.Windows.Forms.ToolStripButton SaveAsButton;
-        private System.Windows.Forms.ToolStripMenuItem savePathToolStripMenuItem;
+        private taiyouToolStripMenuItem pinDocumentToolStripMenuItem;
+        private taiyouToolStripButton SaveButton;
+        private taiyouToolStripButton SaveAsButton;
+        private taiyouToolStripMenuItem savePathToolStripMenuItem;
         public System.Windows.Forms.Panel ExtraFuncPanel;
-        private System.Windows.Forms.ToolStripMenuItem quickFindToolStripMenuItem;
+        private taiyouToolStripMenuItem quickFindToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel LineInfoLabel;
         private System.Windows.Forms.Timer Updater;
         private System.Windows.Forms.ToolStripStatusLabel ColumnInfoLabel;
         public ExtendedRichTextBox TextEditingThing;
         private System.Windows.Forms.ContextMenuStrip TextEditorContextMenu;
-        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem PasteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
+        private taiyouToolStripMenuItem copyToolStripMenuItem;
+        private taiyouToolStripMenuItem PasteToolStripMenuItem;
+        private taiyouToolStripMenuItem cutToolStripMenuItem;
     }
 }

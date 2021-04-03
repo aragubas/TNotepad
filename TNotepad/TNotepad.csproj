@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0D7C5D5A-18EF-4636-9FCA-42273762840A}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TNotepad</RootNamespace>
     <AssemblyName>TNotepad</AssemblyName>
@@ -155,6 +155,10 @@
     <Compile Include="TextEditingTab.Designer.cs">
       <DependentUpon>TextEditingTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThemedControls.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ThemeLoader.cs" />
     <Compile Include="Utils.cs" />
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
@@ -288,6 +292,9 @@
     <Content Include="Resources\TabbedNotpadIcon.ico" />
     <Content Include="Resources\TabbedNotpadIcon.png" />
     <Content Include="TabbedNotpadIcon.ico" />
+    <Content Include="themes\TaiyouLight.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\TabClose.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

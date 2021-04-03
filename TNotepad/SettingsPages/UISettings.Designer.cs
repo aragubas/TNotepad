@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.SaveWarningGroupBox = new System.Windows.Forms.GroupBox();
-            this.SaveWarningCheckBox = new System.Windows.Forms.CheckBox();
+            this.SaveWarningCheckBox = new TNotepad.taiyouCheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.SaveWarningTextBox = new System.Windows.Forms.TextBox();
+            this.SaveWarningTextBox = new TNotepad.taiyouTextBox();
             this.SaveWarningIntervalInfo = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1 = new TNotepad.taiyouFlowLayoutPanel();
             this.LanguageSettingGroupBox = new System.Windows.Forms.GroupBox();
-            this.OpenLanguageSettingsButton = new System.Windows.Forms.Button();
+            this.OpenLanguageSettingsButton = new TNotepad.taiyouButton();
             this.LanguageSettingsInfoLabel = new System.Windows.Forms.Label();
             this.WindowShadowGroupBox = new System.Windows.Forms.GroupBox();
-            this.WindowShadowCheckBox = new System.Windows.Forms.CheckBox();
+            this.WindowShadowCheckBox = new TNotepad.taiyouCheckBox();
             this.SmoothVisualElementsGroupBox = new System.Windows.Forms.GroupBox();
-            this.SmoothVisualElementsCheckbox = new System.Windows.Forms.CheckBox();
+            this.SmoothVisualElementsCheckbox = new TNotepad.taiyouCheckBox();
             this.StretchResizeGroupbox = new System.Windows.Forms.GroupBox();
-            this.StretchResizeCheckbox = new System.Windows.Forms.CheckBox();
+            this.StretchResizeCheckbox = new TNotepad.taiyouCheckBox();
             this.SaveWarningGroupBox.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -57,7 +57,6 @@
             this.SaveWarningGroupBox.AutoSize = true;
             this.SaveWarningGroupBox.Controls.Add(this.SaveWarningCheckBox);
             this.SaveWarningGroupBox.Controls.Add(this.panel1);
-            this.SaveWarningGroupBox.ForeColor = System.Drawing.Color.White;
             this.SaveWarningGroupBox.Location = new System.Drawing.Point(3, 3);
             this.SaveWarningGroupBox.Name = "SaveWarningGroupBox";
             this.SaveWarningGroupBox.Size = new System.Drawing.Size(208, 71);
@@ -88,10 +87,8 @@
             // 
             // SaveWarningTextBox
             // 
-            this.SaveWarningTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.SaveWarningTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SaveWarningTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SaveWarningTextBox.ForeColor = System.Drawing.Color.White;
             this.SaveWarningTextBox.Location = new System.Drawing.Point(112, 0);
             this.SaveWarningTextBox.Name = "SaveWarningTextBox";
             this.SaveWarningTextBox.Size = new System.Drawing.Size(90, 20);
@@ -127,7 +124,6 @@
             // 
             this.LanguageSettingGroupBox.Controls.Add(this.OpenLanguageSettingsButton);
             this.LanguageSettingGroupBox.Controls.Add(this.LanguageSettingsInfoLabel);
-            this.LanguageSettingGroupBox.ForeColor = System.Drawing.Color.White;
             this.LanguageSettingGroupBox.Location = new System.Drawing.Point(217, 3);
             this.LanguageSettingGroupBox.Name = "LanguageSettingGroupBox";
             this.LanguageSettingGroupBox.Size = new System.Drawing.Size(244, 85);
@@ -137,7 +133,6 @@
             // 
             // OpenLanguageSettingsButton
             // 
-            this.OpenLanguageSettingsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.OpenLanguageSettingsButton.FlatAppearance.BorderSize = 0;
             this.OpenLanguageSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OpenLanguageSettingsButton.Location = new System.Drawing.Point(27, 47);
@@ -162,7 +157,6 @@
             // 
             this.WindowShadowGroupBox.AutoSize = true;
             this.WindowShadowGroupBox.Controls.Add(this.WindowShadowCheckBox);
-            this.WindowShadowGroupBox.ForeColor = System.Drawing.Color.White;
             this.WindowShadowGroupBox.Location = new System.Drawing.Point(467, 3);
             this.WindowShadowGroupBox.Name = "WindowShadowGroupBox";
             this.WindowShadowGroupBox.Size = new System.Drawing.Size(232, 37);
@@ -186,7 +180,6 @@
             // 
             this.SmoothVisualElementsGroupBox.AutoSize = true;
             this.SmoothVisualElementsGroupBox.Controls.Add(this.SmoothVisualElementsCheckbox);
-            this.SmoothVisualElementsGroupBox.ForeColor = System.Drawing.Color.White;
             this.SmoothVisualElementsGroupBox.Location = new System.Drawing.Point(3, 94);
             this.SmoothVisualElementsGroupBox.Name = "SmoothVisualElementsGroupBox";
             this.SmoothVisualElementsGroupBox.Size = new System.Drawing.Size(296, 37);
@@ -209,7 +202,6 @@
             // 
             this.StretchResizeGroupbox.AutoSize = true;
             this.StretchResizeGroupbox.Controls.Add(this.StretchResizeCheckbox);
-            this.StretchResizeGroupbox.ForeColor = System.Drawing.Color.White;
             this.StretchResizeGroupbox.Location = new System.Drawing.Point(305, 94);
             this.StretchResizeGroupbox.Name = "StretchResizeGroupbox";
             this.StretchResizeGroupbox.Size = new System.Drawing.Size(182, 37);
@@ -232,10 +224,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Controls.Add(this.flowLayoutPanel1);
             this.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.ForeColor = System.Drawing.Color.White;
             this.Name = "UISettings";
             this.Size = new System.Drawing.Size(733, 397);
             this.Load += new System.EventHandler(this.UISettingscs_Load);
@@ -260,18 +250,18 @@
 
         private System.Windows.Forms.GroupBox SaveWarningGroupBox;
         private System.Windows.Forms.Label SaveWarningIntervalInfo;
-        private System.Windows.Forms.TextBox SaveWarningTextBox;
-        private System.Windows.Forms.CheckBox SaveWarningCheckBox;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private taiyouTextBox SaveWarningTextBox;
+        private taiyouCheckBox SaveWarningCheckBox;
+        private taiyouFlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.GroupBox LanguageSettingGroupBox;
-        private System.Windows.Forms.Button OpenLanguageSettingsButton;
+        private taiyouButton OpenLanguageSettingsButton;
         private System.Windows.Forms.Label LanguageSettingsInfoLabel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox WindowShadowGroupBox;
-        private System.Windows.Forms.CheckBox WindowShadowCheckBox;
+        private taiyouCheckBox WindowShadowCheckBox;
         private System.Windows.Forms.GroupBox SmoothVisualElementsGroupBox;
-        private System.Windows.Forms.CheckBox SmoothVisualElementsCheckbox;
+        private taiyouCheckBox SmoothVisualElementsCheckbox;
         private System.Windows.Forms.GroupBox StretchResizeGroupbox;
-        private System.Windows.Forms.CheckBox StretchResizeCheckbox;
+        private taiyouCheckBox StretchResizeCheckbox;
     }
 }

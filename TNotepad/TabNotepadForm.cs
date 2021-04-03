@@ -15,6 +15,18 @@ namespace TNotepad
         public TabNotepadForm()
         {
             InitializeComponent();
+
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.DoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
+            this.UpdateStyles();
+
+            LoadTheme();
+        }
+
+        public void LoadTheme()
+        {
+            BackColor = ThemeLoader.GetThemeData("Form_BackgroundColor");
+            ForeColor = ThemeLoader.GetThemeData("Form_ForegroundColor");
+
         }
 
         public bool ResizeMode = false;
@@ -108,12 +120,10 @@ namespace TNotepad
             if (this.WindowState == FormWindowState.Normal)
             {
                 this.WindowState = FormWindowState.Maximized;
-                FormMaximizeButton.Text = "\\/";
 
                 return;
             }
             this.WindowState = FormWindowState.Normal;
-            FormMaximizeButton.Text = "/\\";
 
            
 
@@ -147,6 +157,9 @@ namespace TNotepad
             // ReShow hidden controls
             TitlebarPanel.Visible = true;
             FormControls.Visible = true;
+            
+            // Clear some junk that can be left on window borders
+            Invalidate();
 
             ResizeMode = false;
             ScreenWaxTaken = false;
@@ -192,8 +205,14 @@ namespace TNotepad
             FormTitlebar.Text = this.Text;
             if (DisableResizeMode || !ScreenWaxTaken || !Properties.Settings.Default.StrechWindowContentsWhenResizing) { return; }
 
+            // Draw Resizing Image
             e.Graphics.DrawImage(Wax, 0, 0, Width, Height);
 
+        }
+
+        private void FormMinimizeButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }  
 
 
