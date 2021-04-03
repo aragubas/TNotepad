@@ -35,6 +35,10 @@ namespace TNotepad
         {
             InitializeComponent();
             RootControl = pRootControl;
+
+            LoadLangString();
+            LoadValues();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -62,8 +66,6 @@ namespace TNotepad
 
         private void EncodingSelector_Load(object sender, EventArgs e)
         {
-            LoadLangString();
-            LoadValues();
 
         }
 

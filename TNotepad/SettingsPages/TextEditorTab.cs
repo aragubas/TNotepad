@@ -18,6 +18,12 @@ namespace TNotepad.SettingsPages
         {
             InitializeComponent();
             RootControl = pRootControl;
+
+            Dock = DockStyle.Fill;
+
+            LoadValues();
+            LoadLangStrings();
+
         }
 
         public void LoadLangStrings()
@@ -28,10 +34,6 @@ namespace TNotepad.SettingsPages
 
         private void TextEditorTab_Load(object sender, EventArgs e)
         {
-            Dock = DockStyle.Fill;
-
-            LoadValues();
-            LoadLangStrings();
         }
 
         public void LoadValues()

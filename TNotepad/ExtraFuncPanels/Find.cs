@@ -18,6 +18,11 @@ namespace TNotepad.ExtraFuncPanels
             InitializeComponent();
 
             RootControl = pRootControl;
+
+            Dock = DockStyle.Fill;
+
+            LoadLangs();
+
         }
 
         public void LoadLangs()
@@ -27,9 +32,6 @@ namespace TNotepad.ExtraFuncPanels
 
         private void Find_Load(object sender, EventArgs e)
         {
-            Dock = DockStyle.Fill;
-
-            LoadLangs();
         }
 
         private void FindButton_Click(object sender, EventArgs e)

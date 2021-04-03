@@ -44,20 +44,25 @@ namespace TNotepad
             InitializeComponent();
             AssociatedTabPage = pAssociatedTabPage;
             RootControl = pRootControl;
-        }
 
-        private void TextEditingTab_Load(object sender, EventArgs e)
-        {
+
             Dock = DockStyle.Fill;
             if (!DontSetUntitled) { UpdateTitle(Lang.GetLangData("TextEditMain_UntitledTab")); }
 
             LastSavedTimer.Enabled = Properties.Settings.Default.UnsavedTime;
             LastSavedTimer.Interval = Properties.Settings.Default.UnsavedTimeInterval;
-            
+
             LoadLangStrings();
 
             // Set Default Encoding
             SetEncoding(Utils.EncodingNameToEncodingObject());
+
+            TextEditingThing.WordWrap = Properties.Settings.Default.WordWrapEnabled;
+
+        }
+
+        private void TextEditingTab_Load(object sender, EventArgs e)
+        {
             
         }
 
@@ -87,6 +92,12 @@ namespace TNotepad
             // Labels
             SaveStatusText.Text = Lang.GetLangData("TextEditMain_UnsavedStatus");
             EncodingInfoLabel.Text = Lang.GetLangData("TextEditMain_EncodingNotSetStatus");
+
+            // Drop Down
+            copyToolStripMenuItem.Text = Lang.GetLangData("TextEditMain_TextEditDropDown_Copy");
+            cutToolStripMenuItem.Text = Lang.GetLangData("TextEditMain_TextEditDropDown_Cut");
+            PasteToolStripMenuItem.Text = Lang.GetLangData("TextEditMain_TextEditDropDown_Paste");
+
 
         }
 
@@ -330,8 +341,8 @@ namespace TNotepad
 
         private void Updater_Tick(object sender, EventArgs e)
         {
+            
             int DivisionWax = 0;
-
             try
             {
                 DivisionWax = TextEditingThing.GetLineFromCharIndex(TextEditingThing.SelectionStart) + 1 / TextEditingThing.Lines.Length;
@@ -349,6 +360,24 @@ namespace TNotepad
 
             ColumnInfoLabel.Text = Lang.GetLangData("TextEditMain_ColumnSelected") + column;
 
+
+        }
+
+        private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TextEditingThing.SelectionLength = 0;
+            TextEditingThing.SelectedText = Clipboard.GetText();
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(TextEditingThing.SelectedText);
+        }
+
+        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(TextEditingThing.SelectedText);
+            TextEditingThing.SelectedText = "";
 
         }
 

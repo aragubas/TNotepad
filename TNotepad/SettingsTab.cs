@@ -39,6 +39,12 @@ namespace TNotepad
 
             RootControl = pRootControl;
             AssociatedTabPage = pAssociatedTabPage;
+
+            Dock = DockStyle.Fill;
+            CreateSettingsTab(0);
+
+            LoadLangs();
+
         }
 
         public void CreateSettingsTab(int SettingTabID)
@@ -72,10 +78,6 @@ namespace TNotepad
 
         private void SettingsTab_Load(object sender, EventArgs e)
         {
-            Dock = DockStyle.Fill;
-            CreateSettingsTab(0);
-
-            LoadLangs();
 
         }
 

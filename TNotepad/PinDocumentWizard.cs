@@ -36,6 +36,10 @@ namespace TNotepad
         {
             InitializeComponent();
             RootControl = pRootControl;
+
+            DocFileName = RootControl.LastFileName;
+            LoadLang();
+
         }
 
         public void LoadLang()
@@ -52,8 +56,6 @@ namespace TNotepad
         }
         private void PinDocumentWizard_Load(object sender, EventArgs e)
         {
-            DocFileName = RootControl.LastFileName;
-            LoadLang();
 
         }
 

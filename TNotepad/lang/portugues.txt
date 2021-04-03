@@ -39,6 +39,11 @@ TextEditMain_UntitledTab;Arquivo sem titulo
 TextEditMain_EncodingNotSetStatus;Codificação não definida.
 TextEditMain_LineNumber;Linha 
 TextEditMain_ColumnSelected;Coluna 
+# -Dropdown Menu
+TextEditMain_TextEditDropDown_Copy;Copiar
+TextEditMain_TextEditDropDown_Cut;Recortar
+TextEditMain_TextEditDropDown_Paste;Colar
+
 
 #
 # Homescreen
@@ -71,6 +76,8 @@ PinnedDocuments_DeleteSinglePinDialogBox_Title;Apagar Pin
 # -ListView Category
 PinnedDocuments_ListViewCollumsText_PinName;Pin
 PinnedDocuments_ListViewCollumsText_FilePath;Local do Arquivo
+# -Tab Title
+PinnedDocuments_TabTitle;Inicio
 
 
 #

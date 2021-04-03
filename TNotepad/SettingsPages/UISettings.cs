@@ -36,6 +36,11 @@ namespace TNotepad.SettingsPages
             InitializeComponent();
             RootControl = pRootControl;
 
+            Dock = DockStyle.Fill;
+            LoadLangStrings();
+            LoadValues();
+
+
         }
 
         public void LoadLangStrings()
@@ -64,9 +69,6 @@ namespace TNotepad.SettingsPages
         }
         private void UISettingscs_Load(object sender, EventArgs e)
         {
-            Dock = DockStyle.Fill;
-            LoadLangStrings();
-            LoadValues();
 
         }
 

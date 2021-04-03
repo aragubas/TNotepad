@@ -37,14 +37,15 @@ namespace TNotepad
             InitializeComponent();
 
             RootControl = pRootControl;
-        }
 
-        private void HomescreenTab_Load(object sender, EventArgs e)
-        {
             Dock = DockStyle.Fill;
             ReloadPinnedDocuments();
             LoadLangStrings();
 
+        }
+
+        private void HomescreenTab_Load(object sender, EventArgs e)
+        {
 
         }
 

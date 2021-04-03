@@ -16,6 +16,12 @@ namespace TNotepad
         public LanguageSettings()
         {
             InitializeComponent();
+
+            LoadAvaliableLanguages();
+            LoadLang();
+
+            CurrentLanguageTextBox.Text = Properties.Settings.Default.CurrentLanguage;
+
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -25,10 +31,6 @@ namespace TNotepad
 
         private void LanguageSettings_Load(object sender, EventArgs e)
         {
-            LoadAvaliableLanguages();
-            LoadLang();
-
-            CurrentLanguageTextBox.Text = Properties.Settings.Default.CurrentLanguage;
 
         }
 

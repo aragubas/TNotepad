@@ -26,12 +26,163 @@ namespace TNotepad
 
     public partial class ApplicationTabs : TabControl
     {
+
         public ApplicationTabs()
         {
+            //TabPages_index = new List<int>();
+
             this.DrawMode = TabDrawMode.OwnerDrawFixed;
 
+            // Make the tab buttons work
             this.MouseUp += ApplicationTabs_MouseUp;
+            
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.DoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
+            this.UpdateStyles();
 
+            this.ControlAdded += ApplicationTabs_ControlAdded;
+            this.ControlRemoved += ApplicationTabs_ControlRemoved;
+
+
+        }
+
+        void ApplicationTabs_ControlRemoved(object sender, ControlEventArgs e)
+        {
+            this.SuspendLayout();
+        }  
+
+        void ApplicationTabs_ControlAdded(object sender, ControlEventArgs e)
+        {
+            this.SuspendLayout();
+        }
+
+        protected override void NotifyInvalidate(Rectangle invalidatedArea)
+        {
+            Graphics ceira = this.CreateGraphics();
+            ceira.FillRectangle(new SolidBrush(Color.FromArgb(255, 32, 32, 32)), ClientRectangle);
+
+        }
+
+
+        protected override void OnPaintBackground(PaintEventArgs pevent)
+        {
+            //base.OnPaintBackground(pevent);
+
+            Brush b = new SolidBrush(Color.FromArgb(255, 32, 32, 32));
+
+            pevent.Graphics.FillRectangle(b, this.ClientRectangle);
+
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+
+            Rectangle tf = this.ClientRectangle;
+
+
+            for (var i = 0; i < TabPages.Count; i++)
+            {
+                // Set some variables
+                Font fntTab = Font;
+                Brush bshBack;
+                Brush bshFore;
+                Rectangle TabRect = GetTabRect(i);
+
+                // Set SmoothingMode
+                if (Properties.Settings.Default.SmoothVisualElements)
+                {
+                    e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                    e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+
+                }
+                
+                // ################
+                // Draw Background
+                // ################
+                // Selected Tab
+                if (i == this.SelectedIndex) 
+                {
+                    bshFore = Brushes.LightGray;
+                    bshBack = new SolidBrush(Color.FromArgb(255, 64, 64, 64));
+
+                    if (TabPages[i].Tag == "PERSISTENT")
+                    {
+                        bshFore = Brushes.White;
+                        bshBack = new SolidBrush(Color.FromArgb(255, 96, 96, 96));
+
+                    }
+
+                }
+                else // Unselected Tab
+                {
+                    bshBack = new SolidBrush(Color.FromArgb(255, 16, 16, 16));
+                    bshFore = Brushes.Gray;
+                    if (TabPages[i].Tag == "PERSISTENT")
+                    {
+                        bshFore = Brushes.Gray;
+                        bshBack = new SolidBrush(Color.FromArgb(255, 32, 32, 32));
+
+                    }
+
+                }
+
+
+                // Draw Background
+                e.Graphics.FillRectangle(bshBack, TabRect);
+
+                // Draw Tab Title
+                string tabName = TabPages[i].Text;
+                StringFormat sftTab = new StringFormat();
+                Rectangle recTab = TabRect;
+                recTab = new Rectangle(recTab.X, recTab.Y, recTab.Width, recTab.Height);
+
+                e.Graphics.DrawString(tabName, fntTab, bshFore, new Rectangle(recTab.X + 1, recTab.Y + 4, recTab.Width, recTab.Height), sftTab);
+
+                // Draw Red Close Circle
+                var CloseButtonRect = new Rectangle(recTab.Right - 15, recTab.Top + (recTab.Height - 8) / 2, 10, 10);
+                // If current tab is not a persistent one
+                if (TabPages[i].Tag != "PERSISTENT")
+                {
+                    // If current tab is the selected one
+                    if (SelectedIndex == i)
+                    {
+                        e.Graphics.FillEllipse(Brushes.Red, new Rectangle(CloseButtonRect.X - 1, CloseButtonRect.Y - 1, CloseButtonRect.Width + 2, CloseButtonRect.Height + 2));
+                    }
+                    e.Graphics.DrawImage(Properties.Resources.TabClose, new Point(CloseButtonRect.X, CloseButtonRect.Y));
+
+                    // Add spacing to title text
+                    if (!TabPages[i].Text.EndsWith(" "))
+                    {
+                        TabPages[i].Text += " ";
+
+                    }
+
+                }
+                else
+                {
+                    // Add spacing to title text
+                    if (!TabPages[i].Text.EndsWith("  "))
+                    {
+                        TabPages[i].Text += " ";
+
+                    }
+
+                }
+
+                // #########################
+                // Draw Tab Separation Line
+                // #########################
+                // Left Line
+                e.Graphics.FillRectangle(Brushes.White, new Rectangle(TabRect.X - 1, TabRect.Y, 1, TabRect.Height));
+
+                // Right Line
+                if (i == TabPages.Count - 1)
+                {
+                    e.Graphics.FillRectangle(Brushes.White, new Rectangle(TabRect.X + TabRect.Width, TabRect.Y, 1, TabRect.Height));
+
+                }
+            }
+            
         }
 
         void ApplicationTabs_MouseUp(object sender, MouseEventArgs e)
@@ -41,7 +192,7 @@ namespace TNotepad
             {
                 var tabRect = GetTabRect(i);
                 tabRect.Inflate(-2, -2);
-                var imageRect = new Rectangle(tabRect.Right - 15, tabRect.Top + (tabRect.Height - 16) / 2, 10, 10);
+                var imageRect = new Rectangle(tabRect.Right - 15, tabRect.Top + (tabRect.Height - 8) / 2, 10, 10);
 
                 if (imageRect.IntersectsWith(new Rectangle(e.Location.X, e.Location.Y, 1, 1)))
                 {
@@ -56,6 +207,7 @@ namespace TNotepad
 
                         // Remove page
                         TabPages.RemoveAt(i);
+                        //TabPages[i].CloseTab();
 
                     }
 
@@ -65,7 +217,7 @@ namespace TNotepad
 
             if (TabPages.Count == 0)
             {
-                CreateHometab();
+                CreateDefaultTab();
             }
 
 
@@ -73,89 +225,8 @@ namespace TNotepad
 
         private const int TCM_ADJUSTRECT = 0x1328;
 
-        public virtual void CreateHometab()
+        public virtual void CreateDefaultTab()
         {
-
-        }
-
-        protected override void OnDrawItem(DrawItemEventArgs e)
-        {
-            base.OnDrawItem(e);
-
-            Font fntTab;
-            Brush bshBack;
-            Brush bshFore;
-
-            // Set SmoothingMode
-            if (Properties.Settings.Default.SmoothVisualElements)
-            {
-                e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-                e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-
-            }
-
-            if (e.Index == this.SelectedIndex) // Selected Tab
-            {
-                fntTab = new Font(e.Font, FontStyle.Underline);
-                bshFore = Brushes.White;
-                bshBack = new SolidBrush(Color.FromArgb(255, 64, 64, 64));
-
-            }
-            else // Unselected Tab
-            {
-                fntTab = e.Font;
-                bshBack = new SolidBrush(Color.FromArgb(255, 32, 32, 32));
-                bshFore = new SolidBrush(Color.White);
-
-            }
-
-            // Draw Title Background
-            e.Graphics.FillRectangle(bshBack, e.Bounds);
-
-            // Draw Tab Title
-            string tabName = TabPages[e.Index].Text;
-            StringFormat sftTab = new StringFormat();
-            Rectangle recTab = e.Bounds;
-            recTab = new Rectangle(recTab.X, recTab.Y + 4, recTab.Width, recTab.Height - 4);
-
-            e.Graphics.DrawString(tabName, fntTab, bshFore, recTab, sftTab);
-
-            // Draw Red Close Circle
-            var CloseButtonRect = new Rectangle(recTab.Right - 15, recTab.Top + (recTab.Height - 16) / 2, 10, 10);
-            if (TabPages[e.Index].Tag != "PERSISTENT")
-            {
-                if (SelectedIndex == e.Index)
-                {
-                    e.Graphics.FillEllipse(Brushes.Red, new Rectangle(CloseButtonRect.X - 1, CloseButtonRect.Y - 1, CloseButtonRect.Width + 2, CloseButtonRect.Height + 2));
-                }
-                e.Graphics.DrawImage(Properties.Resources.TabClose, new Point(CloseButtonRect.X, CloseButtonRect.Y));
-
-                // Add spacing to title text
-                if (!TabPages[e.Index].Text.EndsWith("   "))
-                {
-                    TabPages[e.Index].Text += "   ";
-
-                }
-
-            }
-            else
-            {
-                // Add spacing to title text
-                if (!TabPages[e.Index].Text.EndsWith(" "))
-                {
-                    TabPages[e.Index].Text += " ";
-
-                }
-
-            }
-
-            // Draw Background
-            Rectangle r = GetTabRect(this.TabPages.Count - 1);
-
-            RectangleF tf = new RectangleF(r.X + r.Width, r.Y - 5, this.Width - (r.X + r.Width) + 5, r.Height + 5);
-            Brush b = new SolidBrush(Color.FromArgb(255, 32, 32, 32));
-
-            e.Graphics.FillRectangle(b, tf);
 
         }
 
@@ -168,7 +239,7 @@ namespace TNotepad
                 rect.Left = this.Left - 4;
                 rect.Right = this.Right + 4;
 
-                rect.Top = this.Top - 6;
+                rect.Top = this.Top - 2;
                 rect.Bottom = this.Bottom + 4;
 
                 Marshal.StructureToPtr(rect, m.LParam, true);
@@ -187,5 +258,6 @@ namespace TNotepad
             public int Left, Top, Right, Bottom;
         }
     }
+
 
 }

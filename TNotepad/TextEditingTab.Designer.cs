@@ -52,9 +52,14 @@
             this.LastSavedTimer = new System.Windows.Forms.Timer(this.components);
             this.ExtraFuncPanel = new System.Windows.Forms.Panel();
             this.Updater = new System.Windows.Forms.Timer(this.components);
+            this.TextEditorContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TextEditingThing = new TNotepad.ExtendedRichTextBox();
             this.Toolbar.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.TextEditorContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // Toolbar
@@ -264,11 +269,53 @@
             this.Updater.Interval = 10;
             this.Updater.Tick += new System.EventHandler(this.Updater_Tick);
             // 
+            // TextEditorContextMenu
+            // 
+            this.TextEditorContextMenu.BackColor = System.Drawing.Color.Gray;
+            this.TextEditorContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.copyToolStripMenuItem,
+            this.cutToolStripMenuItem,
+            this.PasteToolStripMenuItem});
+            this.TextEditorContextMenu.Name = "TextEditorContextMenu";
+            this.TextEditorContextMenu.ShowImageMargin = false;
+            this.TextEditorContextMenu.Size = new System.Drawing.Size(78, 70);
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.copyToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(77, 22);
+            this.copyToolStripMenuItem.Text = "Copy";
+            this.copyToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
+            // 
+            // PasteToolStripMenuItem
+            // 
+            this.PasteToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.PasteToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.PasteToolStripMenuItem.Name = "PasteToolStripMenuItem";
+            this.PasteToolStripMenuItem.Size = new System.Drawing.Size(77, 22);
+            this.PasteToolStripMenuItem.Text = "Paste";
+            this.PasteToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.PasteToolStripMenuItem.Click += new System.EventHandler(this.PasteToolStripMenuItem_Click);
+            // 
+            // cutToolStripMenuItem
+            // 
+            this.cutToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.cutToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(77, 22);
+            this.cutToolStripMenuItem.Text = "Cut";
+            this.cutToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
+            // 
             // TextEditingThing
             // 
             this.TextEditingThing.AcceptsTab = true;
             this.TextEditingThing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.TextEditingThing.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextEditingThing.ContextMenuStrip = this.TextEditorContextMenu;
             this.TextEditingThing.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TextEditingThing.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextEditingThing.ForeColor = System.Drawing.Color.White;
@@ -301,6 +348,7 @@
             this.Toolbar.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.TextEditorContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,5 +379,9 @@
         private System.Windows.Forms.Timer Updater;
         private System.Windows.Forms.ToolStripStatusLabel ColumnInfoLabel;
         public ExtendedRichTextBox TextEditingThing;
+        private System.Windows.Forms.ContextMenuStrip TextEditorContextMenu;
+        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem PasteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
     }
 }

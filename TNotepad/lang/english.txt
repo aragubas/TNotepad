@@ -38,6 +38,10 @@ TextEditMain_UntitledTab;Untitled File
 TextEditMain_EncodingNotSetStatus;Encoding not set.
 TextEditMain_LineNumber;Line 
 TextEditMain_ColumnSelected;Column
+# -Dropdown Menu
+TextEditMain_TextEditDropDown_Copy;Copy
+TextEditMain_TextEditDropDown_Cut;Cut
+TextEditMain_TextEditDropDown_Paste;Paste
 
 #
 # Homescreen
@@ -71,7 +75,8 @@ PinnedDocuments_DeleteSinglePinDialogBox_Title;Delete Pin
 # -ListView Category
 PinnedDocuments_ListViewCollumsText_PinName;Pin
 PinnedDocuments_ListViewCollumsText_FilePath;File Path
-
+# -Tab Title
+PinnedDocuments_TabTitle;Home
 
 #
 # About

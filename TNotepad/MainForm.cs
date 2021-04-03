@@ -18,20 +18,22 @@ namespace TNotepad
             InitializeComponent();
 
             RootControl = pRootControl;
-        }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
             this.Dock = DockStyle.Fill;
 
             AttachSidePanel();
             CreateHometab();
 
             RootControl.FormCloseButton.Click += FormCloseButton_Click;
-            
+
             // Set minimun size to the previous version window size.
             RootControl.MinimumSize = new Size(840, 470);
             RootControl.Size = new Size(840, 470);
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
 
         }
 
@@ -68,7 +70,7 @@ namespace TNotepad
             // Create Tab object
             TabPage newTab = new TabPage();
             newTab.Controls.Add(new HomescreenTab(this));
-            newTab.Text = "TNotepad";
+            newTab.Text = Lang.GetLangData("PinnedDocuments_TabTitle");
             newTab.Padding = new Padding(0, 0, 0, 0);
             newTab.Tag = "PERSISTENT";
 

@@ -32,6 +32,14 @@ namespace TNotepad
         public About()
         {
             InitializeComponent();
+
+            MinimumSize = Size;
+            LoadLang();
+            LicenseView.Text = Properties.Resources.ApacheLicense;
+
+            InfosLabel.Text += Lang.GetLangData("About_MainDesc");
+            InfosLabel.Text += "\n\n" + Lang.GetLangData("About_BuildNumber") + Utils.GetBuildNumber() + "\n\n" + Lang.GetLangData("About_BuildDate") + Utils.GetBuildDate();
+
         }
 
         public void LoadLang()
@@ -53,12 +61,6 @@ namespace TNotepad
 
         private void About_Load(object sender, EventArgs e)
         {
-            MinimumSize = Size;
-            LoadLang();
-            LicenseView.Text = Properties.Resources.ApacheLicense;
-
-            InfosLabel.Text += Lang.GetLangData("About_MainDesc");
-            InfosLabel.Text += "\n\n" + Lang.GetLangData("About_BuildNumber") + Utils.GetBuildNumber() + "\n\n" + Lang.GetLangData("About_BuildDate") + Utils.GetBuildDate();
         }
 
         private void BuildInfo_Button_Click(object sender, EventArgs e)

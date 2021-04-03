@@ -43,6 +43,12 @@ namespace TNotepad
             RootControl = pRootControl;
             RootPanel = pRootPanel;
 
+            Dock = DockStyle.Fill;
+            DefaultWidth = RootPanel.Width;
+            HideShowButton.PerformClick();
+
+            LoadLangs();
+
         }
 
         public void LoadLangs()
@@ -56,11 +62,6 @@ namespace TNotepad
         }
         private void SidePanel_Load(object sender, EventArgs e)
         {
-            Dock = DockStyle.Fill;
-            DefaultWidth = RootPanel.Width;
-            HideShowButton.PerformClick();
-
-            LoadLangs();
         }
 
         private void NewTabButton_Click(object sender, EventArgs e)
