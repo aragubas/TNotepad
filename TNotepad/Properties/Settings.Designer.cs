@@ -168,7 +168,7 @@ namespace TNotepad.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("TaiyouLight")]
+        [global::System.Configuration.DefaultSettingValueAttribute("TaiyouDark")]
         public string CurrentTheme {
             get {
                 return ((string)(this["CurrentTheme"]));

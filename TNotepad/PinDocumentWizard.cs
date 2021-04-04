@@ -27,18 +27,29 @@ using System.Windows.Forms;
 
 namespace TNotepad
 {
-    public partial class PinDocumentWizard : Form
+    public partial class PinDocumentWizard : taiyouUserControl
     {
-        TextEditingTab RootControl;
         string DocFileName;
 
-        public PinDocumentWizard(TextEditingTab pRootControl)
+        public PinDocumentWizard(TextEditingTab textEditingTab)
         {
             InitializeComponent();
-            RootControl = pRootControl;
+            Dock = DockStyle.Fill;
 
-            DocFileName = RootControl.LastFileName;
+            DocFileName = textEditingTab.LastFileName;
             LoadLang();
+            LoadTheme();
+
+        }
+
+        public void LoadTheme()
+        {
+            BackColor = ThemeLoader.GetThemeData("Form_BackgroundColor");
+            ForeColor = ThemeLoader.GetThemeData("Form_ForegroundColor");
+
+            DocPinNameTextbox.LoadTheme();
+
+            PinDocButton.LoadTheme();
 
         }
 
@@ -56,13 +67,24 @@ namespace TNotepad
         }
         private void PinDocumentWizard_Load(object sender, EventArgs e)
         {
+            RootForm.Size = new Size(460, 160);
+            RootForm.ResizeableForm = false;
+            RootForm.MinimizeableForm = false;
+            RootForm.Text = "Pin File";
+            RootForm.FormCloseButton.Click += FormCloseButton_Click;
+
+        }
+
+        void FormCloseButton_Click(object sender, EventArgs e)
+        {
+            RootForm.Close();
 
         }
 
         private void PinButton_Click(object sender, EventArgs e)
         {
             // Check if finename don't contain any invalid character
-            if (textBox1.Text.Contains(":"))
+            if (DocPinNameTextbox.Text.Contains(":"))
             {
                 MessageBox.Show("Title cannot contain ':' character.", "Invalid Character", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
@@ -70,7 +92,7 @@ namespace TNotepad
 
 
             // DocString data to be stored
-            string DocString = "name|" + textBox1.Text + ";path|" + DocFileName;
+            string DocString = "name|" + DocPinNameTextbox.Text + ";path|" + DocFileName;
 
             // Define the list if it has not been defined before
             try
@@ -98,10 +120,10 @@ namespace TNotepad
                     switch (EventSplit[0])
                     {
                         case "name":
-                            if (EventSplit[1] == textBox1.Text)
+                            if (EventSplit[1] == DocPinNameTextbox.Text)
                             {
                                 MessageBox.Show(Lang.GetLangData("PinDocument_SameDocumentTitleAlreadyPinned_Text"), Lang.GetLangData("PinDocument_DuplicateDocumentPin_Title"), MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                                Close();
+                                RootForm.Close();
                                 return;
                             }
                             break;
@@ -110,7 +132,7 @@ namespace TNotepad
                             if (EventSplit[1] == DocFileName)
                             {
                                 MessageBox.Show(Lang.GetLangData("PinDocument_SameDocumentAlreadyPinned_Text"), Lang.GetLangData("PinDocument_DuplicateDocumentPin_Title"), MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                                Close();
+                                RootForm.Close();
                                 return;
                             }
                             break;
@@ -123,7 +145,12 @@ namespace TNotepad
             Properties.Settings.Default.PinnedDocuments.Add(DocString);
             Properties.Settings.Default.Save();
             MessageBox.Show(Lang.GetLangData("PinDocument_DocumentSucefullyPinned_Text"), Lang.GetLangData("PinDocument_DocumentSucefullyPinned_Title"), MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Close();
+            RootForm.Close();
+        }
+
+        private void DocPinNameTextbox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -64,6 +64,14 @@ namespace TNotepad.SettingsPages
             // TextBox
             SaveWarningTextBox.LoadTheme();
 
+            // GroupBoxes
+            LanguageSettingGroupBox.ForeColor = ForeColor;
+            SaveWarningGroupBox.ForeColor = ForeColor;
+            SmoothVisualElementsGroupBox.ForeColor = ForeColor;
+            StretchResizeGroupbox.ForeColor = ForeColor;
+            WindowShadowGroupBox.ForeColor = ForeColor;
+            ThemeSettingsGroupBox.ForeColor = ForeColor;
+
         }
 
         public void LoadLangStrings()
@@ -74,10 +82,12 @@ namespace TNotepad.SettingsPages
             WindowShadowGroupBox.Text = Lang.GetLangData("Settings_UISettings_WindowShadow");
             SmoothVisualElementsGroupBox.Text = Lang.GetLangData("Settings_UISettings_SmoothVisualElementsGroupbox");
             StretchResizeGroupbox.Text = Lang.GetLangData("Settings_UISettings_StretchResizeGroupbox");
+            ThemeSettingsGroupBox.Text = Lang.GetLangData("Settings_UISettings_ThemeSettingsGroupbox");
 
             // Labels
             SaveWarningIntervalInfo.Text = Lang.GetLangData("Settings_UISettings_SaveWarningIntervalInfoLabel");
             LanguageSettingsInfoLabel.Text = Lang.GetLangData("Settings_UISettings_LanguageSettingsInfoLabel");
+            ThemeSettingsInfoLabel.Text = Lang.GetLangData("Settings_UISettings_ThemeSettingsInfoLabel");
 
             // Checkboxes
             SaveWarningCheckBox.Text = Lang.GetLangData("Settings_UISettings_SaveWarningCheckbox");
@@ -87,6 +97,7 @@ namespace TNotepad.SettingsPages
 
             // Buttons
             OpenLanguageSettingsButton.Text = Lang.GetLangData("Settings_UISettings_OpenLanguageSettingsButton");
+            OpenThemeSettingsButton.Text = Lang.GetLangData("Settings_UISettings_OpenThemeSettingsButton");
 
 
         }
@@ -134,13 +145,18 @@ namespace TNotepad.SettingsPages
 
         private void OpenLanguageSettingsButton_Click(object sender, EventArgs e)
         {
-            LanguageSettings languageSettings = new LanguageSettings();
-            languageSettings.ShowDialog();
+            Utils.CreateWindow(new LanguageSettings(), ShowAsDialog: true);
+
         }
 
         private void WindowShadowCheckButton_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void OpenThemeSettingsButton_Click(object sender, EventArgs e)
+        {
+            Utils.CreateWindow(new ThemeSettings(), ShowAsDialog: true);
         }
 
     }

@@ -27,17 +27,18 @@ using System.Windows.Forms;
 
 namespace TNotepad
 {
-    public partial class EncodingSelector : Form
+    public partial class EncodingSelector : taiyouUserControl
     {
         TextEditingTab RootControl;
-
         public EncodingSelector(TextEditingTab pRootControl)
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
             RootControl = pRootControl;
 
             LoadLangString();
             LoadValues();
+            LoadTheme();
 
         }
 
@@ -51,7 +52,7 @@ namespace TNotepad
             } 
             RootControl.SetEncoding(Utils.EncodingNameToEncodingObject(SelectedEncoding));
             RootControl.ReopenFileInEncodingChange();
-            this.Close();
+            RootForm.Close();
 
         }
 
@@ -60,12 +61,40 @@ namespace TNotepad
             EncodingInfoLabel.Text = Lang.GetLangData("EncodingSelector_EncodingInfosLabel");
             radioButton1.Text = Lang.GetLangData("EncodingSelector_SetSelectedEncodingRadioButton");
             button1.Text = Lang.GetLangData("EncodingSelector_ExitSaveButton");
-            Text = Lang.GetLangData("EncodingSelected_WindowTitle");
 
         }
 
         private void EncodingSelector_Load(object sender, EventArgs e)
         {
+            RootForm.Size = new Size(410, 180);
+            RootForm.ResizeableForm = false;
+            RootForm.MinimizeableForm = false;
+            RootForm.Text = Lang.GetLangData("EncodingSelected_WindowTitle");
+
+            RootForm.FormCloseButton.Click += FormCloseButton_Click;
+
+        }
+
+        void FormCloseButton_Click(object sender, EventArgs e)
+        {
+            RootForm.Close();
+
+        }
+
+        private void LoadTheme()
+        {
+            // Background Color
+            BackColor = ThemeLoader.GetThemeData("Form_BackgroundColor");
+            ForeColor = ThemeLoader.GetThemeData("Form_ForegroundColor");
+
+            // Button
+            button1.LoadTheme();
+            
+            // ComboBox
+            comboBox1.LoadTheme();
+            
+            // Radio Button
+            radioButton1.LoadTheme();
 
         }
 

@@ -288,14 +288,13 @@ namespace TNotepad
 
         private void encodingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EncodingSelector Ecd = new EncodingSelector(this);
-            Ecd.ShowDialog();
+            Utils.CreateWindow(new EncodingSelector(this), ShowAsDialog: true);
+
         }
 
         private void pinDocumentToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PinDocumentWizard Pin = new PinDocumentWizard(this);
-            Pin.ShowDialog();
+            Utils.CreateWindow(new PinDocumentWizard(this), ShowAsDialog:true);
 
         }
 
@@ -412,19 +411,30 @@ namespace TNotepad
 
         private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             TextEditingThing.SelectionLength = 0;
             TextEditingThing.SelectedText = Clipboard.GetText();
         }
 
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(TextEditingThing.SelectedText);
+            try
+            {
+                Clipboard.SetText(TextEditingThing.SelectedText);
+
+            }
+            catch (ArgumentNullException) { }
         }
 
         private void cutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(TextEditingThing.SelectedText);
-            TextEditingThing.SelectedText = "";
+            try
+            {
+                Clipboard.SetText(TextEditingThing.SelectedText);
+                TextEditingThing.SelectedText = "";
+
+            }
+            catch (ArgumentNullException) { }
 
         }
 

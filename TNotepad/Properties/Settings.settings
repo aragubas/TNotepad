@@ -39,7 +39,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="CurrentTheme" Type="System.String" Scope="User">
-      <Value Profile="(Default)">TaiyouLight</Value>
+      <Value Profile="(Default)">TaiyouDark</Value>
     </Setting>
   </Settings>
 </SettingsFile>

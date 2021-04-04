@@ -102,9 +102,11 @@ Settings_UISettings_SaveWarning;Aviso de Não-Salvo
 Settings_UISettings_LanguageSetting;Configurações de Idioma
 Settings_UISettings_WindowShadow;Sombra da Janela
 Settings_UISettings_StretchResizeGroupbox;Remendisionar Esticando
+Settings_UISettings_ThemeSettingsGroupbox;Tema
 # -Labels
 Settings_UISettings_SaveWarningIntervalInfoLabel;Intervalo (em milisegundos)
-Settings_UISettings_LanguageSettingsInfoLabel;Clique no botão abaixo para alterar o idioma
+Settings_UISettings_LanguageSettingsInfoLabel;Altera o idioma atual
+Settings_UISettings_ThemeSettingsInfoLabel;Altera o tema atual
 # -Checkbox
 Settings_UISettings_SaveWarningCheckbox;Mostra o tempo em que um arquivo não foi salvo%nna barra de status
 Settings_UISettings_HometabAsDefaultCheckbox;Usar Pagina Inicial como Pagina Padrão
@@ -112,6 +114,7 @@ Settings_UISettings_WindowShadowCheckbox;Desenha uma sombra atraz da janela prin
 Settings_UISettings_StretchResizeCheckbox;Esticar conteudo da janela ao remendisionar.
 # -Buttons
 Settings_UISettings_OpenLanguageSettingsButton;Alterar Idioma
+Settings_UISettings_OpenThemeSettingsButton;Alterar Tema
 
 #
 # Settings -> Text Editor
@@ -203,3 +206,13 @@ QuickFind_FindButton;Encontrar
 BackgroundWorker_WindowTitle;Trabalho em Segundo Plano
 BackgroundWorker_WorksLeftLabel; restante
 BackgroundWorker_CurrentLabel;Atual
+
+#
+# Theme Settings
+#
+ThemeSettings_WindowTitle;Configuraçoes de Tema
+ThemeSettings_SelectedThemeInfoLabel;Tema Atual: 
+ThemeSettings_SelectThemeButton;Aplicar tema
+# MessageBox
+ThemeSettings_ThemeApplyMessage;Você prescisa reiniciar o aplicativo para aplicar o tema.
+ThemeSettings_ThemeApplyMessage_Title;Reiniciar Requirido

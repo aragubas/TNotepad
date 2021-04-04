@@ -123,8 +123,7 @@ namespace TNotepad
 
         private void AboutButton_Click(object sender, EventArgs e)
         {
-            About abt = new About();
-            abt.ShowDialog();
+            Utils.CreateWindow(new About(), ShowAsDialog: true);
 
         }
 

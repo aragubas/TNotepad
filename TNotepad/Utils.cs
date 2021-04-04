@@ -22,6 +22,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TNotepad
 {
@@ -64,6 +65,24 @@ namespace TNotepad
 
             ParentForm.Text = "TNotepad v" + GetVersion();
             ParentForm.Show();
+
+        }
+
+        public static void CreateWindow(taiyouUserControl control, string DefaultTitle="Untitled Window", bool ShowAsDialog = false)
+        {
+            TabNotepadForm ParentForm = new TabNotepadForm();
+            
+            // Add controls to the form
+            control.RootForm = ParentForm;
+            ParentForm.FormControls.Controls.Add(control);
+
+            ParentForm.Text = DefaultTitle;
+            if (!ShowAsDialog)
+            {
+                ParentForm.Show();
+
+            }
+            else { ParentForm.ShowDialog(); }
 
         }
 

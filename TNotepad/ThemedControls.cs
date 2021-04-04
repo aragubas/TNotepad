@@ -10,11 +10,18 @@ namespace TNotepad
 {
     class taiyouButton : Button
     {
+        public taiyouButton()
+        {
+            this.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FlatAppearance.BorderSize = 0;
+
+        }
+
         public void LoadTheme()
         {
             BackColor = ThemeLoader.GetThemeData("Button_BackgroundColor");
             ForeColor = ThemeLoader.GetThemeData("Button_ForegroundColor");
-            
+
         }
 
     }
@@ -30,6 +37,19 @@ namespace TNotepad
         }
 
     }
+
+    class taiyouListBox : ListBox
+    {
+        public void LoadTheme()
+        {
+            if (!ThemeLoader.ThemeLoaded) { return; }
+            BackColor = ThemeLoader.GetThemeData("ListBox_BackgroundColor");
+            ForeColor = ThemeLoader.GetThemeData("ListBox_ForegroundColor");
+
+        }
+
+    }
+
 
     class taiyouToolStripButton : ToolStripButton
     {
@@ -69,12 +89,12 @@ namespace TNotepad
 
     class taiyouToolStripDropDownButton : ToolStripDropDownButton
     {
+
         public void LoadTheme()
         {
             if (!ThemeLoader.ThemeLoaded) { return; }
             BackColor = ThemeLoader.GetThemeData("ToolStrip_DropDownButton_BackgroundColor");
             ForeColor = ThemeLoader.GetThemeData("ToolStrip_DropDownButton_ForegroundColor");
-
         }
 
     }
@@ -131,6 +151,68 @@ namespace TNotepad
 
         }
 
+
+    }
+
+    class taiyouRichTextBox : RichTextBox
+    {
+        public taiyouRichTextBox()
+        {
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+
+        }
+
+        public void LoadTheme()
+        {
+            if (!ThemeLoader.ThemeLoaded) { return; }
+            BackColor = ThemeLoader.GetThemeData("RichTextBox_BackgroundColor");
+            ForeColor = ThemeLoader.GetThemeData("RichTextBox_ForegroundColor");
+
+        }
+
+
+    }
+
+
+    public class taiyouUserControl : UserControl
+    {
+        public TabNotepadForm RootForm;
+
+    }
+
+    public class taiyouComboBox : ComboBox
+    {
+        public taiyouComboBox()
+        {
+            this.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+
+        }
+
+        public void LoadTheme()
+        {
+            if (!ThemeLoader.ThemeLoaded) { return; }
+            BackColor = ThemeLoader.GetThemeData("TextBox_BackgroundColor");
+            ForeColor = ThemeLoader.GetThemeData("TextBox_ForegroundColor");
+
+        }
+
+    }
+
+    public class taiyouRadioButton : RadioButton
+    {
+        public taiyouRadioButton()
+        {
+            this.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+
+        }
+
+        public void LoadTheme()
+        {
+            if (!ThemeLoader.ThemeLoaded) { return; }
+            BackColor = ThemeLoader.GetThemeData("RadioButton_BackgroundColor");
+            ForeColor = ThemeLoader.GetThemeData("RadioButton_ForegroundColor");
+
+        }
 
     }
 

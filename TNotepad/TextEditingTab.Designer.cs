@@ -65,7 +65,6 @@
             // Toolbar
             // 
             this.Toolbar.AllowItemReorder = true;
-            this.Toolbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Toolbar.GripMargin = new System.Windows.Forms.Padding(0);
             this.Toolbar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.Toolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -86,7 +85,6 @@
             // NewPage
             // 
             this.NewPage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.NewPage.ForeColor = System.Drawing.Color.White;
             this.NewPage.Image = ((System.Drawing.Image)(resources.GetObject("NewPage.Image")));
             this.NewPage.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NewPage.Name = "NewPage";
@@ -97,7 +95,6 @@
             // OpenFileButton
             // 
             this.OpenFileButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.OpenFileButton.ForeColor = System.Drawing.Color.White;
             this.OpenFileButton.Image = ((System.Drawing.Image)(resources.GetObject("OpenFileButton.Image")));
             this.OpenFileButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OpenFileButton.Name = "OpenFileButton";
@@ -116,7 +113,6 @@
             this.pinDocumentToolStripMenuItem,
             this.savePathToolStripMenuItem,
             this.quickFindToolStripMenuItem});
-            this.ExtraMenu.ForeColor = System.Drawing.Color.White;
             this.ExtraMenu.Image = ((System.Drawing.Image)(resources.GetObject("ExtraMenu.Image")));
             this.ExtraMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ExtraMenu.Name = "ExtraMenu";
@@ -127,20 +123,20 @@
             // encodingToolStripMenuItem
             // 
             this.encodingToolStripMenuItem.Name = "encodingToolStripMenuItem";
-            this.encodingToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.encodingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.encodingToolStripMenuItem.Text = "Encoding";
             this.encodingToolStripMenuItem.Click += new System.EventHandler(this.encodingToolStripMenuItem_Click);
             // 
             // runToolStripMenuItem
             // 
             this.runToolStripMenuItem.Name = "runToolStripMenuItem";
-            this.runToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.runToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.runToolStripMenuItem.Text = "Run";
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
@@ -148,28 +144,27 @@
             // 
             this.pinDocumentToolStripMenuItem.Enabled = false;
             this.pinDocumentToolStripMenuItem.Name = "pinDocumentToolStripMenuItem";
-            this.pinDocumentToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.pinDocumentToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pinDocumentToolStripMenuItem.Text = "Pin Document";
             this.pinDocumentToolStripMenuItem.Click += new System.EventHandler(this.pinDocumentToolStripMenuItem_Click);
             // 
             // savePathToolStripMenuItem
             // 
             this.savePathToolStripMenuItem.Name = "savePathToolStripMenuItem";
-            this.savePathToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.savePathToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.savePathToolStripMenuItem.Text = "Save Path";
             this.savePathToolStripMenuItem.Click += new System.EventHandler(this.savePathToolStripMenuItem_Click);
             // 
             // quickFindToolStripMenuItem
             // 
             this.quickFindToolStripMenuItem.Name = "quickFindToolStripMenuItem";
-            this.quickFindToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.quickFindToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.quickFindToolStripMenuItem.Text = "Quick Find";
             this.quickFindToolStripMenuItem.Click += new System.EventHandler(this.quickFindToolStripMenuItem_Click);
             // 
             // SaveButton
             // 
             this.SaveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.SaveButton.ForeColor = System.Drawing.Color.White;
             this.SaveButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveButton.Image")));
             this.SaveButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SaveButton.Name = "SaveButton";
@@ -180,7 +175,6 @@
             // SaveAsButton
             // 
             this.SaveAsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.SaveAsButton.ForeColor = System.Drawing.Color.White;
             this.SaveAsButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveAsButton.Image")));
             this.SaveAsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SaveAsButton.Name = "SaveAsButton";
@@ -197,7 +191,6 @@
             // 
             // StatusBar
             // 
-            this.StatusBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.StatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SaveStatusText,
             this.EncodingInfoLabel,
@@ -251,7 +244,6 @@
             // 
             // ExtraFuncPanel
             // 
-            this.ExtraFuncPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ExtraFuncPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.ExtraFuncPanel.Location = new System.Drawing.Point(0, 0);
             this.ExtraFuncPanel.Name = "ExtraFuncPanel";
@@ -267,7 +259,6 @@
             // 
             // TextEditorContextMenu
             // 
-            this.TextEditorContextMenu.BackColor = System.Drawing.Color.Gray;
             this.TextEditorContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.copyToolStripMenuItem,
             this.cutToolStripMenuItem,
@@ -279,7 +270,6 @@
             // copyToolStripMenuItem
             // 
             this.copyToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.copyToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.Size = new System.Drawing.Size(77, 22);
             this.copyToolStripMenuItem.Text = "Copy";
@@ -289,7 +279,6 @@
             // cutToolStripMenuItem
             // 
             this.cutToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.cutToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.Size = new System.Drawing.Size(77, 22);
             this.cutToolStripMenuItem.Text = "Cut";
@@ -299,7 +288,6 @@
             // PasteToolStripMenuItem
             // 
             this.PasteToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.PasteToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.PasteToolStripMenuItem.Name = "PasteToolStripMenuItem";
             this.PasteToolStripMenuItem.Size = new System.Drawing.Size(77, 22);
             this.PasteToolStripMenuItem.Text = "Paste";
@@ -309,12 +297,10 @@
             // TextEditingThing
             // 
             this.TextEditingThing.AcceptsTab = true;
-            this.TextEditingThing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.TextEditingThing.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TextEditingThing.ContextMenuStrip = this.TextEditorContextMenu;
             this.TextEditingThing.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TextEditingThing.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextEditingThing.ForeColor = System.Drawing.Color.White;
             this.TextEditingThing.HideSelection = false;
             this.TextEditingThing.Location = new System.Drawing.Point(0, 60);
             this.TextEditingThing.Name = "TextEditingThing";
@@ -329,13 +315,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.TextEditingThing);
             this.Controls.Add(this.StatusBar);
             this.Controls.Add(this.Toolbar);
             this.Controls.Add(this.ExtraFuncPanel);
             this.DoubleBuffered = true;
-            this.ForeColor = System.Drawing.Color.White;
             this.Name = "TextEditingTab";
             this.Size = new System.Drawing.Size(710, 285);
             this.Load += new System.EventHandler(this.TextEditingTab_Load);

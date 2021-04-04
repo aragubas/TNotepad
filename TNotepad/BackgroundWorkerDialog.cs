@@ -10,26 +10,43 @@ using System.Windows.Forms;
 
 namespace TNotepad
 {
-    public partial class BackgroundWorkerDialog : Form
+    public partial class BackgroundWorkerDialog : taiyouUserControl
     {
         List<BackgroundWorker> Workers = new List<BackgroundWorker>();
         BackgroundWorker LastTask = null;
         bool ProgressChnagedEventHandlerSet = false;
         int CurrentWorking = 0;
+        Size originalSize;
 
         public BackgroundWorkerDialog(List<BackgroundWorker> pWorkers)
         {
             InitializeComponent();
+
+            LoadTheme();
+            originalSize = Size;
 
             Workers = pWorkers;
         }
 
         private void BackgroundWorkerDialog_Load(object sender, EventArgs e)
         {
-            Text = Lang.GetLangData("BackgroundWorker_WindowTitle");
             CurrentInfoLabel.Text = Lang.GetLangData("BackgroundWorker_CurrentLabel");
 
             FileRemaning.Maximum = Workers.Count;
+
+            Dock = DockStyle.Fill;
+            RootForm.ResizeableForm = false;
+            RootForm.MinimizeableForm = false;
+            RootForm.CloseableForm = false;
+            RootForm.Text = Lang.GetLangData("BackgroundWorker_WindowTitle");
+            RootForm.Size = originalSize;
+
+        }
+
+        public void LoadTheme()
+        {
+            BackColor = ThemeLoader.GetThemeData("Form_BackgroundColor");
+            ForeColor = ThemeLoader.GetThemeData("Form_ForegroundColor");
 
         }
 
@@ -75,7 +92,7 @@ namespace TNotepad
                 // Done!
                 if (Workers.Count == 0)
                 {
-                    Close();
+                    RootForm.Close();
                     return;
                 }
 

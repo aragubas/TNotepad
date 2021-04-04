@@ -22,7 +22,7 @@ namespace TNotepad
             this.Dock = DockStyle.Fill;
 
             AttachSidePanel();
-            CreateSettingsTab();
+            CreateHometab();
 
             RootControl.FormCloseButton.Click += FormCloseButton_Click;
 

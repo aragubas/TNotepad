@@ -102,9 +102,11 @@ Settings_UISettings_LanguageSetting;Language Settings
 Settings_UISettings_WindowShadow;Window Shadow
 Settings_UISettings_SmoothVisualElementsGroupbox;Smooth visual elements
 Settings_UISettings_StretchResizeGroupbox;Stretch resize
+Settings_UISettings_ThemeSettingsGroupbox;Theme
 # -Labels
 Settings_UISettings_SaveWarningIntervalInfoLabel;Interval (in miliseconds)
-Settings_UISettings_LanguageSettingsInfoLabel;Click on the button below to change the current language.
+Settings_UISettings_LanguageSettingsInfoLabel;Changes the current language.
+Settings_UISettings_ThemeSettingsInfoLabel;Changes the current theme.
 # -Checkbox
 Settings_UISettings_SaveWarningCheckbox;Show the time a document has been not saved%non statusbar
 Settings_UISettings_HometabAsDefaultCheckbox;Use hometab as default tab
@@ -113,6 +115,7 @@ Settings_UISettings_SmoothVisualElementsCheckbox;Appy anti-aliasing to certain c
 Settings_UISettings_StretchResizeCheckbox;Stretch window when resizing.
 # -Buttons
 Settings_UISettings_OpenLanguageSettingsButton;Change Language
+Settings_UISettings_OpenThemeSettingsButton;Change Theme
 
 #
 # Settings -> Text Editor
@@ -202,3 +205,15 @@ QuickFind_FindButton;Quick Find
 BackgroundWorker_WindowTitle;Working at background
 BackgroundWorker_WorksLeftLabel; left
 BackgroundWorker_CurrentLabel;Current
+
+#
+# Theme Settings
+#
+ThemeSettings_WindowTitle;Theme Settings
+ThemeSettings_SelectedThemeInfoLabel;Selected Theme: 
+ThemeSettings_SelectThemeButton;Apply theme
+# MessageBox
+ThemeSettings_ThemeApplyMessage;You need to restart the application to apply the theme.
+ThemeSettings_ThemeApplyMessage_Title;Restart Required
+
+

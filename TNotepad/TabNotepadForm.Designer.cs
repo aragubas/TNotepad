@@ -133,10 +133,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FormControls.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FormControls.Location = new System.Drawing.Point(2, 28);
+            this.FormControls.Location = new System.Drawing.Point(3, 29);
             this.FormControls.Name = "FormControls";
-            this.FormControls.Size = new System.Drawing.Size(659, 393);
+            this.FormControls.Size = new System.Drawing.Size(657, 391);
             this.FormControls.TabIndex = 6;
+            this.FormControls.Validated += new System.EventHandler(this.FormControls_Validated);
             // 
             // TabNotepadForm
             // 
@@ -154,6 +155,7 @@
             this.Name = "TabNotepadForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Untitled TabNotepad Form";
+            this.Activated += new System.EventHandler(this.TabNotepadForm_Activated);
             this.Load += new System.EventHandler(this.TabNotepadForm_Load);
             this.ResizeBegin += new System.EventHandler(this.TabNotepadForm_ResizeBegin);
             this.ResizeEnd += new System.EventHandler(this.TabNotepadForm_ResizeEnd);

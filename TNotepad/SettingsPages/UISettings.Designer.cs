@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.flowLayoutPanel1 = new TNotepad.taiyouFlowLayoutPanel();
             this.SaveWarningGroupBox = new System.Windows.Forms.GroupBox();
             this.SaveWarningCheckBox = new TNotepad.taiyouCheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.SaveWarningTextBox = new TNotepad.taiyouTextBox();
             this.SaveWarningIntervalInfo = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new TNotepad.taiyouFlowLayoutPanel();
             this.LanguageSettingGroupBox = new System.Windows.Forms.GroupBox();
             this.OpenLanguageSettingsButton = new TNotepad.taiyouButton();
             this.LanguageSettingsInfoLabel = new System.Windows.Forms.Label();
@@ -43,14 +43,33 @@
             this.SmoothVisualElementsCheckbox = new TNotepad.taiyouCheckBox();
             this.StretchResizeGroupbox = new System.Windows.Forms.GroupBox();
             this.StretchResizeCheckbox = new TNotepad.taiyouCheckBox();
+            this.ThemeSettingsGroupBox = new System.Windows.Forms.GroupBox();
+            this.OpenThemeSettingsButton = new TNotepad.taiyouButton();
+            this.ThemeSettingsInfoLabel = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SaveWarningGroupBox.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.LanguageSettingGroupBox.SuspendLayout();
             this.WindowShadowGroupBox.SuspendLayout();
             this.SmoothVisualElementsGroupBox.SuspendLayout();
             this.StretchResizeGroupbox.SuspendLayout();
+            this.ThemeSettingsGroupBox.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.SaveWarningGroupBox);
+            this.flowLayoutPanel1.Controls.Add(this.LanguageSettingGroupBox);
+            this.flowLayoutPanel1.Controls.Add(this.WindowShadowGroupBox);
+            this.flowLayoutPanel1.Controls.Add(this.SmoothVisualElementsGroupBox);
+            this.flowLayoutPanel1.Controls.Add(this.StretchResizeGroupbox);
+            this.flowLayoutPanel1.Controls.Add(this.ThemeSettingsGroupBox);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(733, 397);
+            this.flowLayoutPanel1.TabIndex = 3;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // SaveWarningGroupBox
             // 
@@ -105,20 +124,6 @@
             this.SaveWarningIntervalInfo.TabIndex = 2;
             this.SaveWarningIntervalInfo.Text = "Interval (miliseconds):";
             this.SaveWarningIntervalInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.SaveWarningGroupBox);
-            this.flowLayoutPanel1.Controls.Add(this.LanguageSettingGroupBox);
-            this.flowLayoutPanel1.Controls.Add(this.WindowShadowGroupBox);
-            this.flowLayoutPanel1.Controls.Add(this.SmoothVisualElementsGroupBox);
-            this.flowLayoutPanel1.Controls.Add(this.StretchResizeGroupbox);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(733, 397);
-            this.flowLayoutPanel1.TabIndex = 3;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // LanguageSettingGroupBox
             // 
@@ -220,6 +225,39 @@
             this.StretchResizeCheckbox.Text = "Stretch window when resizing";
             this.StretchResizeCheckbox.UseVisualStyleBackColor = true;
             // 
+            // ThemeSettingsGroupBox
+            // 
+            this.ThemeSettingsGroupBox.Controls.Add(this.OpenThemeSettingsButton);
+            this.ThemeSettingsGroupBox.Controls.Add(this.ThemeSettingsInfoLabel);
+            this.ThemeSettingsGroupBox.Location = new System.Drawing.Point(3, 137);
+            this.ThemeSettingsGroupBox.Name = "ThemeSettingsGroupBox";
+            this.ThemeSettingsGroupBox.Size = new System.Drawing.Size(244, 85);
+            this.ThemeSettingsGroupBox.TabIndex = 7;
+            this.ThemeSettingsGroupBox.TabStop = false;
+            this.ThemeSettingsGroupBox.Text = "Theme Chooser";
+            // 
+            // OpenThemeSettingsButton
+            // 
+            this.OpenThemeSettingsButton.FlatAppearance.BorderSize = 0;
+            this.OpenThemeSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OpenThemeSettingsButton.Location = new System.Drawing.Point(27, 47);
+            this.OpenThemeSettingsButton.Name = "OpenThemeSettingsButton";
+            this.OpenThemeSettingsButton.Size = new System.Drawing.Size(190, 23);
+            this.OpenThemeSettingsButton.TabIndex = 4;
+            this.OpenThemeSettingsButton.Text = "Open Theme Settings";
+            this.OpenThemeSettingsButton.UseVisualStyleBackColor = false;
+            this.OpenThemeSettingsButton.Click += new System.EventHandler(this.OpenThemeSettingsButton_Click);
+            // 
+            // ThemeSettingsInfoLabel
+            // 
+            this.ThemeSettingsInfoLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ThemeSettingsInfoLabel.Location = new System.Drawing.Point(3, 16);
+            this.ThemeSettingsInfoLabel.Name = "ThemeSettingsInfoLabel";
+            this.ThemeSettingsInfoLabel.Size = new System.Drawing.Size(238, 20);
+            this.ThemeSettingsInfoLabel.TabIndex = 4;
+            this.ThemeSettingsInfoLabel.Text = "Language Settings is at another window.";
+            this.ThemeSettingsInfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // UISettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -229,12 +267,12 @@
             this.Name = "UISettings";
             this.Size = new System.Drawing.Size(733, 397);
             this.Load += new System.EventHandler(this.UISettingscs_Load);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.SaveWarningGroupBox.ResumeLayout(false);
             this.SaveWarningGroupBox.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
             this.LanguageSettingGroupBox.ResumeLayout(false);
             this.WindowShadowGroupBox.ResumeLayout(false);
             this.WindowShadowGroupBox.PerformLayout();
@@ -242,6 +280,7 @@
             this.SmoothVisualElementsGroupBox.PerformLayout();
             this.StretchResizeGroupbox.ResumeLayout(false);
             this.StretchResizeGroupbox.PerformLayout();
+            this.ThemeSettingsGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -263,5 +302,8 @@
         private taiyouCheckBox SmoothVisualElementsCheckbox;
         private System.Windows.Forms.GroupBox StretchResizeGroupbox;
         private taiyouCheckBox StretchResizeCheckbox;
+        private System.Windows.Forms.GroupBox ThemeSettingsGroupBox;
+        private taiyouButton OpenThemeSettingsButton;
+        private System.Windows.Forms.Label ThemeSettingsInfoLabel;
     }
 }

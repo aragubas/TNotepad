@@ -30,8 +30,8 @@
         {
             this.InfosLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.LicenseView = new System.Windows.Forms.RichTextBox();
-            this.ExitButton = new System.Windows.Forms.Button();
+            this.LicenseView = new TNotepad.taiyouRichTextBox();
+            this.ExitButton = new TNotepad.taiyouButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,11 +62,9 @@
             this.LicenseView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.LicenseView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.LicenseView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.LicenseView.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.LicenseView.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LicenseView.ForeColor = System.Drawing.Color.White;
             this.LicenseView.Location = new System.Drawing.Point(285, 12);
             this.LicenseView.Name = "LicenseView";
             this.LicenseView.ReadOnly = true;
@@ -77,7 +75,6 @@
             // ExitButton
             // 
             this.ExitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ExitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ExitButton.FlatAppearance.BorderSize = 0;
             this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExitButton.Location = new System.Drawing.Point(12, 287);
@@ -92,24 +89,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(662, 328);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.LicenseView);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.InfosLabel);
             this.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "About";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "About TabNotepad";
-            this.TopMost = true;
+            this.Size = new System.Drawing.Size(662, 328);
             this.Load += new System.EventHandler(this.About_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -121,7 +108,7 @@
 
         private System.Windows.Forms.Label InfosLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.RichTextBox LicenseView;
-        private System.Windows.Forms.Button ExitButton;
+        private taiyouRichTextBox LicenseView;
+        private taiyouButton ExitButton;
     }
 }

@@ -27,7 +27,7 @@ using System.Windows.Forms;
 
 namespace TNotepad
 {
-    public partial class About : Form
+    public partial class About : taiyouUserControl
     {
         public About()
         {
@@ -35,6 +35,7 @@ namespace TNotepad
 
             MinimumSize = Size;
             LoadLang();
+            LoadTheme();
             LicenseView.Text = Properties.Resources.ApacheLicense;
 
             InfosLabel.Text += Lang.GetLangData("About_MainDesc");
@@ -46,7 +47,6 @@ namespace TNotepad
         {
             ExitButton.Text = Lang.GetLangData("About_ExitButton");
 
-
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -56,11 +56,33 @@ namespace TNotepad
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Close();
+            RootForm.Close();
+        }
+
+        public void LoadTheme()
+        {
+            BackColor = ThemeLoader.GetThemeData("Form_BackgroundColor");
+            ForeColor = ThemeLoader.GetThemeData("Form_ForegroundColor");
+
+            ExitButton.LoadTheme();
+            LicenseView.LoadTheme();
+
         }
 
         private void About_Load(object sender, EventArgs e)
         {
+            this.Dock = DockStyle.Fill;
+            RootForm.MinimizeableForm = false;
+            RootForm.Text = Lang.GetLangData("About_WindowTitle");
+            RootForm.MinimumSize = Size;
+
+            RootForm.FormCloseButton.Click += FormCloseButton_Click;
+
+        }
+
+        void FormCloseButton_Click(object sender, EventArgs e)
+        {
+            RootForm.Close();
         }
 
         private void BuildInfo_Button_Click(object sender, EventArgs e)

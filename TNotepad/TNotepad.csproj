@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
@@ -61,13 +61,13 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="BackgroundWorkerDialog.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="BackgroundWorkerDialog.Designer.cs">
       <DependentUpon>BackgroundWorkerDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="EncodingSelector.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="EncodingSelector.Designer.cs">
       <DependentUpon>EncodingSelector.cs</DependentUpon>
@@ -92,7 +92,7 @@
     </Compile>
     <Compile Include="Lang.cs" />
     <Compile Include="LanguageSettings.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="LanguageSettings.Designer.cs">
       <DependentUpon>LanguageSettings.cs</DependentUpon>
@@ -112,7 +112,7 @@
     <Compile Include="obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="PinDocumentWizard.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="PinDocumentWizard.Designer.cs">
       <DependentUpon>PinDocumentWizard.cs</DependentUpon>
@@ -159,6 +159,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ThemeLoader.cs" />
+    <Compile Include="ThemeSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThemeSettings.Designer.cs">
+      <DependentUpon>ThemeSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils.cs" />
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
@@ -243,6 +249,9 @@
     <EmbeddedResource Include="TextEditingTab.resx">
       <DependentUpon>TextEditingTab.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ThemeSettings.resx">
+      <DependentUpon>ThemeSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="obj\Debug\TNotepad.csproj.CoreCompileInputs.cache" />
@@ -292,6 +301,9 @@
     <Content Include="Resources\TabbedNotpadIcon.ico" />
     <Content Include="Resources\TabbedNotpadIcon.png" />
     <Content Include="TabbedNotpadIcon.ico" />
+    <Content Include="themes\TaiyouDark.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="themes\TaiyouLight.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

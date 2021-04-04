@@ -45,18 +45,24 @@ namespace TNotepad
 
         void ApplicationTabs_ControlRemoved(object sender, ControlEventArgs e)
         {
-            this.SuspendLayout();
+            Graphics ceira = this.CreateGraphics();
+            ceira.FillRectangle(new SolidBrush(ThemeLoader.GetThemeData("Form_BackgroundColor")), this.ClientRectangle);
+            DrawTabHeader(ceira);
+
         }  
 
         void ApplicationTabs_ControlAdded(object sender, ControlEventArgs e)
         {
-            this.SuspendLayout();
+            Graphics ceira = this.CreateGraphics();
+            ceira.FillRectangle(new SolidBrush(ThemeLoader.GetThemeData("Form_BackgroundColor")), this.ClientRectangle);
+            DrawTabHeader(ceira);
+
         }
 
         protected override void NotifyInvalidate(Rectangle invalidatedArea)
         {
             Graphics ceira = this.CreateGraphics();
-            ceira.FillRectangle(new SolidBrush(Color.FromArgb(255, 32, 32, 32)), ClientRectangle);
+            DrawTabHeader(ceira);
 
         }
 
@@ -66,17 +72,14 @@ namespace TNotepad
             //base.OnPaintBackground(pevent);
 
             Brush b = new SolidBrush(ThemeLoader.GetThemeData("Form_BackgroundColor"));
-
             pevent.Graphics.FillRectangle(b, this.ClientRectangle);
 
+            DrawTabHeader(pevent.Graphics);
         }
 
-        protected override void OnPaint(PaintEventArgs e)
+        private void DrawTabHeader(Graphics e)
         {
-            base.OnPaint(e);
-
             Rectangle tf = this.ClientRectangle;
-
 
             for (var i = 0; i < TabPages.Count; i++)
             {
@@ -89,16 +92,16 @@ namespace TNotepad
                 // Set SmoothingMode
                 if (Properties.Settings.Default.SmoothVisualElements)
                 {
-                    e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-                    e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+                    e.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                    e.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
 
                 }
-                
+
                 // ################
                 // Draw Background
                 // ################
                 // Selected Tab
-                if (i == this.SelectedIndex) 
+                if (i == this.SelectedIndex)
                 {
                     bshFore = new SolidBrush(ThemeLoader.GetThemeData("TabControl_HeaderSelected_ForegroundColor"));
                     bshBack = new SolidBrush(ThemeLoader.GetThemeData("TabControl_HeaderSelected_BackgroundColor"));
@@ -127,7 +130,7 @@ namespace TNotepad
 
 
                 // Draw Background
-                e.Graphics.FillRectangle(bshBack, TabRect);
+                e.FillRectangle(bshBack, TabRect);
 
                 // Draw Tab Title
                 string tabName = TabPages[i].Text;
@@ -135,7 +138,7 @@ namespace TNotepad
                 Rectangle recTab = TabRect;
                 recTab = new Rectangle(recTab.X, recTab.Y, recTab.Width, recTab.Height);
 
-                e.Graphics.DrawString(tabName, fntTab, bshFore, new Rectangle(recTab.X + 1, recTab.Y + 4, recTab.Width, recTab.Height), sftTab);
+                e.DrawString(tabName, fntTab, bshFore, new Rectangle(recTab.X + 1, recTab.Y + 4, recTab.Width, recTab.Height), sftTab);
 
                 // Draw Red Close Circle
                 var CloseButtonRect = new Rectangle(recTab.Right - 15, recTab.Top + (recTab.Height - 8) / 2, 10, 10);
@@ -145,9 +148,9 @@ namespace TNotepad
                     // If current tab is the selected one
                     if (SelectedIndex == i)
                     {
-                        e.Graphics.FillEllipse(Brushes.Red, new Rectangle(CloseButtonRect.X - 1, CloseButtonRect.Y - 1, CloseButtonRect.Width + 2, CloseButtonRect.Height + 2));
+                        e.FillEllipse(Brushes.Red, new Rectangle(CloseButtonRect.X - 1, CloseButtonRect.Y - 1, CloseButtonRect.Width + 2, CloseButtonRect.Height + 2));
                     }
-                    e.Graphics.DrawImage(Properties.Resources.TabClose, new Point(CloseButtonRect.X, CloseButtonRect.Y));
+                    e.DrawImage(Properties.Resources.TabClose, new Point(CloseButtonRect.X, CloseButtonRect.Y));
 
                     // Add spacing to title text
                     if (!TabPages[i].Text.EndsWith(" "))
@@ -172,15 +175,23 @@ namespace TNotepad
                 // Draw Tab Separation Line
                 // #########################
                 // Left Line
-                e.Graphics.FillRectangle(new SolidBrush(ThemeLoader.GetThemeData("TabControl_SeparatorLineColor")), new Rectangle(TabRect.X - 1, TabRect.Y, 1, TabRect.Height));
+                e.FillRectangle(new SolidBrush(ThemeLoader.GetThemeData("TabControl_SeparatorLineColor")), new Rectangle(TabRect.X - 1, TabRect.Y, 1, TabRect.Height));
 
                 // Right Line
                 if (i == TabPages.Count - 1)
                 {
-                    e.Graphics.FillRectangle(new SolidBrush(ThemeLoader.GetThemeData("TabControl_SeparatorLineColor")), new Rectangle(TabRect.X + TabRect.Width, TabRect.Y, 1, TabRect.Height));
+                    e.FillRectangle(new SolidBrush(ThemeLoader.GetThemeData("TabControl_SeparatorLineColor")), new Rectangle(TabRect.X + TabRect.Width, TabRect.Y, 1, TabRect.Height));
 
                 }
             }
+
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+
+            DrawTabHeader(e.Graphics);
             
         }
 

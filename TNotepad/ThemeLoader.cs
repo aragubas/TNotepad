@@ -34,9 +34,9 @@ namespace TNotepad
             //DicData should be located at (./lang_bank/en-us)
             if (!File.Exists(Lang.CurrentLangFile))
             {
-                Console.WriteLine("Cannot locate language file.");
+                Console.WriteLine("Cannot locate theme file.");
                 Console.WriteLine(Lang.CurrentLangFile);
-                throw new FileNotFoundException("Cannot locate language file.");
+                throw new FileNotFoundException("Cannot locate theme file.");
             }
 
             string[] FileRead = File.ReadAllLines(CurrentLangFile);
@@ -82,7 +82,7 @@ namespace TNotepad
                     catch (IndexOutOfRangeException) { Console.WriteLine("Error while parsing theme data for {" + Key + "}."); continue; }
                 }
                 catch (ArgumentException) { Console.WriteLine("Duplicate entry found, ignoring..."); continue; }
-                Console.WriteLine("LangLoader: Added '" + Key + "' with value '" + Data + "'");
+                Console.WriteLine("ThemeLoader: Added '" + Key + "' with value '" + Data.Replace(" ", "") + "'");
 
                 if (bgWorker != null)
                 {

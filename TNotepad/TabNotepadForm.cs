@@ -12,15 +12,24 @@ namespace TNotepad
 {
     public partial class TabNotepadForm : Form
     {
+        public bool ResizeableForm = true;
+        public bool MinimizeableForm = true;
+        public bool CloseableForm = true;
+
         public TabNotepadForm()
         {
             InitializeComponent();
+            this.ResizeRedraw = true;
 
-            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.DoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.CacheText | ControlStyles.UserPaint | ControlStyles.DoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
             this.UpdateStyles();
 
             LoadTheme();
+
+            
+
         }
+
 
         public void LoadTheme()
         {
@@ -40,7 +49,30 @@ namespace TNotepad
             // Set FormTitlebar Wax
             FormTitlebar.FormHandle = this.Handle;
             FormTitlebar.RootControlReference = this;
-            this.ResizeRedraw = true;
+            
+
+            this.Shown += TabNotepadForm_Shown;
+
+        }
+
+        private bool FocusAfterMinimizing = false;
+
+        void TabNotepadForm_Shown(object sender, EventArgs e)
+        {
+            if (!ResizeableForm)
+            {
+                FormMaximizeButton.Visible = false;
+            }
+
+            if (!MinimizeableForm)
+            {
+                FormMinimizeButton.Visible = false;
+            }
+            if (!CloseableForm)
+            {
+                FormCloseButton.Visible = false;
+            }
+
 
         }
 
@@ -53,7 +85,7 @@ namespace TNotepad
             {
                 case 0x0084/*NCHITTEST*/ :
                     base.WndProc(ref m);
-
+                    if (!this.ResizeableForm) { return; }
                     if ((int)m.Result == 0x01/*HTCLIENT*/)
                     {
                         Point screenPoint = new Point(m.LParam.ToInt32());
@@ -105,10 +137,11 @@ namespace TNotepad
                     cp.ClassStyle |= CS_DROPSHADOW;
 
                 }
-
-                // Should fix flickering when resizing, but it mess up with tab header rendering
-                // Temporaly Disabled.
-                //cp.ExStyle |= 0x2000000;
+                
+                // Makes the form Flicker-Free by enabling compositing
+                // I don't know exatcly how this works but it makes the form flicker-free and layout
+                // draws much faster
+                cp.ExStyle |= 0x2000000;
 
 
                 return cp;
@@ -117,10 +150,14 @@ namespace TNotepad
 
         public virtual void FormMaximizeButton_Click(object sender, EventArgs e)
         {
+            this.SetStyle(ControlStyles.ResizeRedraw, true);
+            this.UpdateStyles();
+            UpdateProperties = true;
+
             if (this.WindowState == FormWindowState.Normal)
             {
                 this.WindowState = FormWindowState.Maximized;
-
+                
                 return;
             }
             this.WindowState = FormWindowState.Normal;
@@ -200,9 +237,26 @@ namespace TNotepad
 
         }
 
+        private bool UpdateProperties;
+
         private void TabNotepadForm_Paint(object sender, PaintEventArgs e)
         {
+            if (UpdateProperties)
+            {
+                UpdateProperties = false;
+                this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.CacheText | ControlStyles.UserPaint | ControlStyles.DoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
+                this.UpdateStyles();
+
+            }
             FormTitlebar.Text = this.Text;
+            if (FocusAfterMinimizing)
+            {
+                FocusAfterMinimizing = false;
+                this.SetStyle(ControlStyles.ResizeRedraw, true);
+                this.UpdateStyles();
+                UpdateProperties = true;
+            
+            }
             if (DisableResizeMode || !ScreenWaxTaken || !Properties.Settings.Default.StrechWindowContentsWhenResizing) { return; }
 
             // Draw Resizing Image
@@ -213,6 +267,20 @@ namespace TNotepad
         private void FormMinimizeButton_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+            
+        }
+
+        private void FormControls_Validated(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void TabNotepadForm_Activated(object sender, EventArgs e)
+        {
+            this.SetStyle(ControlStyles.ResizeRedraw, true);
+            this.UpdateStyles();
+            UpdateProperties = true;
+
         }  
 
 

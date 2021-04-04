@@ -6,7 +6,7 @@
 # Alpha transparency can maybe be supported
 
 # = Forms
-Form_BackgroundColor;255, 210, 210, 210
+Form_BackgroundColor;255, 210, 210, 225
 Form_ForegroundColor;255, 36, 36, 36
 
 
@@ -16,7 +16,11 @@ Button_ForegroundColor; 255, 32, 32, 32
 
 # = ListView
 ListView_BackgroundColor; 255, 200, 200, 200
-ListView_ForegroundColor; 32, 32, 32, 32
+ListView_ForegroundColor; 255, 32, 32, 32
+
+# = ListBox
+ListBox_BackgroundColor; 255, 210, 200, 200
+ListBox_ForegroundColor; 255, 16, 16, 16
 
 # = TabControl
 # Selected
@@ -38,7 +42,7 @@ SidePanel_ForegroundColor; 255, 16, 16, 16
 
 # = ToolStrip
 # Button
-ToolStrip_Button_BackgroundColor; 255, 225, 225, 225
+ToolStrip_Button_BackgroundColor; 0, 0, 0, 0
 ToolStrip_Button_ForegroundColor; 255, 16, 16, 16
 # MenuItem
 ToolStrip_MenuItem_BackgroundColor; 255, 235, 235, 235
@@ -47,7 +51,7 @@ ToolStrip_MenuItem_ForegroundColor; 255, 16, 16, 16
 ToolStrip_BackgroundColor; 255, 200, 200, 200
 ToolStrip_ForegroundColor; 255, 16, 16, 16
 # DropDown
-ToolStrip_DropDownButton_BackgroundColor; 255, 215, 215, 215
+ToolStrip_DropDownButton_BackgroundColor; 0, 0, 0, 0
 ToolStrip_DropDownButton_ForegroundColor; 255, 32, 32, 32
 # StatusStrip
 ToolStrip_StatusStrip_BackgroundColor; 255, 200, 200, 200
@@ -57,9 +61,14 @@ ToolStrip_StatusStrip_ForegroundColor; 255, 64, 64, 64
 ExtraFuncPanel_BackgroundColor; 255, 210, 210, 210
 ExtraFuncPanel_ForegroundColor; 255, 8, 8, 8
 
-# = Text Editor
+# = TextBox
 TextEditor_BackgroundColor; 255, 200, 200, 200
 TextEditor_ForegroundColor; 255, 4, 4, 4
+
+# = RichTextBox
+RichTextBox_BackgroundColor; 255, 200, 200, 200
+RichTextBox_ForegroundColor; 255, 4, 4, 4
+
 
 # = Checkbox
 Checkbox_BackgroundColor; 0, 0, 0, 0
@@ -72,3 +81,11 @@ FlowLayoutPanel_ForegroundColor; 255, 16, 16, 16
 # = TextBox
 TextBox_BackgroundColor; 255, 200, 200, 200
 TextBox_ForegroundColor; 255, 16, 16, 16
+
+# = ComboBox
+ComboBox_BackgroundColor; 255, 220, 220, 220
+ComboBox_ForegroundColor; 255, 8, 8, 8
+
+# = RadioButton
+RadioButton_BackgroundColor; 0, 0, 0, 0
+RadioButton_ForegroundColor; 255, 4, 4, 4

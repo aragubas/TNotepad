@@ -30,7 +30,6 @@ namespace TNotepad
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackgroundWorkerDialog));
             this.CurrentProgress = new System.Windows.Forms.ProgressBar();
             this.WorkingProgress = new System.Windows.Forms.Label();
             this.BackgroundWorking = new System.Windows.Forms.Timer(this.components);
@@ -40,8 +39,6 @@ namespace TNotepad
             // 
             // CurrentProgress
             // 
-            this.CurrentProgress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.CurrentProgress.Location = new System.Drawing.Point(12, 25);
             this.CurrentProgress.Name = "CurrentProgress";
             this.CurrentProgress.Size = new System.Drawing.Size(383, 23);
@@ -51,7 +48,6 @@ namespace TNotepad
             // WorkingProgress
             // 
             this.WorkingProgress.AutoSize = true;
-            this.WorkingProgress.ForeColor = System.Drawing.Color.White;
             this.WorkingProgress.Location = new System.Drawing.Point(12, 65);
             this.WorkingProgress.Name = "WorkingProgress";
             this.WorkingProgress.Size = new System.Drawing.Size(24, 13);
@@ -73,7 +69,6 @@ namespace TNotepad
             // CurrentInfoLabel
             // 
             this.CurrentInfoLabel.AutoSize = true;
-            this.CurrentInfoLabel.ForeColor = System.Drawing.Color.White;
             this.CurrentInfoLabel.Location = new System.Drawing.Point(12, 9);
             this.CurrentInfoLabel.Name = "CurrentInfoLabel";
             this.CurrentInfoLabel.Size = new System.Drawing.Size(41, 13);
@@ -84,17 +79,12 @@ namespace TNotepad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(407, 120);
             this.Controls.Add(this.CurrentInfoLabel);
             this.Controls.Add(this.WorkingProgress);
             this.Controls.Add(this.FileRemaning);
             this.Controls.Add(this.CurrentProgress);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BackgroundWorkerDialog";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Background Worker";
+            this.Size = new System.Drawing.Size(407, 155);
             this.Load += new System.EventHandler(this.BackgroundWorkerDialog_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -39,6 +39,9 @@ namespace TNotepad.SettingsPages
             // FlowLayoutPanel
             flowLayoutPanel1.LoadTheme();
 
+            // GroupBox
+            WordWrapGroupBox.ForeColor = ForeColor;
+
         }
 
         public void LoadLangStrings()

@@ -11,8 +11,9 @@ using System.Windows.Forms;
 
 namespace TNotepad
 {
-    public partial class LanguageSettings : Form
+    public partial class LanguageSettings : taiyouUserControl
     {
+        Size OriginalSize;
         public LanguageSettings()
         {
             InitializeComponent();
@@ -22,16 +23,52 @@ namespace TNotepad
 
             CurrentLanguageTextBox.Text = Properties.Settings.Default.CurrentLanguage;
 
+            LoadThemes();
+
+            OriginalSize = Size;
+        }
+
+        public void LoadThemes()
+        {
+            BackColor = ThemeLoader.GetThemeData("Form_BackgroundColor");
+            ForeColor = ThemeLoader.GetThemeData("Form_ForegroundColor");
+
+            // TextBox
+            CurrentLanguageTextBox.LoadTheme();
+
+            // Button
+            ConfirmButton.LoadTheme();
+            ExitButton.LoadTheme();
+            
+            // List Box
+            AvaliableLanguagesListBox.LoadTheme();
+
+
+
+
+
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            Close();
+            RootForm.Close();
         }
 
         private void LanguageSettings_Load(object sender, EventArgs e)
         {
+            this.Dock = DockStyle.Fill;
+            RootForm.Size = OriginalSize;
+            RootForm.Text = Lang.GetLangData("LanguageSettings_WindowTitle");
+            RootForm.MinimizeableForm = false;
+            RootForm.ResizeableForm = false;
 
+            RootForm.FormCloseButton.Click += FormCloseButton_Click;
+
+        }
+
+        void FormCloseButton_Click(object sender, EventArgs e)
+        {
+            RootForm.Close();
         }
 
         public void LoadLang()
@@ -43,8 +80,6 @@ namespace TNotepad
             // Labels
             AvaliableLanguageFilesInfoLabel.Text = Lang.GetLangData("LanguageSettings_AvaliableLanguageFiles");
             CurrentLanguageInfoLabel.Text = Lang.GetLangData("LanguageSettings_CurrentLanguageLabel");
-
-            Text = Lang.GetLangData("LanguageSettings_WindowTitle");
         }
 
         public void LoadAvaliableLanguages()
@@ -77,7 +112,7 @@ namespace TNotepad
             LoadLang();
             this.Refresh();
             MessageBox.Show(Lang.GetLangData("LanguageChangeMessageBox_Text"), Lang.GetLangData("LanguageChangeMessageBox_Title"));
-            Close();
+            RootForm.Close();
         }
     }
 }
