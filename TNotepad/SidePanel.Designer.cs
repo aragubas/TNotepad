@@ -37,12 +37,7 @@
             this.HideShowButton = new TNotepad.taiyouButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.QuickSettings = new System.Windows.Forms.Panel();
-            this.SettingsMiniButton = new TNotepad.taiyouButton();
-            this.OpenFileMiniButton = new TNotepad.taiyouButton();
-            this.CloseTabMiniButton = new TNotepad.taiyouButton();
-            this.NewFileMiniButton = new TNotepad.taiyouButton();
             this.panel2.SuspendLayout();
-            this.QuickSettings.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -62,12 +57,10 @@
             // 
             // AboutButton
             // 
-            this.AboutButton.BackColor = System.Drawing.Color.Gray;
             this.AboutButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.AboutButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.AboutButton.FlatAppearance.BorderSize = 0;
             this.AboutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AboutButton.ForeColor = System.Drawing.Color.White;
             this.AboutButton.Location = new System.Drawing.Point(0, 81);
             this.AboutButton.Name = "AboutButton";
             this.AboutButton.Size = new System.Drawing.Size(84, 25);
@@ -78,12 +71,10 @@
             // 
             // SettingsButton
             // 
-            this.SettingsButton.BackColor = System.Drawing.Color.Gray;
             this.SettingsButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.SettingsButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.SettingsButton.FlatAppearance.BorderSize = 0;
             this.SettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SettingsButton.ForeColor = System.Drawing.Color.White;
             this.SettingsButton.Location = new System.Drawing.Point(0, 56);
             this.SettingsButton.Name = "SettingsButton";
             this.SettingsButton.Size = new System.Drawing.Size(84, 25);
@@ -94,12 +85,10 @@
             // 
             // OpenFileButton
             // 
-            this.OpenFileButton.BackColor = System.Drawing.Color.Gray;
             this.OpenFileButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.OpenFileButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.OpenFileButton.FlatAppearance.BorderSize = 0;
             this.OpenFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OpenFileButton.ForeColor = System.Drawing.Color.White;
             this.OpenFileButton.Location = new System.Drawing.Point(0, 29);
             this.OpenFileButton.Name = "OpenFileButton";
             this.OpenFileButton.Size = new System.Drawing.Size(84, 27);
@@ -110,12 +99,10 @@
             // 
             // NewTabButton
             // 
-            this.NewTabButton.BackColor = System.Drawing.Color.Gray;
             this.NewTabButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.NewTabButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.NewTabButton.FlatAppearance.BorderSize = 0;
             this.NewTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NewTabButton.ForeColor = System.Drawing.Color.White;
             this.NewTabButton.Location = new System.Drawing.Point(0, 0);
             this.NewTabButton.Name = "NewTabButton";
             this.NewTabButton.Size = new System.Drawing.Size(84, 29);
@@ -162,82 +149,17 @@
             // 
             this.QuickSettings.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.QuickSettings.Controls.Add(this.SettingsMiniButton);
-            this.QuickSettings.Controls.Add(this.OpenFileMiniButton);
-            this.QuickSettings.Controls.Add(this.CloseTabMiniButton);
-            this.QuickSettings.Controls.Add(this.NewFileMiniButton);
             this.QuickSettings.Location = new System.Drawing.Point(96, 79);
             this.QuickSettings.Name = "QuickSettings";
             this.QuickSettings.Size = new System.Drawing.Size(25, 302);
             this.QuickSettings.TabIndex = 3;
             this.QuickSettings.Visible = false;
             // 
-            // SettingsMiniButton
-            // 
-            this.SettingsMiniButton.BackgroundImage = global::TNotepad.Properties.Resources.SettingsMini;
-            this.SettingsMiniButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.SettingsMiniButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SettingsMiniButton.FlatAppearance.BorderSize = 0;
-            this.SettingsMiniButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.SettingsMiniButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SettingsMiniButton.Location = new System.Drawing.Point(0, 81);
-            this.SettingsMiniButton.Name = "SettingsMiniButton";
-            this.SettingsMiniButton.Size = new System.Drawing.Size(25, 27);
-            this.SettingsMiniButton.TabIndex = 3;
-            this.SettingsMiniButton.UseVisualStyleBackColor = true;
-            this.SettingsMiniButton.Click += new System.EventHandler(this.SettingsMiniButton_Click);
-            // 
-            // OpenFileMiniButton
-            // 
-            this.OpenFileMiniButton.BackgroundImage = global::TNotepad.Properties.Resources.OpenFileMini;
-            this.OpenFileMiniButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.OpenFileMiniButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.OpenFileMiniButton.FlatAppearance.BorderSize = 0;
-            this.OpenFileMiniButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.OpenFileMiniButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OpenFileMiniButton.Location = new System.Drawing.Point(0, 54);
-            this.OpenFileMiniButton.Name = "OpenFileMiniButton";
-            this.OpenFileMiniButton.Size = new System.Drawing.Size(25, 27);
-            this.OpenFileMiniButton.TabIndex = 2;
-            this.OpenFileMiniButton.UseVisualStyleBackColor = true;
-            this.OpenFileMiniButton.Click += new System.EventHandler(this.OpenFileMiniButton_Click);
-            // 
-            // CloseTabMiniButton
-            // 
-            this.CloseTabMiniButton.BackgroundImage = global::TNotepad.Properties.Resources.CloseTabMini;
-            this.CloseTabMiniButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.CloseTabMiniButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.CloseTabMiniButton.FlatAppearance.BorderSize = 0;
-            this.CloseTabMiniButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.CloseTabMiniButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CloseTabMiniButton.Location = new System.Drawing.Point(0, 27);
-            this.CloseTabMiniButton.Name = "CloseTabMiniButton";
-            this.CloseTabMiniButton.Size = new System.Drawing.Size(25, 27);
-            this.CloseTabMiniButton.TabIndex = 1;
-            this.CloseTabMiniButton.UseVisualStyleBackColor = true;
-            this.CloseTabMiniButton.Click += new System.EventHandler(this.CloseTabMiniButton_Click);
-            // 
-            // NewFileMiniButton
-            // 
-            this.NewFileMiniButton.BackgroundImage = global::TNotepad.Properties.Resources.NewFileMini;
-            this.NewFileMiniButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.NewFileMiniButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.NewFileMiniButton.FlatAppearance.BorderSize = 0;
-            this.NewFileMiniButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.NewFileMiniButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NewFileMiniButton.Location = new System.Drawing.Point(0, 0);
-            this.NewFileMiniButton.Name = "NewFileMiniButton";
-            this.NewFileMiniButton.Size = new System.Drawing.Size(25, 27);
-            this.NewFileMiniButton.TabIndex = 0;
-            this.NewFileMiniButton.UseVisualStyleBackColor = true;
-            this.NewFileMiniButton.Click += new System.EventHandler(this.NewFileMiniButton_Click);
-            // 
             // SidePanel
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Controls.Add(this.QuickSettings);
             this.Controls.Add(this.HideShowButton);
             this.Controls.Add(this.label1);
@@ -250,7 +172,6 @@
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.SidePanel_DragEnter);
             this.DragOver += new System.Windows.Forms.DragEventHandler(this.SidePanel_DragOver);
             this.panel2.ResumeLayout(false);
-            this.QuickSettings.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,9 +188,5 @@
         private taiyouButton SettingsButton;
         private taiyouButton AboutButton;
         private System.Windows.Forms.Panel QuickSettings;
-        private taiyouButton NewFileMiniButton;
-        private taiyouButton CloseTabMiniButton;
-        private taiyouButton OpenFileMiniButton;
-        private taiyouButton SettingsMiniButton;
     }
 }

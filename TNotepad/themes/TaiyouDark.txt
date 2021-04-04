@@ -6,39 +6,39 @@
 # Alpha transparency can maybe be supported
 
 # = Forms
-Form_BackgroundColor;255, 42, 42, 42
-Form_ForegroundColor;255, 240, 240, 240
+Form_BackgroundColor;255, 42, 42, 58
+Form_ForegroundColor;255, 240, 240, 230
 
 
 # = Button
-Button_BackgroundColor; 255, 128, 128, 128 
-Button_ForegroundColor; 255, 4, 4, 4
+Button_BackgroundColor; 255, 96, 96, 115
+Button_ForegroundColor; 255, 210, 210, 210
 
 # = ListView
-ListView_BackgroundColor; 255, 64, 64, 64
-ListView_ForegroundColor; 255, 230, 230, 230
+ListView_BackgroundColor; 255, 64, 64, 96
+ListView_ForegroundColor; 255, 230, 230, 248
 
 # = ListBox
-ListBox_BackgroundColor; 255, 64, 64, 64
-ListBox_ForegroundColor; 255, 230, 230, 230
+ListBox_BackgroundColor; 255, 64, 64, 96
+ListBox_ForegroundColor; 255, 230, 230, 225
 
 # = TabControl
 # Selected
-TabControl_HeaderSelected_BackgroundColor; 255, 32, 32, 32
-TabControl_PersistentHeaderSelected_BackgroundColor; 255, 38, 38, 38
-TabControl_HeaderSelected_ForegroundColor; 255, 220, 220, 220
-TabControl_PersistentHeaderSelected_ForegroundColor; 255, 200, 200, 200
+TabControl_HeaderSelected_BackgroundColor; 255, 32, 32, 38
+TabControl_PersistentHeaderSelected_BackgroundColor; 255, 38, 38, 48
+TabControl_HeaderSelected_ForegroundColor; 255, 220, 220, 228
+TabControl_PersistentHeaderSelected_ForegroundColor; 255, 200, 200, 228
 # Unselected
-TabControl_HeaderUnselected_BackgroundColor; 255, 24, 24, 24
-TabControl_PersistentHeaderUnselected_BackgroundColor; 255, 28, 28, 28
-TabControl_HeaderUnselected_ForegroundColor; 255, 120, 128, 128
-TabControl_PersistentHeaderUnselected_ForegroundColor; 255, 134, 134, 134
+TabControl_HeaderUnselected_BackgroundColor; 255, 14, 14, 24
+TabControl_PersistentHeaderUnselected_BackgroundColor; 255, 28, 28, 38
+TabControl_HeaderUnselected_ForegroundColor; 255, 120, 128, 138
+TabControl_PersistentHeaderUnselected_ForegroundColor; 255, 134, 134, 147
 # TabSeparator
-TabControl_SeparatorLineColor; 255, 96, 96, 96
+TabControl_SeparatorLineColor; 255, 96, 96, 120
 
 # = SidePanel
-SidePanel_BackgroundColor; 255, 42, 42, 42
-SidePanel_ForegroundColor; 255, 195, 200, 200
+SidePanel_BackgroundColor; 255, 42, 42, 58
+SidePanel_ForegroundColor; 255, 195, 200, 190
 
 # = ToolStrip
 # Button
@@ -48,42 +48,41 @@ ToolStrip_Button_ForegroundColor; 255, 200, 200, 200
 ToolStrip_MenuItem_BackgroundColor; 255, 200, 200, 215
 ToolStrip_MenuItem_ForegroundColor; 255, 4, 4, 4
 # ToolStrip itself
-ToolStrip_BackgroundColor; 255, 64, 64, 64
-ToolStrip_ForegroundColor; 255, 200, 200, 200
+ToolStrip_BackgroundColor; 255, 64, 64, 78
+ToolStrip_ForegroundColor; 255, 200, 200, 190
 # DropDown
-ToolStrip_DropDownButton_BackgroundColor; 0, 16, 16, 16
-ToolStrip_DropDownButton_ForegroundColor; 255, 200, 200, 200
+ToolStrip_DropDownButton_BackgroundColor; 0, 0, 0, 0
+ToolStrip_DropDownButton_ForegroundColor; 255, 200, 200, 190
 # StatusStrip
-ToolStrip_StatusStrip_BackgroundColor; 255, 32, 32, 32
-ToolStrip_StatusStrip_ForegroundColor; 255, 210, 210, 210
-
+ToolStrip_StatusStrip_BackgroundColor; 255, 32, 32, 48
+ToolStrip_StatusStrip_ForegroundColor; 255, 210, 210, 190
+ 
 # = ExtraFunctionalityPanel
-ExtraFuncPanel_BackgroundColor; 255, 64, 64, 64
-ExtraFuncPanel_ForegroundColor; 255, 210, 210, 210
+ExtraFuncPanel_BackgroundColor; 255, 64, 64, 78
+ExtraFuncPanel_ForegroundColor; 255, 210, 210, 190
 
 # = TextBox
-TextEditor_BackgroundColor; 255, 64, 64, 64
+TextEditor_BackgroundColor; 255, 64, 64, 84
 TextEditor_ForegroundColor; 255, 200, 200, 200
 
 # = RichTextBox
-RichTextBox_BackgroundColor; 255, 64, 64, 64
+RichTextBox_BackgroundColor; 255, 64, 64, 78
 RichTextBox_ForegroundColor; 255, 200, 200, 200
-
 
 # = Checkbox
 Checkbox_BackgroundColor; 0, 0, 0, 0
 Checkbox_ForegroundColor; 255, 200, 200, 200
 
 # = FlowLayoutPanel
-FlowLayoutPanel_BackgroundColor; 255, 64, 64, 64
+FlowLayoutPanel_BackgroundColor; 255, 64, 64, 78
 FlowLayoutPanel_ForegroundColor; 255, 200, 200, 200
 
 # = TextBox
-TextBox_BackgroundColor; 255, 32, 32, 32
-TextBox_ForegroundColor; 255, 200, 200, 200
+TextBox_BackgroundColor; 255, 32, 32, 48
+TextBox_ForegroundColor; 255, 200, 200, 180
 
 # = ComboBox
-ComboBox_BackgroundColor; 255, 96, 96, 96
+ComboBox_BackgroundColor; 255, 96, 96, 115
 ComboBox_ForegroundColor; 255, 200, 200, 200
 
 # = RadioButton

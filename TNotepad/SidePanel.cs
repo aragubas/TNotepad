@@ -161,24 +161,6 @@ namespace TNotepad
             e.Effect = DragDropEffects.Copy;
         }
 
-        private void NewFileMiniButton_Click(object sender, EventArgs e)
-        {
-            NewTabButton.PerformClick();
-        }
 
-        private void OpenFileMiniButton_Click(object sender, EventArgs e)
-        {
-            OpenFileButton.PerformClick();
-        }
-
-        private void SettingsMiniButton_Click(object sender, EventArgs e)
-        {
-            SettingsButton.PerformClick();
-        }
-
-        private void CloseTabMiniButton_Click(object sender, EventArgs e)
-        {
-            RootControl.CloseSelectedTab();
-        }
     }
 }
