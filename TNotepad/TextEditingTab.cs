@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 
 namespace TNotepad
 {
-    public partial class TextEditingTab : UserControl
+    public partial class TextEditingTab : taiyouUserControl
     {
         TabPage AssociatedTabPage;
         MainForm RootControl;
@@ -60,51 +60,6 @@ namespace TNotepad
             TextEditingThing.WordWrap = Properties.Settings.Default.WordWrapEnabled;
 
             LoadTheme();
-
-        }
-
-        public void LoadTheme()
-        {
-            // Menu Item
-            copyToolStripMenuItem.LoadTheme();
-            cutToolStripMenuItem.LoadTheme();
-            encodingToolStripMenuItem.LoadTheme();
-            PasteToolStripMenuItem.LoadTheme();
-            pinDocumentToolStripMenuItem.LoadTheme();
-            quickFindToolStripMenuItem.LoadTheme();
-            runToolStripMenuItem.LoadTheme();
-            savePathToolStripMenuItem.LoadTheme();
-            settingsToolStripMenuItem.LoadTheme();
-
-            // ToolStripButton
-            OpenFileButton.LoadTheme();
-            SaveButton.LoadTheme();
-            SaveAsButton.LoadTheme();
-            NewPage.LoadTheme();
-            
-            // ToolStrip
-            Toolbar.LoadTheme();
-
-            // ToolStripDropDownButton
-            ExtraMenu.LoadTheme();
-
-            // StatusStrip
-            StatusBar.LoadTheme();
-
-
-            // ExtraFuncPanel
-            ExtraFuncPanel.BackColor = ThemeLoader.GetThemeData("ExtraFuncPanel_BackgroundColor");
-            ExtraFuncPanel.ForeColor = ThemeLoader.GetThemeData("ExtraFuncPanel_ForegroundColor");
-
-            // Text Editor
-            TextEditingThing.BackColor = ThemeLoader.GetThemeData("TextEditor_BackgroundColor");
-            TextEditingThing.ForeColor = ThemeLoader.GetThemeData("TextEditor_ForegroundColor");
-
-
-            // UserControl Colors
-            this.BackColor = ThemeLoader.GetThemeData("Form_BackgroundColor");
-            this.ForeColor = ThemeLoader.GetThemeData("Form_ForegroundColor");
-
 
         }
 
@@ -435,16 +390,6 @@ namespace TNotepad
 
             }
             catch (ArgumentNullException) { }
-
-        }
-
-    }
-
-    public class ExtendedRichTextBox : RichTextBox
-    {
-        public ExtendedRichTextBox()
-        {
-            this.AllowDrop = false;
 
         }
 

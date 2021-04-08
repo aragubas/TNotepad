@@ -32,13 +32,7 @@ namespace TNotepad.ExtraFuncPanels
 
         private void Find_Load(object sender, EventArgs e)
         {
-            LoadTheme();
-        }
 
-        public void LoadTheme()
-        {
-            textBox1.LoadTheme();
-            FindButton.LoadTheme();
         }
 
         private void FindButton_Click(object sender, EventArgs e)

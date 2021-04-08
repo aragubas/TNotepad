@@ -22,7 +22,6 @@ namespace TNotepad
         {
             InitializeComponent();
 
-            LoadTheme();
             originalSize = Size;
 
             Workers = pWorkers;
@@ -40,13 +39,6 @@ namespace TNotepad
             RootForm.CloseableForm = false;
             RootForm.Text = Lang.GetLangData("BackgroundWorker_WindowTitle");
             RootForm.Size = originalSize;
-
-        }
-
-        public void LoadTheme()
-        {
-            BackColor = ThemeLoader.GetThemeData("Form_BackgroundColor");
-            ForeColor = ThemeLoader.GetThemeData("Form_ForegroundColor");
 
         }
 

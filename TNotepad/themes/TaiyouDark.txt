@@ -88,3 +88,11 @@ ComboBox_ForegroundColor; 255, 200, 200, 200
 # = RadioButton
 RadioButton_BackgroundColor; 0, 0, 0, 0
 RadioButton_ForegroundColor; 255, 200, 200, 200
+
+# = Split Container
+SplitContainer_BackgroundColor; 255, 38, 38, 49
+SplitContainer_ForegroundColor; 255, 240, 240, 240
+
+# = Table Layout
+TableLayout_BackgroundColor; 255, 35, 35, 40
+TableLayout_ForegroundColor; 255, 240, 240, 240

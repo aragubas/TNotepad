@@ -38,7 +38,6 @@ namespace TNotepad
 
             LoadLangString();
             LoadValues();
-            LoadTheme();
 
         }
 
@@ -78,23 +77,6 @@ namespace TNotepad
         void FormCloseButton_Click(object sender, EventArgs e)
         {
             RootForm.Close();
-
-        }
-
-        private void LoadTheme()
-        {
-            // Background Color
-            BackColor = ThemeLoader.GetThemeData("Form_BackgroundColor");
-            ForeColor = ThemeLoader.GetThemeData("Form_ForegroundColor");
-
-            // Button
-            button1.LoadTheme();
-            
-            // ComboBox
-            comboBox1.LoadTheme();
-            
-            // Radio Button
-            radioButton1.LoadTheme();
 
         }
 

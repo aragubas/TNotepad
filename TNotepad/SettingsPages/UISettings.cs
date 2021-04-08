@@ -39,38 +39,6 @@ namespace TNotepad.SettingsPages
             Dock = DockStyle.Fill;
             LoadLangStrings();
             LoadValues();
-            LoadTheme();
-
-        }
-
-        public void LoadTheme()
-        {
-            // Form Wax
-            BackColor = ThemeLoader.GetThemeData("Form_BackgroundColor");
-            ForeColor = ThemeLoader.GetThemeData("Form_ForegroundColor");
-
-            // FlowLayoutPanel
-            flowLayoutPanel1.LoadTheme();
-
-            // Buttons
-            OpenLanguageSettingsButton.LoadTheme();
-            
-            // CheckBox
-            SaveWarningCheckBox.LoadTheme();
-            SmoothVisualElementsCheckbox.LoadTheme();
-            StretchResizeCheckbox.LoadTheme();
-            WindowShadowCheckBox.LoadTheme();
-
-            // TextBox
-            SaveWarningTextBox.LoadTheme();
-
-            // GroupBoxes
-            LanguageSettingGroupBox.ForeColor = ForeColor;
-            SaveWarningGroupBox.ForeColor = ForeColor;
-            SmoothVisualElementsGroupBox.ForeColor = ForeColor;
-            StretchResizeGroupbox.ForeColor = ForeColor;
-            WindowShadowGroupBox.ForeColor = ForeColor;
-            ThemeSettingsGroupBox.ForeColor = ForeColor;
 
         }
 

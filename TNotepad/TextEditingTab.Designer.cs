@@ -56,7 +56,7 @@
             this.copyToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
             this.cutToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
             this.PasteToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
-            this.TextEditingThing = new TNotepad.ExtendedRichTextBox();
+            this.TextEditingThing = new taiyouRichTextBox();
             this.Toolbar.SuspendLayout();
             this.StatusBar.SuspendLayout();
             this.TextEditorContextMenu.SuspendLayout();
@@ -358,7 +358,7 @@
         private System.Windows.Forms.ToolStripStatusLabel LineInfoLabel;
         private System.Windows.Forms.Timer Updater;
         private System.Windows.Forms.ToolStripStatusLabel ColumnInfoLabel;
-        public ExtendedRichTextBox TextEditingThing;
+        public taiyouRichTextBox TextEditingThing;
         private System.Windows.Forms.ContextMenuStrip TextEditorContextMenu;
         private taiyouToolStripMenuItem copyToolStripMenuItem;
         private taiyouToolStripMenuItem PasteToolStripMenuItem;

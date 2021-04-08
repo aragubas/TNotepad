@@ -30,7 +30,7 @@ namespace TNotepad.SettingsPages
         private void InitializeComponent()
         {
             this.flowLayoutPanel1 = new taiyouFlowLayoutPanel();
-            this.WordWrapGroupBox = new System.Windows.Forms.GroupBox();
+            this.WordWrapGroupBox = new taiyouGroupBox();
             this.WordWrapCheckbox = new TNotepad.taiyouCheckBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.WordWrapGroupBox.SuspendLayout();
@@ -83,7 +83,7 @@ namespace TNotepad.SettingsPages
         #endregion
 
         private taiyouFlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.GroupBox WordWrapGroupBox;
+        private taiyouGroupBox WordWrapGroupBox;
         private taiyouCheckBox WordWrapCheckbox;
     }
 }

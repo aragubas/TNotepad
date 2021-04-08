@@ -42,28 +42,6 @@ namespace TNotepad
             ReloadPinnedDocuments();
             LoadLangStrings();
 
-            ReloadTheme();
-
-        }
-
-        public void ReloadTheme()
-        {
-            // Buttons            
-            DeletePinDocButton.LoadTheme();
-            OpenPinDocButton.LoadTheme();
-            ReloadPinDocListButton.LoadTheme();
-            RollbackChanges.LoadTheme();
-            SaveChangesButton.LoadTheme();
-            EditPinDocButton.LoadTheme();
-            
-            // List View
-            PinDocsView.LoadTheme();
-
-            // Form
-            this.BackColor = ThemeLoader.GetThemeData("Form_BackgroundColor");
-            this.ForeColor = ThemeLoader.GetThemeData("Form_ForegroundColor");
-
-            
         }
 
         private void HomescreenTab_Load(object sender, EventArgs e)

@@ -30,6 +30,7 @@ namespace TNotepad
     {
 
         static DateTime BuildDate = new DateTime(2000, 1, 1);
+        public static bool ThemeLoadingEnabled = false;
 
         public static string GetVersion()
         {

@@ -28,12 +28,12 @@ namespace TNotepad
     {
 
         public ApplicationTabs()
-        { 
+        {
             this.DrawMode = TabDrawMode.OwnerDrawFixed;
 
             // Make the tab buttons work
             this.MouseUp += ApplicationTabs_MouseUp;
-            
+
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.DoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
             this.UpdateStyles();
 

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace TNotepad
 {
-    public partial class MainForm : UserControl
+    public partial class MainForm : taiyouUserControl
     {
         TabNotepadForm RootControl;
         public MainForm(TabNotepadForm pRootControl)

@@ -23,31 +23,9 @@ namespace TNotepad
 
             CurrentLanguageTextBox.Text = Properties.Settings.Default.CurrentLanguage;
 
-            LoadThemes();
-
             OriginalSize = Size;
         }
 
-        public void LoadThemes()
-        {
-            BackColor = ThemeLoader.GetThemeData("Form_BackgroundColor");
-            ForeColor = ThemeLoader.GetThemeData("Form_ForegroundColor");
-
-            // TextBox
-            CurrentLanguageTextBox.LoadTheme();
-
-            // Button
-            ConfirmButton.LoadTheme();
-            ExitButton.LoadTheme();
-            
-            // List Box
-            AvaliableLanguagesListBox.LoadTheme();
-
-
-
-
-
-        }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {

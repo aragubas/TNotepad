@@ -93,8 +93,7 @@ namespace TNotepad
             }
 
             // Set ThemeLoaded Variable
-            ThemeLoaded = true;
-
+            ThemeLoaded = true; 
 
         }
 

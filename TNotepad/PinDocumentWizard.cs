@@ -38,18 +38,6 @@ namespace TNotepad
 
             DocFileName = textEditingTab.LastFileName;
             LoadLang();
-            LoadTheme();
-
-        }
-
-        public void LoadTheme()
-        {
-            BackColor = ThemeLoader.GetThemeData("Form_BackgroundColor");
-            ForeColor = ThemeLoader.GetThemeData("Form_ForegroundColor");
-
-            DocPinNameTextbox.LoadTheme();
-
-            PinDocButton.LoadTheme();
 
         }
 

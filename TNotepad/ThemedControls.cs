@@ -19,9 +19,23 @@ namespace TNotepad
 
         public void LoadTheme()
         {
+            if (!ThemeLoader.ThemeLoaded) { return; }
             BackColor = ThemeLoader.GetThemeData("Button_BackgroundColor");
             ForeColor = ThemeLoader.GetThemeData("Button_ForegroundColor");
 
+        }
+
+        // Load theme after being added to user layout
+        private bool ThemeLoaded = false;
+        protected override void OnLayout(LayoutEventArgs e)
+        {
+            base.OnLayout(e);
+
+            if (!ThemeLoaded)
+            {
+                ThemeLoaded = true;
+                LoadTheme();
+            }
         }
 
     }
@@ -33,19 +47,49 @@ namespace TNotepad
             if (!ThemeLoader.ThemeLoaded) { return; }
             BackColor = ThemeLoader.GetThemeData("ListView_BackgroundColor");
             ForeColor = ThemeLoader.GetThemeData("ListView_ForegroundColor");
-            
+
+        }
+
+        // Load theme after being added to user layout
+        private bool ThemeLoaded = false;
+        protected override void OnLayout(LayoutEventArgs e)
+        {
+            base.OnLayout(e);
+
+            if (!ThemeLoaded)
+            {
+                ThemeLoaded = true;
+                LoadTheme();
+            }
         }
 
     }
 
     class taiyouListBox : ListBox
     {
+        public taiyouListBox()
+        {
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+        }
         public void LoadTheme()
         {
             if (!ThemeLoader.ThemeLoaded) { return; }
             BackColor = ThemeLoader.GetThemeData("ListBox_BackgroundColor");
             ForeColor = ThemeLoader.GetThemeData("ListBox_ForegroundColor");
 
+        }
+
+        // Load theme after being added to user layout
+        private bool ThemeLoaded = false;
+        protected override void OnLayout(LayoutEventArgs e)
+        {
+            base.OnLayout(e);
+
+            if (!ThemeLoaded)
+            {
+                ThemeLoaded = true;
+                LoadTheme();
+            }
         }
 
     }
@@ -61,6 +105,19 @@ namespace TNotepad
 
         }
 
+        // Load theme after being added to user layout
+        private bool ThemeLoaded = false;
+        protected override void OnLayout(LayoutEventArgs e)
+        {
+            base.OnLayout(e);
+
+            if (!ThemeLoaded)
+            {
+                ThemeLoaded = true;
+                LoadTheme();
+            }
+        }
+
     }
 
     class taiyouToolStripMenuItem : ToolStripMenuItem
@@ -71,6 +128,19 @@ namespace TNotepad
             BackColor = ThemeLoader.GetThemeData("ToolStrip_MenuItem_BackgroundColor");
             ForeColor = ThemeLoader.GetThemeData("ToolStrip_MenuItem_ForegroundColor");
 
+        }
+
+        // Load theme after being added to user layout
+        private bool ThemeLoaded = false;
+        protected override void OnLayout(LayoutEventArgs e)
+        {
+            base.OnLayout(e);
+
+            if (!ThemeLoaded)
+            {
+                ThemeLoaded = true;
+                LoadTheme();
+            }
         }
 
     }
@@ -85,6 +155,19 @@ namespace TNotepad
 
         }
 
+        // Load theme after being added to user layout
+        private bool ThemeLoaded = false;
+        protected override void OnLayout(LayoutEventArgs e)
+        {
+            base.OnLayout(e);
+
+            if (!ThemeLoaded)
+            {
+                ThemeLoaded = true;
+                LoadTheme();
+            }
+        }
+
     }
 
     class taiyouToolStripDropDownButton : ToolStripDropDownButton
@@ -95,6 +178,19 @@ namespace TNotepad
             if (!ThemeLoader.ThemeLoaded) { return; }
             BackColor = ThemeLoader.GetThemeData("ToolStrip_DropDownButton_BackgroundColor");
             ForeColor = ThemeLoader.GetThemeData("ToolStrip_DropDownButton_ForegroundColor");
+        }
+
+        // Load theme after being added to user layout
+        private bool ThemeLoaded = false;
+        protected override void OnLayout(LayoutEventArgs e)
+        {
+            base.OnLayout(e);
+
+            if (!ThemeLoaded)
+            {
+                ThemeLoaded = true;
+                LoadTheme();
+            }
         }
 
     }
@@ -109,6 +205,19 @@ namespace TNotepad
 
         }
 
+        // Load theme after being added to user layout
+        private bool ThemeLoaded = false;
+        protected override void OnLayout(LayoutEventArgs e)
+        {
+            base.OnLayout(e);
+
+            if (!ThemeLoaded)
+            {
+                ThemeLoaded = true;
+                LoadTheme();
+            }
+        }
+
     }
 
     class taiyouCheckBox : CheckBox
@@ -121,6 +230,20 @@ namespace TNotepad
 
         }
 
+        // Load theme after being added to user layout
+        private bool ThemeLoaded = false;
+        protected override void OnLayout(LayoutEventArgs e)
+        {
+            base.OnLayout(e);
+
+            if (!ThemeLoaded)
+            {
+                ThemeLoaded = true;
+                LoadTheme();
+            }
+        }
+
+
     }
 
     class taiyouFlowLayoutPanel : FlowLayoutPanel
@@ -132,6 +255,20 @@ namespace TNotepad
             ForeColor = ThemeLoader.GetThemeData("FlowLayoutPanel_ForegroundColor");
 
         }
+
+        // Load theme after being added to user layout
+        private bool ThemeLoaded = false;
+        protected override void OnLayout(LayoutEventArgs e)
+        {
+            base.OnLayout(e);
+
+            if (!ThemeLoaded)
+            {
+                ThemeLoaded = true;
+                LoadTheme();
+            }
+        }
+
 
     }
 
@@ -151,14 +288,29 @@ namespace TNotepad
 
         }
 
+        // Load theme after being added to user layout
+        private bool ThemeLoaded = false;
+        protected override void OnLayout(LayoutEventArgs e)
+        {
+            base.OnLayout(e);
+
+            if (!ThemeLoaded)
+            {
+                ThemeLoaded = true;
+                LoadTheme();
+            }
+        }
+
+
 
     }
 
-    class taiyouRichTextBox : RichTextBox
+    public class taiyouRichTextBox : RichTextBox
     {
         public taiyouRichTextBox()
         {
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AllowDrop = false;
 
         }
 
@@ -170,6 +322,20 @@ namespace TNotepad
 
         }
 
+        // Load theme after being added to user layout
+        private bool ThemeLoaded = false;
+        protected override void OnLayout(LayoutEventArgs e)
+        {
+            base.OnLayout(e);
+
+            if (!ThemeLoaded)
+            {
+                ThemeLoaded = true;
+                LoadTheme();
+            }
+        }
+
+
 
     }
 
@@ -177,6 +343,28 @@ namespace TNotepad
     public class taiyouUserControl : UserControl
     {
         public TabNotepadForm RootForm;
+
+        public void LoadTheme()
+        {
+            if (!ThemeLoader.ThemeLoaded) { return; }
+            BackColor = ThemeLoader.GetThemeData("Form_BackgroundColor");
+            ForeColor = ThemeLoader.GetThemeData("Form_ForegroundColor");
+        }
+
+
+        // Load Theme
+        private bool ThemeLoaded = false;
+        protected override void OnLayout(LayoutEventArgs e)
+        {
+            base.OnLayout(e);
+
+            if (!ThemeLoaded)
+            {
+                ThemeLoaded = true;
+                LoadTheme();
+            }
+
+        }
 
     }
 
@@ -196,6 +384,20 @@ namespace TNotepad
 
         }
 
+        // Load theme after being added to user layout
+        private bool ThemeLoaded = false;
+        protected override void OnLayout(LayoutEventArgs e)
+        {
+            base.OnLayout(e);
+
+            if (!ThemeLoaded)
+            {
+                ThemeLoaded = true;
+                LoadTheme();
+            }
+        }
+
+
     }
 
     public class taiyouRadioButton : RadioButton
@@ -214,6 +416,101 @@ namespace TNotepad
 
         }
 
+        // Load theme after being added to user layout
+        private bool ThemeLoaded = false;
+        protected override void OnLayout(LayoutEventArgs e)
+        {
+            base.OnLayout(e);
+
+            if (!ThemeLoaded)
+            {
+                ThemeLoaded = true;
+                LoadTheme();
+            }
+        }
+
+
     }
+
+    public class taiyouTableLayoutPanel : TableLayoutPanel
+    {
+        public void LoadTheme()
+        {
+            if (!ThemeLoader.ThemeLoaded) { return; }
+            BackColor = ThemeLoader.GetThemeData("TableLayout_BackgroundColor");
+            ForeColor = ThemeLoader.GetThemeData("TableLayout_ForegroundColor");
+
+        }
+
+        // Load theme after being added to user layout
+        private bool ThemeLoaded = false;
+        protected override void OnLayout(LayoutEventArgs e)
+        {
+            base.OnLayout(e);
+
+            if (!ThemeLoaded)
+            {
+                ThemeLoaded = true;
+                LoadTheme();
+            }
+        }
+
+    }
+
+    public class taiyouSplitContainer : SplitContainer
+    {
+        public void LoadTheme()
+        {
+            if (!ThemeLoader.ThemeLoaded) { return; }
+            BackColor = ThemeLoader.GetThemeData("SplitContainer_BackgroundColor");
+            ForeColor = ThemeLoader.GetThemeData("SplitContainer_ForegroundColor");
+
+        }
+
+        // Load theme after being added to user layout
+        private bool ThemeLoaded = false;
+        protected override void OnLayout(LayoutEventArgs e)
+        {
+            base.OnLayout(e);
+
+            if (!ThemeLoaded)
+            {
+                ThemeLoaded = true;
+                LoadTheme();
+            }
+        }
+    }
+
+    public class taiyouGroupBox : GroupBox
+    {
+        public taiyouGroupBox()
+        {
+            this.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+        }
+
+        public void LoadTheme()
+        {
+            if (!ThemeLoader.ThemeLoaded) { return; }
+            BackColor = ThemeLoader.GetThemeData("RadioButton_BackgroundColor");
+            ForeColor = ThemeLoader.GetThemeData("RadioButton_ForegroundColor");
+
+        }
+
+        // Load theme after being added to user layout
+        private bool ThemeLoaded = false;
+        protected override void OnLayout(LayoutEventArgs e)
+        {
+            base.OnLayout(e);
+
+            if (!ThemeLoaded)
+            {
+                ThemeLoaded = true;
+                LoadTheme();
+            }
+        }
+
+
+    }
+
 
 }

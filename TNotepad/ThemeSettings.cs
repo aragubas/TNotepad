@@ -25,7 +25,6 @@ namespace TNotepad
         {
             this.Dock = DockStyle.Fill;
             LoadLang();
-            LoadTheme();
             LoadThemes();
 
             RootForm.MinimizeableForm = false;
@@ -55,16 +54,6 @@ namespace TNotepad
 
             }
 
-        }
-
-        public void LoadTheme()
-        {
-            BackColor = ThemeLoader.GetThemeData("Form_BackgroundColor");
-            ForeColor = ThemeLoader.GetThemeData("Form_ForegroundColor");
-
-            SelectThemeButton.LoadTheme();
-            AvaliableThemesListBox.LoadTheme();
-            SelectedThemeTextBox.LoadTheme();
         }
 
         public void LoadLang()
@@ -101,6 +90,7 @@ namespace TNotepad
 
         private void AvaliableThemesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (AvaliableThemesListBox.SelectedIndex == -1) { return; }
             SelectedThemeTextBox.Text = AvaliableThemesListBox.Items[AvaliableThemesListBox.SelectedIndex].ToString();
 
         }

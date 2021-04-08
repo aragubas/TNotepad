@@ -27,7 +27,7 @@ using System.Windows.Forms;
 
 namespace TNotepad
 {
-    public partial class SidePanel : UserControl
+    public partial class SidePanel : taiyouUserControl
     {
         MainForm RootControl;
         Panel RootPanel;
@@ -45,21 +45,6 @@ namespace TNotepad
             HideShowButton.PerformClick();
 
             LoadLangs();
-            LoadTheme();
-
-        }
-
-        public void LoadTheme()
-        {
-            BackColor = ThemeLoader.GetThemeData("SidePanel_BackgroundColor");
-            ForeColor = ThemeLoader.GetThemeData("SidePanel_ForegroundColor");
-
-            label1.ForeColor = ForeColor;
-            AboutButton.LoadTheme();
-            NewTabButton.LoadTheme();
-            OpenFileButton.LoadTheme();
-            SettingsButton.LoadTheme();
-            HideShowButton.LoadTheme();
 
         }
 

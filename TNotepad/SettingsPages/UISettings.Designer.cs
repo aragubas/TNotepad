@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.flowLayoutPanel1 = new TNotepad.taiyouFlowLayoutPanel();
-            this.SaveWarningGroupBox = new System.Windows.Forms.GroupBox();
+            this.SaveWarningGroupBox = new TNotepad.taiyouGroupBox();
             this.SaveWarningCheckBox = new TNotepad.taiyouCheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.SaveWarningTextBox = new TNotepad.taiyouTextBox();
             this.SaveWarningIntervalInfo = new System.Windows.Forms.Label();
-            this.LanguageSettingGroupBox = new System.Windows.Forms.GroupBox();
+            this.LanguageSettingGroupBox = new TNotepad.taiyouGroupBox();
             this.OpenLanguageSettingsButton = new TNotepad.taiyouButton();
             this.LanguageSettingsInfoLabel = new System.Windows.Forms.Label();
-            this.WindowShadowGroupBox = new System.Windows.Forms.GroupBox();
+            this.WindowShadowGroupBox = new TNotepad.taiyouGroupBox();
             this.WindowShadowCheckBox = new TNotepad.taiyouCheckBox();
-            this.SmoothVisualElementsGroupBox = new System.Windows.Forms.GroupBox();
+            this.SmoothVisualElementsGroupBox = new TNotepad.taiyouGroupBox();
             this.SmoothVisualElementsCheckbox = new TNotepad.taiyouCheckBox();
-            this.StretchResizeGroupbox = new System.Windows.Forms.GroupBox();
+            this.StretchResizeGroupbox = new TNotepad.taiyouGroupBox();
             this.StretchResizeCheckbox = new TNotepad.taiyouCheckBox();
-            this.ThemeSettingsGroupBox = new System.Windows.Forms.GroupBox();
+            this.ThemeSettingsGroupBox = new TNotepad.taiyouGroupBox();
             this.OpenThemeSettingsButton = new TNotepad.taiyouButton();
             this.ThemeSettingsInfoLabel = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
@@ -76,6 +76,7 @@
             this.SaveWarningGroupBox.AutoSize = true;
             this.SaveWarningGroupBox.Controls.Add(this.SaveWarningCheckBox);
             this.SaveWarningGroupBox.Controls.Add(this.panel1);
+            this.SaveWarningGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveWarningGroupBox.Location = new System.Drawing.Point(3, 3);
             this.SaveWarningGroupBox.Name = "SaveWarningGroupBox";
             this.SaveWarningGroupBox.Size = new System.Drawing.Size(208, 71);
@@ -129,6 +130,7 @@
             // 
             this.LanguageSettingGroupBox.Controls.Add(this.OpenLanguageSettingsButton);
             this.LanguageSettingGroupBox.Controls.Add(this.LanguageSettingsInfoLabel);
+            this.LanguageSettingGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LanguageSettingGroupBox.Location = new System.Drawing.Point(217, 3);
             this.LanguageSettingGroupBox.Name = "LanguageSettingGroupBox";
             this.LanguageSettingGroupBox.Size = new System.Drawing.Size(244, 85);
@@ -162,6 +164,7 @@
             // 
             this.WindowShadowGroupBox.AutoSize = true;
             this.WindowShadowGroupBox.Controls.Add(this.WindowShadowCheckBox);
+            this.WindowShadowGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.WindowShadowGroupBox.Location = new System.Drawing.Point(467, 3);
             this.WindowShadowGroupBox.Name = "WindowShadowGroupBox";
             this.WindowShadowGroupBox.Size = new System.Drawing.Size(232, 37);
@@ -185,6 +188,7 @@
             // 
             this.SmoothVisualElementsGroupBox.AutoSize = true;
             this.SmoothVisualElementsGroupBox.Controls.Add(this.SmoothVisualElementsCheckbox);
+            this.SmoothVisualElementsGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SmoothVisualElementsGroupBox.Location = new System.Drawing.Point(3, 94);
             this.SmoothVisualElementsGroupBox.Name = "SmoothVisualElementsGroupBox";
             this.SmoothVisualElementsGroupBox.Size = new System.Drawing.Size(296, 37);
@@ -207,6 +211,7 @@
             // 
             this.StretchResizeGroupbox.AutoSize = true;
             this.StretchResizeGroupbox.Controls.Add(this.StretchResizeCheckbox);
+            this.StretchResizeGroupbox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StretchResizeGroupbox.Location = new System.Drawing.Point(305, 94);
             this.StretchResizeGroupbox.Name = "StretchResizeGroupbox";
             this.StretchResizeGroupbox.Size = new System.Drawing.Size(182, 37);
@@ -229,6 +234,7 @@
             // 
             this.ThemeSettingsGroupBox.Controls.Add(this.OpenThemeSettingsButton);
             this.ThemeSettingsGroupBox.Controls.Add(this.ThemeSettingsInfoLabel);
+            this.ThemeSettingsGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ThemeSettingsGroupBox.Location = new System.Drawing.Point(3, 137);
             this.ThemeSettingsGroupBox.Name = "ThemeSettingsGroupBox";
             this.ThemeSettingsGroupBox.Size = new System.Drawing.Size(244, 85);
@@ -287,22 +293,22 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox SaveWarningGroupBox;
+        private taiyouGroupBox SaveWarningGroupBox;
         private System.Windows.Forms.Label SaveWarningIntervalInfo;
         private taiyouTextBox SaveWarningTextBox;
         private taiyouCheckBox SaveWarningCheckBox;
         private taiyouFlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.GroupBox LanguageSettingGroupBox;
+        private taiyouGroupBox LanguageSettingGroupBox;
         private taiyouButton OpenLanguageSettingsButton;
         private System.Windows.Forms.Label LanguageSettingsInfoLabel;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox WindowShadowGroupBox;
+        private taiyouGroupBox WindowShadowGroupBox;
         private taiyouCheckBox WindowShadowCheckBox;
-        private System.Windows.Forms.GroupBox SmoothVisualElementsGroupBox;
+        private taiyouGroupBox SmoothVisualElementsGroupBox;
         private taiyouCheckBox SmoothVisualElementsCheckbox;
-        private System.Windows.Forms.GroupBox StretchResizeGroupbox;
+        private taiyouGroupBox StretchResizeGroupbox;
         private taiyouCheckBox StretchResizeCheckbox;
-        private System.Windows.Forms.GroupBox ThemeSettingsGroupBox;
+        private taiyouGroupBox ThemeSettingsGroupBox;
         private taiyouButton OpenThemeSettingsButton;
         private System.Windows.Forms.Label ThemeSettingsInfoLabel;
     }

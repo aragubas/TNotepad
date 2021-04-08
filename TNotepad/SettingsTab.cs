@@ -27,7 +27,7 @@ using System.Windows.Forms;
 
 namespace TNotepad
 {
-    public partial class SettingsTab : UserControl
+    public partial class SettingsTab : taiyouUserControl
     {
         TabPage AssociatedTabPage;
         TabNotepadForm RootControl;
@@ -44,20 +44,6 @@ namespace TNotepad
             CreateSettingsTab(0);
 
             LoadLangs();
-            LoadTheme();
-
-        }
-
-        public void LoadTheme()
-        {
-            this.BackColor = ThemeLoader.GetThemeData("Form_BackgroundColor");
-            this.ForeColor = ThemeLoader.GetThemeData("Form_ForegroundColor");
-
-            // Button
-            UISettingsPanelButton.LoadTheme();
-            TextEditorSettingsPanelButton.LoadTheme();
-            ApplyChangesButton.LoadTheme();
-
         }
 
         public void CreateSettingsTab(int SettingTabID)

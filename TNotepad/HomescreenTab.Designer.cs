@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.PinnedDocsTitle = new System.Windows.Forms.Label();
-            this.TipPinLabel = new System.Windows.Forms.Label();
+            this.splitContainer1 = new taiyouSplitContainer();
+            this.tableLayoutPanel1 = new taiyouTableLayoutPanel();
             this.OpenPinDocButton = new TNotepad.taiyouButton();
             this.EditPinDocButton = new TNotepad.taiyouButton();
             this.DeletePinDocButton = new TNotepad.taiyouButton();
             this.PinDocsView = new TNotepad.taiyouListView();
             this.PinName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.FilePath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.PinnedDocsTitle = new System.Windows.Forms.Label();
             this.RollbackChanges = new TNotepad.taiyouButton();
             this.SaveChangesButton = new TNotepad.taiyouButton();
+            this.TipPinLabel = new System.Windows.Forms.Label();
             this.ReloadPinDocListButton = new TNotepad.taiyouButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -102,31 +102,8 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(505, 34);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // PinnedDocsTitle
-            // 
-            this.PinnedDocsTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PinnedDocsTitle.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PinnedDocsTitle.Location = new System.Drawing.Point(0, 0);
-            this.PinnedDocsTitle.Name = "PinnedDocsTitle";
-            this.PinnedDocsTitle.Size = new System.Drawing.Size(505, 30);
-            this.PinnedDocsTitle.TabIndex = 0;
-            this.PinnedDocsTitle.Text = "Pinned Documents";
-            this.PinnedDocsTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.PinnedDocsTitle.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // TipPinLabel
-            // 
-            this.TipPinLabel.AutoSize = true;
-            this.TipPinLabel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TipPinLabel.Location = new System.Drawing.Point(3, 7);
-            this.TipPinLabel.Name = "TipPinLabel";
-            this.TipPinLabel.Size = new System.Drawing.Size(163, 32);
-            this.TipPinLabel.TabIndex = 3;
-            this.TipPinLabel.Text = "You can pin a document at\r\nExtras -> Pin Document\r\n";
-            // 
             // OpenPinDocButton
             // 
-            this.OpenPinDocButton.BackColor = System.Drawing.Color.Gray;
             this.OpenPinDocButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OpenPinDocButton.FlatAppearance.BorderSize = 0;
             this.OpenPinDocButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -140,7 +117,6 @@
             // 
             // EditPinDocButton
             // 
-            this.EditPinDocButton.BackColor = System.Drawing.Color.Gray;
             this.EditPinDocButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EditPinDocButton.FlatAppearance.BorderSize = 0;
             this.EditPinDocButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -154,7 +130,6 @@
             // 
             // DeletePinDocButton
             // 
-            this.DeletePinDocButton.BackColor = System.Drawing.Color.Gray;
             this.DeletePinDocButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DeletePinDocButton.FlatAppearance.BorderSize = 0;
             this.DeletePinDocButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -169,7 +144,6 @@
             // PinDocsView
             // 
             this.PinDocsView.Activation = System.Windows.Forms.ItemActivation.OneClick;
-            this.PinDocsView.BackColor = System.Drawing.Color.DimGray;
             this.PinDocsView.BackgroundImageTiled = true;
             this.PinDocsView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PinDocsView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -197,16 +171,27 @@
             this.FilePath.Text = "File Path";
             this.FilePath.Width = 349;
             // 
+            // PinnedDocsTitle
+            // 
+            this.PinnedDocsTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PinnedDocsTitle.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PinnedDocsTitle.Location = new System.Drawing.Point(0, 0);
+            this.PinnedDocsTitle.Name = "PinnedDocsTitle";
+            this.PinnedDocsTitle.Size = new System.Drawing.Size(505, 30);
+            this.PinnedDocsTitle.TabIndex = 0;
+            this.PinnedDocsTitle.Text = "Pinned Documents";
+            this.PinnedDocsTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PinnedDocsTitle.Click += new System.EventHandler(this.label1_Click);
+            // 
             // RollbackChanges
             // 
             this.RollbackChanges.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.RollbackChanges.BackColor = System.Drawing.Color.Gray;
             this.RollbackChanges.FlatAppearance.BorderSize = 0;
             this.RollbackChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RollbackChanges.Location = new System.Drawing.Point(7, 100);
             this.RollbackChanges.Name = "RollbackChanges";
-            this.RollbackChanges.Size = new System.Drawing.Size(202, 23);
+            this.RollbackChanges.Size = new System.Drawing.Size(201, 23);
             this.RollbackChanges.TabIndex = 5;
             this.RollbackChanges.Text = "Rollback Changes";
             this.RollbackChanges.UseVisualStyleBackColor = false;
@@ -216,27 +201,35 @@
             // 
             this.SaveChangesButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SaveChangesButton.BackColor = System.Drawing.Color.Gray;
             this.SaveChangesButton.FlatAppearance.BorderSize = 0;
             this.SaveChangesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveChangesButton.Location = new System.Drawing.Point(6, 71);
             this.SaveChangesButton.Name = "SaveChangesButton";
-            this.SaveChangesButton.Size = new System.Drawing.Size(202, 23);
+            this.SaveChangesButton.Size = new System.Drawing.Size(201, 23);
             this.SaveChangesButton.TabIndex = 4;
             this.SaveChangesButton.Text = "Save Changes";
             this.SaveChangesButton.UseVisualStyleBackColor = false;
             this.SaveChangesButton.Click += new System.EventHandler(this.SaveChangesButton_Click);
             // 
+            // TipPinLabel
+            // 
+            this.TipPinLabel.AutoSize = true;
+            this.TipPinLabel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TipPinLabel.Location = new System.Drawing.Point(3, 7);
+            this.TipPinLabel.Name = "TipPinLabel";
+            this.TipPinLabel.Size = new System.Drawing.Size(163, 32);
+            this.TipPinLabel.TabIndex = 3;
+            this.TipPinLabel.Text = "You can pin a document at\r\nExtras -> Pin Document\r\n";
+            // 
             // ReloadPinDocListButton
             // 
             this.ReloadPinDocListButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ReloadPinDocListButton.BackColor = System.Drawing.Color.Gray;
             this.ReloadPinDocListButton.FlatAppearance.BorderSize = 0;
             this.ReloadPinDocListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ReloadPinDocListButton.Location = new System.Drawing.Point(6, 42);
             this.ReloadPinDocListButton.Name = "ReloadPinDocListButton";
-            this.ReloadPinDocListButton.Size = new System.Drawing.Size(202, 23);
+            this.ReloadPinDocListButton.Size = new System.Drawing.Size(201, 23);
             this.ReloadPinDocListButton.TabIndex = 3;
             this.ReloadPinDocListButton.Text = "Refresh List";
             this.ReloadPinDocListButton.UseVisualStyleBackColor = false;
@@ -246,11 +239,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.White;
             this.Name = "HomescreenTab";
             this.Size = new System.Drawing.Size(728, 351);
             this.Load += new System.EventHandler(this.HomescreenTab_Load);
@@ -269,7 +260,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label PinnedDocsTitle;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private taiyouTableLayoutPanel tableLayoutPanel1;
         private taiyouButton OpenPinDocButton;
         private taiyouButton EditPinDocButton;
         private taiyouButton DeletePinDocButton;
@@ -277,7 +268,7 @@
         private taiyouListView PinDocsView;
         private System.Windows.Forms.ColumnHeader PinName;
         private System.Windows.Forms.ColumnHeader FilePath;
-        private System.Windows.Forms.SplitContainer splitContainer1;
+        private taiyouSplitContainer splitContainer1;
         private taiyouButton ReloadPinDocListButton;
         private taiyouButton SaveChangesButton;
         private taiyouButton RollbackChanges;
