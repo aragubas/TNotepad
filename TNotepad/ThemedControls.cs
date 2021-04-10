@@ -42,6 +42,10 @@ namespace TNotepad
 
     class taiyouListView : ListView
     {
+        public taiyouListView()
+        {
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+        }
         public void LoadTheme()
         {
             if (!ThemeLoader.ThemeLoaded) { return; }

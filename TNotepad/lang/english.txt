@@ -37,7 +37,7 @@ TextEditMain_UntitledTab;Untitled File
 # -Encoding Status
 TextEditMain_EncodingNotSetStatus;Encoding not set.
 TextEditMain_LineNumber;Line 
-TextEditMain_ColumnSelected;Column
+TextEditMain_ColumnSelected;Column 
 # -Dropdown Menu
 TextEditMain_TextEditDropDown_Copy;Copy
 TextEditMain_TextEditDropDown_Cut;Cut

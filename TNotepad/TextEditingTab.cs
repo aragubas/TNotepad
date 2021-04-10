@@ -184,18 +184,26 @@ namespace TNotepad
         // Open a File
         public void OpenFile(string FileName)
         {
-            if (FileName == "") { return; }
-            // Set to default encoding, if encoding is null
-            if (CurrentEncoding == null) { SetEncoding(Utils.EncodingNameToEncodingObject()); }
+            try
+            {
+                if (FileName == "") { return; }
+                // Set to default encoding, if encoding is null
+                if (CurrentEncoding == null) { SetEncoding(Utils.EncodingNameToEncodingObject()); }
 
-            TextEditingThing.Text = File.ReadAllText(FileName, CurrentEncoding);
+                TextEditingThing.Text = File.ReadAllText(FileName, CurrentEncoding);
 
-            SaveStatusText.Text = Lang.GetLangData("TextEditMain_UnsavedStatus");
-            ResetLastUnsavedTime();
-            LastFileName = FileName;
-            pinDocumentToolStripMenuItem.Enabled = true;
+                SaveStatusText.Text = Lang.GetLangData("TextEditMain_UnsavedStatus");
+                ResetLastUnsavedTime();
+                LastFileName = FileName;
+                pinDocumentToolStripMenuItem.Enabled = true;
 
-            UpdateTitle(Path.GetFileName(FileName));
+                UpdateTitle(Path.GetFileName(FileName));
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error while loading pinned file\n" + ex.Message);
+            }
         }
 
         // Last saved time timer
@@ -209,6 +217,7 @@ namespace TNotepad
             string LastTimeInString = dateTime.ToString("HH:mm:ss");
 
             SaveStatusText.Text = Lang.GetLangData("TextEditMain_UnsavedStatusInLast").Replace("$1", LastTimeInString);
+            Console.WriteLine("Next Unsaved time warning");
 
         }
 
