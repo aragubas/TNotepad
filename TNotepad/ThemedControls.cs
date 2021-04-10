@@ -63,7 +63,7 @@ namespace TNotepad
             if (!ThemeLoaded)
             {
                 ThemeLoaded = true;
-                LoadTheme();
+                LoadTheme(); 
             }
         }
 

@@ -241,6 +241,9 @@ namespace TNotepad
 
         private void TabNotepadForm_Paint(object sender, PaintEventArgs e)
         {
+            // Draw window border
+            e.Graphics.DrawRectangle(new Pen(ThemeLoader.GetThemeData("Form_ForegroundColor"), 2), ClientRectangle);
+
             if (UpdateProperties)
             {
                 UpdateProperties = false;
@@ -281,11 +284,7 @@ namespace TNotepad
             this.UpdateStyles();
             UpdateProperties = true;
 
-        }  
-
-
-
-
+        }
 
     }
 
