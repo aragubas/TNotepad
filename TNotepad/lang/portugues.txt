@@ -104,6 +104,7 @@ Settings_UISettings_WindowShadow;Sombra da Janela
 Settings_UISettings_StretchResizeGroupbox;Remendisionar Esticando
 Settings_UISettings_ThemeSettingsGroupbox;Tema
 Settings_UISettings_SmoothVisualElementsGroupbox;Suavizar elementos visuais
+Settings_UISettings_DeflickerGroupbox;Forçar Buffer Duplo
 # -Labels
 Settings_UISettings_SaveWarningIntervalInfoLabel;Intervalo (em milisegundos)
 Settings_UISettings_LanguageSettingsInfoLabel;Altera o idioma atual
@@ -114,6 +115,7 @@ Settings_UISettings_HometabAsDefaultCheckbox;Usar Pagina Inicial como Pagina Pad
 Settings_UISettings_WindowShadowCheckbox;Desenha uma sombra atraz da janela principal
 Settings_UISettings_StretchResizeCheckbox;Esticar conteudo da janela ao remendisionar.
 Settings_UISettings_SmoothVisualElementsCheckbox;Aplicar anti-alias para elementos visuais
+Settings_UISettings_DeflickerCheckBox;Força buffer duplo em todos os controles, util para impedir flashes brancos
 # -Buttons
 Settings_UISettings_OpenLanguageSettingsButton;Alterar Idioma
 Settings_UISettings_OpenThemeSettingsButton;Alterar Tema
@@ -122,8 +124,7 @@ Settings_UISettings_OpenThemeSettingsButton;Alterar Tema
 # Settings -> Text Editor
 #
 Settings_TextEditor_WordWrapGroupBoxTitle;Quebra de Linha
-Settings_TextEditor_WordWrapEnabled;Ativado
-Settings_TextEditor_WordWrapToggleButton;Alternar
+Settings_TextEditor_WordWrapCheckbox;Ativar quebra de linha
 
 #
 # Encoding Selector
@@ -218,3 +219,16 @@ ThemeSettings_SelectThemeButton;Aplicar tema
 # MessageBox
 ThemeSettings_ThemeApplyMessage;Você prescisa reiniciar o aplicativo para aplicar o tema.
 ThemeSettings_ThemeApplyMessage_Title;Reiniciar Requirido
+
+#
+# Saving Error
+#
+SavingError_PathTooLong_Text;Nome de arquivo ou caminho muito longos.
+SavingError_Title;Erro ao salvar
+
+#
+# Tab Switcher
+#
+TabSwitcher_SwitchLabelInfos;Precione ENTER ou BARRA DE ESPAÇO para alternar%nPrecione ESCAPE para fechar.
+TabSwitcher_Title;Alternador de Aba
+TabSwitcher_CloseButton;Fechar

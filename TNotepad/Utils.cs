@@ -31,6 +31,9 @@ namespace TNotepad
 
         static DateTime BuildDate = new DateTime(2000, 1, 1);
         public static bool ThemeLoadingEnabled = false;
+        public static bool OpenTabStartupArg;
+        public static string OpenTabStartupArg_FileName;
+        public static MainForm MainFormInstance;
 
         public static string GetVersion()
         {
@@ -58,7 +61,7 @@ namespace TNotepad
 
         public static void CreateMainForm()
         {
-            TabNotepadForm ParentForm = new TabNotepadForm();
+            /*TabNotepadForm ParentForm = new TabNotepadForm();
             MainForm ParentControls = new MainForm(ParentForm);
 
             // Add controls to the form
@@ -66,6 +69,8 @@ namespace TNotepad
 
             ParentForm.Text = "TNotepad v" + GetVersion();
             ParentForm.Show();
+            */
+            CreateWindow(new MainForm(), "TNotepad v" + GetVersion(), false);
 
         }
 
@@ -78,6 +83,7 @@ namespace TNotepad
             ParentForm.FormControls.Controls.Add(control);
 
             ParentForm.Text = DefaultTitle;
+
             if (!ShowAsDialog)
             {
                 ParentForm.Show();

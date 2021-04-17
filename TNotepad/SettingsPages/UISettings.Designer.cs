@@ -46,6 +46,8 @@
             this.ThemeSettingsGroupBox = new TNotepad.taiyouGroupBox();
             this.OpenThemeSettingsButton = new TNotepad.taiyouButton();
             this.ThemeSettingsInfoLabel = new System.Windows.Forms.Label();
+            this.DeFlickerGroupBox = new TNotepad.taiyouGroupBox();
+            this.DeFlickerCheckBox = new TNotepad.taiyouCheckBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.SaveWarningGroupBox.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -54,6 +56,7 @@
             this.SmoothVisualElementsGroupBox.SuspendLayout();
             this.StretchResizeGroupbox.SuspendLayout();
             this.ThemeSettingsGroupBox.SuspendLayout();
+            this.DeFlickerGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -64,7 +67,9 @@
             this.flowLayoutPanel1.Controls.Add(this.SmoothVisualElementsGroupBox);
             this.flowLayoutPanel1.Controls.Add(this.StretchResizeGroupbox);
             this.flowLayoutPanel1.Controls.Add(this.ThemeSettingsGroupBox);
+            this.flowLayoutPanel1.Controls.Add(this.DeFlickerGroupBox);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(733, 397);
@@ -131,7 +136,7 @@
             this.LanguageSettingGroupBox.Controls.Add(this.OpenLanguageSettingsButton);
             this.LanguageSettingGroupBox.Controls.Add(this.LanguageSettingsInfoLabel);
             this.LanguageSettingGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LanguageSettingGroupBox.Location = new System.Drawing.Point(217, 3);
+            this.LanguageSettingGroupBox.Location = new System.Drawing.Point(3, 80);
             this.LanguageSettingGroupBox.Name = "LanguageSettingGroupBox";
             this.LanguageSettingGroupBox.Size = new System.Drawing.Size(244, 85);
             this.LanguageSettingGroupBox.TabIndex = 3;
@@ -165,7 +170,7 @@
             this.WindowShadowGroupBox.AutoSize = true;
             this.WindowShadowGroupBox.Controls.Add(this.WindowShadowCheckBox);
             this.WindowShadowGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.WindowShadowGroupBox.Location = new System.Drawing.Point(467, 3);
+            this.WindowShadowGroupBox.Location = new System.Drawing.Point(3, 171);
             this.WindowShadowGroupBox.Name = "WindowShadowGroupBox";
             this.WindowShadowGroupBox.Size = new System.Drawing.Size(232, 37);
             this.WindowShadowGroupBox.TabIndex = 4;
@@ -189,7 +194,7 @@
             this.SmoothVisualElementsGroupBox.AutoSize = true;
             this.SmoothVisualElementsGroupBox.Controls.Add(this.SmoothVisualElementsCheckbox);
             this.SmoothVisualElementsGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SmoothVisualElementsGroupBox.Location = new System.Drawing.Point(3, 94);
+            this.SmoothVisualElementsGroupBox.Location = new System.Drawing.Point(3, 214);
             this.SmoothVisualElementsGroupBox.Name = "SmoothVisualElementsGroupBox";
             this.SmoothVisualElementsGroupBox.Size = new System.Drawing.Size(296, 37);
             this.SmoothVisualElementsGroupBox.TabIndex = 5;
@@ -212,7 +217,7 @@
             this.StretchResizeGroupbox.AutoSize = true;
             this.StretchResizeGroupbox.Controls.Add(this.StretchResizeCheckbox);
             this.StretchResizeGroupbox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StretchResizeGroupbox.Location = new System.Drawing.Point(305, 94);
+            this.StretchResizeGroupbox.Location = new System.Drawing.Point(3, 257);
             this.StretchResizeGroupbox.Name = "StretchResizeGroupbox";
             this.StretchResizeGroupbox.Size = new System.Drawing.Size(182, 37);
             this.StretchResizeGroupbox.TabIndex = 6;
@@ -235,7 +240,7 @@
             this.ThemeSettingsGroupBox.Controls.Add(this.OpenThemeSettingsButton);
             this.ThemeSettingsGroupBox.Controls.Add(this.ThemeSettingsInfoLabel);
             this.ThemeSettingsGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ThemeSettingsGroupBox.Location = new System.Drawing.Point(3, 137);
+            this.ThemeSettingsGroupBox.Location = new System.Drawing.Point(3, 300);
             this.ThemeSettingsGroupBox.Name = "ThemeSettingsGroupBox";
             this.ThemeSettingsGroupBox.Size = new System.Drawing.Size(244, 85);
             this.ThemeSettingsGroupBox.TabIndex = 7;
@@ -264,6 +269,29 @@
             this.ThemeSettingsInfoLabel.Text = "Language Settings is at another window.";
             this.ThemeSettingsInfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // DeFlickerGroupBox
+            // 
+            this.DeFlickerGroupBox.AutoSize = true;
+            this.DeFlickerGroupBox.Controls.Add(this.DeFlickerCheckBox);
+            this.DeFlickerGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeFlickerGroupBox.Location = new System.Drawing.Point(305, 3);
+            this.DeFlickerGroupBox.Name = "DeFlickerGroupBox";
+            this.DeFlickerGroupBox.Size = new System.Drawing.Size(332, 37);
+            this.DeFlickerGroupBox.TabIndex = 8;
+            this.DeFlickerGroupBox.TabStop = false;
+            this.DeFlickerGroupBox.Text = "Window De-Flicker";
+            // 
+            // DeFlickerCheckBox
+            // 
+            this.DeFlickerCheckBox.AutoSize = true;
+            this.DeFlickerCheckBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DeFlickerCheckBox.Location = new System.Drawing.Point(3, 16);
+            this.DeFlickerCheckBox.Name = "DeFlickerCheckBox";
+            this.DeFlickerCheckBox.Size = new System.Drawing.Size(326, 18);
+            this.DeFlickerCheckBox.TabIndex = 5;
+            this.DeFlickerCheckBox.Text = "Remove flickering by force-enabling Double Buffer on controls";
+            this.DeFlickerCheckBox.UseVisualStyleBackColor = true;
+            // 
             // UISettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -287,6 +315,8 @@
             this.StretchResizeGroupbox.ResumeLayout(false);
             this.StretchResizeGroupbox.PerformLayout();
             this.ThemeSettingsGroupBox.ResumeLayout(false);
+            this.DeFlickerGroupBox.ResumeLayout(false);
+            this.DeFlickerGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -311,5 +341,7 @@
         private taiyouGroupBox ThemeSettingsGroupBox;
         private taiyouButton OpenThemeSettingsButton;
         private System.Windows.Forms.Label ThemeSettingsInfoLabel;
+        private taiyouGroupBox DeFlickerGroupBox;
+        private taiyouCheckBox DeFlickerCheckBox;
     }
 }

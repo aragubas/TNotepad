@@ -177,5 +177,17 @@ namespace TNotepad.Properties {
                 this["CurrentTheme"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ForceDoubleBuffer {
+            get {
+                return ((bool)(this["ForceDoubleBuffer"]));
+            }
+            set {
+                this["ForceDoubleBuffer"] = value;
+            }
+        }
     }
 }

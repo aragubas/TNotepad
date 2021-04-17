@@ -12,28 +12,61 @@ namespace TNotepad
 {
     public partial class MainForm : taiyouUserControl
     {
-        TabNotepadForm RootControl;
-        public MainForm(TabNotepadForm pRootControl)
+        public MainForm()
         {
             InitializeComponent();
-
-            RootControl = pRootControl;
 
             this.Dock = DockStyle.Fill;
 
             AttachSidePanel();
             CreateHometab();
-
-            RootControl.FormCloseButton.Click += FormCloseButton_Click;
-
-            // Set minimun size to the previous version window size.
-            RootControl.MinimumSize = new Size(840, 470);
-            RootControl.Size = new Size(840, 470);
-
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            RootForm.FormCloseButton.Click += FormCloseButton_Click;
+
+            // Set minimun size to the previous version window size.
+            RootForm.MinimumSize = new Size(840, 470);
+            RootForm.Size = new Size(840, 470);
+
+            // Enable Tab Switcher Shortcut
+            RootForm.KeyPreview = true;
+            RootForm.KeyDown += RootForm_KeyDown;
+
+            Utils.MainFormInstance = this;
+
+            Tabs.CreateNewTabEvent += Tabs_CreateNewTabEvent;
+        }
+
+        void Tabs_CreateNewTabEvent()
+        {
+            CreateNewTab();
+        }
+
+        void FormControls_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            // Open Shortcut
+            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.Tab)
+            {
+                OpenTabSwitcher();
+            }
+        }
+
+        public void OpenTabSwitcher()
+        {
+            TabSwitcher tabSw = new TabSwitcher(Tabs);
+            Utils.CreateWindow(tabSw, "Tab Switcher", true);
+
+        }
+
+        void RootForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Open Shortcut
+            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.Tab)
+            {
+                OpenTabSwitcher();
+            }
 
         }
 
@@ -51,15 +84,9 @@ namespace TNotepad
         public void CloseSelectedTab()
         {
             // Create new tab if there is no one left
-            if (Tabs.SelectedTab.Tag != "PERSISTENT")
-            {
-                // Clear controls before closing tab
-                foreach (Control wax in Tabs.TabPages[Tabs.SelectedIndex].Controls)
-                {
-                    wax.Dispose();
-                }
-                Tabs.TabPages.RemoveAt(Tabs.SelectedIndex);
-
+            if (!Tabs.SelectedTab.Tag.ToString().Contains("PERSISTENT"))
+            {  
+                Tabs.ClosePageAt(Tabs.SelectedIndex);
             }
 
         }
@@ -78,8 +105,6 @@ namespace TNotepad
 
             // Set selected tab to the newly created one
             Tabs.SelectedIndex = Tabs.TabPages.IndexOf(newTab);
-            Refresh();
-
 
         }
 
@@ -94,8 +119,6 @@ namespace TNotepad
 
             // Set selected tab to the newly created one
             Tabs.SelectedIndex = Tabs.TabPages.IndexOf(newTab);
-            Refresh();
-
         }
 
         public void CreateSettingsTab()
@@ -103,15 +126,14 @@ namespace TNotepad
             // Create Tab object
             TabPage newTab = new TabPage();
             newTab.Text = Lang.GetLangData("Generic_Settings");
-            newTab.Controls.Add(new SettingsTab(RootControl, newTab));
+            newTab.Controls.Add(new SettingsTab(RootForm, newTab));
             newTab.Padding = new Padding(0, 0, 0, 0);
+            newTab.Tag = "GENERIC";
 
             Tabs.TabPages.Add(newTab);
 
             // Set selected tab to the newly created one
             Tabs.SelectedIndex = Tabs.TabPages.IndexOf(newTab);
-            Refresh();
-
         }
 
 
@@ -128,13 +150,12 @@ namespace TNotepad
             // Add the control
             newTab.Controls.Add(TextEdtTab);
             newTab.Padding = new Padding(0, 0, 0, 0);
+            newTab.Tag = "TEXT_EDITOR";
 
             Tabs.TabPages.Add(newTab);
 
             // Set selected tab to the newly created one
             Tabs.SelectedIndex = Tabs.TabPages.IndexOf(newTab);
-            Refresh();
-
         }
 
         public void AttachSidePanel()

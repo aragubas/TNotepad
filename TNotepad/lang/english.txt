@@ -103,6 +103,7 @@ Settings_UISettings_WindowShadow;Window Shadow
 Settings_UISettings_SmoothVisualElementsGroupbox;Smooth visual elements
 Settings_UISettings_StretchResizeGroupbox;Stretch resize
 Settings_UISettings_ThemeSettingsGroupbox;Theme
+Settings_UISettings_DeflickerGroupbox;Window De-Flicker
 # -Labels
 Settings_UISettings_SaveWarningIntervalInfoLabel;Interval (in miliseconds)
 Settings_UISettings_LanguageSettingsInfoLabel;Changes the current language.
@@ -113,6 +114,7 @@ Settings_UISettings_HometabAsDefaultCheckbox;Use hometab as default tab
 Settings_UISettings_WindowShadowCheckbox;Draw a shadow behind the main window
 Settings_UISettings_SmoothVisualElementsCheckbox;Appy anti-aliasing to certain custom-rendered elements.
 Settings_UISettings_StretchResizeCheckbox;Stretch window when resizing.
+Settings_UISettings_DeflickerCheckBox;Forces double-buffer on all controls, usefull for removing white flashing and flickering
 # -Buttons
 Settings_UISettings_OpenLanguageSettingsButton;Change Language
 Settings_UISettings_OpenThemeSettingsButton;Change Theme
@@ -216,4 +218,15 @@ ThemeSettings_SelectThemeButton;Apply theme
 ThemeSettings_ThemeApplyMessage;You need to restart the application to apply the theme.
 ThemeSettings_ThemeApplyMessage_Title;Restart Required
 
+#
+# Saving Error
+#
+SavingError_PathTooLong_Text;Filename or Pathn name is too long.
+SavingError_Title;Error while saving
 
+#
+# Tab Switcher
+#
+TabSwitcher_SwitchLabelInfos;Press ENTER ou SPACEBAR to switch%nPress ESCAPE to exit.
+TabSwitcher_Title;Tab Switcher
+TabSwitcher_CloseButton;Close

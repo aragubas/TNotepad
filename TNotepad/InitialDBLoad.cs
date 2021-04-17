@@ -20,6 +20,7 @@ namespace TNotepad
 
         private void InitialDBLoad_Load(object sender, EventArgs e)
         {
+            Console.WriteLine("Loading Databases...");
             BGWorker.RunWorkerAsync();
         }
 

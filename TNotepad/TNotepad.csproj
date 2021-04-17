@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0D7C5D5A-18EF-4636-9FCA-42273762840A}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TNotepad</RootNamespace>
     <AssemblyName>TNotepad</AssemblyName>
@@ -149,6 +149,12 @@
     <Compile Include="TabNotepadForm.Designer.cs">
       <DependentUpon>TabNotepadForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TabSwitcher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabSwitcher.Designer.cs">
+      <DependentUpon>TabSwitcher.cs</DependentUpon>
+    </Compile>
     <Compile Include="TextEditingTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -246,6 +252,9 @@
     <EmbeddedResource Include="TabNotepadForm.resx">
       <DependentUpon>TabNotepadForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TabSwitcher.resx">
+      <DependentUpon>TabSwitcher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TextEditingTab.resx">
       <DependentUpon>TextEditingTab.cs</DependentUpon>
     </EmbeddedResource>
@@ -300,6 +309,7 @@
     <Content Include="Resources\SettingsMini.png" />
     <Content Include="Resources\TabbedNotpadIcon.ico" />
     <Content Include="Resources\TabbedNotpadIcon.png" />
+    <None Include="Resources\TabNew.png" />
     <Content Include="TabbedNotpadIcon.ico" />
     <Content Include="themes\TaiyouDark.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -23,9 +23,18 @@ using System.Windows.Forms;
 
 namespace TNotepad
 {
-
+    
+    
     public partial class ApplicationTabs : TabControl
     {
+        int LastSelectedTab = -1;
+        private const int WM_PAINT = 0xF;
+        public delegate void dCreateNewTabEvent();
+        public delegate void dCreateDefaultTabEvent();
+        public event dCreateNewTabEvent CreateNewTabEvent;
+        public event dCreateDefaultTabEvent CreateDefaultTabEvent;
+        private TabPage NewTabButton;
+        private int LastSelectedWax = 0;
 
         public ApplicationTabs()
         {
@@ -34,60 +43,85 @@ namespace TNotepad
             // Make the tab buttons work
             this.MouseUp += ApplicationTabs_MouseUp;
 
-            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.DoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
-            this.UpdateStyles();
+            if (Properties.Settings.Default.ForceDoubleBuffer)
+            {
+
+                this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.DoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
+                this.UpdateStyles();
+
+            }
 
             this.ControlAdded += ApplicationTabs_ControlAdded;
-            this.ControlRemoved += ApplicationTabs_ControlRemoved;
-
+            this.Selected += ApplicationTabs_Selected;
+            CreateNewTabButton();
 
         }
 
-        void ApplicationTabs_ControlRemoved(object sender, ControlEventArgs e)
+        void ApplicationTabs_Selected(object sender, TabControlEventArgs e)
         {
-            Graphics ceira = this.CreateGraphics();
-            ceira.FillRectangle(new SolidBrush(ThemeLoader.GetThemeData("Form_BackgroundColor")), this.ClientRectangle);
-            DrawTabHeader(ceira);
+            if (TabPages[SelectedIndex].Tag.ToString() == "NEWTAB")
+            {
+                SelectedIndex = LastSelectedWax;
+            }
+            else
+            {
+                LastSelectedWax = SelectedIndex;
+            }
 
-        }  
+        }
+
+        public void CreateNewTabButton()
+        {
+            // Create Tab object
+            TabPage newTab = new TabPage();
+            newTab.Tag = "NEWTAB";
+            newTab.Text += "+";
+
+            Label BackgroundFix = new Label();
+            BackgroundFix.BackColor = ThemeLoader.GetThemeData("Form_BackgroundColor");
+            BackgroundFix.Dock = DockStyle.Fill;
+            newTab.Controls.Add(BackgroundFix);
+
+            NewTabButton = newTab;
+            TabPages.Add(newTab);
+
+        }
+
 
         void ApplicationTabs_ControlAdded(object sender, ControlEventArgs e)
         {
-            Graphics ceira = this.CreateGraphics();
-            ceira.FillRectangle(new SolidBrush(ThemeLoader.GetThemeData("Form_BackgroundColor")), this.ClientRectangle);
-            DrawTabHeader(ceira);
+            int Index = TabPages.IndexOf(NewTabButton);
+
+            if (Index != TabPages.Count - 1)
+            {
+                TabPages.Remove(NewTabButton);
+                TabPages.Add(NewTabButton);
+            }
 
         }
-
-        protected override void NotifyInvalidate(Rectangle invalidatedArea)
-        {
-            Graphics ceira = this.CreateGraphics();
-            DrawTabHeader(ceira);
-
-        }
-
 
         protected override void OnPaintBackground(PaintEventArgs pevent)
         {
-            //base.OnPaintBackground(pevent);
-
+            // Fill background with FormBackgroundColor key
             Brush b = new SolidBrush(ThemeLoader.GetThemeData("Form_BackgroundColor"));
-            pevent.Graphics.FillRectangle(b, this.ClientRectangle);
+            pevent.Graphics.FillRectangle(b, pevent.ClipRectangle);
 
-            DrawTabHeader(pevent.Graphics);
-        }
+        }        
 
         private void DrawTabHeader(Graphics e)
         {
             Rectangle tf = this.ClientRectangle;
 
             for (var i = 0; i < TabPages.Count; i++)
-            {
+            {   
                 // Set some variables
                 Font fntTab = Font;
                 Brush bshBack;
                 Brush bshFore;
                 Rectangle TabRect = GetTabRect(i);
+                string TabTitle = TabPages[i].Text;
+
+                string TabType = TabPages[i].Tag.ToString();
 
                 // Set SmoothingMode
                 if (Properties.Settings.Default.SmoothVisualElements)
@@ -106,12 +140,15 @@ namespace TNotepad
                     bshFore = new SolidBrush(ThemeLoader.GetThemeData("TabControl_HeaderSelected_ForegroundColor"));
                     bshBack = new SolidBrush(ThemeLoader.GetThemeData("TabControl_HeaderSelected_BackgroundColor"));
 
-                    if (TabPages[i].Tag == "PERSISTENT")
+                    if (TabPages[i].Tag.ToString().Split(';')[0] == "PERSISTENT")
                     {
                         bshFore = new SolidBrush(ThemeLoader.GetThemeData("TabControl_PersistentHeaderSelected_ForegroundColor"));
                         bshBack = new SolidBrush(ThemeLoader.GetThemeData("TabControl_PersistentHeaderSelected_BackgroundColor"));
 
                     }
+
+                    // Make the selected tab a bit higher
+                    TabRect = new Rectangle(TabRect.X, TabRect.Y - 1, TabRect.Width, TabRect.Height + 1);
 
                 }
                 else // Unselected Tab
@@ -119,7 +156,7 @@ namespace TNotepad
                     bshFore = new SolidBrush(ThemeLoader.GetThemeData("TabControl_HeaderUnselected_ForegroundColor"));
                     bshBack = new SolidBrush(ThemeLoader.GetThemeData("TabControl_HeaderUnselected_BackgroundColor"));
 
-                    if (TabPages[i].Tag == "PERSISTENT")
+                    if (TabPages[i].Tag.ToString().Split(';')[0] == "PERSISTENT")
                     {
                         bshFore = new SolidBrush(ThemeLoader.GetThemeData("TabControl_PersistentHeaderUnselected_ForegroundColor"));
                         bshBack = new SolidBrush(ThemeLoader.GetThemeData("TabControl_PersistentHeaderUnselected_BackgroundColor"));
@@ -128,22 +165,33 @@ namespace TNotepad
 
                 }
 
-
                 // Draw Background
-                e.FillRectangle(bshBack, TabRect);
-
-                // Draw Tab Title
-                string tabName = TabPages[i].Text;
                 StringFormat sftTab = new StringFormat();
+
+                if (TabType == "NEWTAB")
+                {
+                    TabRect = new Rectangle(TabRect.X + 5, TabRect.Y + 3, 20, TabRect.Height - 5);
+                    Rectangle PosRect = new Rectangle(TabRect.X, TabRect.Y, 16, 16);
+                    sftTab.Alignment = StringAlignment.Center;
+                    
+
+                    e.FillRectangle(bshBack, TabRect);
+                    e.DrawImage(Properties.Resources.TabNew, new Point(PosRect.X + 5, PosRect.Y + 3));
+
+                    continue;
+                }
+
+                e.FillRectangle(bshBack, TabRect);
+                // Draw Tab Title
                 Rectangle recTab = TabRect;
                 recTab = new Rectangle(recTab.X, recTab.Y, recTab.Width, recTab.Height);
 
-                e.DrawString(tabName, fntTab, bshFore, new Rectangle(recTab.X + 1, recTab.Y + 4, recTab.Width, recTab.Height), sftTab);
+                e.DrawString(TabTitle, fntTab, bshFore, new Rectangle(recTab.X + 1, recTab.Y + 4, recTab.Width, recTab.Height), sftTab);
 
                 // Draw Red Close Circle
                 var CloseButtonRect = new Rectangle(recTab.Right - 15, recTab.Top + (recTab.Height - 8) / 2, 10, 10);
                 // If current tab is not a persistent one
-                if (TabPages[i].Tag != "PERSISTENT")
+                if (TabType != "PERSISTENT")
                 {
                     // If current tab is the selected one
                     if (SelectedIndex == i)
@@ -153,7 +201,7 @@ namespace TNotepad
                     e.DrawImage(Properties.Resources.TabClose, new Point(CloseButtonRect.X, CloseButtonRect.Y));
 
                     // Add spacing to title text
-                    if (!TabPages[i].Text.EndsWith(" "))
+                    if (!TabPages[i].Text.EndsWith("   "))
                     {
                         TabPages[i].Text += " ";
 
@@ -162,12 +210,6 @@ namespace TNotepad
                 }
                 else
                 {
-                    // Add spacing to title text
-                    if (!TabPages[i].Text.EndsWith("  "))
-                    {
-                        TabPages[i].Text += " ";
-
-                    }
 
                 }
 
@@ -192,12 +234,25 @@ namespace TNotepad
             base.OnPaint(e);
 
             DrawTabHeader(e.Graphics);
-            
+
+        }
+
+        public void ClosePageAt(int i)
+        {
+            // Dispose all constrols present on that page before closing it 
+            foreach (Control wax in TabPages[i].Controls)
+            {
+                wax.Dispose();
+            }
+            TabPages.RemoveAt(i);
+            Refresh();
+
         }
 
         void ApplicationTabs_MouseUp(object sender, MouseEventArgs e)
         {
-            // Process MouseDown event only till (tabControl.TabPages.Count - 1) excluding the last TabPage
+            this.Capture = true;
+
             for (var i = 0; i < TabPages.Count; i++)
             {
                 var tabRect = GetTabRect(i);
@@ -207,41 +262,52 @@ namespace TNotepad
                 if (imageRect.IntersectsWith(new Rectangle(e.Location.X, e.Location.Y, 1, 1)))
                 {
                     // Don't close tabs with tag PERSISTENT
-                    if (TabPages[i].Tag != "PERSISTENT")
+                    if (TabPages[i].Tag.ToString() != "PERSISTENT" && TabPages[i].Tag.ToString() != "NEWTAB")
                     {
-                        // Dispose all constrols present on that page
-                        foreach (Control wax in TabPages[i].Controls)
+                        // Close tab 
+                        ClosePageAt(i);
+
+                        // Call Create Default Tab if tab has been closed
+                        if (TabPages.Count == 0)
                         {
-                            wax.Dispose();
+                            if (CreateNewTabEvent != null)
+                            {
+                                CreateDefaultTabEvent.Invoke();
+                            }
+
                         }
 
-                        // Remove page
-                        TabPages.RemoveAt(i);
-                        //TabPages[i].CloseTab();
-
+                        
                     }
 
-                    break;
+                    return;
                 }
             }
 
-            if (TabPages.Count == 0)
+            // Add Tab Button
+            if (TabPages.Count > 1)
             {
-                CreateDefaultTab();
-            }
+                Rectangle LastPageRect = GetTabRect(TabPages.Count - 1);
+                Rectangle PosRect = new Rectangle(LastPageRect.X + 5, LastPageRect.Y, 16, 16);
 
+                if (PosRect.IntersectsWith(new Rectangle(e.Location.X, e.Location.Y, 1, 1)))
+                {
+                    SelectedIndex = 0;
+                    if (CreateNewTabEvent != null)
+                    {
+                        CreateNewTabEvent.Invoke();
+                        
+                    }
+                }
+
+            }
 
         }
 
         private const int TCM_ADJUSTRECT = 0x1328;
 
-        public virtual void CreateDefaultTab()
-        {
-
-        }
-
         protected override void WndProc(ref Message m)
-        {
+        { 
             // Hide undesirable borders
             if (m.Msg == TCM_ADJUSTRECT)
             {
@@ -249,13 +315,13 @@ namespace TNotepad
                 rect.Left = this.Left - 4;
                 rect.Right = this.Right + 4;
 
-                rect.Top = this.Top - 2;
+                rect.Top = this.Top;
                 rect.Bottom = this.Bottom + 4;
 
                 Marshal.StructureToPtr(rect, m.LParam, true);
                 //m.Result = (IntPtr)1;
                 //return;
-            }
+            } 
 
 
             //else

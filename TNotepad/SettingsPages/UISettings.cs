@@ -51,6 +51,7 @@ namespace TNotepad.SettingsPages
             SmoothVisualElementsGroupBox.Text = Lang.GetLangData("Settings_UISettings_SmoothVisualElementsGroupbox");
             StretchResizeGroupbox.Text = Lang.GetLangData("Settings_UISettings_StretchResizeGroupbox");
             ThemeSettingsGroupBox.Text = Lang.GetLangData("Settings_UISettings_ThemeSettingsGroupbox");
+            DeFlickerGroupBox.Text = Lang.GetLangData("Settings_UISettings_DeflickerGroupbox");
 
             // Labels
             SaveWarningIntervalInfo.Text = Lang.GetLangData("Settings_UISettings_SaveWarningIntervalInfoLabel");
@@ -62,6 +63,7 @@ namespace TNotepad.SettingsPages
             WindowShadowCheckBox.Text = Lang.GetLangData("Settings_UISettings_WindowShadowCheckbox");
             SmoothVisualElementsCheckbox.Text = Lang.GetLangData("Settings_UISettings_SmoothVisualElementsCheckbox");
             StretchResizeCheckbox.Text = Lang.GetLangData("Settings_UISettings_StretchResizeCheckbox");
+            DeFlickerCheckBox.Text = Lang.GetLangData("Settings_UISettings_DeflickerCheckBox");
 
             // Buttons
             OpenLanguageSettingsButton.Text = Lang.GetLangData("Settings_UISettings_OpenLanguageSettingsButton");
@@ -81,6 +83,7 @@ namespace TNotepad.SettingsPages
             WindowShadowCheckBox.Checked = Properties.Settings.Default.WindowShadow;
             SmoothVisualElementsCheckbox.Checked = Properties.Settings.Default.SmoothVisualElements;
             StretchResizeCheckbox.Checked = Properties.Settings.Default.StrechWindowContentsWhenResizing;
+            DeFlickerCheckBox.Checked = Properties.Settings.Default.ForceDoubleBuffer;
 
         }
 
@@ -90,6 +93,7 @@ namespace TNotepad.SettingsPages
             Properties.Settings.Default.WindowShadow = WindowShadowCheckBox.Checked;
             Properties.Settings.Default.SmoothVisualElements = SmoothVisualElementsCheckbox.Checked;
             Properties.Settings.Default.StrechWindowContentsWhenResizing = StretchResizeCheckbox.Checked;
+            Properties.Settings.Default.ForceDoubleBuffer = DeFlickerCheckBox.Checked;
 
             // Unsaved Time Interval
             try

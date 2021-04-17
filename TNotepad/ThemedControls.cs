@@ -13,7 +13,8 @@ namespace TNotepad
         public taiyouButton()
         {
             this.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FlatAppearance.BorderSize = 0;
+            this.FlatAppearance.BorderSize = 1;
+            this.FlatAppearance.BorderColor = Color.Black;
 
         }
 
@@ -22,6 +23,7 @@ namespace TNotepad
             if (!ThemeLoader.ThemeLoaded) { return; }
             BackColor = ThemeLoader.GetThemeData("Button_BackgroundColor");
             ForeColor = ThemeLoader.GetThemeData("Button_ForegroundColor");
+            this.FlatAppearance.BorderSize = 0;
 
         }
 
@@ -41,7 +43,7 @@ namespace TNotepad
     }
 
     class taiyouListView : ListView
-    {
+    { 
         public taiyouListView()
         {
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -315,6 +317,7 @@ namespace TNotepad
         {
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.AllowDrop = false;
+            this.EnableAutoDragDrop = false;
 
         }
 

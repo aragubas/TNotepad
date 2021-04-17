@@ -56,7 +56,7 @@
             this.copyToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
             this.cutToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
             this.PasteToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
-            this.TextEditingThing = new taiyouRichTextBox();
+            this.TextEditingThing = new TNotepad.taiyouRichTextBox();
             this.Toolbar.SuspendLayout();
             this.StatusBar.SuspendLayout();
             this.TextEditorContextMenu.SuspendLayout();
@@ -123,20 +123,20 @@
             // encodingToolStripMenuItem
             // 
             this.encodingToolStripMenuItem.Name = "encodingToolStripMenuItem";
-            this.encodingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.encodingToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.encodingToolStripMenuItem.Text = "Encoding";
             this.encodingToolStripMenuItem.Click += new System.EventHandler(this.encodingToolStripMenuItem_Click);
             // 
             // runToolStripMenuItem
             // 
             this.runToolStripMenuItem.Name = "runToolStripMenuItem";
-            this.runToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.runToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.runToolStripMenuItem.Text = "Run";
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
@@ -144,21 +144,21 @@
             // 
             this.pinDocumentToolStripMenuItem.Enabled = false;
             this.pinDocumentToolStripMenuItem.Name = "pinDocumentToolStripMenuItem";
-            this.pinDocumentToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pinDocumentToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.pinDocumentToolStripMenuItem.Text = "Pin Document";
             this.pinDocumentToolStripMenuItem.Click += new System.EventHandler(this.pinDocumentToolStripMenuItem_Click);
             // 
             // savePathToolStripMenuItem
             // 
             this.savePathToolStripMenuItem.Name = "savePathToolStripMenuItem";
-            this.savePathToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.savePathToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.savePathToolStripMenuItem.Text = "Save Path";
             this.savePathToolStripMenuItem.Click += new System.EventHandler(this.savePathToolStripMenuItem_Click);
             // 
             // quickFindToolStripMenuItem
             // 
             this.quickFindToolStripMenuItem.Name = "quickFindToolStripMenuItem";
-            this.quickFindToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quickFindToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.quickFindToolStripMenuItem.Text = "Quick Find";
             this.quickFindToolStripMenuItem.Click += new System.EventHandler(this.quickFindToolStripMenuItem_Click);
             // 
@@ -310,6 +310,7 @@
             this.TextEditingThing.TabIndex = 1;
             this.TextEditingThing.Text = "";
             this.TextEditingThing.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Text_KeyDown);
+            this.TextEditingThing.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TextEditingThing_KeyUp);
             // 
             // TextEditingTab
             // 

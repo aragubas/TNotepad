@@ -122,7 +122,16 @@ namespace TNotepad
 
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
-            SaveFile(saveFileDialog1.FileName);
+            try
+            {
+                SaveFile(saveFileDialog1.FileName);
+
+            }
+            catch (PathTooLongException)
+            {
+                MessageBox.Show(Lang.GetLangData("SavingError_PathTooLong_Text"), Lang.GetLangData("SavingError_Title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+            }
 
         }
 
@@ -160,6 +169,50 @@ namespace TNotepad
 
         public void UpdateTitle(string NewTitle)
         {
+            // Wrap Tab Title
+            if (NewTitle.Length >= 35)
+            {
+                NewTitle = NewTitle.Substring(0, 35);
+
+                if (File.Exists(LastFileName)) // If file exists, add file extension insted of three dots
+                {
+                    FileInfo FileInfo = new FileInfo(LastFileName);
+
+                    string FileExtension = FileInfo.Extension;
+                    
+                    // if no file extension, add three dots
+                    if (FileExtension == "")
+                    {
+                        NewTitle += "...";
+
+                    }
+                    else if (FileExtension.Length > 7) // If has file extension, check its length
+                    {
+                        FileExtension = FileExtension.Substring(0, 7);
+                        NewTitle += "[...]" + FileExtension;
+
+                    }
+                    else
+                    {
+                        NewTitle += "[...]" + FileExtension;
+                    }
+
+
+
+                    // Wrap file exntesion if bigger than 7 characters
+
+                }
+                else // If file doesn't exist, just add three dots
+                {
+                    NewTitle += "...";
+
+                }
+
+
+                
+            }
+            
+            // Set Tab Title
             AssociatedTabPage.Text = NewTitle;
 
         }
@@ -400,6 +453,10 @@ namespace TNotepad
             }
             catch (ArgumentNullException) { }
 
+        }
+
+        private void TextEditingThing_KeyUp(object sender, KeyEventArgs e)
+        {
         }
 
     }

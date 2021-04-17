@@ -12,21 +12,27 @@ namespace TNotepad
 {
     public partial class TabNotepadForm : Form
     {
+        // Some Properties
         public bool ResizeableForm = true;
         public bool MinimizeableForm = true;
         public bool CloseableForm = true;
+        public bool Borderless = false;
+
+        // Workaround
+        private bool FocusAfterMinimizing = false;
 
         public TabNotepadForm()
         {
             InitializeComponent();
             this.ResizeRedraw = true;
 
-            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.CacheText | ControlStyles.UserPaint | ControlStyles.DoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
-            this.UpdateStyles();
+            if (Properties.Settings.Default.ForceDoubleBuffer)
+            {
+                this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.CacheText | ControlStyles.UserPaint | ControlStyles.DoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
+                this.UpdateStyles();
+            }
 
             LoadTheme();
-
-            
 
         }
 
@@ -35,6 +41,21 @@ namespace TNotepad
         {
             BackColor = ThemeLoader.GetThemeData("Form_BackgroundColor");
             ForeColor = ThemeLoader.GetThemeData("Form_ForegroundColor");
+
+            FormCloseButton.BackColor = ThemeLoader.GetThemeData("Form_CloseButton_BackgroundColor");
+            FormCloseButton.ForeColor = ThemeLoader.GetThemeData("Form_CloseButton_ForegroundColor");
+
+            FormMaximizeButton.BackColor = ThemeLoader.GetThemeData("Form_MaximizeButton_BackgroundColor");
+            FormMaximizeButton.ForeColor = ThemeLoader.GetThemeData("Form_MaximizeButton_ForegroundColor");
+
+            FormMinimizeButton.BackColor = ThemeLoader.GetThemeData("Form_MinimizeButton_BackgroundColor");
+            FormMinimizeButton.ForeColor = ThemeLoader.GetThemeData("Form_MinimizeButton_ForegroundColor");
+
+            FormCloseButton.FlatAppearance.MouseDownBackColor = ThemeLoader.GetThemeData("Form_CloseButton_MouseDownColor");
+            FormMaximizeButton.FlatAppearance.MouseDownBackColor = ThemeLoader.GetThemeData("Form_MaximizeButton_MouseDownColor");
+            FormMinimizeButton.FlatAppearance.MouseDownBackColor = ThemeLoader.GetThemeData("Form_MinimizeButton_MouseDownColor");
+
+            WindowBorderColor = ThemeLoader.GetThemeData("Form_BorderColor");
 
         }
 
@@ -49,30 +70,36 @@ namespace TNotepad
             // Set FormTitlebar Wax
             FormTitlebar.FormHandle = this.Handle;
             FormTitlebar.RootControlReference = this;
-            
 
-            this.Shown += TabNotepadForm_Shown;
 
-        }
-
-        private bool FocusAfterMinimizing = false;
-
-        void TabNotepadForm_Shown(object sender, EventArgs e)
-        {
-            if (!ResizeableForm)
+            if (!ResizeableForm || Borderless)
             {
                 FormMaximizeButton.Visible = false;
             }
 
-            if (!MinimizeableForm)
+            if (!MinimizeableForm || Borderless)
             {
                 FormMinimizeButton.Visible = false;
             }
-            if (!CloseableForm)
+            if (!CloseableForm || Borderless)
             {
                 FormCloseButton.Visible = false;
             }
 
+            if (Borderless)
+            {
+                // Remove the titlebar panel
+                Controls.Remove(TitlebarPanel);
+                // Make the window content fill the form
+                if (ResizeableForm)
+                {
+                    FormControls.Location = new Point(2, 2);
+                    FormControls.Size = new Size(Size.Width - 4, Size.Height - 4);
+                    FormControls.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
+
+                }
+
+            }
 
         }
 
@@ -128,7 +155,6 @@ namespace TNotepad
             get
             {
                 CreateParams cp = base.CreateParams;
-                cp.Style |= 0x20000; // <--- use 0x20000
 
                 // Add shadow
                 if (Properties.Settings.Default.WindowShadow)
@@ -141,7 +167,11 @@ namespace TNotepad
                 // Makes the form Flicker-Free by enabling compositing
                 // I don't know exatcly how this works but it makes the form flicker-free and layout
                 // draws much faster
-                cp.ExStyle |= 0x2000000;
+                if (Properties.Settings.Default.ForceDoubleBuffer)
+                {
+                    cp.Style |= 0x20000; // <--- use 0x20000
+                    cp.ExStyle |= 0x2000000;
+                }
 
 
                 return cp;
@@ -238,11 +268,12 @@ namespace TNotepad
         }
 
         private bool UpdateProperties;
+        Color WindowBorderColor;
 
         private void TabNotepadForm_Paint(object sender, PaintEventArgs e)
         {
             // Draw window border
-            e.Graphics.DrawRectangle(new Pen(ThemeLoader.GetThemeData("Form_ForegroundColor"), 2), ClientRectangle);
+            e.Graphics.DrawRectangle(new Pen(WindowBorderColor, 2), ClientRectangle);
 
             if (UpdateProperties)
             {
