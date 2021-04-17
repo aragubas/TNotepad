@@ -23,6 +23,8 @@ namespace TNotepad
             if (!ThemeLoader.ThemeLoaded) { return; }
             BackColor = ThemeLoader.GetThemeData("Button_BackgroundColor");
             ForeColor = ThemeLoader.GetThemeData("Button_ForegroundColor");
+            FlatAppearance.MouseOverBackColor = ThemeLoader.GetThemeData("Button_MouseOverColor");
+            FlatAppearance.MouseDownBackColor = ThemeLoader.GetThemeData("Button_MouseDownColor");
             this.FlatAppearance.BorderSize = 0;
 
         }

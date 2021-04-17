@@ -137,7 +137,6 @@
             this.FormTitlebar.TabIndex = 2;
             this.FormTitlebar.Text = "TabNotepad";
             this.FormTitlebar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.FormTitlebar.MouseLeave += new System.EventHandler(this.FormTitlebar_MouseLeave);
             // 
             // TabNotepadForm
             // 

@@ -23,6 +23,9 @@ Form_BorderColor; 255, 220, 230, 255
 # = Button
 Button_BackgroundColor; 255, 96, 96, 115
 Button_ForegroundColor; 255, 210, 210, 210
+Button_MouseDownColor; 255, 120, 120, 120
+Button_MouseOverColor; 255, 96, 96, 100
+
 
 # = ListView
 ListView_BackgroundColor; 255, 64, 64, 96

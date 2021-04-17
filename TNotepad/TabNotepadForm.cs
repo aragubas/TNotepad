@@ -261,12 +261,6 @@ namespace TNotepad
 
         }
 
-        private void FormTitlebar_MouseLeave(object sender, EventArgs e)
-        {
-            DisableResizeMode = false;
-
-        }
-
         private bool UpdateProperties;
         Color WindowBorderColor;
 
@@ -291,6 +285,10 @@ namespace TNotepad
                 UpdateProperties = true;
             
             }
+
+            // #####
+            // Draw Steched Copy of Window
+            // ####
             if (DisableResizeMode || !ScreenWaxTaken || !Properties.Settings.Default.StrechWindowContentsWhenResizing) { return; }
 
             // Draw Resizing Image
@@ -321,6 +319,16 @@ namespace TNotepad
 
     public class MoveWindowLabel : Label
     {
+        public MoveWindowLabel()
+        {
+            this.MouseLeave += MoveWindowLabel_MouseLeave;
+        }
+
+        void MoveWindowLabel_MouseLeave(object sender, EventArgs e)
+        {
+            RootControlReference.DisableResizeMode = false;
+
+        }
         public IntPtr FormHandle;
         public TabNotepadForm RootControlReference;
 

@@ -52,21 +52,7 @@ namespace TNotepad
             }
 
             this.ControlAdded += ApplicationTabs_ControlAdded;
-            this.Selected += ApplicationTabs_Selected;
             CreateNewTabButton();
-
-        }
-
-        void ApplicationTabs_Selected(object sender, TabControlEventArgs e)
-        {
-            if (TabPages[SelectedIndex].Tag.ToString() == "NEWTAB")
-            {
-                SelectedIndex = LastSelectedWax;
-            }
-            else
-            {
-                LastSelectedWax = SelectedIndex;
-            }
 
         }
 
@@ -76,11 +62,6 @@ namespace TNotepad
             TabPage newTab = new TabPage();
             newTab.Tag = "NEWTAB";
             newTab.Text += "+";
-
-            Label BackgroundFix = new Label();
-            BackgroundFix.BackColor = ThemeLoader.GetThemeData("Form_BackgroundColor");
-            BackgroundFix.Dock = DockStyle.Fill;
-            newTab.Controls.Add(BackgroundFix);
 
             NewTabButton = newTab;
             TabPages.Add(newTab);
@@ -112,6 +93,17 @@ namespace TNotepad
         {
             Rectangle tf = this.ClientRectangle;
 
+            // Make the NEWTAB Button Tab Unselectable
+            if (SelectedTab.Tag.ToString() == "NEWTAB")
+            {
+                SelectedIndex = LastSelectedWax;
+            }
+            else
+            {
+                LastSelectedWax = SelectedIndex;
+            }
+
+            // Render All Pages
             for (var i = 0; i < TabPages.Count; i++)
             {   
                 // Set some variables
@@ -132,7 +124,7 @@ namespace TNotepad
                 }
 
                 // ################
-                // Draw Background
+                // Set Colors
                 // ################
                 // Selected Tab
                 if (i == this.SelectedIndex)
@@ -165,9 +157,11 @@ namespace TNotepad
 
                 }
 
-                // Draw Background
                 StringFormat sftTab = new StringFormat();
 
+                // ################
+                // Render NewTab Button
+                // ################
                 if (TabType == "NEWTAB")
                 {
                     TabRect = new Rectangle(TabRect.X + 5, TabRect.Y + 3, 20, TabRect.Height - 5);
@@ -181,19 +175,27 @@ namespace TNotepad
                     continue;
                 }
 
+                // ################
+                // Draw Tab Background
+                // ################
                 e.FillRectangle(bshBack, TabRect);
+
+                // ################
                 // Draw Tab Title
+                // ################
                 Rectangle recTab = TabRect;
                 recTab = new Rectangle(recTab.X, recTab.Y, recTab.Width, recTab.Height);
 
                 e.DrawString(TabTitle, fntTab, bshFore, new Rectangle(recTab.X + 1, recTab.Y + 4, recTab.Width, recTab.Height), sftTab);
 
-                // Draw Red Close Circle
+                // ################
+                // Draw Tab Close Button
+                // ################
                 var CloseButtonRect = new Rectangle(recTab.Right - 15, recTab.Top + (recTab.Height - 8) / 2, 10, 10);
                 // If current tab is not a persistent one
                 if (TabType != "PERSISTENT")
                 {
-                    // If current tab is the selected one
+                    // If current tab is the selected one, draw a red circle
                     if (SelectedIndex == i)
                     {
                         e.FillEllipse(Brushes.Red, new Rectangle(CloseButtonRect.X - 1, CloseButtonRect.Y - 1, CloseButtonRect.Width + 2, CloseButtonRect.Height + 2));
@@ -201,15 +203,11 @@ namespace TNotepad
                     e.DrawImage(Properties.Resources.TabClose, new Point(CloseButtonRect.X, CloseButtonRect.Y));
 
                     // Add spacing to title text
-                    if (!TabPages[i].Text.EndsWith("   "))
+                    if (!TabPages[i].Text.EndsWith("  "))
                     {
                         TabPages[i].Text += " ";
 
                     }
-
-                }
-                else
-                {
 
                 }
 

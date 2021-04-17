@@ -37,6 +37,13 @@ namespace TNotepad
             Utils.MainFormInstance = this;
 
             Tabs.CreateNewTabEvent += Tabs_CreateNewTabEvent;
+
+            // handle open with
+            if (Utils.OpenTabStartupArg)
+            {
+                Utils.OpenTabStartupArg = false;
+                CreateNewTabWithOpenDocument(Utils.OpenTabStartupArg_FileName);
+            }
         }
 
         void Tabs_CreateNewTabEvent()

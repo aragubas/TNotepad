@@ -115,7 +115,7 @@ Settings_UISettings_HometabAsDefaultCheckbox;Usar Pagina Inicial como Pagina Pad
 Settings_UISettings_WindowShadowCheckbox;Desenha uma sombra atraz da janela principal
 Settings_UISettings_StretchResizeCheckbox;Esticar conteudo da janela ao remendisionar.
 Settings_UISettings_SmoothVisualElementsCheckbox;Aplicar anti-alias para elementos visuais
-Settings_UISettings_DeflickerCheckBox;Força buffer duplo em todos os controles, util para impedir flashes brancos
+Settings_UISettings_DeflickerCheckBox;Força buffer duplo em todos os controles,%nutil para impedir flashes brancos
 # -Buttons
 Settings_UISettings_OpenLanguageSettingsButton;Alterar Idioma
 Settings_UISettings_OpenThemeSettingsButton;Alterar Tema

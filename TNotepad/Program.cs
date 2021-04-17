@@ -46,6 +46,8 @@ namespace TNotepad
                 }
             }
 
+            Console.WriteLine("Startup Path is: " + Environment.CurrentDirectory);
+
             // Start InitialDB Load
             InitialDBLoad Ceira = new InitialDBLoad();
             Ceira.Show();

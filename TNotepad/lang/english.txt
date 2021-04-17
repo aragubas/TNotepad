@@ -114,7 +114,7 @@ Settings_UISettings_HometabAsDefaultCheckbox;Use hometab as default tab
 Settings_UISettings_WindowShadowCheckbox;Draw a shadow behind the main window
 Settings_UISettings_SmoothVisualElementsCheckbox;Appy anti-aliasing to certain custom-rendered elements.
 Settings_UISettings_StretchResizeCheckbox;Stretch window when resizing.
-Settings_UISettings_DeflickerCheckBox;Forces double-buffer on all controls, usefull for removing white flashing and flickering
+Settings_UISettings_DeflickerCheckBox;Forces double-buffer on all controls, usefull for removing%nwhite flashing and flickering
 # -Buttons
 Settings_UISettings_OpenLanguageSettingsButton;Change Language
 Settings_UISettings_OpenThemeSettingsButton;Change Theme
