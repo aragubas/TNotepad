@@ -49,7 +49,51 @@ namespace TNotepad
         public taiyouListView()
         {
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.OwnerDraw = true;
         }
+
+        protected override void OnDrawColumnHeader(DrawListViewColumnHeaderEventArgs e)
+        {
+            SolidBrush BackgroundColor = new SolidBrush(Color.DimGray);
+            SolidBrush ForegroundColor = new SolidBrush(Color.White);
+            e.Graphics.FillRectangle(BackgroundColor, e.Bounds);
+
+            StringFormat sfT = new StringFormat();
+            sfT.Alignment = StringAlignment.Center;
+
+            e.Graphics.DrawString(e.Header.Text, e.Font, ForegroundColor, e.Bounds, sfT);
+
+            e.Graphics.FillRectangle(new SolidBrush(Color.Black), new Rectangle(e.Bounds.X + e.Bounds.Width - 1, e.Bounds.Y, 1, e.Bounds.Height));
+
+        }
+
+        protected override void OnDrawItem(DrawListViewItemEventArgs e)
+        {
+            SolidBrush ForegroundColor = new SolidBrush(Color.White);
+            SolidBrush BackgroundColor = new SolidBrush(Color.FromArgb(0, 0, 0, 0));
+
+            StringFormat sfT = new StringFormat();
+
+            if (this.SelectedItems.Contains(e.Item))
+            {
+                BackgroundColor = new SolidBrush(Color.FromArgb(100, 23, 32, 40));
+
+            }
+
+
+            e.Graphics.FillRectangle(BackgroundColor, e.Bounds);
+            e.Graphics.DrawString(e.Item.Text, e.Item.Font, ForegroundColor, e.Bounds, sfT);
+            
+
+        }
+
+        protected override void OnPaintBackground(PaintEventArgs pevent)
+        {
+            SolidBrush BGColor = new SolidBrush(BackColor);
+            pevent.Graphics.FillRectangle(BGColor, pevent.ClipRectangle);
+
+        }
+
         public void LoadTheme()
         {
             if (!ThemeLoader.ThemeLoaded) { return; }

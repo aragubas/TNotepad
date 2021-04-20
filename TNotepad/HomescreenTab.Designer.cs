@@ -151,8 +151,6 @@
             this.FilePath});
             this.PinDocsView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PinDocsView.HideSelection = false;
-            this.PinDocsView.HotTracking = true;
-            this.PinDocsView.HoverSelection = true;
             this.PinDocsView.Location = new System.Drawing.Point(0, 30);
             this.PinDocsView.Name = "PinDocsView";
             this.PinDocsView.Size = new System.Drawing.Size(505, 321);

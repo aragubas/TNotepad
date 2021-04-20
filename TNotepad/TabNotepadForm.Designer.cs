@@ -34,8 +34,8 @@
             this.FormMinimizeButton = new System.Windows.Forms.Button();
             this.FormMaximizeButton = new System.Windows.Forms.Button();
             this.FormCloseButton = new System.Windows.Forms.Button();
-            this.FormControls = new System.Windows.Forms.Panel();
             this.FormTitlebar = new TNotepad.MoveWindowLabel();
+            this.FormControls = new System.Windows.Forms.Panel();
             this.TitlebarPanel.SuspendLayout();
             this.WindowButtonsPanel.SuspendLayout();
             this.SuspendLayout();
@@ -75,7 +75,8 @@
             this.FormMinimizeButton.Location = new System.Drawing.Point(17, 0);
             this.FormMinimizeButton.Name = "FormMinimizeButton";
             this.FormMinimizeButton.Size = new System.Drawing.Size(25, 20);
-            this.FormMinimizeButton.TabIndex = 2;
+            this.FormMinimizeButton.TabIndex = 0;
+            this.FormMinimizeButton.TabStop = false;
             this.FormMinimizeButton.Text = "─";
             this.FormMinimizeButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.FormMinimizeButton.UseVisualStyleBackColor = false;
@@ -93,7 +94,8 @@
             this.FormMaximizeButton.Location = new System.Drawing.Point(42, 0);
             this.FormMaximizeButton.Name = "FormMaximizeButton";
             this.FormMaximizeButton.Size = new System.Drawing.Size(25, 20);
-            this.FormMaximizeButton.TabIndex = 1;
+            this.FormMaximizeButton.TabIndex = 0;
+            this.FormMaximizeButton.TabStop = false;
             this.FormMaximizeButton.Text = "↨";
             this.FormMaximizeButton.UseVisualStyleBackColor = false;
             this.FormMaximizeButton.Click += new System.EventHandler(this.FormMaximizeButton_Click);
@@ -111,9 +113,21 @@
             this.FormCloseButton.Name = "FormCloseButton";
             this.FormCloseButton.Size = new System.Drawing.Size(44, 20);
             this.FormCloseButton.TabIndex = 0;
+            this.FormCloseButton.TabStop = false;
             this.FormCloseButton.Text = "X";
             this.FormCloseButton.UseVisualStyleBackColor = false;
             this.FormCloseButton.Click += new System.EventHandler(this.FormCloseButton_Click);
+            // 
+            // FormTitlebar
+            // 
+            this.FormTitlebar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FormTitlebar.Font = new System.Drawing.Font("Arial", 10F);
+            this.FormTitlebar.Location = new System.Drawing.Point(0, 0);
+            this.FormTitlebar.Name = "FormTitlebar";
+            this.FormTitlebar.Size = new System.Drawing.Size(638, 26);
+            this.FormTitlebar.TabIndex = 0;
+            this.FormTitlebar.Text = "TabNotepad";
+            this.FormTitlebar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormControls
             // 
@@ -124,19 +138,8 @@
             this.FormControls.Location = new System.Drawing.Point(3, 29);
             this.FormControls.Name = "FormControls";
             this.FormControls.Size = new System.Drawing.Size(657, 391);
-            this.FormControls.TabIndex = 6;
+            this.FormControls.TabIndex = 0;
             this.FormControls.Validated += new System.EventHandler(this.FormControls_Validated);
-            // 
-            // FormTitlebar
-            // 
-            this.FormTitlebar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FormTitlebar.Font = new System.Drawing.Font("Arial", 10F);
-            this.FormTitlebar.Location = new System.Drawing.Point(0, 0);
-            this.FormTitlebar.Name = "FormTitlebar";
-            this.FormTitlebar.Size = new System.Drawing.Size(638, 26);
-            this.FormTitlebar.TabIndex = 2;
-            this.FormTitlebar.Text = "TabNotepad";
-            this.FormTitlebar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TabNotepadForm
             // 

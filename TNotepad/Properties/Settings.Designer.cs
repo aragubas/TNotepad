@@ -73,6 +73,24 @@ namespace TNotepad.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>name|Exprimental Item;path|C:\</string>
+  <string>name|Exprimental Item;path|C:\</string>
+  <string>name|Exprimental Item;path|C:\</string>
+  <string>name|Exprimental Item;path|C:\</string>
+  <string>name|Exprimental Item;path|C:\</string>
+  <string>name|Exprimental Item;path|C:\</string>
+  <string>name|Exprimental Item;path|C:\</string>
+  <string>name|Exprimental Item;path|C:\</string>
+  <string>name|Exprimental Item;path|C:\</string>
+  <string>name|Exprimental Item;path|C:\</string>
+  <string>name|Exprimental Item;path|C:\</string>
+  <string>name|Exprimental Item;path|C:\</string>
+  <string>name|Exprimental Item;path|C:\</string>
+  <string>name|Exprimental Item;path|C:\</string>
+  <string>name|Exprimental Item;path|C:\</string>
+</ArrayOfString>")]
         public global::System.Collections.Specialized.StringCollection PinnedDocuments {
             get {
                 return ((global::System.Collections.Specialized.StringCollection)(this["PinnedDocuments"]));
