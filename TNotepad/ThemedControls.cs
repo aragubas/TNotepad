@@ -119,11 +119,6 @@ namespace TNotepad
 
         }
 
-        protected override void WndProc(ref Message m)
-        {
-            base.WndProc(ref m);
-        }
-
         public void LoadTheme()
         {
             if (!ThemeLoader.ThemeLoaded) { return; }
