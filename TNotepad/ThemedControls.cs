@@ -66,13 +66,19 @@ namespace TNotepad
         {
             SolidBrush BackgroundColor = new SolidBrush(Color.DimGray);
             SolidBrush ForegroundColor = new SolidBrush(Color.White);
+            // Draw Header Background
             e.Graphics.FillRectangle(BackgroundColor, e.Bounds);
 
-            StringFormat sfT = new StringFormat();
-            sfT.Alignment = StringAlignment.Center;
 
+            StringFormat sfT = new StringFormat();
+            // Set Text to Center
+            sfT.Alignment = StringAlignment.Center;
+            sfT.LineAlignment = StringAlignment.Center;
+
+            // Draw Header Text
             e.Graphics.DrawString(e.Header.Text, e.Font, ForegroundColor, e.Bounds, sfT);
 
+            // Draw Separation Line
             e.Graphics.FillRectangle(new SolidBrush(Color.Black), new Rectangle(e.Bounds.X + e.Bounds.Width - 1, e.Bounds.Y, 1, e.Bounds.Height));
 
         }
