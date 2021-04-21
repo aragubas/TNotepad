@@ -89,16 +89,16 @@ namespace TNotepad
                 case 1:
                     HideShowButton.Text = ">";
                     HideToggle = -1;
-                    RootPanel.Width = HideShowButton.Width + 4;
                     QuickSettings.Visible = true;
-                    label1.Text = "";
+                    label1.Visible = false;
+                    RootPanel.Width = HideShowButton.Width + 4;
                     break;
 
                 case 0:
                     HideShowButton.Text = "<";
-                    RootPanel.Width = DefaultWidth;
-                    label1.Text = "TabNotepad";
+                    label1.Visible = true;
                     QuickSettings.Visible = false;
+                    RootPanel.Width = DefaultWidth;
                     break;
 
             }

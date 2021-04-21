@@ -46,7 +46,7 @@ namespace TNotepad
             if (Properties.Settings.Default.ForceDoubleBuffer)
             {
 
-                this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.DoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
+                this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
                 this.UpdateStyles();
 
             }
@@ -94,13 +94,22 @@ namespace TNotepad
             Rectangle tf = this.ClientRectangle;
 
             // Make the NEWTAB Button Tab Unselectable
-            if (SelectedTab.Tag.ToString() == "NEWTAB")
+            try
             {
-                SelectedIndex = LastSelectedWax;
+                if (SelectedTab.Tag.ToString() == "NEWTAB")
+                {
+                    SelectedIndex = LastSelectedWax;
+                }
+                else
+                {
+                    LastSelectedWax = SelectedIndex;
+                }
+
             }
-            else
+            catch (NullReferenceException)
             {
-                LastSelectedWax = SelectedIndex;
+                Console.WriteLine("Got NullReferenceError when checking if current tab is NEWTAB.");
+
             }
 
             // Render All Pages

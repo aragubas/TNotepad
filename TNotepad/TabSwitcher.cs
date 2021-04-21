@@ -111,5 +111,10 @@ namespace TNotepad
         {
 
         }
+
+        private void TabList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            SwitchTab();
+        }
     }
 }

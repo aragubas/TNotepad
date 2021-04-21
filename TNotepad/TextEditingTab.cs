@@ -253,10 +253,43 @@ namespace TNotepad
                 UpdateTitle(Path.GetFileName(FileName));
 
             }
-            catch (Exception ex)
+            catch (FileNotFoundException)
             {
-                MessageBox.Show("Error while loading pinned file\n" + ex.Message);
+                string Error = Lang.GetLangData("Error_FileNotFoundError").Replace("$1", FileName);
+                MessageBox.Show(Error, Lang.GetLangData("Error_Title"),MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ClearShowError(Error);
+
             }
+            catch (Exception e)
+            {
+                string Error = Lang.GetLangData("Error_OpenFileError").Replace("$1", FileName) + Environment.NewLine + e.Message;
+                MessageBox.Show(Error, Lang.GetLangData("Error_Title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ClearShowError(Error);
+
+            }
+
+        }
+
+        private void ClearShowError(string Message)
+        {
+            Updater.Stop();
+            LastSavedTimer.Stop();
+
+            foreach (Control wax in Controls)
+            {
+                wax.Dispose();
+            }
+            Controls.Clear();
+
+            Label ErrorInfo = new Label();
+            ErrorInfo.Font = new Font("Segoe UI", 12f, FontStyle.Regular);
+            ErrorInfo.BackColor = ThemeLoader.GetThemeData("Form_BackgroundColor");
+            ErrorInfo.Text = Message;
+            ErrorInfo.TextAlign = ContentAlignment.MiddleCenter;
+            ErrorInfo.Dock = DockStyle.Fill;
+
+            Controls.Add(ErrorInfo);
+
         }
 
         // Last saved time timer
@@ -270,8 +303,7 @@ namespace TNotepad
             string LastTimeInString = dateTime.ToString("HH:mm:ss");
 
             SaveStatusText.Text = Lang.GetLangData("TextEditMain_UnsavedStatusInLast").Replace("$1", LastTimeInString);
-            Console.WriteLine("Next Unsaved time warning");
-
+            
         }
 
 
@@ -404,7 +436,6 @@ namespace TNotepad
 
         private void Updater_Tick(object sender, EventArgs e)
         {
-            
             int DivisionWax = 0;
             try
             {

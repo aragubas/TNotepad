@@ -58,6 +58,7 @@
             this.TabList.Size = new System.Drawing.Size(305, 249);
             this.TabList.TabIndex = 1;
             this.TabList.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TabList_KeyUp);
+            this.TabList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.TabList_MouseDoubleClick);
             // 
             // CloseTabButton
             // 

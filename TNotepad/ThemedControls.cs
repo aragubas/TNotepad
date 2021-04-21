@@ -50,6 +50,16 @@ namespace TNotepad
         {
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OwnerDraw = true;
+
+            if (Properties.Settings.Default.ForceDoubleBuffer)
+            {
+
+                this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
+                this.UpdateStyles();
+
+            }
+            this.OwnerDraw = true;
+
         }
 
         protected override void OnDrawColumnHeader(DrawListViewColumnHeaderEventArgs e)
@@ -77,21 +87,36 @@ namespace TNotepad
             if (this.SelectedItems.Contains(e.Item))
             {
                 BackgroundColor = new SolidBrush(Color.FromArgb(100, 23, 32, 40));
+                e.Graphics.FillRectangle(BackgroundColor, e.Item.GetBounds(ItemBoundsPortion.Label));
 
             }
 
+            // WORKAROUND : Item name being rendered more 2 times
+            if (e.Item.SubItems.Count == 0)
+            {
+                e.Graphics.DrawString(e.Item.Text, e.Item.Font, ForegroundColor, e.Item.Bounds, sfT);
 
-            e.Graphics.FillRectangle(BackgroundColor, e.Bounds);
-            e.Graphics.DrawString(e.Item.Text, e.Item.Font, ForegroundColor, e.Bounds, sfT);
+            }
             
 
         }
 
-        protected override void OnPaintBackground(PaintEventArgs pevent)
+        protected override void OnDrawSubItem(DrawListViewSubItemEventArgs e)
         {
-            SolidBrush BGColor = new SolidBrush(BackColor);
-            pevent.Graphics.FillRectangle(BGColor, pevent.ClipRectangle);
+            SolidBrush ForegroundColor = new SolidBrush(Color.White);
+            SolidBrush BackgroundColor = new SolidBrush(this.BackColor);
+            
+            StringFormat sfT = new StringFormat();
 
+            // WORKAROUND : Subitem Name being rendered over item name
+            e.Graphics.FillRectangle(BackgroundColor, e.SubItem.Bounds);
+            e.Graphics.DrawString(e.SubItem.Text, e.SubItem.Font, ForegroundColor, e.SubItem.Bounds, sfT);
+
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            base.WndProc(ref m);
         }
 
         public void LoadTheme()

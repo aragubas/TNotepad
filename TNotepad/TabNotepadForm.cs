@@ -28,7 +28,7 @@ namespace TNotepad
 
             if (Properties.Settings.Default.ForceDoubleBuffer)
             {
-                this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.CacheText | ControlStyles.UserPaint | ControlStyles.DoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
+                this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.CacheText | ControlStyles.DoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
                 this.UpdateStyles();
             }
 
@@ -113,6 +113,8 @@ namespace TNotepad
                 case 0x0084/*NCHITTEST*/ :
                     base.WndProc(ref m);
                     if (!this.ResizeableForm) { return; }
+                    if (this.WindowState != FormWindowState.Normal) { return; }
+
                     if ((int)m.Result == 0x01/*HTCLIENT*/)
                     {
                         Point screenPoint = new Point(m.LParam.ToInt32());

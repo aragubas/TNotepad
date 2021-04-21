@@ -53,7 +53,7 @@
             this.panel2.Location = new System.Drawing.Point(6, 50);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(84, 332);
-            this.panel2.TabIndex = 1;
+            this.panel2.TabIndex = 0;
             // 
             // AboutButton
             // 
@@ -64,7 +64,8 @@
             this.AboutButton.Location = new System.Drawing.Point(0, 81);
             this.AboutButton.Name = "AboutButton";
             this.AboutButton.Size = new System.Drawing.Size(84, 25);
-            this.AboutButton.TabIndex = 4;
+            this.AboutButton.TabIndex = 0;
+            this.AboutButton.TabStop = false;
             this.AboutButton.Text = "About";
             this.AboutButton.UseVisualStyleBackColor = false;
             this.AboutButton.Click += new System.EventHandler(this.AboutButton_Click);
@@ -78,7 +79,8 @@
             this.SettingsButton.Location = new System.Drawing.Point(0, 56);
             this.SettingsButton.Name = "SettingsButton";
             this.SettingsButton.Size = new System.Drawing.Size(84, 25);
-            this.SettingsButton.TabIndex = 3;
+            this.SettingsButton.TabIndex = 0;
+            this.SettingsButton.TabStop = false;
             this.SettingsButton.Text = "Settings";
             this.SettingsButton.UseVisualStyleBackColor = false;
             this.SettingsButton.Click += new System.EventHandler(this.button1_Click);
@@ -92,7 +94,8 @@
             this.OpenFileButton.Location = new System.Drawing.Point(0, 29);
             this.OpenFileButton.Name = "OpenFileButton";
             this.OpenFileButton.Size = new System.Drawing.Size(84, 27);
-            this.OpenFileButton.TabIndex = 1;
+            this.OpenFileButton.TabIndex = 0;
+            this.OpenFileButton.TabStop = false;
             this.OpenFileButton.Text = "Open File";
             this.OpenFileButton.UseVisualStyleBackColor = false;
             this.OpenFileButton.Click += new System.EventHandler(this.OpenFileButton_Click);
@@ -107,6 +110,7 @@
             this.NewTabButton.Name = "NewTabButton";
             this.NewTabButton.Size = new System.Drawing.Size(84, 29);
             this.NewTabButton.TabIndex = 0;
+            this.NewTabButton.TabStop = false;
             this.NewTabButton.Text = "New Tab";
             this.NewTabButton.UseVisualStyleBackColor = false;
             this.NewTabButton.Click += new System.EventHandler(this.NewTabButton_Click);
@@ -129,11 +133,11 @@
             this.HideShowButton.FlatAppearance.BorderSize = 0;
             this.HideShowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HideShowButton.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HideShowButton.ForeColor = System.Drawing.Color.White;
             this.HideShowButton.Location = new System.Drawing.Point(96, 48);
             this.HideShowButton.Name = "HideShowButton";
             this.HideShowButton.Size = new System.Drawing.Size(25, 25);
-            this.HideShowButton.TabIndex = 2;
+            this.HideShowButton.TabIndex = 0;
+            this.HideShowButton.TabStop = false;
             this.HideShowButton.Text = "<";
             this.HideShowButton.UseVisualStyleBackColor = true;
             this.HideShowButton.Click += new System.EventHandler(this.HideShowButton_Click);
@@ -152,7 +156,7 @@
             this.QuickSettings.Location = new System.Drawing.Point(96, 79);
             this.QuickSettings.Name = "QuickSettings";
             this.QuickSettings.Size = new System.Drawing.Size(25, 302);
-            this.QuickSettings.TabIndex = 3;
+            this.QuickSettings.TabIndex = 0;
             this.QuickSettings.Visible = false;
             // 
             // SidePanel

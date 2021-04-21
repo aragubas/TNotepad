@@ -134,7 +134,6 @@
             this.FormControls.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.FormControls.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.FormControls.Location = new System.Drawing.Point(3, 29);
             this.FormControls.Name = "FormControls";
             this.FormControls.Size = new System.Drawing.Size(657, 391);
