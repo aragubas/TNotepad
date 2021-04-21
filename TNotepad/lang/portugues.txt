@@ -232,3 +232,10 @@ SavingError_Title;Erro ao salvar
 TabSwitcher_SwitchLabelInfos;Precione ENTER ou BARRA DE ESPAÇO para alternar%nPrecione ESCAPE para fechar.
 TabSwitcher_Title;Alternador de Aba
 TabSwitcher_CloseButton;Fechar
+
+#
+# Generic Errors
+#
+Error_Title;Erro
+Error_FileNotFoundError;Arquivo '$1' não foi encontrado.
+Error_OpenFileError;Erro ao abrir '$1'.

@@ -234,6 +234,6 @@ TabSwitcher_CloseButton;Close
 #
 # Generic Errors
 #
-Error_Title;Error!
+Error_Title;Error
 Error_FileNotFoundError;File '$1' was not found.
 Error_OpenFileError;Error while opening '$1'.

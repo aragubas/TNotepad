@@ -272,23 +272,34 @@ namespace TNotepad
 
         private void ClearShowError(string Message)
         {
+            // Stop timer for control removal
             Updater.Stop();
             LastSavedTimer.Stop();
 
+            // Dispose all controls
             foreach (Control wax in Controls)
             {
                 wax.Dispose();
             }
+            // Clear all controls
             Controls.Clear();
 
+            // Create Error Info Label
             Label ErrorInfo = new Label();
             ErrorInfo.Font = new Font("Segoe UI", 12f, FontStyle.Regular);
             ErrorInfo.BackColor = ThemeLoader.GetThemeData("Form_BackgroundColor");
             ErrorInfo.Text = Message;
             ErrorInfo.TextAlign = ContentAlignment.MiddleCenter;
             ErrorInfo.Dock = DockStyle.Fill;
-
+            
+            // Add error info
             Controls.Add(ErrorInfo);
+
+            
+            // Update Title
+            UpdateTitle(Lang.GetLangData("Error_Title"));
+
+            
 
         }
 

@@ -84,6 +84,7 @@ namespace TNotepad
 
             StringFormat sfT = new StringFormat();
 
+            // Only draw background if necessary
             if (this.SelectedItems.Contains(e.Item))
             {
                 BackgroundColor = new SolidBrush(Color.FromArgb(100, 23, 32, 40));
@@ -91,21 +92,19 @@ namespace TNotepad
 
             }
 
-            // WORKAROUND : Item name being rendered more 2 times
-            if (e.Item.SubItems.Count == 0)
-            {
-                e.Graphics.DrawString(e.Item.Text, e.Item.Font, ForegroundColor, e.Item.Bounds, sfT);
-
-            }
-            
-
+            e.Graphics.DrawString(e.Item.Text, e.Item.Font, ForegroundColor, e.Item.Bounds, sfT);
+           
         }
 
         protected override void OnDrawSubItem(DrawListViewSubItemEventArgs e)
         {
+            // Don't draw subitem if X if equal to item X
+            if (e.SubItem.Bounds.X == e.Item.Bounds.X) { return; }
+
             SolidBrush ForegroundColor = new SolidBrush(Color.White);
             SolidBrush BackgroundColor = new SolidBrush(this.BackColor);
-            
+
+
             StringFormat sfT = new StringFormat();
 
             // WORKAROUND : Subitem Name being rendered over item name
