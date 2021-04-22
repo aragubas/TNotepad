@@ -30,6 +30,10 @@ Button_MouseOverColor; 255, 96, 96, 100
 # = ListView
 ListView_BackgroundColor; 255, 64, 64, 96
 ListView_ForegroundColor; 255, 230, 230, 248
+ListView_Header_BackgroundColor; 255, 48, 48, 54
+ListView_Header_ForegroundColor; 255, 240, 240, 255
+ListView_Header_SpliterColor; 255, 72, 72, 72, 102
+ListView_SelectedItemBackgroundColor; 150, 32, 32, 48
 
 # = ListBox
 ListBox_BackgroundColor; 255, 64, 64, 96

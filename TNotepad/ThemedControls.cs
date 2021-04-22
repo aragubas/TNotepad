@@ -64,8 +64,8 @@ namespace TNotepad
 
         protected override void OnDrawColumnHeader(DrawListViewColumnHeaderEventArgs e)
         {
-            SolidBrush BackgroundColor = new SolidBrush(Color.DimGray);
-            SolidBrush ForegroundColor = new SolidBrush(Color.White);
+            SolidBrush BackgroundColor = new SolidBrush(ThemeLoader.GetThemeData("ListView_Header_BackgroundColor"));
+            SolidBrush ForegroundColor = new SolidBrush(ThemeLoader.GetThemeData("ListView_Header_ForegroundColor"));
             // Draw Header Background
             e.Graphics.FillRectangle(BackgroundColor, e.Bounds);
 
@@ -79,21 +79,21 @@ namespace TNotepad
             e.Graphics.DrawString(e.Header.Text, e.Font, ForegroundColor, e.Bounds, sfT);
 
             // Draw Separation Line
-            e.Graphics.FillRectangle(new SolidBrush(Color.Black), new Rectangle(e.Bounds.X + e.Bounds.Width - 1, e.Bounds.Y, 1, e.Bounds.Height));
+            e.Graphics.FillRectangle(new SolidBrush(ThemeLoader.GetThemeData("ListView_Header_SpliterColor")), new Rectangle(e.Bounds.X + e.Bounds.Width - 1, e.Bounds.Y, 1, e.Bounds.Height));
 
         }
 
         protected override void OnDrawItem(DrawListViewItemEventArgs e)
         {
-            SolidBrush ForegroundColor = new SolidBrush(Color.White);
-            SolidBrush BackgroundColor = new SolidBrush(Color.FromArgb(0, 0, 0, 0));
+            SolidBrush ForegroundColor = new SolidBrush(ForeColor);
+            SolidBrush BackgroundColor = new SolidBrush(BackColor);
 
             StringFormat sfT = new StringFormat();
 
             // Only draw background if necessary
             if (this.SelectedItems.Contains(e.Item))
             {
-                BackgroundColor = new SolidBrush(Color.FromArgb(100, 23, 32, 40));
+                BackgroundColor = new SolidBrush(ThemeLoader.GetThemeData("ListView_SelectedItemBackgroundColor"));
                 e.Graphics.FillRectangle(BackgroundColor, e.Item.GetBounds(ItemBoundsPortion.Label));
 
             }
@@ -107,8 +107,8 @@ namespace TNotepad
             // Don't draw subitem if X if equal to item X
             if (e.SubItem.Bounds.X == e.Item.Bounds.X) { return; }
 
-            SolidBrush ForegroundColor = new SolidBrush(Color.White);
-            SolidBrush BackgroundColor = new SolidBrush(this.BackColor);
+            SolidBrush ForegroundColor = new SolidBrush(ForeColor);
+            SolidBrush BackgroundColor = new SolidBrush(BackColor);
 
 
             StringFormat sfT = new StringFormat();
@@ -389,6 +389,43 @@ namespace TNotepad
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.AllowDrop = false;
             this.EnableAutoDragDrop = false;
+
+        }
+
+        /// <summary>
+        /// Goto a specific line
+        /// </summary>
+        /// <param name="LineNumber">0 based location of line</param>
+        public void GotoLine(int LineNumber)
+        {
+            int Index = GetFirstCharIndexFromLine(LineNumber);
+            Select(LineNumber, 0);
+        }
+
+        /// <summary>
+        /// Get the current selected column
+        /// </summary>
+        /// <returns>int</returns>
+        public int SelectedColumn()
+        {
+            int index = SelectionStart;
+            int line = GetLineFromCharIndex(index);
+
+            int firstChar = GetFirstCharIndexFromLine(line);
+            return index - firstChar + 1;
+        }
+
+        /// <summary>
+        /// Get the current selected line number
+        /// </summary>
+        /// <returns>int</returns>
+        public int SelectedLine()
+        {
+            try
+            {
+                return GetLineFromCharIndex(SelectionStart) + 1 / Lines.Length;
+            }
+            catch (DivideByZeroException) { return 1; }
 
         }
 

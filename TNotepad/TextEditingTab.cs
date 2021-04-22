@@ -26,6 +26,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Media;
 
 namespace TNotepad
 {
@@ -273,7 +274,7 @@ namespace TNotepad
         private void ClearShowError(string Message)
         {
             // Stop timer for control removal
-            Updater.Stop();
+            //Updater.Stop();
             LastSavedTimer.Stop();
 
             // Dispose all controls
@@ -295,11 +296,9 @@ namespace TNotepad
             // Add error info
             Controls.Add(ErrorInfo);
 
-            
+
             // Update Title
             UpdateTitle(Lang.GetLangData("Error_Title"));
-
-            
 
         }
 
@@ -378,11 +377,6 @@ namespace TNotepad
             MessageBox.Show(LastFileName, Lang.GetLangData("TextEditMain_CurrentSavingPath_Title"), MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void TextEditingTab_KeyDown(object sender, KeyEventArgs e)
-        {
-            
-        }
-
         public void QuitExtraFuncPanel()
         {
             ExtraFuncPanel.Controls.Clear();
@@ -445,29 +439,6 @@ namespace TNotepad
             FindExtraFuncPanel();
         }
 
-        private void Updater_Tick(object sender, EventArgs e)
-        {
-            int DivisionWax = 0;
-            try
-            {
-                DivisionWax = TextEditingThing.GetLineFromCharIndex(TextEditingThing.SelectionStart) + 1 / TextEditingThing.Lines.Length;
-            }
-            catch (DivideByZeroException) { DivisionWax = 1; }
-
-            LineInfoLabel.Text = Lang.GetLangData("TextEditMain_LineNumber") + DivisionWax;
-            
-            int index = TextEditingThing.SelectionStart;
-            int line = TextEditingThing.GetLineFromCharIndex(index);
-
-            // Get the column.
-            int firstChar = TextEditingThing.GetFirstCharIndexFromLine(line);
-            int column = index - firstChar;
-
-            ColumnInfoLabel.Text = Lang.GetLangData("TextEditMain_ColumnSelected") + column;
-
-
-        }
-
         private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
@@ -497,8 +468,17 @@ namespace TNotepad
 
         }
 
-        private void TextEditingThing_KeyUp(object sender, KeyEventArgs e)
+        private void TextEditingThing_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void TextEditingThing_SelectionChanged(object sender, EventArgs e)
+        {
+            LineInfoLabel.Text = Lang.GetLangData("TextEditMain_LineNumber") + TextEditingThing.SelectedLine();
+
+            ColumnInfoLabel.Text = Lang.GetLangData("TextEditMain_ColumnSelected") + TextEditingThing.SelectedColumn();
+
         }
 
     }

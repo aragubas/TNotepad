@@ -51,7 +51,6 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.LastSavedTimer = new System.Windows.Forms.Timer(this.components);
             this.ExtraFuncPanel = new System.Windows.Forms.Panel();
-            this.Updater = new System.Windows.Forms.Timer(this.components);
             this.TextEditorContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copyToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
             this.cutToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
@@ -251,12 +250,6 @@
             this.ExtraFuncPanel.TabIndex = 3;
             this.ExtraFuncPanel.Visible = false;
             // 
-            // Updater
-            // 
-            this.Updater.Enabled = true;
-            this.Updater.Interval = 10;
-            this.Updater.Tick += new System.EventHandler(this.Updater_Tick);
-            // 
             // TextEditorContextMenu
             // 
             this.TextEditorContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -309,8 +302,8 @@
             this.TextEditingThing.Size = new System.Drawing.Size(710, 203);
             this.TextEditingThing.TabIndex = 1;
             this.TextEditingThing.Text = "";
-            this.TextEditingThing.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Text_KeyDown);
-            this.TextEditingThing.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TextEditingThing_KeyUp);
+            this.TextEditingThing.SelectionChanged += new System.EventHandler(this.TextEditingThing_SelectionChanged);
+            this.TextEditingThing.TextChanged += new System.EventHandler(this.TextEditingThing_TextChanged);
             // 
             // TextEditingTab
             // 
@@ -324,7 +317,6 @@
             this.Name = "TextEditingTab";
             this.Size = new System.Drawing.Size(710, 285);
             this.Load += new System.EventHandler(this.TextEditingTab_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextEditingTab_KeyDown);
             this.Toolbar.ResumeLayout(false);
             this.Toolbar.PerformLayout();
             this.StatusBar.ResumeLayout(false);
@@ -357,7 +349,6 @@
         public System.Windows.Forms.Panel ExtraFuncPanel;
         private taiyouToolStripMenuItem quickFindToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel LineInfoLabel;
-        private System.Windows.Forms.Timer Updater;
         private System.Windows.Forms.ToolStripStatusLabel ColumnInfoLabel;
         public taiyouRichTextBox TextEditingThing;
         private System.Windows.Forms.ContextMenuStrip TextEditorContextMenu;
