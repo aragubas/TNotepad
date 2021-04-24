@@ -1,4 +1,6 @@
-﻿namespace TNotepad
+﻿using TaiyouUI;
+
+namespace TNotepad
 {
     partial class SettingsTab
     {
@@ -31,9 +33,9 @@
             this.SideOptionsPanel = new System.Windows.Forms.Panel();
             this.OptionsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SettingsPanel = new System.Windows.Forms.Panel();
-            this.UISettingsPanelButton = new TNotepad.taiyouButton();
-            this.TextEditorSettingsPanelButton = new TNotepad.taiyouButton();
-            this.ApplyChangesButton = new TNotepad.taiyouButton();
+            this.UISettingsPanelButton = new taiyouButton();
+            this.TextEditorSettingsPanelButton = new taiyouButton();
+            this.ApplyChangesButton = new taiyouButton();
             this.SideOptionsPanel.SuspendLayout();
             this.OptionsFlowLayoutPanel.SuspendLayout();
             this.SuspendLayout();

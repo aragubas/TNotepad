@@ -1,4 +1,6 @@
-﻿namespace TNotepad
+﻿using TaiyouUI;
+
+namespace TNotepad
 {
     partial class About
     {
@@ -30,8 +32,8 @@
         {
             this.InfosLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.LicenseView = new TNotepad.taiyouRichTextBox();
-            this.ExitButton = new TNotepad.taiyouButton();
+            this.LicenseView = new taiyouRichTextBox();
+            this.ExitButton = new taiyouButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 

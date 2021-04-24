@@ -83,12 +83,16 @@ PinnedDocuments_TabTitle;Inicio
 #
 # About
 #
-About_WindowTitle;Sobre TabNotepad
-About_MainDesc;Feito usando Windows Forms em c# pelo%nVisual Studio 2013 Community
-About_BuildNumber;Numero da build:
-About_BuildDate;Data da Build:
+About_WindowTitle;Sobre TNotepad
+About_MainDesc;Feito usando TaiyouUI pelo%nVisual Studio 2013 Community
+About_BuildNumber;Numero da Build: 
+About_BuildDate;Data da Build: 
+About_Version;Versão: 
+About_TaiyouUIVersion;Versão do TaiyouUI: 
+About_TaiyouUIBuildNumber;Numero de Build TaiyouUI: 
+About_TaiyouUIBuildDate;Data Build TaiyouUI: 
 # -Message Box
-About_LogoClickText;TabNotepad faz parte do pacote de software 'Taiyou'
+About_LogoClickText;TabNotepad faz parte do pacote de software Taiyou
 About_LogoClickTitle;Sobre
 # -Buttons
 About_ExitButton;Fechar
@@ -203,10 +207,16 @@ SidePanel_AboutButton;Sobre
 #
 QuickFind_FindButton;Encontrar
 
+
+#
+# Quick GotoLine
+#
+QuickGotoLine_GoButton;Ir para Linha
+
 #
 # Background Worker
 #
-BackgroundWorker_WindowTitle;Trabalho em Segundo Plano
+BackgroundWorker_WindowTitle;Por Favor Aguarde
 BackgroundWorker_WorksLeftLabel; restante
 BackgroundWorker_CurrentLabel;Atual
 

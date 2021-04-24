@@ -1,4 +1,6 @@
-﻿namespace TNotepad
+﻿using TaiyouUI;
+
+namespace TNotepad
 {
     partial class SidePanel
     {
@@ -29,12 +31,12 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.AboutButton = new TNotepad.taiyouButton();
-            this.SettingsButton = new TNotepad.taiyouButton();
-            this.OpenFileButton = new TNotepad.taiyouButton();
-            this.NewTabButton = new TNotepad.taiyouButton();
+            this.AboutButton = new taiyouButton();
+            this.SettingsButton = new taiyouButton();
+            this.OpenFileButton = new taiyouButton();
+            this.NewTabButton = new taiyouButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.HideShowButton = new TNotepad.taiyouButton();
+            this.HideShowButton = new taiyouButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.QuickSettings = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();

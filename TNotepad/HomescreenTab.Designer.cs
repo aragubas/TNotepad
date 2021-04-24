@@ -1,4 +1,6 @@
-﻿namespace TNotepad
+﻿using TaiyouUI;
+
+namespace TNotepad
 {
     partial class HomescreenTab
     {
@@ -31,17 +33,17 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new taiyouSplitContainer();
             this.tableLayoutPanel1 = new taiyouTableLayoutPanel();
-            this.OpenPinDocButton = new TNotepad.taiyouButton();
-            this.EditPinDocButton = new TNotepad.taiyouButton();
-            this.DeletePinDocButton = new TNotepad.taiyouButton();
-            this.PinDocsView = new TNotepad.taiyouListView();
+            this.OpenPinDocButton = new taiyouButton();
+            this.EditPinDocButton = new taiyouButton();
+            this.DeletePinDocButton = new taiyouButton();
+            this.PinDocsView = new taiyouListView();
             this.PinName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.FilePath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.PinnedDocsTitle = new System.Windows.Forms.Label();
-            this.RollbackChanges = new TNotepad.taiyouButton();
-            this.SaveChangesButton = new TNotepad.taiyouButton();
+            this.RollbackChanges = new taiyouButton();
+            this.SaveChangesButton = new taiyouButton();
             this.TipPinLabel = new System.Windows.Forms.Label();
-            this.ReloadPinDocListButton = new TNotepad.taiyouButton();
+            this.ReloadPinDocListButton = new taiyouButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();

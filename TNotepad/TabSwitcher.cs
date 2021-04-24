@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TaiyouUI;
 
 namespace TNotepad
 {
@@ -61,7 +62,7 @@ namespace TNotepad
         {
             foreach(TabPage tab in RootTabControl.TabPages)
             {
-                if (tab.Tag == "NEWTAB") { continue; }
+                if (tab.Tag.Equals("NEWTAB")) { continue; }
                 TabList.Items.Add(tab.Text);
 
             }

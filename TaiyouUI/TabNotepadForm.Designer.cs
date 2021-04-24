@@ -1,4 +1,4 @@
-﻿namespace TNotepad
+﻿namespace TaiyouUI
 {
     partial class TabNotepadForm
     {
@@ -34,7 +34,7 @@
             this.FormMinimizeButton = new System.Windows.Forms.Button();
             this.FormMaximizeButton = new System.Windows.Forms.Button();
             this.FormCloseButton = new System.Windows.Forms.Button();
-            this.FormTitlebar = new TNotepad.MoveWindowLabel();
+            this.FormTitlebar = new MoveWindowLabel();
             this.FormControls = new System.Windows.Forms.Panel();
             this.TitlebarPanel.SuspendLayout();
             this.WindowButtonsPanel.SuspendLayout();

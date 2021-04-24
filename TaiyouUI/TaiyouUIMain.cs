@@ -6,9 +6,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TNotepad
+namespace TaiyouUI
 {
-    class taiyouButton : Button
+    public static class Properties
+    {
+        public static bool UseForcedDoubleBuffer;
+        public static bool StrechWindowContentsWhenResizing;
+        public static bool WindowShadow;
+
+    }
+
+    public class taiyouButton : Button
     {
         public taiyouButton()
         {
@@ -44,16 +52,15 @@ namespace TNotepad
 
     }
 
-    class taiyouListView : ListView
-    { 
+    public class taiyouListView : ListView
+    {
         public taiyouListView()
         {
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OwnerDraw = true;
 
-            if (Properties.Settings.Default.ForceDoubleBuffer)
+            if (Properties.UseForcedDoubleBuffer)
             {
-
                 this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
                 this.UpdateStyles();
 
@@ -97,7 +104,7 @@ namespace TNotepad
             }
 
             e.Graphics.DrawString(e.Item.Text, e.Item.Font, ForegroundColor, e.Item.Bounds);
-           
+
         }
 
         protected override void OnDrawSubItem(DrawListViewSubItemEventArgs e)
@@ -131,13 +138,13 @@ namespace TNotepad
             if (!ThemeLoaded)
             {
                 ThemeLoaded = true;
-                LoadTheme(); 
+                LoadTheme();
             }
         }
 
     }
 
-    class taiyouListBox : ListBox
+    public class taiyouListBox : ListBox
     {
         public taiyouListBox()
         {
@@ -167,7 +174,7 @@ namespace TNotepad
     }
 
 
-    class taiyouToolStripButton : ToolStripButton
+    public class taiyouToolStripButton : ToolStripButton
     {
         public void LoadTheme()
         {
@@ -192,7 +199,7 @@ namespace TNotepad
 
     }
 
-    class taiyouToolStripMenuItem : ToolStripMenuItem
+    public class taiyouToolStripMenuItem : ToolStripMenuItem
     {
         public void LoadTheme()
         {
@@ -217,7 +224,7 @@ namespace TNotepad
 
     }
 
-    class taiyouToolStrip : ToolStrip
+    public class taiyouToolStrip : ToolStrip
     {
         public void LoadTheme()
         {
@@ -242,7 +249,7 @@ namespace TNotepad
 
     }
 
-    class taiyouToolStripDropDownButton : ToolStripDropDownButton
+    public class taiyouToolStripDropDownButton : ToolStripDropDownButton
     {
 
         public void LoadTheme()
@@ -267,7 +274,7 @@ namespace TNotepad
 
     }
 
-    class taiyouStatusStrip : StatusStrip
+    public class taiyouStatusStrip : StatusStrip
     {
         public void LoadTheme()
         {
@@ -292,7 +299,7 @@ namespace TNotepad
 
     }
 
-    class taiyouCheckBox : CheckBox
+    public class taiyouCheckBox : CheckBox
     {
         public void LoadTheme()
         {
@@ -318,7 +325,7 @@ namespace TNotepad
 
     }
 
-    class taiyouFlowLayoutPanel : FlowLayoutPanel
+    public class taiyouFlowLayoutPanel : FlowLayoutPanel
     {
         public void LoadTheme()
         {
@@ -344,7 +351,7 @@ namespace TNotepad
 
     }
 
-    class taiyouTextBox : TextBox
+    public class taiyouTextBox : TextBox
     {
         public taiyouTextBox()
         {
@@ -387,13 +394,14 @@ namespace TNotepad
 
         }
 
+        // FIXME : Not Working
         /// <summary>
-        /// Goto a specific line
+        /// NOT WORKING : Goto a specific line
         /// </summary>
         /// <param name="LineNumber">0 based location of line</param>
         public void GotoLine(int LineNumber)
         {
-            int Index = GetFirstCharIndexFromLine(LineNumber);
+            int Index = GetFirstCharIndexFromLine(LineNumber - 1);
             Select(LineNumber, 0);
         }
 
@@ -621,6 +629,5 @@ namespace TNotepad
 
 
     }
-
 
 }

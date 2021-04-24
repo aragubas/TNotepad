@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using TaiyouUI;
 
 namespace TNotepad
 {
@@ -85,7 +86,7 @@ namespace TNotepad
 
         void Ceira_DoWork(object sender, DoWorkEventArgs e)
         {
-            ThemeLoader.LoadDictData(Gambiarra);
+            ThemeLoader.LoadDictData(Properties.Settings.Default.CurrentTheme, Gambiarra);
         }
 
         private void AvaliableThemesListBox_SelectedIndexChanged(object sender, EventArgs e)

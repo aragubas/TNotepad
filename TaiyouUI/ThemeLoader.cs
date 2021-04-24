@@ -7,39 +7,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TNotepad
+namespace TaiyouUI
 {
-    class ThemeLoader
+    public class ThemeLoader
     {
-        //static List<String> Language_StringData = new List<string>();
         public static Dictionary<string, Color> ThemeData = new Dictionary<string, Color>();
-        public static string CurrentLangFile = "";
+        public static string CurrentThemeFile = "";
         public static bool ThemeLoaded = false;
 
         public static Color GetThemeData(string Key)
         {
             if (!ThemeData.ContainsKey(Key))
             {
-                throw new KeyNotFoundException("Cannot find key '" + Key + "' at theme '" + Properties.Settings.Default.CurrentTheme + "'");
+                throw new KeyNotFoundException("Cannot find key '" + Key + "' at theme '" + CurrentThemeFile + "'");
             }
 
             return ThemeData[Key];
         }
 
-        public static void LoadDictData(BackgroundWorker bgWorker = null)
+        public static void LoadDictData(string ThemeName, BackgroundWorker bgWorker = null)
         {
             ThemeData.Clear();
-            CurrentLangFile = Environment.CurrentDirectory + "\\themes\\" + Properties.Settings.Default.CurrentTheme + ".txt";
+            CurrentThemeFile = Environment.CurrentDirectory + "\\themes\\" + ThemeName + ".txt";
 
             //DicData should be located at (./lang_bank/en-us)
-            if (!File.Exists(Lang.CurrentLangFile))
+            if (!File.Exists(CurrentThemeFile))
             {
                 Console.WriteLine("Cannot locate theme file.");
-                Console.WriteLine(Lang.CurrentLangFile);
+                Console.WriteLine(CurrentThemeFile);
                 throw new FileNotFoundException("Cannot locate theme file.");
             }
 
-            string[] FileRead = File.ReadAllLines(CurrentLangFile);
+            string[] FileRead = File.ReadAllLines(CurrentThemeFile);
 
 
             int Wax = -1;
@@ -93,9 +92,10 @@ namespace TNotepad
             }
 
             // Set ThemeLoaded Variable
-            ThemeLoaded = true; 
+            ThemeLoaded = true;
 
         }
 
     }
+
 }

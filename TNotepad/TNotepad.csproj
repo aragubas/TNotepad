@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0D7C5D5A-18EF-4636-9FCA-42273762840A}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TNotepad</RootNamespace>
     <AssemblyName>TNotepad</AssemblyName>
@@ -25,12 +25,14 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>0</WarningLevel>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>TNotepad.Program</StartupObject>
@@ -49,6 +51,10 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="TaiyouUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\TaiyouUI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.cs">
@@ -77,6 +83,12 @@
     </Compile>
     <Compile Include="ExtraFuncPanels\Find.Designer.cs">
       <DependentUpon>Find.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExtraFuncPanels\GotoLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExtraFuncPanels\GotoLine.Designer.cs">
+      <DependentUpon>GotoLine.cs</DependentUpon>
     </Compile>
     <Compile Include="HomescreenTab.cs">
       <SubType>UserControl</SubType>
@@ -144,12 +156,6 @@
     <Compile Include="SidePanel.Designer.cs">
       <DependentUpon>SidePanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="TabNotepadForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TabNotepadForm.Designer.cs">
-      <DependentUpon>TabNotepadForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="TabSwitcher.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -162,10 +168,6 @@
     <Compile Include="TextEditingTab.Designer.cs">
       <DependentUpon>TextEditingTab.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThemedControls.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ThemeLoader.cs" />
     <Compile Include="ThemeSettings.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -184,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ExtraFuncPanels\Find.resx">
       <DependentUpon>Find.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtraFuncPanels\GotoLine.resx">
+      <DependentUpon>GotoLine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomescreenTab.resx">
       <DependentUpon>HomescreenTab.cs</DependentUpon>
@@ -250,9 +255,6 @@
     <EmbeddedResource Include="SidePanel.resx">
       <DependentUpon>SidePanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TabNotepadForm.resx">
-      <DependentUpon>TabNotepadForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="TabSwitcher.resx">
       <DependentUpon>TabSwitcher.cs</DependentUpon>
     </EmbeddedResource>
@@ -304,7 +306,7 @@
     <Content Include="obj\Release\TNotepad.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Release\TNotepad.exe" />
     <Content Include="obj\Release\TNotepad.pdb" />
-    <Content Include="plugins\Test.dll">
+    <Content Include="plugins\InitPlugin.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\CloseTabMini.png" />

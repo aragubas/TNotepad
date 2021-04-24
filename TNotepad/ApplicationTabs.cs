@@ -20,6 +20,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using TaiyouUI;
 
 namespace TNotepad
 {
@@ -27,7 +28,6 @@ namespace TNotepad
     
     public partial class ApplicationTabs : TabControl
     {
-        int LastSelectedTab = -1;
         private const int WM_PAINT = 0xF;
         public delegate void dCreateNewTabEvent();
         public delegate void dCreateDefaultTabEvent();
@@ -96,7 +96,7 @@ namespace TNotepad
             // Make the NEWTAB Button Tab Unselectable
             try
             {
-                if (SelectedTab.Tag.ToString() == "NEWTAB")
+                if (SelectedTab.Tag.ToString().Equals("NEWTAB"))
                 {
                     SelectedIndex = LastSelectedWax;
                 }
@@ -141,7 +141,7 @@ namespace TNotepad
                     bshFore = new SolidBrush(ThemeLoader.GetThemeData("TabControl_HeaderSelected_ForegroundColor"));
                     bshBack = new SolidBrush(ThemeLoader.GetThemeData("TabControl_HeaderSelected_BackgroundColor"));
 
-                    if (TabPages[i].Tag.ToString().Split(';')[0] == "PERSISTENT")
+                    if (TabPages[i].Tag.ToString().Split(';')[0].Equals("PERSISTENT"))
                     {
                         bshFore = new SolidBrush(ThemeLoader.GetThemeData("TabControl_PersistentHeaderSelected_ForegroundColor"));
                         bshBack = new SolidBrush(ThemeLoader.GetThemeData("TabControl_PersistentHeaderSelected_BackgroundColor"));
@@ -157,7 +157,7 @@ namespace TNotepad
                     bshFore = new SolidBrush(ThemeLoader.GetThemeData("TabControl_HeaderUnselected_ForegroundColor"));
                     bshBack = new SolidBrush(ThemeLoader.GetThemeData("TabControl_HeaderUnselected_BackgroundColor"));
 
-                    if (TabPages[i].Tag.ToString().Split(';')[0] == "PERSISTENT")
+                    if (TabPages[i].Tag.ToString().Split(';')[0].Equals("PERSISTENT"))
                     {
                         bshFore = new SolidBrush(ThemeLoader.GetThemeData("TabControl_PersistentHeaderUnselected_ForegroundColor"));
                         bshBack = new SolidBrush(ThemeLoader.GetThemeData("TabControl_PersistentHeaderUnselected_BackgroundColor"));
@@ -171,7 +171,7 @@ namespace TNotepad
                 // ################
                 // Render NewTab Button
                 // ################
-                if (TabType == "NEWTAB")
+                if (TabType.Equals("NEWTAB"))
                 {
                     TabRect = new Rectangle(TabRect.X + 5, TabRect.Y + 3, 20, TabRect.Height - 5);
                     Rectangle PosRect = new Rectangle(TabRect.X, TabRect.Y, 16, 16);
@@ -202,7 +202,7 @@ namespace TNotepad
                 // ################
                 var CloseButtonRect = new Rectangle(recTab.Right - 15, recTab.Top + (recTab.Height - 8) / 2, 10, 10);
                 // If current tab is not a persistent one
-                if (TabType != "PERSISTENT")
+                if (!TabType.Equals("PERSISTENT"))
                 {
                     // If current tab is the selected one, draw a red circle
                     if (SelectedIndex == i)
@@ -269,7 +269,7 @@ namespace TNotepad
                 if (imageRect.IntersectsWith(new Rectangle(e.Location.X, e.Location.Y, 1, 1)))
                 {
                     // Don't close tabs with tag PERSISTENT
-                    if (TabPages[i].Tag.ToString() != "PERSISTENT" && TabPages[i].Tag.ToString() != "NEWTAB")
+                    if (!TabPages[i].Tag.ToString().Equals("PERSISTENT") && !TabPages[i].Tag.ToString().Equals("NEWTAB"))
                     {
                         // Close tab 
                         ClosePageAt(i);

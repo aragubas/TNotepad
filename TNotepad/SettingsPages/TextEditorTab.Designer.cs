@@ -1,4 +1,5 @@
-﻿
+﻿using TaiyouUI;
+
 namespace TNotepad.SettingsPages
 {
     partial class TextEditorTab
@@ -31,7 +32,7 @@ namespace TNotepad.SettingsPages
         {
             this.flowLayoutPanel1 = new taiyouFlowLayoutPanel();
             this.WordWrapGroupBox = new taiyouGroupBox();
-            this.WordWrapCheckbox = new TNotepad.taiyouCheckBox();
+            this.WordWrapCheckbox = new taiyouCheckBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.WordWrapGroupBox.SuspendLayout();
             this.SuspendLayout();

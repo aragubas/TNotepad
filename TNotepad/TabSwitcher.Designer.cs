@@ -1,4 +1,6 @@
-﻿namespace TNotepad
+﻿using TaiyouUI;
+
+namespace TNotepad
 {
     partial class TabSwitcher
     {
@@ -28,9 +30,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.WindowTitle = new TNotepad.MoveWindowLabel();
-            this.TabList = new TNotepad.taiyouListBox();
-            this.CloseTabButton = new TNotepad.taiyouButton();
+            this.WindowTitle = new MoveWindowLabel();
+            this.TabList = new taiyouListBox();
+            this.CloseTabButton = new taiyouButton();
             this.HowToSwitchInfoLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 

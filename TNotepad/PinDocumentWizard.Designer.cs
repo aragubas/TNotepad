@@ -1,4 +1,6 @@
-﻿namespace TNotepad
+﻿using TaiyouUI;
+
+namespace TNotepad
 {
     partial class PinDocumentWizard
     {
@@ -29,8 +31,8 @@
         private void InitializeComponent()
         {
             this.DocNameThingLabel = new System.Windows.Forms.Label();
-            this.DocPinNameTextbox = new TNotepad.taiyouTextBox();
-            this.PinDocButton = new TNotepad.taiyouButton();
+            this.DocPinNameTextbox = new taiyouTextBox();
+            this.PinDocButton = new taiyouButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();

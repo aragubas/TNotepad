@@ -1,4 +1,6 @@
-﻿namespace TNotepad
+﻿using TaiyouUI;
+
+namespace TNotepad
 {
     partial class EncodingSelector
     {
@@ -29,10 +31,10 @@
         private void InitializeComponent()
         {
             this.EncodingInfoLabel = new System.Windows.Forms.Label();
-            this.comboBox1 = new TNotepad.taiyouComboBox();
-            this.radioButton1 = new TNotepad.taiyouRadioButton();
-            this.button1 = new TNotepad.taiyouButton();
+            this.comboBox1 = new TaiyouUI.taiyouComboBox();
+            this.button1 = new TaiyouUI.taiyouButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.SetAsDefaultEncodingCheckbox = new TaiyouUI.taiyouCheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,18 +63,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(318, 23);
             this.comboBox1.TabIndex = 1;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton1.Location = new System.Drawing.Point(12, 63);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(383, 19);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Set selected encoding as default";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -99,13 +90,25 @@
             this.panel1.Size = new System.Drawing.Size(383, 27);
             this.panel1.TabIndex = 4;
             // 
+            // SetAsDefaultEncodingCheckbox
+            // 
+            this.SetAsDefaultEncodingCheckbox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SetAsDefaultEncodingCheckbox.Location = new System.Drawing.Point(12, 52);
+            this.SetAsDefaultEncodingCheckbox.Name = "SetAsDefaultEncodingCheckbox";
+            this.SetAsDefaultEncodingCheckbox.Size = new System.Drawing.Size(383, 40);
+            this.SetAsDefaultEncodingCheckbox.TabIndex = 5;
+            this.SetAsDefaultEncodingCheckbox.Text = "Set selected encoding as default for new documents";
+            this.SetAsDefaultEncodingCheckbox.UseVisualStyleBackColor = true;
+            // 
             // EncodingSelector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.SetAsDefaultEncodingCheckbox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.radioButton1);
             this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "EncodingSelector";
             this.Size = new System.Drawing.Size(407, 142);
@@ -120,8 +123,8 @@
 
         private System.Windows.Forms.Label EncodingInfoLabel;
         private taiyouComboBox comboBox1;
-        private taiyouRadioButton radioButton1;
         private taiyouButton button1;
         private System.Windows.Forms.Panel panel1;
+        private taiyouCheckBox SetAsDefaultEncodingCheckbox;
     }
 }

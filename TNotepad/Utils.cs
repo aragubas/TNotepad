@@ -23,6 +23,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TaiyouUI;
 
 namespace TNotepad
 {
@@ -34,6 +35,7 @@ namespace TNotepad
         public static bool OpenTabStartupArg;
         public static string OpenTabStartupArg_FileName;
         public static MainForm MainFormInstance;
+        public static PluginAPI InstanceAPI;
 
         public static string GetVersion()
         {
@@ -57,6 +59,13 @@ namespace TNotepad
 
             return buildDate.ToString();
 
+        }
+
+        public static void ApplyTaiyouUISettings()
+        {
+            TaiyouUI.Properties.StrechWindowContentsWhenResizing = Properties.Settings.Default.StrechWindowContentsWhenResizing;
+            TaiyouUI.Properties.UseForcedDoubleBuffer = Properties.Settings.Default.ForceDoubleBuffer;
+            TaiyouUI.Properties.WindowShadow = Properties.Settings.Default.WindowShadow;
         }
 
         public static void CreateMainForm()

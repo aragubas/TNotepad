@@ -1,4 +1,6 @@
-﻿namespace TNotepad
+﻿using TaiyouUI;
+
+namespace TNotepad
 {
     partial class ThemeSettings
     {
@@ -28,11 +30,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.AvaliableThemesListBox = new TNotepad.taiyouListBox();
+            this.AvaliableThemesListBox = new taiyouListBox();
             this.TopThingsPanel = new System.Windows.Forms.Panel();
-            this.SelectedThemeTextBox = new TNotepad.taiyouTextBox();
+            this.SelectedThemeTextBox = new taiyouTextBox();
             this.SelectedThemeInfoLabel = new System.Windows.Forms.Label();
-            this.SelectThemeButton = new TNotepad.taiyouButton();
+            this.SelectThemeButton = new taiyouButton();
             this.TopThingsPanel.SuspendLayout();
             this.SuspendLayout();
             // 

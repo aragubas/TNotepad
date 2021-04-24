@@ -24,6 +24,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TaiyouUI;
 
 namespace TNotepad
 {
@@ -35,11 +36,12 @@ namespace TNotepad
 
             MinimumSize = Size;
             LoadLang();
-            LoadTheme();
             LicenseView.Text = Properties.Resources.ApacheLicense;
 
             InfosLabel.Text += Lang.GetLangData("About_MainDesc");
-            InfosLabel.Text += "\n\n" + Lang.GetLangData("About_BuildNumber") + Utils.GetBuildNumber() + "\n\n" + Lang.GetLangData("About_BuildDate") + Utils.GetBuildDate();
+            InfosLabel.Text += "\n\n" + Lang.GetLangData("About_Version") + Utils.GetVersion() + "\n" + Lang.GetLangData("About_BuildNumber") + Utils.GetBuildNumber() + "\n" + Lang.GetLangData("About_BuildDate") + Utils.GetBuildDate();
+            InfosLabel.Text += "\n\n" + Lang.GetLangData("About_TaiyouUIVersion") + TaiyouUI.Version.GetVersion() + "\n" + Lang.GetLangData("About_TaiyouUIBuildNumber") + TaiyouUI.Version.GetBuildNumber() + "\n" + Lang.GetLangData("About_TaiyouUIBuildDate") + TaiyouUI.Version.GetBuildDate();
+            
 
         }
 
@@ -59,15 +61,6 @@ namespace TNotepad
             RootForm.Close();
         }
 
-        public void LoadTheme()
-        {
-            BackColor = ThemeLoader.GetThemeData("Form_BackgroundColor");
-            ForeColor = ThemeLoader.GetThemeData("Form_ForegroundColor");
-
-            ExitButton.LoadTheme();
-            LicenseView.LoadTheme();
-
-        }
 
         private void About_Load(object sender, EventArgs e)
         {
@@ -83,11 +76,6 @@ namespace TNotepad
         void FormCloseButton_Click(object sender, EventArgs e)
         {
             RootForm.Close();
-        }
-
-        private void BuildInfo_Button_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Build at " + Utils.GetBuildDate() + "\nBuild ID:" + Utils.GetBuildNumber(), "Build Info");
         }
 
         private void CheckForUpdateButton_Click(object sender, EventArgs e)

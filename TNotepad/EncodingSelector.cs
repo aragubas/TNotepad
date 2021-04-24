@@ -24,6 +24,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TaiyouUI;
 
 namespace TNotepad
 {
@@ -38,13 +39,14 @@ namespace TNotepad
 
             LoadLangString();
             LoadValues();
+            SetAsDefaultEncodingCheckbox.Checked = true;
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             string SelectedEncoding = comboBox1.Items[comboBox1.SelectedIndex].ToString();
-            if (radioButton1.Checked)
+            if (SetAsDefaultEncodingCheckbox.Checked)
             {
                 Properties.Settings.Default.DefaultEncoding = SelectedEncoding;
                 Properties.Settings.Default.Save();
@@ -58,7 +60,7 @@ namespace TNotepad
         public void LoadLangString()
         {
             EncodingInfoLabel.Text = Lang.GetLangData("EncodingSelector_EncodingInfosLabel");
-            radioButton1.Text = Lang.GetLangData("EncodingSelector_SetSelectedEncodingRadioButton");
+            SetAsDefaultEncodingCheckbox.Text = Lang.GetLangData("EncodingSelector_SetSelectedEncodingRadioButton");
             button1.Text = Lang.GetLangData("EncodingSelector_ExitSaveButton");
 
         }
@@ -83,6 +85,12 @@ namespace TNotepad
         private void LoadValues()
         {
             comboBox1.SelectedIndex = comboBox1.Items.IndexOf(Properties.Settings.Default.DefaultEncoding);
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SetAsDefaultEncodingCheckbox.Checked = false;
 
         }
     }

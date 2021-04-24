@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TNotepad
+namespace TaiyouUI
 {
     public partial class TabNotepadForm : Form
     {
@@ -26,7 +26,7 @@ namespace TNotepad
             InitializeComponent();
             this.ResizeRedraw = true;
 
-            if (Properties.Settings.Default.ForceDoubleBuffer)
+            if (Properties.UseForcedDoubleBuffer)
             {
                 this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.CacheText | ControlStyles.DoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
                 this.UpdateStyles();
@@ -159,7 +159,7 @@ namespace TNotepad
                 CreateParams cp = base.CreateParams;
 
                 // Add shadow
-                if (Properties.Settings.Default.WindowShadow)
+                if (Properties.WindowShadow)
                 {
                     const int CS_DROPSHADOW = 0x20000;
                     cp.ClassStyle |= CS_DROPSHADOW;
@@ -169,7 +169,7 @@ namespace TNotepad
                 // Makes the form Flicker-Free by enabling compositing
                 // I don't know exatcly how this works but it makes the form flicker-free and layout
                 // draws much faster
-                if (Properties.Settings.Default.ForceDoubleBuffer)
+                if (Properties.UseForcedDoubleBuffer)
                 {
                     cp.Style |= 0x20000; // <--- use 0x20000
                     cp.ExStyle |= 0x2000000;
@@ -205,7 +205,7 @@ namespace TNotepad
 
         private void TabNotepadForm_ResizeBegin(object sender, EventArgs e)
         {
-            if (DisableResizeMode || !Properties.Settings.Default.StrechWindowContentsWhenResizing) { return; }
+            if (DisableResizeMode || !Properties.StrechWindowContentsWhenResizing) { return; }
             TakeScreenWax();
 
             ResizeMode = true;
@@ -220,7 +220,7 @@ namespace TNotepad
 
         private void TabNotepadForm_ResizeEnd(object sender, EventArgs e)
         {
-            if (DisableResizeMode || !Properties.Settings.Default.StrechWindowContentsWhenResizing) { return; }
+            if (DisableResizeMode || !Properties.StrechWindowContentsWhenResizing) { return; }
             this.ResumeLayout();
 
             // ReShow hidden controls
@@ -291,7 +291,7 @@ namespace TNotepad
             // #####
             // Draw Steched Copy of Window
             // ####
-            if (DisableResizeMode || !ScreenWaxTaken || !Properties.Settings.Default.StrechWindowContentsWhenResizing) { return; }
+            if (DisableResizeMode || !ScreenWaxTaken || !Properties.StrechWindowContentsWhenResizing) { return; }
 
             // Draw Resizing Image
             e.Graphics.DrawImage(Wax, 0, 0, Width, Height);

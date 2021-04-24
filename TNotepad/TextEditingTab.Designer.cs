@@ -1,4 +1,6 @@
-﻿namespace TNotepad
+﻿using TaiyouUI;
+
+namespace TNotepad
 {
     partial class TextEditingTab
     {
@@ -30,20 +32,20 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TextEditingTab));
-            this.Toolbar = new TNotepad.taiyouToolStrip();
-            this.NewPage = new TNotepad.taiyouToolStripButton();
-            this.OpenFileButton = new TNotepad.taiyouToolStripButton();
-            this.ExtraMenu = new TNotepad.taiyouToolStripDropDownButton();
-            this.encodingToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
-            this.runToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
-            this.settingsToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
-            this.pinDocumentToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
-            this.savePathToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
-            this.quickFindToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
-            this.SaveButton = new TNotepad.taiyouToolStripButton();
-            this.SaveAsButton = new TNotepad.taiyouToolStripButton();
+            this.Toolbar = new TaiyouUI.taiyouToolStrip();
+            this.NewPage = new TaiyouUI.taiyouToolStripButton();
+            this.OpenFileButton = new TaiyouUI.taiyouToolStripButton();
+            this.ExtraMenu = new TaiyouUI.taiyouToolStripDropDownButton();
+            this.encodingToolStripMenuItem = new TaiyouUI.taiyouToolStripMenuItem();
+            this.runToolStripMenuItem = new TaiyouUI.taiyouToolStripMenuItem();
+            this.settingsToolStripMenuItem = new TaiyouUI.taiyouToolStripMenuItem();
+            this.pinDocumentToolStripMenuItem = new TaiyouUI.taiyouToolStripMenuItem();
+            this.savePathToolStripMenuItem = new TaiyouUI.taiyouToolStripMenuItem();
+            this.quickFindToolStripMenuItem = new TaiyouUI.taiyouToolStripMenuItem();
+            this.SaveButton = new TaiyouUI.taiyouToolStripButton();
+            this.SaveAsButton = new TaiyouUI.taiyouToolStripButton();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.StatusBar = new TNotepad.taiyouStatusStrip();
+            this.StatusBar = new TaiyouUI.taiyouStatusStrip();
             this.SaveStatusText = new System.Windows.Forms.ToolStripStatusLabel();
             this.EncodingInfoLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.LineInfoLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -52,10 +54,10 @@
             this.LastSavedTimer = new System.Windows.Forms.Timer(this.components);
             this.ExtraFuncPanel = new System.Windows.Forms.Panel();
             this.TextEditorContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.copyToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
-            this.cutToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
-            this.PasteToolStripMenuItem = new TNotepad.taiyouToolStripMenuItem();
-            this.TextEditingThing = new TNotepad.taiyouRichTextBox();
+            this.copyToolStripMenuItem = new TaiyouUI.taiyouToolStripMenuItem();
+            this.cutToolStripMenuItem = new TaiyouUI.taiyouToolStripMenuItem();
+            this.PasteToolStripMenuItem = new TaiyouUI.taiyouToolStripMenuItem();
+            this.TextEditingThing = new TaiyouUI.taiyouRichTextBox();
             this.Toolbar.SuspendLayout();
             this.StatusBar.SuspendLayout();
             this.TextEditorContextMenu.SuspendLayout();
@@ -304,6 +306,7 @@
             this.TextEditingThing.Text = "";
             this.TextEditingThing.SelectionChanged += new System.EventHandler(this.TextEditingThing_SelectionChanged);
             this.TextEditingThing.TextChanged += new System.EventHandler(this.TextEditingThing_TextChanged);
+            this.TextEditingThing.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextEditingThing_KeyDown);
             // 
             // TextEditingTab
             // 

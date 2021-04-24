@@ -27,6 +27,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Media;
+using TaiyouUI;
 
 namespace TNotepad
 {
@@ -59,6 +60,7 @@ namespace TNotepad
             SetEncoding(Utils.EncodingNameToEncodingObject());
 
             TextEditingThing.WordWrap = Properties.Settings.Default.WordWrapEnabled;
+            TextEditingThing.Rtf = null;
 
             LoadTheme();
 
@@ -316,12 +318,6 @@ namespace TNotepad
             
         }
 
-
-        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         public void SaveDocument()
         {
             if (LastFileName == "")
@@ -395,42 +391,16 @@ namespace TNotepad
             Ceira.Focus();
         }
 
-        private void Text_KeyDown(object sender, KeyEventArgs e)
+        public void GotoLineExtraFuncPanel()
         {
-            // Find Shortcut
-            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.F)
-            {
-                FindExtraFuncPanel();
-            }
+            ExtraFuncPanel.Visible = true;
+            // Remove all previus controls
+            ExtraFuncPanel.Controls.Clear();
 
-            // Save Shortcut
-            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.S)
-            {
-                SaveButton.PerformClick();
+            ExtraFuncPanels.GotoLine Ceira = new ExtraFuncPanels.GotoLine(this);
+            ExtraFuncPanel.Controls.Add(Ceira);
 
-            }else if (e.KeyCode == Keys.S && (e.Control && e.Shift)) // Save As Shortcut
-            {
-                SaveAsButton.PerformClick();
-            }
-
-            // Open Shortcut
-            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.O)
-            {
-                OpenFileButton.PerformClick();
-            }
-
-            // New Page Shortcut
-            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.N)
-            {
-                NewPage.PerformClick();
-            }
-
-            // Close Shortcut
-            if (e.KeyCode == Keys.E && (e.Control && e.Shift))
-            {
-                RootControl.CloseSelectedTab();
-            }
-
+            Ceira.Focus();
 
         }
 
@@ -478,6 +448,68 @@ namespace TNotepad
             LineInfoLabel.Text = Lang.GetLangData("TextEditMain_LineNumber") + TextEditingThing.SelectedLine();
 
             ColumnInfoLabel.Text = Lang.GetLangData("TextEditMain_ColumnSelected") + TextEditingThing.SelectedColumn();
+
+        }
+
+        private void TextEditingThing_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Find Shortcut 
+            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.F)
+            {
+                FindExtraFuncPanel();
+            }
+
+            // FIXME : Goto Line not working
+            // GotoLine Shortcut
+            /*
+            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.G)
+            {
+                GotoLineExtraFuncPanel();
+            }
+            */
+
+            // Undo Shortcut
+            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.Z)
+            {
+                TextEditingThing.Undo();
+            }
+
+            // Redo Shortcut
+            if (e.KeyCode == Keys.Y && (e.Control && e.Shift))
+            {
+                TextEditingThing.Redo();
+            }
+
+
+            // Save Shortcut
+            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.S)
+            {
+                SaveButton.PerformClick();
+
+            }
+            else if (e.KeyCode == Keys.S && (e.Control && e.Shift)) // Save As Shortcut
+            {
+                SaveAsButton.PerformClick();
+            }
+
+            // Open Shortcut
+            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.O)
+            {
+                OpenFileButton.PerformClick();
+            }
+
+            // New Page Shortcut
+            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.N)
+            {
+                NewPage.PerformClick();
+            }
+
+            // Close Shortcut
+            if (e.KeyCode == Keys.E && (e.Control && e.Shift))
+            {
+                RootControl.CloseSelectedTab();
+            }
+
 
         }
 

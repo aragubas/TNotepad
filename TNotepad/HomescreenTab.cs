@@ -129,7 +129,7 @@ namespace TNotepad
                 }
 
             } 
-            catch (Exception ex)
+            catch (Exception)
             {
                 NoDocumentsPinned();
             }

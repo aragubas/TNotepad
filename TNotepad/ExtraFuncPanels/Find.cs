@@ -38,7 +38,6 @@ namespace TNotepad.ExtraFuncPanels
         private void FindButton_Click(object sender, EventArgs e)
         {
             RootControl.TextEditingThing.Find(textBox1.Text);
-            //RootControl.TextEditingThing.SelectedText = RootControl.TextEditingThing.Text.Substring(Pos, 2);
             RootControl.TextEditingThing.Focus();
             RootControl.QuitExtraFuncPanel();
 
@@ -52,6 +51,7 @@ namespace TNotepad.ExtraFuncPanels
                 RootControl.QuitExtraFuncPanel();
 
             }
+
         }
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -65,6 +65,7 @@ namespace TNotepad.ExtraFuncPanels
             {
                 FindButton.PerformClick();
             }
+
         }
     }
 }

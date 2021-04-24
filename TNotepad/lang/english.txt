@@ -82,9 +82,13 @@ PinnedDocuments_TabTitle;Home
 # About
 #
 About_WindowTitle;About TabNotepad
-About_MainDesc;Powered by Windows Forms made in C# using%nVisual Studio 2013 Community
-About_BuildNumber;Build Number:
-About_BuildDate;Build Date:
+About_MainDesc;Powered by TaiyouUI made in C# using%nVisual Studio 2013 Community
+About_BuildNumber;Build Number: 
+About_BuildDate;Build Date: 
+About_Version;Version: 
+About_TaiyouUIVersion;TaiyouUI Version: 
+About_TaiyouUIBuildNumber;TaiyouUI Build Number: 
+About_TaiyouUIBuildDate;TaiyouUI Build Date: 
 # -Message Box
 About_LogoClickText;TabNotepad is part of Taiyou Software Packpage.
 About_LogoClickTitle;About
@@ -199,12 +203,17 @@ SidePanel_AboutButton;About
 #
 # Quick Find
 #
-QuickFind_FindButton;Quick Find
+QuickFind_FindButton;Find
+
+#
+# Quick GotoLine
+#
+QuickGotoLine_GoButton;Goto Line
 
 #
 # Background Worker
 #
-BackgroundWorker_WindowTitle;Working at background
+BackgroundWorker_WindowTitle;Please Wait
 BackgroundWorker_WorksLeftLabel; left
 BackgroundWorker_CurrentLabel;Current
 

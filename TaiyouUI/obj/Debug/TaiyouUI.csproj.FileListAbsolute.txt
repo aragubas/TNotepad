@@ -1,0 +1,9 @@
+C:\Users\Bazinga\Documents\Projects\TNotepad\TaiyouUI\bin\Debug\TaiyouUI.dll
+C:\Users\Bazinga\Documents\Projects\TNotepad\TaiyouUI\bin\Debug\TaiyouUI.pdb
+C:\Users\Bazinga\Documents\Projects\TNotepad\TaiyouUI\obj\Debug\TaiyouUI.dll
+C:\Users\Bazinga\Documents\Projects\TNotepad\TaiyouUI\obj\Debug\TaiyouUI.pdb
+C:\Users\Bazinga\Documents\Projects\TNotepad\TNotepad\lib\TaiyouUI.dll
+C:\Users\Bazinga\Documents\Projects\TNotepad\TNotepad\lib\TaiyouUI.pdb
+C:\Users\Bazinga\Documents\Projects\TNotepad\TaiyouUI\obj\Debug\TaiyouUI.csprojResolveAssemblyReference.cache
+C:\Users\Bazinga\Documents\Projects\TNotepad\TaiyouUI\obj\Debug\TaiyouUI.TabNotepadForm.resources
+C:\Users\Bazinga\Documents\Projects\TNotepad\TaiyouUI\obj\Debug\TaiyouUI.csproj.GenerateResource.Cache

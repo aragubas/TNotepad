@@ -40,15 +40,19 @@ namespace TNotepad
 
         private void BGWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            ChangeReportText("Language Files 1/3");
+            ChangeReportText("Language Files 1/4");
             Lang.LoadDictData(BGWorker);
 
             BGWorker.ReportProgress(0);
-            ChangeReportText("Theme Files 2/3");
-            ThemeLoader.LoadDictData(BGWorker);
+            ChangeReportText("Theme Files 2/4");
+            TaiyouUI.ThemeLoader.LoadDictData(Properties.Settings.Default.CurrentTheme, BGWorker);
 
             BGWorker.ReportProgress(0);
-            ChangeReportText("Plugins 3/3");
+            ChangeReportText("Create PluginAPI Instance 3/4");
+            Utils.InstanceAPI = new PluginAPI();
+            
+            BGWorker.ReportProgress(0);
+            ChangeReportText("Plugins 4/4");
             PluginManager.LoadPlugins(BGWorker);
 
 

@@ -1,4 +1,5 @@
-﻿
+﻿using TaiyouUI;
+
 namespace TNotepad
 {
     partial class LanguageSettings
@@ -31,11 +32,11 @@ namespace TNotepad
         {
             this.CurrentLanguageInfoLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.CurrentLanguageTextBox = new TNotepad.taiyouTextBox();
-            this.ConfirmButton = new TNotepad.taiyouButton();
-            this.AvaliableLanguagesListBox = new TNotepad.taiyouListBox();
+            this.CurrentLanguageTextBox = new taiyouTextBox();
+            this.ConfirmButton = new taiyouButton();
+            this.AvaliableLanguagesListBox = new taiyouListBox();
             this.AvaliableLanguageFilesInfoLabel = new System.Windows.Forms.Label();
-            this.ExitButton = new TNotepad.taiyouButton();
+            this.ExitButton = new taiyouButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 

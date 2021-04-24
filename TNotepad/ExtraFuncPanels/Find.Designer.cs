@@ -1,6 +1,8 @@
-﻿
+﻿using TaiyouUI;
+
 namespace TNotepad.ExtraFuncPanels
 {
+
     partial class Find
     {
         /// <summary> 
@@ -29,23 +31,25 @@ namespace TNotepad.ExtraFuncPanels
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new taiyouTextBox();
-            this.FindButton = new taiyouButton();
+            this.textBox1 = new TaiyouUI.taiyouTextBox();
+            this.FindButton = new TaiyouUI.taiyouButton();
             this.SuspendLayout();
             // 
             // textBox1
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Location = new System.Drawing.Point(0, 0);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(404, 20);
+            this.textBox1.Size = new System.Drawing.Size(398, 20);
             this.textBox1.TabIndex = 0;
             this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // FindButton
             // 
             this.FindButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FindButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FindButton.Location = new System.Drawing.Point(404, 0);
             this.FindButton.Name = "FindButton";
             this.FindButton.Size = new System.Drawing.Size(82, 24);
@@ -61,7 +65,7 @@ namespace TNotepad.ExtraFuncPanels
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.FindButton);
             this.Name = "Find";
-            this.Size = new System.Drawing.Size(486, 67);
+            this.Size = new System.Drawing.Size(486, 27);
             this.Load += new System.EventHandler(this.Find_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Find_KeyDown);
             this.ResumeLayout(false);
