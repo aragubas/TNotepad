@@ -1,3 +1,4 @@
 *.suo
 *.csproj
 Old Releases
+.vs
