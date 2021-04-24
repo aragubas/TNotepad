@@ -1,0 +1,7 @@
+C:\Users\Bazinga\Documents\Projects\TNotepad\Plugins\Test\bin\Debug\Test.dll
+C:\Users\Bazinga\Documents\Projects\TNotepad\Plugins\Test\bin\Debug\Test.pdb
+C:\Users\Bazinga\Documents\Projects\TNotepad\Plugins\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\Bazinga\Documents\Projects\TNotepad\Plugins\Test\obj\Debug\Test.dll
+C:\Users\Bazinga\Documents\Projects\TNotepad\Plugins\Test\obj\Debug\Test.pdb
+C:\Users\Bazinga\Documents\Projects\TNotepad\TNotepad\plugins\Test.dll
+C:\Users\Bazinga\Documents\Projects\TNotepad\TNotepad\plugins\Test.pdb

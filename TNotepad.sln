@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TNotepad", "TNotepad\TNotepad.csproj", "{0D7C5D5A-18EF-4636-9FCA-42273762840A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Plugins\Test\Test.csproj", "{911E557F-7487-4180-869A-6AD4D9459ABC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0D7C5D5A-18EF-4636-9FCA-42273762840A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D7C5D5A-18EF-4636-9FCA-42273762840A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D7C5D5A-18EF-4636-9FCA-42273762840A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{911E557F-7487-4180-869A-6AD4D9459ABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{911E557F-7487-4180-869A-6AD4D9459ABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{911E557F-7487-4180-869A-6AD4D9459ABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{911E557F-7487-4180-869A-6AD4D9459ABC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

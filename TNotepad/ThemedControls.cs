@@ -88,8 +88,6 @@ namespace TNotepad
             SolidBrush ForegroundColor = new SolidBrush(ForeColor);
             SolidBrush BackgroundColor = new SolidBrush(BackColor);
 
-            StringFormat sfT = new StringFormat();
-
             // Only draw background if necessary
             if (this.SelectedItems.Contains(e.Item))
             {
@@ -98,7 +96,7 @@ namespace TNotepad
 
             }
 
-            e.Graphics.DrawString(e.Item.Text, e.Item.Font, ForegroundColor, e.Item.Bounds, sfT);
+            e.Graphics.DrawString(e.Item.Text, e.Item.Font, ForegroundColor, e.Item.Bounds);
            
         }
 
@@ -110,12 +108,9 @@ namespace TNotepad
             SolidBrush ForegroundColor = new SolidBrush(ForeColor);
             SolidBrush BackgroundColor = new SolidBrush(BackColor);
 
-
-            StringFormat sfT = new StringFormat();
-
             // WORKAROUND : Subitem Name being rendered over item name
             e.Graphics.FillRectangle(BackgroundColor, e.SubItem.Bounds);
-            e.Graphics.DrawString(e.SubItem.Text, e.SubItem.Font, ForegroundColor, e.SubItem.Bounds, sfT);
+            e.Graphics.DrawString(e.SubItem.Text, e.SubItem.Font, ForegroundColor, e.SubItem.Bounds);
 
         }
 
