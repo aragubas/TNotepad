@@ -62,7 +62,7 @@ namespace TNotepad
 
             BGWorker.ReportProgress(0);
             ChangeReportText("Theme Files 2/3");
-            TaiyouUI.ThemeLoader.LoadDictData(Properties.Settings.Default.CurrentTheme, BGWorker);
+            TaiyouUI.ThemeLoader.LoadDictData(Environment.CurrentDirectory + "\\themes\\" + Properties.Settings.Default.CurrentTheme + ".txt", BGWorker);
 
             BGWorker.ReportProgress(0);
             ChangeReportText("Create PluginAPI Instance 3/3");

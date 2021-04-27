@@ -103,7 +103,7 @@ namespace TNotepad
 
         void Ceira_DoWork(object sender, DoWorkEventArgs e)
         {
-            ThemeLoader.LoadDictData(Properties.Settings.Default.CurrentTheme, Gambiarra);
+            ThemeLoader.LoadDictData(Environment.CurrentDirectory + "\\themes\\" + Properties.Settings.Default.CurrentTheme + ".txt", Gambiarra);
         }
 
         private void AvaliableThemesListBox_SelectedIndexChanged(object sender, EventArgs e)
