@@ -1,5 +1,0 @@
-C:\Users\Bazinga\Documents\Projects\TNotepad\TNotepad\lib\TaiyouUI.dll
-C:\Users\Bazinga\Documents\Projects\TNotepad\TaiyouUI\obj\Release\TaiyouUI.csprojResolveAssemblyReference.cache
-C:\Users\Bazinga\Documents\Projects\TNotepad\TaiyouUI\obj\Release\TaiyouUI.TabNotepadForm.resources
-C:\Users\Bazinga\Documents\Projects\TNotepad\TaiyouUI\obj\Release\TaiyouUI.csproj.GenerateResource.Cache
-C:\Users\Bazinga\Documents\Projects\TNotepad\TaiyouUI\obj\Release\TaiyouUI.dll

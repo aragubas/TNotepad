@@ -29,8 +29,15 @@ namespace TNotepad.SettingsPages
 
         public void LoadLangStrings()
         {
+            // WordWrap Settings
             WordWrapGroupBox.Text = Lang.GetLangData("Settings_TextEditor_WordWrapGroupBoxTitle");
             WordWrapCheckbox.Text = Lang.GetLangData("Settings_TextEditor_WordWrapCheckbox");
+
+            // Font Settings
+            FontSettingPreview.Text = Lang.GetLangData("Settings_TextEditor_FontSettings_PreviewText");
+            FontSettingChangeFontButton.Text = Lang.GetLangData("Settings_TextEditor_FontSettings_ChangeFontButton");
+            FontSettingGroupBox.Text = Lang.GetLangData("Settings_TextEditor_FontSettings_GroupBoxTitle");
+
         }
 
         private void TextEditorTab_Load(object sender, EventArgs e)
@@ -40,13 +47,21 @@ namespace TNotepad.SettingsPages
         public void LoadValues()
         {
             WordWrapCheckbox.Checked = Properties.Settings.Default.WordWrapEnabled;
+            FontSettingPreview.Font = Properties.Settings.Default.TextEditorFont;
 
         }
 
         public void SaveSettings()
         {
             Properties.Settings.Default.WordWrapEnabled = WordWrapCheckbox.Checked;
-            
+            Properties.Settings.Default.TextEditorFont = FontSettingPreview.Font;
+
+        }
+
+        private void FontSettingChangeFontButton_Click(object sender, EventArgs e)
+        {
+            TextEditorFont.ShowDialog();
+            FontSettingPreview.Font = TextEditorFont.Font;
 
         }
 

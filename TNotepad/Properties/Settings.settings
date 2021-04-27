@@ -44,5 +44,8 @@
     <Setting Name="ForceDoubleBuffer" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="TextEditorFont" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Segoe UI Semilight, 9.75pt</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -128,6 +128,9 @@ Settings_UISettings_OpenThemeSettingsButton;Change Theme
 #
 Settings_TextEditor_WordWrapGroupBoxTitle;Word Wrap
 Settings_TextEditor_WordWrapCheckbox;Enabled
+Settings_TextEditor_FontSettings_PreviewText;This is a sample text for current font.
+Settings_TextEditor_FontSettings_ChangeFontButton; Change current font
+Settings_TextEditor_FontSettings_GroupBoxTitle;Font Settings
 
 #
 # Encoding Selector

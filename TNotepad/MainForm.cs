@@ -20,7 +20,8 @@ namespace TNotepad
             this.Dock = DockStyle.Fill;
 
             AttachSidePanel();
-            CreateHometab();
+            //CreateHometab();
+            CreateNewTab();
         }
 
         private void MainForm_Load(object sender, EventArgs e)

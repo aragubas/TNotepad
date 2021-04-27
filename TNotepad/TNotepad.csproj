@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0D7C5D5A-18EF-4636-9FCA-42273762840A}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TNotepad</RootNamespace>
     <AssemblyName>TNotepad</AssemblyName>
@@ -51,9 +51,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="TaiyouUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="TaiyouUI, Version=1.0.7786.40665, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\TaiyouUI.dll</HintPath>
+      <HintPath>..\..\TaiyouUILibrary\Bin\TaiyouUI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

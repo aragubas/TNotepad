@@ -30,26 +30,26 @@ namespace TNotepad.SettingsPages
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowLayoutPanel1 = new taiyouFlowLayoutPanel();
-            this.SaveWarningGroupBox = new taiyouGroupBox();
-            this.SaveWarningCheckBox = new taiyouCheckBox();
+            this.flowLayoutPanel1 = new TaiyouUI.taiyouFlowLayoutPanel();
+            this.SaveWarningGroupBox = new TaiyouUI.taiyouGroupBox();
+            this.SaveWarningCheckBox = new TaiyouUI.taiyouCheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.SaveWarningTextBox = new taiyouTextBox();
+            this.SaveWarningTextBox = new TaiyouUI.taiyouTextBox();
             this.SaveWarningIntervalInfo = new System.Windows.Forms.Label();
-            this.LanguageSettingGroupBox = new taiyouGroupBox();
-            this.OpenLanguageSettingsButton = new taiyouButton();
+            this.LanguageSettingGroupBox = new TaiyouUI.taiyouGroupBox();
+            this.OpenLanguageSettingsButton = new TaiyouUI.taiyouButton();
             this.LanguageSettingsInfoLabel = new System.Windows.Forms.Label();
-            this.WindowShadowGroupBox = new taiyouGroupBox();
-            this.WindowShadowCheckBox = new taiyouCheckBox();
-            this.SmoothVisualElementsGroupBox = new taiyouGroupBox();
-            this.SmoothVisualElementsCheckbox = new taiyouCheckBox();
-            this.StretchResizeGroupbox = new taiyouGroupBox();
-            this.StretchResizeCheckbox = new taiyouCheckBox();
-            this.ThemeSettingsGroupBox = new taiyouGroupBox();
-            this.OpenThemeSettingsButton = new taiyouButton();
+            this.WindowShadowGroupBox = new TaiyouUI.taiyouGroupBox();
+            this.WindowShadowCheckBox = new TaiyouUI.taiyouCheckBox();
+            this.SmoothVisualElementsGroupBox = new TaiyouUI.taiyouGroupBox();
+            this.SmoothVisualElementsCheckbox = new TaiyouUI.taiyouCheckBox();
+            this.StretchResizeGroupbox = new TaiyouUI.taiyouGroupBox();
+            this.StretchResizeCheckbox = new TaiyouUI.taiyouCheckBox();
+            this.ThemeSettingsGroupBox = new TaiyouUI.taiyouGroupBox();
+            this.OpenThemeSettingsButton = new TaiyouUI.taiyouButton();
             this.ThemeSettingsInfoLabel = new System.Windows.Forms.Label();
-            this.DeFlickerGroupBox = new taiyouGroupBox();
-            this.DeFlickerCheckBox = new taiyouCheckBox();
+            this.DeFlickerGroupBox = new TaiyouUI.taiyouGroupBox();
+            this.DeFlickerCheckBox = new TaiyouUI.taiyouCheckBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.SaveWarningGroupBox.SuspendLayout();
             this.panel1.SuspendLayout();

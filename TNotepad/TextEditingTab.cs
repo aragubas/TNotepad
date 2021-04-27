@@ -60,7 +60,7 @@ namespace TNotepad
             SetEncoding(Utils.EncodingNameToEncodingObject());
 
             TextEditingThing.WordWrap = Properties.Settings.Default.WordWrapEnabled;
-            TextEditingThing.Rtf = null;
+            TextEditingThing.Font = Properties.Settings.Default.TextEditorFont;
 
             LoadTheme();
 

@@ -189,5 +189,17 @@ namespace TNotepad.Properties {
                 this["ForceDoubleBuffer"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Segoe UI Semilight, 9.75pt")]
+        public global::System.Drawing.Font TextEditorFont {
+            get {
+                return ((global::System.Drawing.Font)(this["TextEditorFont"]));
+            }
+            set {
+                this["TextEditorFont"] = value;
+            }
+        }
     }
 }

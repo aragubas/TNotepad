@@ -60,6 +60,8 @@ namespace TNotepad
         }
         private void SidePanel_Load(object sender, EventArgs e)
         {
+            PluginManager.LoadPlugins(null);
+
         }
 
         private void NewTabButton_Click(object sender, EventArgs e)
