@@ -14,3 +14,4 @@ Just to put some image there
 ### Taiyou Light
 ![image](https://user-images.githubusercontent.com/47148297/115948681-db419700-a4a5-11eb-9508-8a54992b3f70.png)
 
+We now have a [Discord Server!](https://discord.gg/mCG3NHsPpx)
