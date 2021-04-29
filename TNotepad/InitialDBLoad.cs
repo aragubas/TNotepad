@@ -58,11 +58,19 @@ namespace TNotepad
         private void BGWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             ChangeReportText("Language Files 1/3");
+            // Listen to Force Lang file
+            if (File.Exists(Program.ExecutablePath + "\\force-lang.command"))
+            {
+                Properties.Settings.Default.CurrentLanguage = File.ReadAllLines(Program.ExecutablePath + "\\force-lang.command")[0];
+                Properties.Settings.Default.Save();
+
+                File.Delete(Program.ExecutablePath + "\\force-lang.command");
+            }
             Lang.LoadDictData(BGWorker);
 
             BGWorker.ReportProgress(0);
             ChangeReportText("Theme Files 2/3");
-            TaiyouUI.ThemeLoader.LoadDictData(Environment.CurrentDirectory + "\\themes\\" + Properties.Settings.Default.CurrentTheme + ".txt", BGWorker);
+            TaiyouUI.ThemeLoader.LoadDictData(Program.ExecutablePath + "\\themes\\" + Properties.Settings.Default.CurrentTheme + ".txt", BGWorker);
 
             BGWorker.ReportProgress(0);
             ChangeReportText("Create PluginAPI Instance 3/3");

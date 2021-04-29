@@ -54,7 +54,7 @@ namespace TNotepad
 
         public static void LoadPlugins(BackgroundWorker bgWorker = null)
         {
-            PluginPath = Environment.CurrentDirectory + "\\plugins\\";
+            PluginPath = Program.ExecutablePath + "\\plugins\\";
             Console.WriteLine("PluginLoader : Plugin Path is {" + PluginPath + "}");
             DirectoryInfo fileInfo = new DirectoryInfo(PluginPath);
             FileInfo[] Files = fileInfo.GetFiles();

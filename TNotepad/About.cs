@@ -68,6 +68,8 @@ namespace TNotepad
             RootForm.MinimizeableForm = false;
             RootForm.Text = Lang.GetLangData("About_WindowTitle");
             RootForm.MinimumSize = Size;
+            // Set Icon
+            RootForm.Icon = Properties.Resources.Icon;
 
             RootForm.FormCloseButton.Click += FormCloseButton_Click;
 

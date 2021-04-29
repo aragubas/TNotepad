@@ -46,9 +46,12 @@ namespace TNotepad
             LoadThemes();
 
             RootForm.MinimizeableForm = false;
+            RootForm.ResizeableForm = false;
             RootForm.MinimumSize = this.Size;
             RootForm.Size = originalSize;
             RootForm.FormCloseButton.Click += FormCloseButton_Click;
+            // Set Icon
+            RootForm.Icon = Properties.Resources.Icon;
 
         }
 
@@ -61,7 +64,7 @@ namespace TNotepad
         {
             SelectedThemeTextBox.Text = Properties.Settings.Default.CurrentTheme;
 
-            DirectoryInfo dirInfo = new DirectoryInfo(Environment.CurrentDirectory + "\\themes\\");
+            DirectoryInfo dirInfo = new DirectoryInfo(Program.ExecutablePath + "\\themes\\");
 
             foreach (var file in dirInfo.GetFiles("*.txt", SearchOption.TopDirectoryOnly))
             {
@@ -110,6 +113,11 @@ namespace TNotepad
         {
             if (AvaliableThemesListBox.SelectedIndex == -1) { return; }
             SelectedThemeTextBox.Text = AvaliableThemesListBox.Items[AvaliableThemesListBox.SelectedIndex].ToString();
+
+        }
+
+        private void TopThingsPanel_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

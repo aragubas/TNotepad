@@ -57,6 +57,8 @@ namespace TNotepad
             RootForm.Text = Lang.GetLangData("LanguageSettings_WindowTitle");
             RootForm.MinimizeableForm = false;
             RootForm.ResizeableForm = false;
+            // Set Icon
+            RootForm.Icon = Properties.Resources.Icon;
 
             RootForm.FormCloseButton.Click += FormCloseButton_Click;
 
@@ -80,7 +82,7 @@ namespace TNotepad
 
         public void LoadAvaliableLanguages()
         {
-            DirectoryInfo directoryInfo = new DirectoryInfo(Environment.CurrentDirectory + "\\lang"); ;
+            DirectoryInfo directoryInfo = new DirectoryInfo(Program.ExecutablePath + "\\lang"); ;
             FileInfo[] files = directoryInfo.GetFiles("*.txt");
 
             foreach(var file in files)

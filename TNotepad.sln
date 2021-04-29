@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TNotepad", "TNotepad\TNotep
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InitPlugin", "Plugins\Test\InitPlugin.csproj", "{911E557F-7487-4180-869A-6AD4D9459ABC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Installer", "Installer\Installer.csproj", "{C83C701D-C0FD-47E3-8A3D-37D939AD00C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{911E557F-7487-4180-869A-6AD4D9459ABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{911E557F-7487-4180-869A-6AD4D9459ABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{911E557F-7487-4180-869A-6AD4D9459ABC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C83C701D-C0FD-47E3-8A3D-37D939AD00C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C83C701D-C0FD-47E3-8A3D-37D939AD00C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C83C701D-C0FD-47E3-8A3D-37D939AD00C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C83C701D-C0FD-47E3-8A3D-37D939AD00C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

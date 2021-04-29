@@ -42,6 +42,9 @@ namespace TNotepad
 
             originalSize = Size;
 
+            // Set Icon
+            RootForm.Icon = Properties.Resources.Icon;
+
             Workers = pWorkers;
         }
 

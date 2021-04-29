@@ -37,13 +37,16 @@ namespace TNotepad
             this.Dock = DockStyle.Fill;
 
             AttachSidePanel();
-            //CreateHometab();
-            CreateNewTab();
+            CreateHometab();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // Add Action when clicking close button
             RootForm.FormCloseButton.Click += FormCloseButton_Click;
+
+            // Set Icon
+            RootForm.Icon = Properties.Resources.Icon;
 
             // Set minimun size to the previous version window size.
             RootForm.MinimumSize = new Size(840, 470);

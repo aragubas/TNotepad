@@ -1,0 +1,6 @@
+#
+# Arquivo de Idioma para o TNotepad
+#
+PlugText:Carregando
+UnplugText:Desconectado
+BatteryFullText:Carregado

@@ -43,7 +43,7 @@ namespace TNotepad
         public static void LoadDictData(BackgroundWorker bgWorker = null)
         {
             LangData.Clear();
-            CurrentLangFile = Environment.CurrentDirectory + "\\lang\\" + Properties.Settings.Default.CurrentLanguage + ".txt";
+            CurrentLangFile = Program.ExecutablePath + "\\lang\\" + Properties.Settings.Default.CurrentLanguage + ".txt";
 
             //DicData should be located at (./lang_bank/en-us)
             if (!File.Exists(Lang.CurrentLangFile))

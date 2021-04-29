@@ -26,12 +26,21 @@ namespace TNotepad
 {
     static class Program
     {
+        public static string ExecutablePath;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main(string[] Args)
         {
+            // Set executable path
+            ExecutablePath = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
+
+            // Write Build number to file
+            File.WriteAllText(ExecutablePath + "\\build_info.txt", Utils.GetVersionWithBuild(), new System.Text.UTF8Encoding());
+            
+            // Enable visual styles
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
@@ -46,7 +55,7 @@ namespace TNotepad
                 }
             }
 
-            Console.WriteLine("Startup Path is: " + Environment.CurrentDirectory);
+            Console.WriteLine("Install Path is: " + ExecutablePath);
 
             // Start InitialDB Load
             InitialDBLoad Ceira = new InitialDBLoad();

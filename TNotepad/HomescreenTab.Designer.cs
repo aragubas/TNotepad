@@ -48,19 +48,19 @@ namespace TNotepad
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.splitContainer1 = new taiyouSplitContainer();
-            this.tableLayoutPanel1 = new taiyouTableLayoutPanel();
-            this.OpenPinDocButton = new taiyouButton();
-            this.EditPinDocButton = new taiyouButton();
-            this.DeletePinDocButton = new taiyouButton();
-            this.PinDocsView = new taiyouListView();
+            this.splitContainer1 = new TaiyouUI.taiyouSplitContainer();
+            this.tableLayoutPanel1 = new TaiyouUI.taiyouTableLayoutPanel();
+            this.OpenPinDocButton = new TaiyouUI.taiyouButton();
+            this.EditPinDocButton = new TaiyouUI.taiyouButton();
+            this.DeletePinDocButton = new TaiyouUI.taiyouButton();
+            this.PinDocsView = new TaiyouUI.taiyouListView();
             this.PinName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.FilePath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.PinnedDocsTitle = new System.Windows.Forms.Label();
-            this.RollbackChanges = new taiyouButton();
-            this.SaveChangesButton = new taiyouButton();
+            this.RollbackChanges = new TaiyouUI.taiyouButton();
+            this.SaveChangesButton = new TaiyouUI.taiyouButton();
             this.TipPinLabel = new System.Windows.Forms.Label();
-            this.ReloadPinDocListButton = new taiyouButton();
+            this.ReloadPinDocListButton = new TaiyouUI.taiyouButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -108,7 +108,7 @@ namespace TNotepad
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 213F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 285F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 108F));
             this.tableLayoutPanel1.Controls.Add(this.OpenPinDocButton, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.EditPinDocButton, 1, 0);
@@ -128,7 +128,7 @@ namespace TNotepad
             this.OpenPinDocButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OpenPinDocButton.Location = new System.Drawing.Point(3, 3);
             this.OpenPinDocButton.Name = "OpenPinDocButton";
-            this.OpenPinDocButton.Size = new System.Drawing.Size(178, 28);
+            this.OpenPinDocButton.Size = new System.Drawing.Size(106, 28);
             this.OpenPinDocButton.TabIndex = 0;
             this.OpenPinDocButton.Text = "Open";
             this.OpenPinDocButton.UseVisualStyleBackColor = false;
@@ -139,9 +139,9 @@ namespace TNotepad
             this.EditPinDocButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EditPinDocButton.FlatAppearance.BorderSize = 0;
             this.EditPinDocButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditPinDocButton.Location = new System.Drawing.Point(187, 3);
+            this.EditPinDocButton.Location = new System.Drawing.Point(115, 3);
             this.EditPinDocButton.Name = "EditPinDocButton";
-            this.EditPinDocButton.Size = new System.Drawing.Size(207, 28);
+            this.EditPinDocButton.Size = new System.Drawing.Size(279, 28);
             this.EditPinDocButton.TabIndex = 1;
             this.EditPinDocButton.Text = "Edit";
             this.EditPinDocButton.UseVisualStyleBackColor = false;
@@ -172,6 +172,7 @@ namespace TNotepad
             this.PinDocsView.HideSelection = false;
             this.PinDocsView.Location = new System.Drawing.Point(0, 30);
             this.PinDocsView.Name = "PinDocsView";
+            this.PinDocsView.OwnerDraw = true;
             this.PinDocsView.Size = new System.Drawing.Size(505, 321);
             this.PinDocsView.TabIndex = 4;
             this.PinDocsView.UseCompatibleStateImageBehavior = false;
@@ -181,7 +182,7 @@ namespace TNotepad
             // PinName
             // 
             this.PinName.Text = "Pin Name";
-            this.PinName.Width = 100;
+            this.PinName.Width = 266;
             // 
             // FilePath
             // 
@@ -208,7 +209,7 @@ namespace TNotepad
             this.RollbackChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RollbackChanges.Location = new System.Drawing.Point(7, 100);
             this.RollbackChanges.Name = "RollbackChanges";
-            this.RollbackChanges.Size = new System.Drawing.Size(201, 23);
+            this.RollbackChanges.Size = new System.Drawing.Size(200, 23);
             this.RollbackChanges.TabIndex = 5;
             this.RollbackChanges.Text = "Rollback Changes";
             this.RollbackChanges.UseVisualStyleBackColor = false;
@@ -222,7 +223,7 @@ namespace TNotepad
             this.SaveChangesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveChangesButton.Location = new System.Drawing.Point(6, 71);
             this.SaveChangesButton.Name = "SaveChangesButton";
-            this.SaveChangesButton.Size = new System.Drawing.Size(201, 23);
+            this.SaveChangesButton.Size = new System.Drawing.Size(200, 23);
             this.SaveChangesButton.TabIndex = 4;
             this.SaveChangesButton.Text = "Save Changes";
             this.SaveChangesButton.UseVisualStyleBackColor = false;
@@ -246,7 +247,7 @@ namespace TNotepad
             this.ReloadPinDocListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ReloadPinDocListButton.Location = new System.Drawing.Point(6, 42);
             this.ReloadPinDocListButton.Name = "ReloadPinDocListButton";
-            this.ReloadPinDocListButton.Size = new System.Drawing.Size(201, 23);
+            this.ReloadPinDocListButton.Size = new System.Drawing.Size(200, 23);
             this.ReloadPinDocListButton.TabIndex = 3;
             this.ReloadPinDocListButton.Text = "Refresh List";
             this.ReloadPinDocListButton.UseVisualStyleBackColor = false;

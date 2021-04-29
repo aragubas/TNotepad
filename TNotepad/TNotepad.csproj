@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0D7C5D5A-18EF-4636-9FCA-42273762840A}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TNotepad</RootNamespace>
     <AssemblyName>TNotepad</AssemblyName>
@@ -38,7 +38,7 @@
     <StartupObject>TNotepad.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>TabbedNotpadIcon.ico</ApplicationIcon>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -54,6 +54,9 @@
     <Reference Include="TaiyouUI, Version=1.0.7786.40665, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\TaiyouUILibrary\Bin\TaiyouUI.dll</HintPath>
+    </Reference>
+    <Reference Include="TaiyouUtils">
+      <HintPath>..\..\TaiyouUtils\TaiyouUtils\Bin\TaiyouUtils.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -288,6 +291,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="lang\english.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -316,7 +322,6 @@
     <Content Include="Resources\TabbedNotpadIcon.ico" />
     <Content Include="Resources\TabbedNotpadIcon.png" />
     <None Include="Resources\TabNew.png" />
-    <Content Include="TabbedNotpadIcon.ico" />
     <Content Include="themes\TaiyouDark.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -47,11 +47,11 @@ namespace TNotepad
         /// </summary>
         private void InitializeComponent()
         {
-            this.AvaliableThemesListBox = new taiyouListBox();
+            this.AvaliableThemesListBox = new TaiyouUI.taiyouListBox();
             this.TopThingsPanel = new System.Windows.Forms.Panel();
-            this.SelectedThemeTextBox = new taiyouTextBox();
+            this.SelectedThemeTextBox = new TaiyouUI.taiyouTextBox();
             this.SelectedThemeInfoLabel = new System.Windows.Forms.Label();
-            this.SelectThemeButton = new taiyouButton();
+            this.SelectThemeButton = new TaiyouUI.taiyouButton();
             this.TopThingsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,10 +60,11 @@ namespace TNotepad
             this.AvaliableThemesListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.AvaliableThemesListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.AvaliableThemesListBox.FormattingEnabled = true;
             this.AvaliableThemesListBox.Location = new System.Drawing.Point(6, 36);
             this.AvaliableThemesListBox.Name = "AvaliableThemesListBox";
-            this.AvaliableThemesListBox.Size = new System.Drawing.Size(420, 225);
+            this.AvaliableThemesListBox.Size = new System.Drawing.Size(392, 184);
             this.AvaliableThemesListBox.TabIndex = 0;
             this.AvaliableThemesListBox.SelectedIndexChanged += new System.EventHandler(this.AvaliableThemesListBox_SelectedIndexChanged);
             // 
@@ -75,8 +76,9 @@ namespace TNotepad
             this.TopThingsPanel.Controls.Add(this.SelectedThemeInfoLabel);
             this.TopThingsPanel.Location = new System.Drawing.Point(3, 3);
             this.TopThingsPanel.Name = "TopThingsPanel";
-            this.TopThingsPanel.Size = new System.Drawing.Size(423, 27);
+            this.TopThingsPanel.Size = new System.Drawing.Size(395, 27);
             this.TopThingsPanel.TabIndex = 1;
+            this.TopThingsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.TopThingsPanel_Paint);
             // 
             // SelectedThemeTextBox
             // 
@@ -84,7 +86,7 @@ namespace TNotepad
             this.SelectedThemeTextBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.SelectedThemeTextBox.Location = new System.Drawing.Point(103, 0);
             this.SelectedThemeTextBox.Name = "SelectedThemeTextBox";
-            this.SelectedThemeTextBox.Size = new System.Drawing.Size(320, 20);
+            this.SelectedThemeTextBox.Size = new System.Drawing.Size(292, 20);
             this.SelectedThemeTextBox.TabIndex = 1;
             // 
             // SelectedThemeInfoLabel
@@ -103,9 +105,9 @@ namespace TNotepad
             this.SelectThemeButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SelectThemeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SelectThemeButton.Location = new System.Drawing.Point(6, 270);
+            this.SelectThemeButton.Location = new System.Drawing.Point(6, 232);
             this.SelectThemeButton.Name = "SelectThemeButton";
-            this.SelectThemeButton.Size = new System.Drawing.Size(420, 23);
+            this.SelectThemeButton.Size = new System.Drawing.Size(392, 23);
             this.SelectThemeButton.TabIndex = 2;
             this.SelectThemeButton.Text = "Select Theme";
             this.SelectThemeButton.UseVisualStyleBackColor = true;
@@ -119,7 +121,7 @@ namespace TNotepad
             this.Controls.Add(this.TopThingsPanel);
             this.Controls.Add(this.AvaliableThemesListBox);
             this.Name = "ThemeSettings";
-            this.Size = new System.Drawing.Size(429, 301);
+            this.Size = new System.Drawing.Size(401, 263);
             this.Load += new System.EventHandler(this.ThemeSettings_Load);
             this.TopThingsPanel.ResumeLayout(false);
             this.TopThingsPanel.PerformLayout();

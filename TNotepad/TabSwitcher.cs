@@ -50,6 +50,8 @@ namespace TNotepad
             RootForm.ResizeableForm = true;
             RootForm.MinimumSize = OriginalSize;
             RootForm.Size = OriginalSize;
+            // Set Icon
+            RootForm.Icon = Properties.Resources.Icon;
 
             // Make the window moveable
             WindowTitle.RootControlReference = RootForm;

@@ -61,6 +61,8 @@ namespace TNotepad
             RootForm.MinimizeableForm = false;
             RootForm.Text = "Pin File";
             RootForm.FormCloseButton.Click += FormCloseButton_Click;
+            // Set Icon
+            RootForm.Icon = Properties.Resources.Icon;
 
         }
 

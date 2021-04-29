@@ -49,11 +49,11 @@ namespace TNotepad
         {
             this.CurrentLanguageInfoLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.CurrentLanguageTextBox = new taiyouTextBox();
-            this.ConfirmButton = new taiyouButton();
-            this.AvaliableLanguagesListBox = new taiyouListBox();
+            this.CurrentLanguageTextBox = new TaiyouUI.taiyouTextBox();
+            this.ConfirmButton = new TaiyouUI.taiyouButton();
+            this.AvaliableLanguagesListBox = new TaiyouUI.taiyouListBox();
             this.AvaliableLanguageFilesInfoLabel = new System.Windows.Forms.Label();
-            this.ExitButton = new taiyouButton();
+            this.ExitButton = new TaiyouUI.taiyouButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
