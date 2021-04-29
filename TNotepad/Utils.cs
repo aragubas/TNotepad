@@ -70,7 +70,7 @@ namespace TNotepad
 
         public static void CreateMainForm()
         {
-            /*TabNotepadForm ParentForm = new TabNotepadForm();
+            /*TaiyouForm ParentForm = new TaiyouForm();
             MainForm ParentControls = new MainForm(ParentForm);
 
             // Add controls to the form
@@ -85,7 +85,7 @@ namespace TNotepad
 
         public static void CreateWindow(taiyouUserControl control, string DefaultTitle="Untitled Window", bool ShowAsDialog = false)
         {
-            TabNotepadForm ParentForm = new TabNotepadForm();
+            TaiyouForm ParentForm = new TaiyouForm();
             
             // Add controls to the form
             control.RootForm = ParentForm;

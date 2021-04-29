@@ -30,9 +30,9 @@ namespace TNotepad.SettingsPages
 {
     public partial class TextEditorTab : UserControl
     {
-        TabNotepadForm RootControl;
+        TaiyouForm RootControl;
 
-        public TextEditorTab(TabNotepadForm pRootControl)
+        public TextEditorTab(TaiyouForm pRootControl)
         {
             InitializeComponent();
             RootControl = pRootControl;

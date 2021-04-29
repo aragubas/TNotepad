@@ -31,10 +31,10 @@ namespace TNotepad
     public partial class SettingsTab : taiyouUserControl
     {
         TabPage AssociatedTabPage;
-        TabNotepadForm RootControl;
+        TaiyouForm RootControl;
         dynamic SelectedTab;
 
-        public SettingsTab(TabNotepadForm pRootControl, TabPage pAssociatedTabPage)
+        public SettingsTab(TaiyouForm pRootControl, TabPage pAssociatedTabPage)
         {
             InitializeComponent();
 
