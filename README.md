@@ -3,7 +3,7 @@ Free and Open Source Tabbed Notepad Application created with C# and Windows Form
 
 ## How to build
 Just download the project and open with Visual Studio 2013 or newer.
-You will also need to download/compile [Taiyou UI Library](https://github.com/aragubas/TaiyouUILibrary/)
+You will also need to download/compile [Taiyou UI Library](https://github.com/aragubas/TaiyouUILibrary/) and [Taiyou Utils Library](https://github.com/aragubas/TaiyouUtils)
 
 ## Screenshots!
 Just to put some image there
