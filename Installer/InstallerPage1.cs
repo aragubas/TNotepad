@@ -253,6 +253,8 @@ namespace Installer
 
         private void Instalation_DoWork(object sender, DoWorkEventArgs e)
         {
+            try
+            {
             // Set up install path
             this.Invoke(new Action(() => SetStatusText(TaiyouUtils.Lang.Get("InstallStatus_SetUpInstallPath"))));
             SetUpInstallPath();
@@ -262,7 +264,7 @@ namespace Installer
             RegisterTaiyouInstalation();
 
             // Unpack Installer Packpage
-            this.Invoke(new Action(() => SetStatusText(TaiyouUtils.Lang.Get("InstallStatus_UnpackpInstallerPackpage"))));
+            this.Invoke(new Action(() => SetStatusText(TaiyouUtils.Lang.Get("InstallStatus_UnpackInstallerPackpage"))));
             UnpackInstallPackpage();
 
             // Set Default Language
@@ -272,6 +274,15 @@ namespace Installer
             // Create Desktop Shortcut
             this.Invoke(new Action(() => SetStatusText(TaiyouUtils.Lang.Get("InstallStatus_CreateDesktopShortcut"))));
             CreateDesktopShortcut();
+
+            } catch (Exception ex)
+            {
+                // Finish Instalation with error
+                Instalation.ReportProgress(100);
+                this.Invoke(new Action(() => SetStatusText(TaiyouUtils.Lang.Get("InstallStatus_InstalationError"))));
+                this.Invoke(new Action(() => ShowInstallExtraPage(new InstalationComplete(this, true, ex))));
+                return;
+            }
 
 
             // Finish Instalation

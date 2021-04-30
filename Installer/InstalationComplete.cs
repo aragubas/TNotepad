@@ -17,18 +17,32 @@ namespace Installer
     public partial class InstalationComplete : taiyouUserControl
     {
         InstallerPage1 RootPage;
+        bool InstalationError;
+        Exception Exc;
 
-        public InstalationComplete(InstallerPage1 pRootPage)
+        public InstalationComplete(InstallerPage1 pRootPage, bool pInstalationError=false, Exception pExc=null)
         {
             InitializeComponent();
 
             RootPage = pRootPage;
+            InstalationError = pInstalationError;
+            Exc = pExc;
         }
 
         private void InstalationComplete_Load(object sender, EventArgs e)
         {
             Dock = DockStyle.Fill;
             LoadLang();
+
+            if (InstalationError)
+            {
+                MainLogo.Image = Properties.Resources.FatalError;
+
+                TitleLabel.Text = TaiyouUtils.Lang.Get("InstalationError_Title");
+                InstallCompleteLabel.Text = TaiyouUtils.Lang.Get("InstalationError_DescriptionText").Replace("$1", Exc.Message);
+                FinishButton.Text = TaiyouUtils.Lang.Get("InstalationError_FinishButton");
+
+            }
         }
 
         public void LoadLang()
@@ -44,8 +58,9 @@ namespace Installer
             // Delete the temporary directory
             Directory.Delete(Program.TempDirToWorkWith, true);
             
-            // Start newly installed program
-            Process.Start(RootPage.PathToChargerPlugEventExecutable);
+            // Start newly installed program only if instalation didn't errored out
+            if (!InstalationError) { Process.Start(RootPage.PathToChargerPlugEventExecutable); }
+            
 
             Environment.Exit(0);
         }

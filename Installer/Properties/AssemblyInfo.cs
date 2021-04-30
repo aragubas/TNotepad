@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Taiyou ChargerPlugEvent Installer")]
-[assembly: AssemblyDescription("Installs Taiyou ChargerPlugEvent on your computer")]
+[assembly: AssemblyTitle("Taiyou TNotepad Installer")]
+[assembly: AssemblyDescription("Installs TabNotepad on your computer")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Aragubas")]
-[assembly: AssemblyProduct("ChargerPlugEvent Installer")]
+[assembly: AssemblyProduct("TabNotepad Installer")]
 [assembly: AssemblyCopyright("Licensed under Apache 2.0 License.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

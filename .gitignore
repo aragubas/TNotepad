@@ -1,3 +1,10 @@
-*.suo
-*.csproj
+*.exe
+*.pdb
+*.dll
+Installer/bin
+Installer/obj
+TNotepad/bin
+TNotepad/obj
+Plugins/Test/bin
+Plugins/Test/onb
 Old Releases

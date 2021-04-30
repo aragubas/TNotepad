@@ -98,11 +98,21 @@ namespace Installer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ChargerPlugEvent.exe.
+        ///   Looks up a localized string similar to TNotepad.exe.
         /// </summary>
         internal static string ExecutableName {
             get {
                 return ResourceManager.GetString("ExecutableName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FatalError {
+            get {
+                object obj = ResourceManager.GetObject("FatalError", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -175,9 +185,9 @@ namespace Installer.Properties {
         ///# Alpha transparency can maybe be supported
         ///
         ///# = Forms
-        ///Form_BackgroundColor;255, 42, 42, 58
-        ///Form_ForegroundColor;255, 240, 240, 230
-        ///Form_CloseButton_BackgroundColor; 255, 235, 120, 120
+        ///Form_BackgroundColor;255, 42, 42, 62
+        ///Form_ForegroundColor;255, 240, 240, 234
+        ///Form_CloseButton_BackgroundColor; 255, 190, 120, 140
         ///Form_CloseButton_ForegroundColor; 255, 220, 220, 230
         ///Form_CloseButton_MouseDownColor; 255, 200, 100, 100
         ///Form_MaximizeButton_BackgroundColor; 255, 100, 100, 100
