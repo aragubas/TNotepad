@@ -1,2 +1,0 @@
-C:\Users\Bazinga\Documents\Projects\TNotepad\TNotepad\plugins\InitPlugin.dll
-C:\Users\Bazinga\Documents\Projects\TNotepad\Plugins\Test\obj\Release\InitPlugin.dll
