@@ -51,8 +51,7 @@ namespace TNotepad
                 Properties.Settings.Default.DefaultEncoding = SelectedEncoding;
                 Properties.Settings.Default.Save();
             } 
-            RootControl.SetEncoding(Utils.EncodingNameToEncodingObject(SelectedEncoding));
-            RootControl.ReopenFileInEncodingChange();
+            RootControl.SetEncoding(Utils.EncodingNameToEncodingObject(SelectedEncoding), true);
             RootForm.Close();
 
         }

@@ -110,7 +110,7 @@ namespace TNotepad
 
         void Ceira_DoWork(object sender, DoWorkEventArgs e)
         {
-            ThemeLoader.LoadDictData(Environment.CurrentDirectory + "\\themes\\" + Properties.Settings.Default.CurrentTheme + ".txt", bgWork);
+            ThemeLoader.LoadDictData(Program.ExecutablePath + "\\themes\\" + Properties.Settings.Default.CurrentTheme + ".txt", bgWork);
         }
 
         private void AvaliableThemesListBox_SelectedIndexChanged(object sender, EventArgs e)

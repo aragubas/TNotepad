@@ -1,0 +1,45 @@
+# Language file for ChargerPlugEvent Installer
+# -- File linked inside the installer executable
+LanguageLink;english
+
+# -- Window
+WindowTitle;TNotepad Installer rev 2
+
+# -- Load LangFile Screen
+LoadLangFile_LoadingLabel;Loading language file...
+
+# -- Main Screen
+MainPage_TitleLabel;Instalation -> Set Up
+MainPage_InstallingTitle;Instalation -> Installing
+
+# -- About Install
+AboutInstall_Title;Instalation -> Set Up -> About TNotepad
+
+# -- Instalation Complete
+InstalationComplete_Title;Instalation -> Installing -> Instalation Complete
+InstalationComplete_DescriptionText;Instalation Finished!%n%nif you find any errors fell free to write a issue at TNotepad github page!
+InstalationComplete_FinishButton;Finish
+
+# -- Instalation Error
+InstalationError_Title;Instalation Error
+InstalationError_DescriptionText;Error while installing TabNotepad, if you dont know what do to please open a issue at TabNotepad's Github Page%n%nError: $1
+InstalationError_FinishButton;Exit
+
+
+# -- Install Status
+InstallStatus_SetUpInstallPath;Setting up instalation path
+InstallStatus_InstalationFinished;Instalation Finished!
+InstallStatus_RegisterInstalation;Register instalation
+InstallStatus_UnpackInstallerPackpage;Unpacking Installer Packpage
+InstallStatus_SetCorrectLanguage;Set default language
+InstallStatus_CreateDesktopShortcut;Create desktop shortcut
+InstallStatus_FileAlreadyExists;File already exists
+InstallStatus_InstalationError;Error
+
+# -- Slide 00
+Slide00_Title;Click button next to continue
+
+# -- Slide 001
+Slide01_Title;TNotepad (License Terms and Privacy)
+Slide01_Text;After clicking "Next" you agree with Apache 2.0 license%nTabNotepad don't have any data collection or even a line of code connecting it to the internet%n%nTabNotepad is a free an open source software, you can modify, distribute or even make other software using it as a base, With a condition of including a valid reference to the original software with a link or so on.%n%nTabNotepad is a Taiyou Software, created by Aragubas/Paulo Otávio de Lima
+NextButton;Next

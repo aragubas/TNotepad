@@ -117,10 +117,18 @@ namespace TNotepad
         }
 
 
-        public void SetEncoding(Encoding newEncoding)
+        public void SetEncoding(Encoding newEncoding, bool ReloadAfterEncodingChangeWarning=false)
         {
+            if (LastFileName != "") { Directory.CreateDirectory(Program.ExecutablePath + "\\temp\\"); File.WriteAllText(Program.ExecutablePath + "\\temp\\encoding_change", TextEditingThing.Text, CurrentEncoding); }
             CurrentEncoding = newEncoding;
             EncodingInfoLabel.Text = Utils.GetCurrentEncodingName(newEncoding);
+
+            string lastCeira = Program.ExecutablePath + "\\temp\\encoding_change";
+
+            if (LastFileName != "") { OpenFile(lastCeira); File.Delete(Program.ExecutablePath + "\\temp\\encoding_change"); }
+
+            LastFileName = lastCeira;
+
         }
 
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -217,23 +225,6 @@ namespace TNotepad
             
             // Set Tab Title
             AssociatedTabPage.Text = NewTitle;
-
-        }
-
-        public void ReopenFileInEncodingChange()
-        {
-            if (MessageBox.Show(Lang.GetLangData("TextEditMain_ReloadAfterEncodingChange_Text"), Lang.GetLangData("TextEditMain_ReloadAfterEncodingChange_Title"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                if (LastFileName == "")
-                { 
-                    saveFileDialog1.ShowDialog();
-                }
-                SaveFile(LastFileName);
-
-                TextEditingThing.Text = "";
-
-                OpenFile(LastFileName);
-            }
 
         }
 
