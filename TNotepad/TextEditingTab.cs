@@ -128,6 +128,7 @@ namespace TNotepad
             if (LastFileName != "") { OpenFile(lastCeira); File.Delete(Program.ExecutablePath + "\\temp\\encoding_change"); }
 
             LastFileName = lastCeira;
+            UpdateTitle(LastFileName);
 
         }
 
