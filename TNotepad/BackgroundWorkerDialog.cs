@@ -42,9 +42,6 @@ namespace TNotepad
 
             originalSize = Size;
 
-            // Set Icon
-            RootForm.Icon = Properties.Resources.Icon;
-
             Workers = pWorkers;
         }
 
@@ -53,13 +50,15 @@ namespace TNotepad
             CurrentInfoLabel.Text = Lang.GetLangData("BackgroundWorker_CurrentLabel");
 
             FileRemaning.Maximum = Workers.Count;
-
+            
+            // Set Form Properties
             Dock = DockStyle.Fill;
             RootForm.ResizeableForm = false;
             RootForm.MinimizeableForm = false;
             RootForm.CloseableForm = false;
             RootForm.Text = Lang.GetLangData("BackgroundWorker_WindowTitle");
             RootForm.Size = originalSize;
+            RootForm.Icon = Properties.Resources.Icon;
 
         }
 
@@ -71,7 +70,16 @@ namespace TNotepad
 
         private void BackgroundWorking_Tick(object sender, EventArgs e)
         {
-            WorkingProgress.Text = Workers.Count + Lang.GetLangData("BackgroundWorker_WorksLeftLabel");
+            try
+            {
+                WorkingProgress.Text = Workers.Count + Lang.GetLangData("BackgroundWorker_WorksLeftLabel");
+
+            }
+            catch (KeyNotFoundException)
+            {
+                WorkingProgress.Text = Workers.Count + " left";
+
+            }
             FileRemaning.Value = CurrentWorking;
 
             // Last task is still running

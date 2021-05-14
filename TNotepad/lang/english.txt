@@ -128,7 +128,7 @@ Settings_UISettings_OpenThemeSettingsButton;Change Theme
 #
 Settings_TextEditor_WordWrapGroupBoxTitle;Word Wrap
 Settings_TextEditor_WordWrapCheckbox;Enabled
-Settings_TextEditor_FontSettings_PreviewText;This is a sample text for current font.
+Settings_TextEditor_FontSettings_PreviewText;The quick brown fox jumps over the lazy dog
 Settings_TextEditor_FontSettings_ChangeFontButton; Change current font
 Settings_TextEditor_FontSettings_GroupBoxTitle;Font Settings
 
@@ -225,10 +225,12 @@ BackgroundWorker_CurrentLabel;Current
 #
 ThemeSettings_WindowTitle;Theme Settings
 ThemeSettings_SelectedThemeInfoLabel;Selected Theme: 
-ThemeSettings_SelectThemeButton;Apply theme
+ThemeSettings_SelectThemeButton;Confirm
+ThemeSettings_ExitButton;Exit
 # MessageBox
 ThemeSettings_ThemeApplyMessage;You need to restart the application to apply the theme.
 ThemeSettings_ThemeApplyMessage_Title;Restart Required
+ThemeSettings_AvalibleThemesFileInfoLabel;Avalible theme files:
 
 #
 # Saving Error

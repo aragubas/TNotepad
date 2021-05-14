@@ -93,7 +93,7 @@ namespace TNotepad
 
                 }
 
-            }catch(NullReferenceException ex)
+            }catch(NullReferenceException)
             {
                 // Define the list
                 Properties.Settings.Default.PinnedDocuments = new System.Collections.Specialized.StringCollection();

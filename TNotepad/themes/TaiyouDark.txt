@@ -109,7 +109,7 @@ RadioButton_ForegroundColor; 255, 200, 200, 200
 # = Split Container
 SplitContainer_BackgroundColor; 255, 38, 38, 49
 SplitContainer_ForegroundColor; 255, 240, 240, 240
-
-# = Table Layout
-TableLayout_BackgroundColor; 255, 35, 35, 40
+ 
+# = Table Layout 
+TableLayout_BackgroundColor; 255, 48, 48, 68
 TableLayout_ForegroundColor; 255, 240, 240, 240

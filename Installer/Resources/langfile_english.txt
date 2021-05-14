@@ -1,6 +1,0 @@
-#
-# English LangFile for TNotepad
-#
-PlugText:Charging
-UnplugText:Unplugged
-BatteryFullText:Fully charged

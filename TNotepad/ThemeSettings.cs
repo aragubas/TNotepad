@@ -31,27 +31,29 @@ namespace TNotepad
 {
     public partial class ThemeSettings : taiyouUserControl
     {
-        Size originalSize;
+        Size OriginalSize;
         public ThemeSettings()
         {
             InitializeComponent();
 
-            originalSize = Size;
+            OriginalSize = Size;
         }
 
         private void ThemeSettings_Load(object sender, EventArgs e)
         {
-            this.Dock = DockStyle.Fill;
             LoadLang();
             LoadThemes();
 
+            this.Dock = DockStyle.Fill;
+            RootForm.Size = OriginalSize;
+            RootForm.Text = Lang.GetLangData("ThemeSettings_WindowTitle");
             RootForm.MinimizeableForm = false;
             RootForm.ResizeableForm = false;
-            RootForm.MinimumSize = this.Size;
-            RootForm.Size = originalSize;
-            RootForm.FormCloseButton.Click += FormCloseButton_Click;
             // Set Icon
             RootForm.Icon = Properties.Resources.Icon;
+            RootForm.FormCloseButton.Click += FormCloseButton_Click;
+
+
 
         }
 
@@ -82,10 +84,12 @@ namespace TNotepad
             RootForm.Text = Lang.GetLangData("ThemeSettings_WindowTitle");
             SelectedThemeInfoLabel.Text = Lang.GetLangData("ThemeSettings_SelectedThemeInfoLabel");
             AvaliableThemesListBox.Text = Lang.GetLangData("ThemeSettings_SelectThemeButton");
+            AvaliableThemeFilesInfoLabel.Text = Lang.GetLangData("ThemeSettings_AvalibleThemesFileInfoLabel");
+            ExitButton.Text = Lang.GetLangData("ThemeSettings_ExitButton");
 
         }
 
-        BackgroundWorker Gambiarra;
+        BackgroundWorker bgWork;
         private void SelectThemeButton_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.CurrentTheme = SelectedThemeTextBox.Text;
@@ -94,7 +98,7 @@ namespace TNotepad
             // Create background worker
             BackgroundWorker Ceira = new BackgroundWorker();
             Ceira.WorkerReportsProgress = true;
-            Gambiarra = Ceira;
+            bgWork = Ceira;
             Ceira.DoWork += Ceira_DoWork;
             
             Utils.CreateWindow(new BackgroundWorkerDialog(new List<BackgroundWorker>() { Ceira }), ShowAsDialog:true);
@@ -106,7 +110,7 @@ namespace TNotepad
 
         void Ceira_DoWork(object sender, DoWorkEventArgs e)
         {
-            ThemeLoader.LoadDictData(Environment.CurrentDirectory + "\\themes\\" + Properties.Settings.Default.CurrentTheme + ".txt", Gambiarra);
+            ThemeLoader.LoadDictData(Environment.CurrentDirectory + "\\themes\\" + Properties.Settings.Default.CurrentTheme + ".txt", bgWork);
         }
 
         private void AvaliableThemesListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -119,6 +123,11 @@ namespace TNotepad
         private void TopThingsPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        { 
+            RootForm.Close();
         }
     }
 }

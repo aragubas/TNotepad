@@ -97,6 +97,7 @@ namespace TNotepad
             CurrentLanguageTextBox.Text = AvaliableLanguagesListBox.Items[AvaliableLanguagesListBox.SelectedIndex].ToString();
         }
 
+        BackgroundWorker bgWork;
         private void ConfirmButton_Click(object sender, EventArgs e)
         {
             if (CurrentLanguageTextBox.Text == "")
@@ -104,13 +105,27 @@ namespace TNotepad
                 ExitButton.PerformClick();
             }
 
+            bgWork = new BackgroundWorker();
+            bgWork.WorkerReportsProgress = true;
+            bgWork.DoWork += bgWork_DoWork;
+
             Properties.Settings.Default.CurrentLanguage = CurrentLanguageTextBox.Text;
             Properties.Settings.Default.Save();
-            Lang.LoadDictData();
+
+            Utils.CreateWindow(new BackgroundWorkerDialog(new List<BackgroundWorker>() { bgWork }), ShowAsDialog: true);
+
+
             LoadLang();
             this.Refresh();
             MessageBox.Show(Lang.GetLangData("LanguageChangeMessageBox_Text"), Lang.GetLangData("LanguageChangeMessageBox_Title"));
+
             RootForm.Close();
+        }
+
+        void bgWork_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Lang.LoadDictData(bgWork);
+
         }
     }
 }

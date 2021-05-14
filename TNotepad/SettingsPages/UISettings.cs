@@ -47,17 +47,13 @@ namespace TNotepad.SettingsPages
         {
             // Group Box
             SaveWarningGroupBox.Text = Lang.GetLangData("Settings_UISettings_SaveWarning");
-            LanguageSettingGroupBox.Text = Lang.GetLangData("Settings_UISettings_LanguageSetting");
             WindowShadowGroupBox.Text = Lang.GetLangData("Settings_UISettings_WindowShadow");
             SmoothVisualElementsGroupBox.Text = Lang.GetLangData("Settings_UISettings_SmoothVisualElementsGroupbox");
             StretchResizeGroupbox.Text = Lang.GetLangData("Settings_UISettings_StretchResizeGroupbox");
-            ThemeSettingsGroupBox.Text = Lang.GetLangData("Settings_UISettings_ThemeSettingsGroupbox");
             DeFlickerGroupBox.Text = Lang.GetLangData("Settings_UISettings_DeflickerGroupbox");
 
             // Labels
             SaveWarningIntervalInfo.Text = Lang.GetLangData("Settings_UISettings_SaveWarningIntervalInfoLabel");
-            LanguageSettingsInfoLabel.Text = Lang.GetLangData("Settings_UISettings_LanguageSettingsInfoLabel");
-            ThemeSettingsInfoLabel.Text = Lang.GetLangData("Settings_UISettings_ThemeSettingsInfoLabel");
 
             // Checkboxes
             SaveWarningCheckBox.Text = Lang.GetLangData("Settings_UISettings_SaveWarningCheckbox");
@@ -74,6 +70,7 @@ namespace TNotepad.SettingsPages
         }
         private void UISettingscs_Load(object sender, EventArgs e)
         {
+            tableLayoutPanel1.Size = new Size(535, Size.Height);
 
         }
 
@@ -111,25 +108,24 @@ namespace TNotepad.SettingsPages
 
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+        // Language Settings Button
         private void OpenLanguageSettingsButton_Click(object sender, EventArgs e)
         {
             Utils.CreateWindow(new LanguageSettings(), ShowAsDialog: true);
 
         }
 
-        private void WindowShadowCheckButton_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        // Theme Settings Button
         private void OpenThemeSettingsButton_Click(object sender, EventArgs e)
         {
             Utils.CreateWindow(new ThemeSettings(), ShowAsDialog: true);
+        }
+
+        // Resize tableLayoutPanel
+        private void UISettings_SizeChanged(object sender, EventArgs e)
+        {
+            tableLayoutPanel1.Size = new Size(535, Size.Height);
+
         }
 
     }

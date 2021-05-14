@@ -52,6 +52,8 @@ namespace TNotepad
             this.SelectedThemeTextBox = new TaiyouUI.taiyouTextBox();
             this.SelectedThemeInfoLabel = new System.Windows.Forms.Label();
             this.SelectThemeButton = new TaiyouUI.taiyouButton();
+            this.AvaliableThemeFilesInfoLabel = new System.Windows.Forms.Label();
+            this.ExitButton = new TaiyouUI.taiyouButton();
             this.TopThingsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,9 +64,9 @@ namespace TNotepad
             | System.Windows.Forms.AnchorStyles.Right)));
             this.AvaliableThemesListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.AvaliableThemesListBox.FormattingEnabled = true;
-            this.AvaliableThemesListBox.Location = new System.Drawing.Point(6, 36);
+            this.AvaliableThemesListBox.Location = new System.Drawing.Point(6, 58);
             this.AvaliableThemesListBox.Name = "AvaliableThemesListBox";
-            this.AvaliableThemesListBox.Size = new System.Drawing.Size(392, 184);
+            this.AvaliableThemesListBox.Size = new System.Drawing.Size(429, 158);
             this.AvaliableThemesListBox.TabIndex = 0;
             this.AvaliableThemesListBox.SelectedIndexChanged += new System.EventHandler(this.AvaliableThemesListBox_SelectedIndexChanged);
             // 
@@ -76,7 +78,7 @@ namespace TNotepad
             this.TopThingsPanel.Controls.Add(this.SelectedThemeInfoLabel);
             this.TopThingsPanel.Location = new System.Drawing.Point(3, 3);
             this.TopThingsPanel.Name = "TopThingsPanel";
-            this.TopThingsPanel.Size = new System.Drawing.Size(395, 27);
+            this.TopThingsPanel.Size = new System.Drawing.Size(432, 27);
             this.TopThingsPanel.TabIndex = 1;
             this.TopThingsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.TopThingsPanel_Paint);
             // 
@@ -86,7 +88,7 @@ namespace TNotepad
             this.SelectedThemeTextBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.SelectedThemeTextBox.Location = new System.Drawing.Point(103, 0);
             this.SelectedThemeTextBox.Name = "SelectedThemeTextBox";
-            this.SelectedThemeTextBox.Size = new System.Drawing.Size(292, 20);
+            this.SelectedThemeTextBox.Size = new System.Drawing.Size(329, 22);
             this.SelectedThemeTextBox.TabIndex = 1;
             // 
             // SelectedThemeInfoLabel
@@ -102,30 +104,57 @@ namespace TNotepad
             // 
             // SelectThemeButton
             // 
-            this.SelectThemeButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SelectThemeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.SelectThemeButton.FlatAppearance.BorderSize = 0;
             this.SelectThemeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SelectThemeButton.Location = new System.Drawing.Point(6, 232);
+            this.SelectThemeButton.Location = new System.Drawing.Point(6, 225);
             this.SelectThemeButton.Name = "SelectThemeButton";
-            this.SelectThemeButton.Size = new System.Drawing.Size(392, 23);
+            this.SelectThemeButton.Size = new System.Drawing.Size(100, 33);
             this.SelectThemeButton.TabIndex = 2;
             this.SelectThemeButton.Text = "Select Theme";
             this.SelectThemeButton.UseVisualStyleBackColor = true;
             this.SelectThemeButton.Click += new System.EventHandler(this.SelectThemeButton_Click);
             // 
+            // AvaliableThemeFilesInfoLabel
+            // 
+            this.AvaliableThemeFilesInfoLabel.AutoSize = true;
+            this.AvaliableThemeFilesInfoLabel.Location = new System.Drawing.Point(9, 37);
+            this.AvaliableThemeFilesInfoLabel.Name = "AvaliableThemeFilesInfoLabel";
+            this.AvaliableThemeFilesInfoLabel.Size = new System.Drawing.Size(119, 13);
+            this.AvaliableThemeFilesInfoLabel.TabIndex = 3;
+            this.AvaliableThemeFilesInfoLabel.Text = "Avaliable Theme Files:\r\n";
+            // 
+            // ExitButton
+            // 
+            this.ExitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ExitButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ExitButton.FlatAppearance.BorderSize = 0;
+            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitButton.Location = new System.Drawing.Point(330, 225);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(105, 33);
+            this.ExitButton.TabIndex = 4;
+            this.ExitButton.Text = "Exit";
+            this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
             // ThemeSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.ExitButton);
+            this.Controls.Add(this.AvaliableThemeFilesInfoLabel);
             this.Controls.Add(this.SelectThemeButton);
             this.Controls.Add(this.TopThingsPanel);
             this.Controls.Add(this.AvaliableThemesListBox);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.Name = "ThemeSettings";
-            this.Size = new System.Drawing.Size(401, 263);
+            this.Size = new System.Drawing.Size(438, 266);
             this.Load += new System.EventHandler(this.ThemeSettings_Load);
             this.TopThingsPanel.ResumeLayout(false);
             this.TopThingsPanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -136,5 +165,7 @@ namespace TNotepad
         private System.Windows.Forms.Label SelectedThemeInfoLabel;
         private taiyouTextBox SelectedThemeTextBox;
         private taiyouButton SelectThemeButton;
+        private System.Windows.Forms.Label AvaliableThemeFilesInfoLabel;
+        private taiyouButton ExitButton;
     }
 }

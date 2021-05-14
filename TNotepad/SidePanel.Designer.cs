@@ -48,12 +48,12 @@ namespace TNotepad
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.AboutButton = new taiyouButton();
-            this.SettingsButton = new taiyouButton();
-            this.OpenFileButton = new taiyouButton();
-            this.NewTabButton = new taiyouButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.HideShowButton = new taiyouButton();
+            this.AboutButton = new TaiyouUI.taiyouButton();
+            this.SettingsButton = new TaiyouUI.taiyouButton();
+            this.OpenFileButton = new TaiyouUI.taiyouButton();
+            this.NewTabButton = new TaiyouUI.taiyouButton();
+            this.ProgramNameLabel = new System.Windows.Forms.Label();
+            this.HideShowButton = new TaiyouUI.taiyouButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.QuickSettings = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
@@ -134,17 +134,17 @@ namespace TNotepad
             this.NewTabButton.UseVisualStyleBackColor = false;
             this.NewTabButton.Click += new System.EventHandler(this.NewTabButton_Click);
             // 
-            // label1
+            // ProgramNameLabel
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.ProgramNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 51);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "TabNotepad";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ProgramNameLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProgramNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.ProgramNameLabel.Name = "ProgramNameLabel";
+            this.ProgramNameLabel.Size = new System.Drawing.Size(118, 51);
+            this.ProgramNameLabel.TabIndex = 0;
+            this.ProgramNameLabel.Text = "TabNotepad";
+            this.ProgramNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // HideShowButton
             // 
@@ -185,7 +185,7 @@ namespace TNotepad
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.QuickSettings);
             this.Controls.Add(this.HideShowButton);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ProgramNameLabel);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "SidePanel";
@@ -205,7 +205,7 @@ namespace TNotepad
         private System.Windows.Forms.Panel panel2;
         private taiyouButton OpenFileButton;
         private taiyouButton NewTabButton;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label ProgramNameLabel;
         private taiyouButton HideShowButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private taiyouButton SettingsButton;

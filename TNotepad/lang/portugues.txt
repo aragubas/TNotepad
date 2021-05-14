@@ -129,6 +129,9 @@ Settings_UISettings_OpenThemeSettingsButton;Alterar Tema
 #
 Settings_TextEditor_WordWrapGroupBoxTitle;Quebra de Linha
 Settings_TextEditor_WordWrapCheckbox;Ativar quebra de linha
+Settings_TextEditor_FontSettings_PreviewText;À noite, vovô Kowalsky vê o ímã cair no pé do pinguim queixoso e vovó põe açúcar no chá de tâmaras do jabuti feliz.
+Settings_TextEditor_FontSettings_ChangeFontButton;Alterar fonte
+Settings_TextEditor_FontSettings_GroupBoxTitle;Alterar fonte
 
 #
 # Encoding Selector
@@ -225,10 +228,12 @@ BackgroundWorker_CurrentLabel;Atual
 #
 ThemeSettings_WindowTitle;Configuraçoes de Tema
 ThemeSettings_SelectedThemeInfoLabel;Tema Atual: 
-ThemeSettings_SelectThemeButton;Aplicar tema
+ThemeSettings_SelectThemeButton;Confirmar
+ThemeSettings_ExitButton;Sair
 # MessageBox
 ThemeSettings_ThemeApplyMessage;Você prescisa reiniciar o aplicativo para aplicar o tema.
 ThemeSettings_ThemeApplyMessage_Title;Reiniciar Requirido
+ThemeSettings_AvalibleThemesFileInfoLabel;Arquivos de tema disponivel:
 
 #
 # Saving Error

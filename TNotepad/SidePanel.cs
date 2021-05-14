@@ -90,18 +90,32 @@ namespace TNotepad
             switch (HideToggle)
             {
                 case 1:
+                    // Suspend layout to erradicate slowdown
+                    RootPanel.Parent.SuspendLayout();
+
+                    ProgramNameLabel.Text = "";
                     HideShowButton.Text = ">";
                     HideToggle = -1;
                     QuickSettings.Visible = true;
-                    label1.Visible = false;
+                    ProgramNameLabel.Visible = false;
                     RootPanel.Width = HideShowButton.Width + 4;
+
+                    // Resume layout
+                    RootPanel.Parent.ResumeLayout();
                     break;
 
-                case 0:
+                case 0: 
+                    // Suspend layout to erradicate slowdown
+                    RootPanel.Parent.SuspendLayout();
+                     
+                    ProgramNameLabel.Text = "TabNotepad";
                     HideShowButton.Text = "<";
-                    label1.Visible = true;
+                    ProgramNameLabel.Visible = true;
                     QuickSettings.Visible = false;
                     RootPanel.Width = DefaultWidth;
+                    
+                    // Resume layout
+                    RootPanel.Parent.ResumeLayout();
                     break;
 
             }

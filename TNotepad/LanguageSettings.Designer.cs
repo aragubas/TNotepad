@@ -76,7 +76,7 @@ namespace TNotepad
             this.panel1.Controls.Add(this.CurrentLanguageInfoLabel);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(482, 32);
+            this.panel1.Size = new System.Drawing.Size(414, 32);
             this.panel1.TabIndex = 1;
             // 
             // CurrentLanguageTextBox
@@ -85,7 +85,7 @@ namespace TNotepad
             this.CurrentLanguageTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CurrentLanguageTextBox.Location = new System.Drawing.Point(115, 0);
             this.CurrentLanguageTextBox.Name = "CurrentLanguageTextBox";
-            this.CurrentLanguageTextBox.Size = new System.Drawing.Size(367, 25);
+            this.CurrentLanguageTextBox.Size = new System.Drawing.Size(299, 25);
             this.CurrentLanguageTextBox.TabIndex = 1;
             // 
             // ConfirmButton
@@ -93,7 +93,7 @@ namespace TNotepad
             this.ConfirmButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ConfirmButton.FlatAppearance.BorderSize = 0;
             this.ConfirmButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ConfirmButton.Location = new System.Drawing.Point(12, 264);
+            this.ConfirmButton.Location = new System.Drawing.Point(12, 222);
             this.ConfirmButton.Name = "ConfirmButton";
             this.ConfirmButton.Size = new System.Drawing.Size(75, 32);
             this.ConfirmButton.TabIndex = 2;
@@ -111,7 +111,7 @@ namespace TNotepad
             this.AvaliableLanguagesListBox.ItemHeight = 17;
             this.AvaliableLanguagesListBox.Location = new System.Drawing.Point(12, 67);
             this.AvaliableLanguagesListBox.Name = "AvaliableLanguagesListBox";
-            this.AvaliableLanguagesListBox.Size = new System.Drawing.Size(482, 189);
+            this.AvaliableLanguagesListBox.Size = new System.Drawing.Size(414, 138);
             this.AvaliableLanguagesListBox.TabIndex = 3;
             this.AvaliableLanguagesListBox.SelectedIndexChanged += new System.EventHandler(this.AvaliableLanguagesListBox_SelectedIndexChanged);
             // 
@@ -126,10 +126,10 @@ namespace TNotepad
             // 
             // ExitButton
             // 
-            this.ExitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ExitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ExitButton.FlatAppearance.BorderSize = 0;
             this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExitButton.Location = new System.Drawing.Point(419, 264);
+            this.ExitButton.Location = new System.Drawing.Point(351, 222);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(75, 32);
             this.ExitButton.TabIndex = 5;
@@ -149,7 +149,7 @@ namespace TNotepad
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "LanguageSettings";
-            this.Size = new System.Drawing.Size(506, 308);
+            this.Size = new System.Drawing.Size(438, 266);
             this.Load += new System.EventHandler(this.LanguageSettings_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

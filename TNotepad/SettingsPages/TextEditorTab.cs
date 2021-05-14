@@ -82,6 +82,12 @@ namespace TNotepad.SettingsPages
 
         }
 
+        private void TextEditorTab_SizeChanged(object sender, EventArgs e)
+        {
+            taiyouTableLayoutPanel1.Size = new Size(535, Size.Height);
+
+        }
+
 
     }
 }
